@@ -13,12 +13,12 @@ import javax.swing.UnsupportedLookAndFeelException;
  *
  * @author nejac
  */
-public class booking extends javax.swing.JFrame {
+public class USER_booking extends javax.swing.JFrame {
 
     /**
      * Creates new form booking
      */
-    public booking() {
+    public USER_booking() {
         initComponents();
     }
 
@@ -305,13 +305,13 @@ public class booking extends javax.swing.JFrame {
                     }
                 }
             } catch (ClassNotFoundException ex) {
-                java.util.logging.Logger.getLogger(booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                java.util.logging.Logger.getLogger(USER_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             } catch (InstantiationException ex) {
-                java.util.logging.Logger.getLogger(booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                java.util.logging.Logger.getLogger(USER_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             } catch (IllegalAccessException ex) {
-                java.util.logging.Logger.getLogger(booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                java.util.logging.Logger.getLogger(USER_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-                java.util.logging.Logger.getLogger(booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                java.util.logging.Logger.getLogger(USER_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             }
             //</editor-fold>
             UIManager.setLookAndFeel("com.formdev.flatlaf.FlatLightLaf");
@@ -319,17 +319,17 @@ public class booking extends javax.swing.JFrame {
             /* Create and display the form */
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
-                    new booking().setVisible(true);
+                    new USER_booking().setVisible(true);
                 }
             });
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(booking.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(USER_booking.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            Logger.getLogger(booking.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(USER_booking.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            Logger.getLogger(booking.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(USER_booking.class.getName()).log(Level.SEVERE, null, ex);
         } catch (UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(booking.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(USER_booking.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

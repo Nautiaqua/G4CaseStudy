@@ -15,12 +15,12 @@ import java.util.logging.Logger;
  * @author WINDOWS
  */
 
-public class login_menu extends javax.swing.JFrame {
+public class USER_login_menu extends javax.swing.JFrame {
     
     /**
      * Creates new form login_menu
      */
-    public login_menu() {
+    public USER_login_menu() {
         initComponents();
     }
 
@@ -145,34 +145,36 @@ public class login_menu extends javax.swing.JFrame {
                     }
                 }
             } catch (ClassNotFoundException ex) {
-                java.util.logging.Logger.getLogger(login_menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                java.util.logging.Logger.getLogger(USER_login_menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             } catch (InstantiationException ex) {
-                java.util.logging.Logger.getLogger(login_menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                java.util.logging.Logger.getLogger(USER_login_menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             } catch (IllegalAccessException ex) {
-                java.util.logging.Logger.getLogger(login_menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                java.util.logging.Logger.getLogger(USER_login_menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-                java.util.logging.Logger.getLogger(login_menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                java.util.logging.Logger.getLogger(USER_login_menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             }
+            //</editor-fold>
             //</editor-fold>
             
             UIManager.setLookAndFeel("com.formdev.flatlaf.FlatLightLaf");
             /* Create and display the form */
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
-                    new login_menu().setVisible(true);
+                    new USER_login_menu().setVisible(true);
                 }
             });
             
             
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(login_menu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(USER_login_menu.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            Logger.getLogger(login_menu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(USER_login_menu.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            Logger.getLogger(login_menu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(USER_login_menu.class.getName()).log(Level.SEVERE, null, ex);
         } catch (UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(login_menu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(USER_login_menu.class.getName()).log(Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
         
         
