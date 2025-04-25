@@ -29,6 +29,8 @@ public class login_menu extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setName("Casa de Los Tropicos"); // NOI18N
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(238, 216, 194));
 
