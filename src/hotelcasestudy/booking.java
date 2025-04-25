@@ -149,13 +149,12 @@ public class booking extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1344, -1));
 
-        jPanel2.setBackground(new java.awt.Color(105, 73, 50));
+        jPanel2.setBackground(new java.awt.Color(236, 234, 232));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(1344, 70));
 
         jLabel6.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(226, 165, 79));
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\nejac\\OneDrive\\Pictures\\Screenshots\\Screenshot 2025-04-25 185904.png")); // NOI18N
 
         jToggleButton2.setBackground(new java.awt.Color(105, 73, 50));
         jToggleButton2.setForeground(new java.awt.Color(255, 255, 255));
