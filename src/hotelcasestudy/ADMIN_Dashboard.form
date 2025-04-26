@@ -18,6 +18,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-14,0,0,5,59"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -42,7 +43,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="441" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="826" max="32767" attributes="0"/>
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
@@ -116,6 +117,9 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="c2" green="e7" red="ff" type="rgb"/>
         </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/hotelcasestudy/Images/3 (1).png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="REPORT GENERATION MODULE"/>
       </Properties>
       <Events>
@@ -123,7 +127,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="416" y="489" width="453" height="74"/>
+          <AbsoluteConstraints x="160" y="280" width="480" height="74"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -138,6 +142,9 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="c2" green="e7" red="ff" type="rgb"/>
         </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/hotelcasestudy/Images/user-1 (1).png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="USER MANAGEMENT"/>
       </Properties>
       <Events>
@@ -145,7 +152,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="235" y="269" width="376" height="74"/>
+          <AbsoluteConstraints x="470" y="490" width="350" height="74"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -160,6 +167,9 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="c2" green="e7" red="ff" type="rgb"/>
         </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/hotelcasestudy/Images/r (1).png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="ROOM TYPE MANAGEMENT"/>
       </Properties>
       <Events>
@@ -167,7 +177,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="654" y="269" width="-1" height="74"/>
+          <AbsoluteConstraints x="670" y="280" width="-1" height="74"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -182,6 +192,9 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="c2" green="e7" red="ff" type="rgb"/>
         </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/hotelcasestudy/Images/222 (1).png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="RESERVATION MANAGEMENT"/>
       </Properties>
       <Events>
@@ -189,7 +202,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="235" y="386" width="-1" height="74"/>
+          <AbsoluteConstraints x="160" y="380" width="480" height="74"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -204,6 +217,9 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="c2" green="e7" red="ff" type="rgb"/>
         </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/hotelcasestudy/Images/m (1).png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="ROOM MANAGEMENT"/>
       </Properties>
       <Events>
@@ -211,7 +227,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="663" y="386" width="341" height="74"/>
+          <AbsoluteConstraints x="670" y="380" width="420" height="74"/>
         </Constraint>
       </Constraints>
     </Component>

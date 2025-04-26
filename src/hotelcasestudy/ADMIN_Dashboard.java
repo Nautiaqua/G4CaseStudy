@@ -62,7 +62,7 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 826, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(30, 30, 30))
         );
@@ -85,57 +85,62 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 231, 194));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/3 (1).png"))); // NOI18N
         jButton3.setText("REPORT GENERATION MODULE");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(416, 489, 453, 74));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 480, 74));
 
         jButton4.setBackground(new java.awt.Color(0, 0, 0));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 231, 194));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/user-1 (1).png"))); // NOI18N
         jButton4.setText("USER MANAGEMENT");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 269, 376, 74));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 490, 350, 74));
 
         jButton5.setBackground(new java.awt.Color(0, 0, 0));
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 231, 194));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/r (1).png"))); // NOI18N
         jButton5.setText("ROOM TYPE MANAGEMENT");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(654, 269, -1, 74));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 280, -1, 74));
 
         jButton6.setBackground(new java.awt.Color(0, 0, 0));
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 231, 194));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/222 (1).png"))); // NOI18N
         jButton6.setText("RESERVATION MANAGEMENT");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 386, -1, 74));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 480, 74));
 
         jButton7.setBackground(new java.awt.Color(0, 0, 0));
         jButton7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 231, 194));
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/m (1).png"))); // NOI18N
         jButton7.setText("ROOM MANAGEMENT");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(663, 386, 341, 74));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 380, 420, 74));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
