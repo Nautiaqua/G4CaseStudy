@@ -185,11 +185,11 @@ public class USER_signup_screen extends javax.swing.JFrame {
             }
         }
         
-        if (password_length >= 12){
+        if (password_length >= 12 && password_length <= 30){
             password_check = true;
             invalid_password.setText(null);
         } else {
-            invalid_password.setText("Must be 12 or more characters!");
+            invalid_password.setText("Must be 12 to 30 characters!");
         }
         
         if (password_txt.getText() == null) {

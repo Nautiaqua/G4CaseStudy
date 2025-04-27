@@ -142,7 +142,9 @@ public class USER_login_screen extends javax.swing.JFrame {
             invalid.setText("Email or Password is Invalid!");
         }
         if (!email_txt.getText().isEmpty() && !password_txt.getText().isEmpty()) { // This is just placeholder code while we don't have the backend.
-            System.out.println("This works");
+            USER_booking userbooking = new USER_booking();
+            this.setVisible(false);
+            userbooking.setVisible(true);
         }
     }//GEN-LAST:event_login_finish_btnActionPerformed
 
