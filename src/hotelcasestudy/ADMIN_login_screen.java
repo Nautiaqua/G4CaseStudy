@@ -143,7 +143,7 @@ public class ADMIN_login_screen extends javax.swing.JFrame {
         }
         if (!email_txt.getText().isEmpty() && !password_txt.getText().isEmpty()) { // This is just placeholder code while we don't have the backend.
             System.out.println("This works");
-            ADMIN_dashboard admindashboard = new ADMIN_dashboard();
+            ADMIN_Dashboard admindashboard = new ADMIN_Dashboard();
             this.setVisible(false);
             admindashboard.setVisible(true);
         }
