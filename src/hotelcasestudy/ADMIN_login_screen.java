@@ -11,12 +11,12 @@ import java.util.logging.Logger;
  * @author WINDOWS
  */
 
-public class USER_login_screen extends javax.swing.JFrame {
+public class ADMIN_login_screen extends javax.swing.JFrame {
     
     /**
      * Creates new form login_menu
      */
-    public USER_login_screen() {
+    public ADMIN_login_screen() {
         initComponents();
     }
 
@@ -33,13 +33,13 @@ public class USER_login_screen extends javax.swing.JFrame {
         return_btn = new javax.swing.JButton();
         login_finish_btn = new javax.swing.JButton();
         casa_logo = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         invalid = new javax.swing.JLabel();
         password_txt = new javax.swing.JTextField();
         email_txt = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         password_label = new javax.swing.JLabel();
         email_label1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,12 +47,12 @@ public class USER_login_screen extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(237, 234, 233));
+        jPanel1.setBackground(new java.awt.Color(104, 72, 50));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        return_btn.setBackground(new java.awt.Color(134, 97, 72));
+        return_btn.setBackground(new java.awt.Color(255, 255, 255));
         return_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        return_btn.setForeground(new java.awt.Color(255, 255, 255));
+        return_btn.setForeground(new java.awt.Color(134, 97, 72));
         return_btn.setText("RETURN");
         return_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,9 +61,9 @@ public class USER_login_screen extends javax.swing.JFrame {
         });
         jPanel1.add(return_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 530, 160, 49));
 
-        login_finish_btn.setBackground(new java.awt.Color(134, 97, 72));
+        login_finish_btn.setBackground(new java.awt.Color(255, 255, 255));
         login_finish_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        login_finish_btn.setForeground(new java.awt.Color(255, 255, 255));
+        login_finish_btn.setForeground(new java.awt.Color(134, 97, 72));
         login_finish_btn.setText("LOG IN");
         login_finish_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,13 +76,9 @@ public class USER_login_screen extends javax.swing.JFrame {
         casa_logo.setText("jLabel2");
         jPanel1.add(casa_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 235, 171));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/LOGO NO BG - 1.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 389, 86));
-
         invalid.setBackground(new java.awt.Color(105, 73, 50));
         invalid.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        invalid.setForeground(new java.awt.Color(123, 24, 24));
+        invalid.setForeground(new java.awt.Color(255, 51, 51));
         invalid.setToolTipText("");
         jPanel1.add(invalid, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 230, -1));
 
@@ -101,23 +97,27 @@ public class USER_login_screen extends javax.swing.JFrame {
         });
         jPanel1.add(email_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 320, -1));
 
-        jLabel3.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 3, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Log In");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, -1));
 
         password_label.setBackground(new java.awt.Color(105, 73, 50));
         password_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        password_label.setForeground(new java.awt.Color(105, 73, 50));
+        password_label.setForeground(new java.awt.Color(255, 255, 255));
         password_label.setText("Password");
         jPanel1.add(password_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 90, -1));
 
         email_label1.setBackground(new java.awt.Color(105, 73, 50));
         email_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        email_label1.setForeground(new java.awt.Color(105, 73, 50));
-        email_label1.setText("Email");
-        jPanel1.add(email_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 50, -1));
+        email_label1.setForeground(new java.awt.Color(255, 255, 255));
+        email_label1.setText("Admin ID");
+        jPanel1.add(email_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 80, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/LOGO NO BG - 1 (WHITE).png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 389, 86));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 520, 760));
 
@@ -170,14 +170,74 @@ public class USER_login_screen extends javax.swing.JFrame {
                     }
                 }
             } catch (ClassNotFoundException ex) {
-                java.util.logging.Logger.getLogger(USER_login_screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                java.util.logging.Logger.getLogger(ADMIN_login_screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             } catch (InstantiationException ex) {
-                java.util.logging.Logger.getLogger(USER_login_screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                java.util.logging.Logger.getLogger(ADMIN_login_screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             } catch (IllegalAccessException ex) {
-                java.util.logging.Logger.getLogger(USER_login_screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                java.util.logging.Logger.getLogger(ADMIN_login_screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-                java.util.logging.Logger.getLogger(USER_login_screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                java.util.logging.Logger.getLogger(ADMIN_login_screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             }
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
             //</editor-fold>
             //</editor-fold>
             //</editor-fold>
@@ -187,20 +247,80 @@ public class USER_login_screen extends javax.swing.JFrame {
             /* Create and display the form */
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
-                    new USER_login_screen().setVisible(true);
+                    new ADMIN_login_screen().setVisible(true);
                 }
             });
             
             
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(USER_login_screen.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ADMIN_login_screen.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            Logger.getLogger(USER_login_screen.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ADMIN_login_screen.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            Logger.getLogger(USER_login_screen.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ADMIN_login_screen.class.getName()).log(Level.SEVERE, null, ex);
         } catch (UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(USER_login_screen.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ADMIN_login_screen.class.getName()).log(Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>

@@ -124,10 +124,16 @@ public class USER_login_menu extends javax.swing.JFrame {
 
     private void member_itemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_member_itemActionPerformed
         // TODO add your handling code here:
+        USER_login_screen userlogin = new USER_login_screen();
+        this.setVisible(false);
+        userlogin.setVisible(true);
     }//GEN-LAST:event_member_itemActionPerformed
 
     private void admin_itemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admin_itemActionPerformed
         // TODO add your handling code here:
+        ADMIN_login_screen adminlogin = new ADMIN_login_screen();
+        this.setVisible(false);
+        adminlogin.setVisible(true);
     }//GEN-LAST:event_admin_itemActionPerformed
 
     /**
