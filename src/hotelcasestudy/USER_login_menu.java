@@ -115,6 +115,9 @@ public class USER_login_menu extends javax.swing.JFrame {
 
     private void signup_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signup_btnActionPerformed
         // TODO add your handling code here:
+        USER_signup_screen usersignup = new USER_signup_screen();
+        this.setVisible(false);
+        usersignup.setVisible(true);
     }//GEN-LAST:event_signup_btnActionPerformed
 
     private void login_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_btnActionPerformed

@@ -47,7 +47,7 @@ public class ADMIN_login_screen extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(104, 72, 50));
+        jPanel1.setBackground(new java.awt.Color(140, 100, 75));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         return_btn.setBackground(new java.awt.Color(255, 255, 255));
@@ -125,7 +125,7 @@ public class ADMIN_login_screen extends javax.swing.JFrame {
         jLabel4.setText("jLabel4");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, -1, -1));
 
-        setSize(new java.awt.Dimension(1360, 767));
+        setSize(new java.awt.Dimension(1360, 763));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
