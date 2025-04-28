@@ -34,12 +34,12 @@ public class ADMIN_login_screen extends javax.swing.JFrame {
         login_finish_btn = new javax.swing.JButton();
         casa_logo = new javax.swing.JLabel();
         invalid = new javax.swing.JLabel();
-        password_txt = new javax.swing.JTextField();
         email_txt = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         password_label = new javax.swing.JLabel();
         email_label1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        password_txt = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -82,20 +82,10 @@ public class ADMIN_login_screen extends javax.swing.JFrame {
         invalid.setToolTipText("");
         jPanel1.add(invalid, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 230, -1));
 
-        password_txt.setBackground(new java.awt.Color(255, 255, 255));
-        password_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        password_txt.setForeground(new java.awt.Color(105, 73, 50));
-        jPanel1.add(password_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 320, 26));
-
         email_txt.setBackground(new java.awt.Color(255, 255, 255));
         email_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         email_txt.setForeground(new java.awt.Color(105, 73, 50));
-        email_txt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                email_txtActionPerformed(evt);
-            }
-        });
-        jPanel1.add(email_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 320, -1));
+        jPanel1.add(email_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 320, 26));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 3, 18)); // NOI18N
@@ -119,13 +109,18 @@ public class ADMIN_login_screen extends javax.swing.JFrame {
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 389, 86));
 
+        password_txt.setBackground(new java.awt.Color(255, 255, 255));
+        password_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        password_txt.setForeground(new java.awt.Color(105, 73, 50));
+        jPanel1.add(password_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 320, 26));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 520, 760));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/TropicosImage1HD.png"))); // NOI18N
         jLabel4.setText("jLabel4");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, -1, -1));
 
-        setSize(new java.awt.Dimension(1360, 763));
+        setSize(new java.awt.Dimension(1358, 764));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -138,20 +133,16 @@ public class ADMIN_login_screen extends javax.swing.JFrame {
 
     private void login_finish_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_finish_btnActionPerformed
         // TODO add your handling code here:
-        if (email_txt.getText().isEmpty() && password_txt.getText().isEmpty()) { // This code will remain lol.
+        if (email_txt.getText().isEmpty() && email_txt.getText().isEmpty()) { // This code will remain lol.
             invalid.setText("Email or Password is Invalid!");
         }
-        if (!email_txt.getText().isEmpty() && !password_txt.getText().isEmpty()) { // This is just placeholder code while we don't have the backend.
+        if (!email_txt.getText().isEmpty() && !email_txt.getText().isEmpty()) { // This is just placeholder code while we don't have the backend.
             System.out.println("This works");
             ADMIN_Dashboard admindashboard = new ADMIN_Dashboard();
             this.setVisible(false);
             admindashboard.setVisible(true);
         }
     }//GEN-LAST:event_login_finish_btnActionPerformed
-
-    private void email_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email_txtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_email_txtActionPerformed
 
     /**
      * @param args the command line arguments

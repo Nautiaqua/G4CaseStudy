@@ -32,11 +32,11 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        report_generation_module = new javax.swing.JButton();
+        user_management = new javax.swing.JButton();
+        room_type_management_btn = new javax.swing.JButton();
+        reservation_management = new javax.swing.JButton();
+        room_management_btn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -51,65 +51,65 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
         jLabel2.setText("ADMIN DASHBOARD");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 132, 506, 70));
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 0));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 231, 194));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/3 (1).png"))); // NOI18N
-        jButton3.setText("REPORT GENERATION MODULE");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        report_generation_module.setBackground(new java.awt.Color(0, 0, 0));
+        report_generation_module.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        report_generation_module.setForeground(new java.awt.Color(255, 231, 194));
+        report_generation_module.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/3 (1).png"))); // NOI18N
+        report_generation_module.setText("REPORT GENERATION MODULE");
+        report_generation_module.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                report_generation_moduleActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 480, 74));
+        getContentPane().add(report_generation_module, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 480, 74));
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 0));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 231, 194));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/user-1 (1).png"))); // NOI18N
-        jButton4.setText("USER MANAGEMENT");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        user_management.setBackground(new java.awt.Color(0, 0, 0));
+        user_management.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        user_management.setForeground(new java.awt.Color(255, 231, 194));
+        user_management.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/user-1 (1).png"))); // NOI18N
+        user_management.setText("USER MANAGEMENT");
+        user_management.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                user_managementActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 490, 350, 74));
+        getContentPane().add(user_management, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 490, 350, 74));
 
-        jButton5.setBackground(new java.awt.Color(0, 0, 0));
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 231, 194));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/r (1).png"))); // NOI18N
-        jButton5.setText("ROOM TYPE MANAGEMENT");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        room_type_management_btn.setBackground(new java.awt.Color(0, 0, 0));
+        room_type_management_btn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        room_type_management_btn.setForeground(new java.awt.Color(255, 231, 194));
+        room_type_management_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/r (1).png"))); // NOI18N
+        room_type_management_btn.setText("ROOM TYPE MANAGEMENT");
+        room_type_management_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                room_type_management_btnActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 280, -1, 74));
+        getContentPane().add(room_type_management_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 280, -1, 74));
 
-        jButton6.setBackground(new java.awt.Color(0, 0, 0));
-        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 231, 194));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/222 (1).png"))); // NOI18N
-        jButton6.setText("RESERVATION MANAGEMENT");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        reservation_management.setBackground(new java.awt.Color(0, 0, 0));
+        reservation_management.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        reservation_management.setForeground(new java.awt.Color(255, 231, 194));
+        reservation_management.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/222 (1).png"))); // NOI18N
+        reservation_management.setText("RESERVATION MANAGEMENT");
+        reservation_management.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                reservation_managementActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 480, 74));
+        getContentPane().add(reservation_management, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 480, 74));
 
-        jButton7.setBackground(new java.awt.Color(0, 0, 0));
-        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 231, 194));
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/m (1).png"))); // NOI18N
-        jButton7.setText("ROOM MANAGEMENT");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        room_management_btn.setBackground(new java.awt.Color(0, 0, 0));
+        room_management_btn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        room_management_btn.setForeground(new java.awt.Color(255, 231, 194));
+        room_management_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/m (1).png"))); // NOI18N
+        room_management_btn.setText("ROOM MANAGEMENT");
+        room_management_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                room_management_btnActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 380, 420, 74));
+        getContentPane().add(room_management_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 380, 420, 74));
 
         jPanel2.setBackground(new java.awt.Color(140, 100, 75));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -167,29 +167,32 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 70));
 
-        setSize(new java.awt.Dimension(1360, 767));
+        setSize(new java.awt.Dimension(1358, 764));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void report_generation_moduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_report_generation_moduleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_report_generation_moduleActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void user_managementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_user_managementActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_user_managementActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void room_type_management_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_room_type_management_btnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_room_type_management_btnActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void reservation_managementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reservation_managementActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_reservation_managementActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void room_management_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_room_management_btnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+       ADMIN_room_management roommanagement = new ADMIN_room_management();
+       this.setVisible(false);
+       roommanagement.setVisible(true);
+    }//GEN-LAST:event_room_management_btnActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -248,15 +251,15 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton report_generation_module;
+    private javax.swing.JButton reservation_management;
+    private javax.swing.JButton room_management_btn;
+    private javax.swing.JButton room_type_management_btn;
+    private javax.swing.JButton user_management;
     // End of variables declaration//GEN-END:variables
 }
