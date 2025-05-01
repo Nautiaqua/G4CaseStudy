@@ -210,8 +210,9 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_room_type_management_btnActionPerformed
 
     private void reservation_managementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reservation_managementActionPerformed
-        // TODO add your handling code here:
-        
+        ADMIN_ReservationManagement RESERVEMANAGE = new ADMIN_ReservationManagement();
+       this.setVisible(false);
+       RESERVEMANAGE.setVisible(true);
     }//GEN-LAST:event_reservation_managementActionPerformed
 
     private void room_management_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_room_management_btnActionPerformed
