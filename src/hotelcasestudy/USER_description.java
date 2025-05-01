@@ -251,8 +251,8 @@ public class USER_description extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         
-        try {
-            DBConnection bConnection = new DBConnection(); // Allows this JFrame to connect to database.
+        try { // Allows this JFrame to connect to database.
+            // Allows this JFrame to connect to database.
             /* Set the Nimbus look and feel */
             //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
             /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -265,31 +265,17 @@ public class USER_description extends javax.swing.JFrame {
                         break;
                     }
                 }
-            } catch (ClassNotFoundException ex) {
-                java.util.logging.Logger.getLogger(USER_description.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            } catch (InstantiationException ex) {
-                java.util.logging.Logger.getLogger(USER_description.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            } catch (IllegalAccessException ex) {
-                java.util.logging.Logger.getLogger(USER_description.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
                 java.util.logging.Logger.getLogger(USER_description.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             }
             //</editor-fold>
             UIManager.setLookAndFeel("com.formdev.flatlaf.FlatLightLaf");
             
             /* Create and display the form */
-            java.awt.EventQueue.invokeLater(new Runnable() {
-                public void run() {
-                    new USER_description().setVisible(true);
-                }
+            java.awt.EventQueue.invokeLater(() -> {
+                new USER_description().setVisible(true);
             });
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(USER_description.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            Logger.getLogger(USER_description.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            Logger.getLogger(USER_description.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
             Logger.getLogger(USER_description.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
