@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hotelcasestudy;
+import java.awt.Toolkit;
 import javax.swing.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,6 +19,7 @@ public class USER_pass_view extends javax.swing.JFrame {
      */
     public USER_pass_view() {
         initComponents();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/App_Icon.png")));
     }
 
     /**

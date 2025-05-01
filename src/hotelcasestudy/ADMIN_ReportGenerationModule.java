@@ -174,7 +174,7 @@ public class ADMIN_ReportGenerationModule extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       Admin_Daily_Statistic DailyStats = new Admin_Daily_Statistic();
+       ADMIN_Daily_Statistic DailyStats = new ADMIN_Daily_Statistic();
        this.setVisible(false);
        DailyStats.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed

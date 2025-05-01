@@ -4,6 +4,7 @@
  */
 package hotelcasestudy;
 
+import java.awt.Toolkit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -26,6 +27,7 @@ public class ADMIN_room_management extends javax.swing.JFrame {
      */
     public ADMIN_room_management() {
         initComponents();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/App_Icon.png")));
         buttonGroup1.add(yes);
     }
 

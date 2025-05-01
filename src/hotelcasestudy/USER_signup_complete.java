@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hotelcasestudy;
+import java.awt.Toolkit;
 import javax.swing.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,6 +19,7 @@ public class USER_signup_complete extends javax.swing.JFrame {
      */
     public USER_signup_complete() {
         initComponents();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/App_Icon.png")));
     }
 
     /**

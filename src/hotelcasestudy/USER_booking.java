@@ -4,6 +4,7 @@
  */
 package hotelcasestudy;
 
+import java.awt.Toolkit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
@@ -20,6 +21,7 @@ public class USER_booking extends javax.swing.JFrame {
      */
     public USER_booking() {
         initComponents();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/App_Icon.png")));
     }
 
     /**

@@ -4,6 +4,7 @@
  */
 package hotelcasestudy;
 
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
@@ -22,7 +23,7 @@ public class ADMIN_MaintenanceScheduling extends javax.swing.JFrame {
      */
     public ADMIN_MaintenanceScheduling() {
         initComponents();
-      
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/App_Icon.png")));
     }
 
     /**

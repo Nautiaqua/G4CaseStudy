@@ -4,6 +4,8 @@
  */
 package hotelcasestudy;
 
+import java.awt.Toolkit;
+
 /**
  *
  * @author Nardz Ablaza
@@ -15,6 +17,7 @@ public class ADMIN_ReservationManagement extends javax.swing.JFrame {
      */
     public ADMIN_ReservationManagement() {
         initComponents();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/App_Icon.png")));
     }
 
     /**
