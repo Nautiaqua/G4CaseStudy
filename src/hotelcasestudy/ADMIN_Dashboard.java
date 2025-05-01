@@ -11,12 +11,12 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
- * @author Christopher
+ * @author WINDOWS
  */
 public class ADMIN_Dashboard extends javax.swing.JFrame {
 
     /**
-     * Creates new form ADMIN_Dashboard
+     * Creates new form ADMIN_dashbard
      */
     public ADMIN_Dashboard() {
         initComponents();
@@ -31,203 +31,212 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        report_generation_module = new javax.swing.JButton();
-        user_management = new javax.swing.JButton();
-        room_type_management_btn = new javax.swing.JButton();
-        reservation_management = new javax.swing.JButton();
-        room_management_btn = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        report_popup = new javax.swing.JPopupMenu();
+        dailystats = new javax.swing.JMenuItem();
+        reservation_history = new javax.swing.JMenuItem();
+        revenue_report = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        logout_btn = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        room_type_management = new javax.swing.JButton();
+        maint_sched = new javax.swing.JButton();
+        room_management = new javax.swing.JButton();
+        resv_management = new javax.swing.JButton();
+        user_management = new javax.swing.JButton();
+        employee_management = new javax.swing.JButton();
+        report_btn = new javax.swing.JButton();
+
+        dailystats.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        dailystats.setForeground(new java.awt.Color(104, 72, 50));
+        dailystats.setText("Daily Statistics");
+        report_popup.add(dailystats);
+
+        reservation_history.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        reservation_history.setForeground(new java.awt.Color(104, 72, 50));
+        reservation_history.setText("Reservation History");
+        report_popup.add(reservation_history);
+
+        revenue_report.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        revenue_report.setForeground(new java.awt.Color(104, 72, 50));
+        revenue_report.setText("Revenue Report");
+        report_popup.add(revenue_report);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(237, 234, 233));
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        report_generation_module.setBackground(new java.awt.Color(0, 0, 0));
-        report_generation_module.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        report_generation_module.setForeground(new java.awt.Color(255, 231, 194));
-        report_generation_module.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/3 (1).png"))); // NOI18N
-        report_generation_module.setText("REPORT GENERATION MODULE");
-        report_generation_module.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                report_generation_moduleActionPerformed(evt);
-            }
-        });
-        getContentPane().add(report_generation_module, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 480, 74));
+        jPanel1.setBackground(new java.awt.Color(237, 234, 233));
 
-        user_management.setBackground(new java.awt.Color(0, 0, 0));
-        user_management.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        user_management.setForeground(new java.awt.Color(255, 231, 194));
-        user_management.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/user-1 (1).png"))); // NOI18N
-        user_management.setText("USER MANAGEMENT");
-        user_management.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                user_managementActionPerformed(evt);
-            }
-        });
-        getContentPane().add(user_management, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 490, 350, 74));
-
-        room_type_management_btn.setBackground(new java.awt.Color(0, 0, 0));
-        room_type_management_btn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        room_type_management_btn.setForeground(new java.awt.Color(255, 231, 194));
-        room_type_management_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/r (1).png"))); // NOI18N
-        room_type_management_btn.setText("ROOM TYPE MANAGEMENT");
-        room_type_management_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                room_type_management_btnActionPerformed(evt);
-            }
-        });
-        getContentPane().add(room_type_management_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 280, -1, 74));
-
-        reservation_management.setBackground(new java.awt.Color(0, 0, 0));
-        reservation_management.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        reservation_management.setForeground(new java.awt.Color(255, 231, 194));
-        reservation_management.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/222 (1).png"))); // NOI18N
-        reservation_management.setText("RESERVATION MANAGEMENT");
-        reservation_management.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reservation_managementActionPerformed(evt);
-            }
-        });
-        getContentPane().add(reservation_management, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 480, 74));
-
-        room_management_btn.setBackground(new java.awt.Color(0, 0, 0));
-        room_management_btn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        room_management_btn.setForeground(new java.awt.Color(255, 231, 194));
-        room_management_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/m (1).png"))); // NOI18N
-        room_management_btn.setText("ROOM MANAGEMENT");
-        room_management_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                room_management_btnActionPerformed(evt);
-            }
-        });
-        getContentPane().add(room_management_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 380, 420, 74));
-
-        jPanel2.setBackground(new java.awt.Color(140, 100, 75));
-        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel2.setPreferredSize(new java.awt.Dimension(1344, 70));
+        jPanel4.setBackground(new java.awt.Color(140, 100, 75));
+        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel4.setPreferredSize(new java.awt.Dimension(1344, 70));
 
         jLabel6.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(226, 165, 79));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/Cas De Los NO BG 2.png"))); // NOI18N
-        jLabel7.setText("jLabel7");
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/Cas De Los NO BG 2.png"))); // NOI18N
+        jLabel9.setText("jLabel7");
 
-        jButton1.setBackground(new java.awt.Color(140, 100, 75));
-        jButton1.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Log Out");
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        logout_btn.setBackground(new java.awt.Color(140, 100, 75));
+        logout_btn.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        logout_btn.setForeground(new java.awt.Color(255, 255, 255));
+        logout_btn.setText("Log Out");
+        logout_btn.setBorder(null);
+        logout_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                logout_btnActionPerformed(evt);
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/LOGO NO BG - 2 (WHITE).png"))); // NOI18N
-        jLabel3.setText("jLabel2");
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/LOGO NO BG - 2 (WHITE).png"))); // NOI18N
+        jLabel10.setText("jLabel2");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(683, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(logout_btn)
                 .addGap(18, 18, 18))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(2, 2, 2)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(jButton1)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(logout_btn)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 70));
+        jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel1.setText("Admin Dashboard");
 
-        jPanel1.setBackground(new java.awt.Color(237, 234, 233));
+        room_type_management.setBackground(new java.awt.Color(140, 100, 75));
+        room_type_management.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        room_type_management.setForeground(new java.awt.Color(255, 255, 255));
+        room_type_management.setText("Room Type Management");
 
-        jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
-        jLabel2.setText("ADMIN DASHBOARD");
+        maint_sched.setBackground(new java.awt.Color(140, 100, 75));
+        maint_sched.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        maint_sched.setForeground(new java.awt.Color(255, 255, 255));
+        maint_sched.setText("Maintenance Scheduling");
+
+        room_management.setBackground(new java.awt.Color(140, 100, 75));
+        room_management.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        room_management.setForeground(new java.awt.Color(255, 255, 255));
+        room_management.setText("Room Management");
+
+        resv_management.setBackground(new java.awt.Color(140, 100, 75));
+        resv_management.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        resv_management.setForeground(new java.awt.Color(255, 255, 255));
+        resv_management.setText("Reservation Management");
+
+        user_management.setBackground(new java.awt.Color(140, 100, 75));
+        user_management.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        user_management.setForeground(new java.awt.Color(255, 255, 255));
+        user_management.setText("User Management");
+
+        employee_management.setBackground(new java.awt.Color(140, 100, 75));
+        employee_management.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        employee_management.setForeground(new java.awt.Color(255, 255, 255));
+        employee_management.setText("Employee Management");
+
+        report_btn.setBackground(new java.awt.Color(140, 100, 75));
+        report_btn.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        report_btn.setForeground(new java.awt.Color(255, 255, 255));
+        report_btn.setText("Report Generation Module");
+        report_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                report_btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(453, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(391, 391, 391))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(report_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(employee_management, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(user_management, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(resv_management, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(room_management, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(maint_sched, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addComponent(room_type_management, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(445, 445, 445))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(557, Short.MAX_VALUE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(138, 138, 138)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(maint_sched)
+                .addGap(18, 18, 18)
+                .addComponent(room_type_management)
+                .addGap(18, 18, 18)
+                .addComponent(room_management)
+                .addGap(18, 18, 18)
+                .addComponent(resv_management)
+                .addGap(18, 18, 18)
+                .addComponent(user_management)
+                .addGap(18, 18, 18)
+                .addComponent(employee_management)
+                .addGap(18, 18, 18)
+                .addComponent(report_btn)
+                .addGap(0, 161, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1350, 690));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         setSize(new java.awt.Dimension(1360, 765));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void report_generation_moduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_report_generation_moduleActionPerformed
-        ADMIN_ReportGenerationModule RGM = new ADMIN_ReportGenerationModule();
-        this.setVisible(false);
-        RGM.setVisible(true); 
-    }//GEN-LAST:event_report_generation_moduleActionPerformed
-
-    private void user_managementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_user_managementActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_user_managementActionPerformed
-
-    private void room_type_management_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_room_type_management_btnActionPerformed
-       ADMIN_RoomTypeManagement roomtypemanagement = new ADMIN_RoomTypeManagement();
-       this.setVisible(false);
-       roomtypemanagement.setVisible(true);
-    }//GEN-LAST:event_room_type_management_btnActionPerformed
-
-    private void reservation_managementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reservation_managementActionPerformed
-        ADMIN_ReservationManagement RESERVEMANAGE = new ADMIN_ReservationManagement();
-       this.setVisible(false);
-       RESERVEMANAGE.setVisible(true);
-    }//GEN-LAST:event_reservation_managementActionPerformed
-
-    private void room_management_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_room_management_btnActionPerformed
-        // TODO add your handling code here:
-       ADMIN_room_management roommanagement = new ADMIN_room_management();
-       this.setVisible(false);
-       roommanagement.setVisible(true);
-    }//GEN-LAST:event_room_management_btnActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void logout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btnActionPerformed
         // TODO add your handling code here:
         USER_login_menu userloginmenu = new USER_login_menu();
         this.setVisible(false);
         userloginmenu.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_logout_btnActionPerformed
+
+    private void report_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_report_btnActionPerformed
+        // TODO add your handling code here:
+        report_popup.show(report_btn, 0, report_btn.getHeight());
+    }//GEN-LAST:event_report_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -235,7 +244,6 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
     public static void main(String args[]) {
 
         try {
-            DBConnection bConnection = new DBConnection();
             /* Set the Nimbus look and feel */
             //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
             /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -258,6 +266,9 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
                 java.util.logging.Logger.getLogger(ADMIN_Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             }
             //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
             UIManager.setLookAndFeel("com.formdev.flatlaf.FlatLightLaf");
             
             /* Create and display the form */
@@ -278,17 +289,23 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JMenuItem dailystats;
+    private javax.swing.JButton employee_management;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JButton report_generation_module;
-    private javax.swing.JButton reservation_management;
-    private javax.swing.JButton room_management_btn;
-    private javax.swing.JButton room_type_management_btn;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JButton logout_btn;
+    private javax.swing.JButton maint_sched;
+    private javax.swing.JButton report_btn;
+    private javax.swing.JPopupMenu report_popup;
+    private javax.swing.JMenuItem reservation_history;
+    private javax.swing.JButton resv_management;
+    private javax.swing.JMenuItem revenue_report;
+    private javax.swing.JButton room_management;
+    private javax.swing.JButton room_type_management;
     private javax.swing.JButton user_management;
     // End of variables declaration//GEN-END:variables
 }
