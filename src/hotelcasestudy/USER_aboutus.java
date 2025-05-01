@@ -14,12 +14,12 @@ import javax.swing.UnsupportedLookAndFeelException;
  *
  * @author nejac
  */
-public class USER_booking extends javax.swing.JFrame {
+public class USER_aboutus extends javax.swing.JFrame {
 
     /**
      * Creates new form booking
      */
-    public USER_booking() {
+    public USER_aboutus() {
         initComponents();
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/App_Icon.png")));
     }
@@ -34,19 +34,6 @@ public class USER_booking extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        adult_spinner = new javax.swing.JSpinner();
-        room_spinner = new javax.swing.JSpinner();
-        child_spinner = new javax.swing.JSpinner();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        datechoose = new com.toedter.calendar.JDateChooser();
-        invalid = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -64,116 +51,6 @@ public class USER_booking extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(194, 204, 196));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel3.setBackground(new java.awt.Color(105, 73, 50));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel4.setBackground(new java.awt.Color(236, 234, 232));
-
-        jLabel1.setBackground(new java.awt.Color(105, 73, 50));
-        jLabel1.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel1.setText("Date");
-
-        adult_spinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
-
-        room_spinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, 10, 1));
-        room_spinner.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                room_spinnerStateChanged(evt);
-            }
-        });
-
-        child_spinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
-
-        jLabel5.setBackground(new java.awt.Color(105, 73, 50));
-        jLabel5.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel5.setText("Rooms");
-
-        jLabel10.setBackground(new java.awt.Color(105, 73, 50));
-        jLabel10.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel10.setText("Adults");
-
-        jLabel11.setBackground(new java.awt.Color(105, 73, 50));
-        jLabel11.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel11.setText("Children");
-
-        jButton5.setBackground(new java.awt.Color(134, 97, 72));
-        jButton5.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("BOOK");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(datechoose, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(room_spinner, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(adult_spinner, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addComponent(child_spinner, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(child_spinner))
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(adult_spinner))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(room_spinner))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(datechoose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(23, 23, 23))
-        );
-
-        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 19, -1, 90));
-
-        invalid.setBackground(new java.awt.Color(105, 73, 50));
-        invalid.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
-        invalid.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel3.add(invalid, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 110, -1));
-
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 485, -1, -1));
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/04_Carruselcenter_2160x1080_1_6f689d48e4 (3).png"))); // NOI18N
-        jLabel9.setText("jLabel9");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-200, -80, -1, -1));
-
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1344, -1));
 
         jPanel2.setBackground(new java.awt.Color(236, 234, 232));
@@ -311,23 +188,6 @@ public class USER_booking extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-        int room = (int) room_spinner.getValue();
-        int adult = (int) adult_spinner.getValue();
-        int child = (int) child_spinner.getValue();
-        
-        if (datechoose.getDate() == null || room == 0 || adult == 0) {
-            invalid.setText("Invalid Selection!");
-        } else {
-            System.out.println("This works.");
-        }
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void room_spinnerStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_room_spinnerStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_room_spinnerStateChanged
-
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -352,13 +212,13 @@ public class USER_booking extends javax.swing.JFrame {
                     }
                 }
             } catch (ClassNotFoundException ex) {
-                java.util.logging.Logger.getLogger(USER_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                java.util.logging.Logger.getLogger(USER_aboutus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             } catch (InstantiationException ex) {
-                java.util.logging.Logger.getLogger(USER_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                java.util.logging.Logger.getLogger(USER_aboutus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             } catch (IllegalAccessException ex) {
-                java.util.logging.Logger.getLogger(USER_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                java.util.logging.Logger.getLogger(USER_aboutus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-                java.util.logging.Logger.getLogger(USER_booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                java.util.logging.Logger.getLogger(USER_aboutus.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             }
             //</editor-fold>
             UIManager.setLookAndFeel("com.formdev.flatlaf.FlatLightLaf");
@@ -366,43 +226,30 @@ public class USER_booking extends javax.swing.JFrame {
             /* Create and display the form */
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
-                    new USER_booking().setVisible(true);
+                    new USER_aboutus().setVisible(true);
                 }
             });
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(USER_booking.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(USER_aboutus.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            Logger.getLogger(USER_booking.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(USER_aboutus.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            Logger.getLogger(USER_booking.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(USER_aboutus.class.getName()).log(Level.SEVERE, null, ex);
         } catch (UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(USER_booking.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(USER_aboutus.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JSpinner adult_spinner;
-    private javax.swing.JSpinner child_spinner;
-    private com.toedter.calendar.JDateChooser datechoose;
-    private javax.swing.JLabel invalid;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JButton logout;
-    private javax.swing.JSpinner room_spinner;
     // End of variables declaration//GEN-END:variables
 }
