@@ -31,7 +31,6 @@ public class Admin_Daily_Statistic extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        return_btn7 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -81,17 +80,6 @@ public class Admin_Daily_Statistic extends javax.swing.JFrame {
             }
         });
 
-        return_btn7.setBackground(new java.awt.Color(140, 100, 75));
-        return_btn7.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        return_btn7.setForeground(new java.awt.Color(255, 255, 255));
-        return_btn7.setText("Return to Report Generation Dashboard");
-        return_btn7.setBorder(null);
-        return_btn7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                return_btn7ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -101,9 +89,7 @@ public class Admin_Daily_Statistic extends javax.swing.JFrame {
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 672, Short.MAX_VALUE)
-                .addComponent(return_btn7)
-                .addGap(44, 44, 44)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 935, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton2)
                     .addComponent(jButton1))
@@ -120,9 +106,7 @@ public class Admin_Daily_Statistic extends javax.swing.JFrame {
                             .addComponent(jLabel9)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(return_btn7))))
+                        .addComponent(jButton2)))
                 .addGap(31, 31, 31)
                 .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -345,13 +329,6 @@ public class Admin_Daily_Statistic extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void return_btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_return_btn7ActionPerformed
-        // TODO add your handling code here:
-        ADMIN_ReportGenerationModule RGMM = new ADMIN_ReportGenerationModule();
-        this.dispose();
-        RGMM.setVisible(true);
-    }//GEN-LAST:event_return_btn7ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -411,6 +388,5 @@ public class Admin_Daily_Statistic extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JButton return_btn7;
     // End of variables declaration//GEN-END:variables
 }
