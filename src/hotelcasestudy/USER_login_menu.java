@@ -41,6 +41,7 @@ public class USER_login_menu extends javax.swing.JFrame {
         login_btn = new javax.swing.JButton();
         casa_logo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        testlabel = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         member_item.setBackground(new java.awt.Color(237, 234, 233));
@@ -118,6 +119,13 @@ public class USER_login_menu extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(70, 310, 389, 86);
 
+        testlabel.setBackground(new java.awt.Color(255, 51, 51));
+        testlabel.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
+        testlabel.setForeground(new java.awt.Color(255, 51, 51));
+        testlabel.setText("jLabel2");
+        jPanel1.add(testlabel);
+        testlabel.setBounds(200, 600, 37, 16);
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 520, 760));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/TropicosImage1HD.png"))); // NOI18N
@@ -164,7 +172,7 @@ public class USER_login_menu extends javax.swing.JFrame {
     public static void main(String args[]) {
 
         try {
-            DBConnection bConnection = new DBConnection(); // Allows this JFrame to connect to database.
+            DBConnection db = new DBConnection(); // Allows this JFrame to connect to database.
             /* Set the Nimbus look and feel */
             //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
             /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -224,5 +232,6 @@ public class USER_login_menu extends javax.swing.JFrame {
     private javax.swing.JPopupMenu login_popup;
     private javax.swing.JMenuItem member_item;
     private javax.swing.JButton signup_btn;
+    private javax.swing.JLabel testlabel;
     // End of variables declaration//GEN-END:variables
 }
