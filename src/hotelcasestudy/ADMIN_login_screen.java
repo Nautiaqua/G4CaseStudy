@@ -120,7 +120,7 @@ public class ADMIN_login_screen extends javax.swing.JFrame {
         jLabel4.setText("jLabel4");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, -1, -1));
 
-        setSize(new java.awt.Dimension(1358, 764));
+        setSize(new java.awt.Dimension(1360, 765));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

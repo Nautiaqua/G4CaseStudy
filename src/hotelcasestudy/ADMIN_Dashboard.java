@@ -31,7 +31,6 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
         report_generation_module = new javax.swing.JButton();
         user_management = new javax.swing.JButton();
         room_type_management_btn = new javax.swing.JButton();
@@ -43,15 +42,12 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(237, 234, 233));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel2.setText("ADMIN DASHBOARD");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 132, 506, 70));
 
         report_generation_module.setBackground(new java.awt.Color(0, 0, 0));
         report_generation_module.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -171,25 +167,36 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(237, 234, 233));
 
+        jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
+        jLabel2.setText("ADMIN DASHBOARD");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1350, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(453, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(391, 391, 391))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 690, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(557, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1350, 690));
 
-        setSize(new java.awt.Dimension(1358, 764));
+        setSize(new java.awt.Dimension(1360, 765));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void report_generation_moduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_report_generation_moduleActionPerformed
-        // TODO add your handling code here:
+        ADMIN_ReportGenerationModule RGM = new ADMIN_ReportGenerationModule();
+        this.setVisible(false);
+        RGM.setVisible(true); 
     }//GEN-LAST:event_report_generation_moduleActionPerformed
 
     private void user_managementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_user_managementActionPerformed
@@ -197,11 +204,14 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_user_managementActionPerformed
 
     private void room_type_management_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_room_type_management_btnActionPerformed
-        // TODO add your handling code here:
+       ADMIN_RoomTypeManagement roomtypemanagement = new ADMIN_RoomTypeManagement();
+       this.setVisible(false);
+       roomtypemanagement.setVisible(true);
     }//GEN-LAST:event_room_type_management_btnActionPerformed
 
     private void reservation_managementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reservation_managementActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_reservation_managementActionPerformed
 
     private void room_management_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_room_management_btnActionPerformed

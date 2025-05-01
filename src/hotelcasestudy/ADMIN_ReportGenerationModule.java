@@ -41,6 +41,7 @@ public class ADMIN_ReportGenerationModule extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        return_btn0 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -122,6 +123,17 @@ public class ADMIN_ReportGenerationModule extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/LOGO NO BG - 2 (WHITE).png"))); // NOI18N
         jLabel3.setText("jLabel2");
 
+        return_btn0.setBackground(new java.awt.Color(140, 100, 75));
+        return_btn0.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        return_btn0.setForeground(new java.awt.Color(255, 255, 255));
+        return_btn0.setText("Return to Dashboard");
+        return_btn0.setBorder(null);
+        return_btn0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                return_btn0ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -135,6 +147,8 @@ public class ADMIN_ReportGenerationModule extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(return_btn0)
+                .addGap(36, 36, 36)
                 .addComponent(jButton1)
                 .addGap(18, 18, 18))
         );
@@ -148,13 +162,14 @@ public class ADMIN_ReportGenerationModule extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
                             .addComponent(jButton1)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(return_btn0))))
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 70));
 
-        setSize(new java.awt.Dimension(1360, 767));
+        setSize(new java.awt.Dimension(1360, 765));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -164,6 +179,9 @@ public class ADMIN_ReportGenerationModule extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+       ADMIN_MaintenanceScheduling MS = new ADMIN_MaintenanceScheduling();
+       this.setVisible(false);
+       MS.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -180,6 +198,12 @@ public class ADMIN_ReportGenerationModule extends javax.swing.JFrame {
         this.setVisible(false);
         userloginmenu.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void return_btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_return_btn0ActionPerformed
+        ADMIN_Dashboard admindashboard = new ADMIN_Dashboard();
+        this.dispose();
+        admindashboard.setVisible(true);
+    }//GEN-LAST:event_return_btn0ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,5 +264,6 @@ public class ADMIN_ReportGenerationModule extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton return_btn0;
     // End of variables declaration//GEN-END:variables
 }

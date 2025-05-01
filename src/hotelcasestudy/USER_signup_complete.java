@@ -69,7 +69,7 @@ public class USER_signup_complete extends javax.swing.JFrame {
         invalid_confirm.setToolTipText("");
 
         jLabel3.setBackground(new java.awt.Color(105, 73, 50));
-        jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Liberation Sans", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(105, 73, 50));
         jLabel3.setText("Thank you for joining us!");
 
@@ -84,7 +84,7 @@ public class USER_signup_complete extends javax.swing.JFrame {
         invalid_password.setToolTipText("");
 
         jLabel5.setBackground(new java.awt.Color(105, 73, 50));
-        jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(105, 73, 50));
         jLabel5.setText("Your registration is complete.");
 
@@ -95,28 +95,27 @@ public class USER_signup_complete extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(invalid_password, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(190, 190, 190)
+                        .addComponent(signup_finish_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(70, 70, 70)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(invalid_confirm))
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(230, 230, 230)
                                 .addComponent(invalid_email, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(70, 70, 70)
-                                .addComponent(casa_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(invalid_password, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(invalid_confirm))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(190, 190, 190)
-                        .addComponent(signup_finish_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(casa_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -145,7 +144,7 @@ public class USER_signup_complete extends javax.swing.JFrame {
                         .addGap(40, 40, 40)
                         .addComponent(invalid_confirm))
                     .addComponent(jLabel3))
-                .addGap(32, 32, 32)
+                .addGap(26, 26, 26)
                 .addComponent(signup_finish_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -155,7 +154,7 @@ public class USER_signup_complete extends javax.swing.JFrame {
         jLabel4.setText("jLabel4");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, -1, -1));
 
-        setSize(new java.awt.Dimension(1358, 764));
+        setSize(new java.awt.Dimension(1360, 765));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

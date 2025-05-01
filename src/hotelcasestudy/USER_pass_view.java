@@ -11,12 +11,12 @@ import java.util.logging.Logger;
  * @author WINDOWS
  */
 
-public class USER_login_screen extends javax.swing.JFrame {
+public class USER_pass_view extends javax.swing.JFrame {
     
     /**
      * Creates new form login_menu
      */
-    public USER_login_screen() {
+    public USER_pass_view() {
         initComponents();
     }
 
@@ -31,17 +31,16 @@ public class USER_login_screen extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         return_btn = new javax.swing.JButton();
-        login_finish_btn = new javax.swing.JButton();
         casa_logo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         invalid = new javax.swing.JLabel();
-        password_txt = new javax.swing.JTextField();
         email_txt = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         email_label1 = new javax.swing.JLabel();
         email_txt1 = new javax.swing.JTextField();
-        password_label1 = new javax.swing.JLabel();
-        logout_btn = new javax.swing.JButton();
+        sec_ans = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        password_label = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -61,37 +60,21 @@ public class USER_login_screen extends javax.swing.JFrame {
                 return_btnActionPerformed(evt);
             }
         });
-        jPanel1.add(return_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 530, 160, 49));
-
-        login_finish_btn.setBackground(new java.awt.Color(134, 97, 72));
-        login_finish_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        login_finish_btn.setForeground(new java.awt.Color(255, 255, 255));
-        login_finish_btn.setText("FINISH");
-        login_finish_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                login_finish_btnActionPerformed(evt);
-            }
-        });
-        jPanel1.add(login_finish_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 470, 160, 49));
+        jPanel1.add(return_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 520, 160, 49));
 
         casa_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/Cas De Los NO BG (237x237).png"))); // NOI18N
         casa_logo.setText("jLabel2");
-        jPanel1.add(casa_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 235, 171));
+        jPanel1.add(casa_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 235, 171));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/LOGO NO BG - 1.png"))); // NOI18N
         jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 389, 86));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 389, 86));
 
         invalid.setBackground(new java.awt.Color(105, 73, 50));
         invalid.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         invalid.setForeground(new java.awt.Color(123, 24, 24));
         invalid.setToolTipText("");
         jPanel1.add(invalid, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 230, -1));
-
-        password_txt.setBackground(new java.awt.Color(255, 255, 255));
-        password_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        password_txt.setForeground(new java.awt.Color(105, 73, 50));
-        jPanel1.add(password_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 320, 20));
 
         email_txt.setBackground(new java.awt.Color(255, 255, 255));
         email_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
@@ -101,19 +84,19 @@ public class USER_login_screen extends javax.swing.JFrame {
                 email_txtActionPerformed(evt);
             }
         });
-        jPanel1.add(email_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 320, 20));
+        jPanel1.add(email_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 320, 20));
 
         jLabel3.setBackground(new java.awt.Color(105, 73, 50));
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel3.setText("Log In");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, -1));
+        jLabel3.setText("Password Recovery");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, -1, -1));
 
         email_label1.setBackground(new java.awt.Color(105, 73, 50));
         email_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         email_label1.setForeground(new java.awt.Color(105, 73, 50));
         email_label1.setText("Email");
-        jPanel1.add(email_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 50, -1));
+        jPanel1.add(email_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, 50, -1));
 
         email_txt1.setBackground(new java.awt.Color(255, 255, 255));
         email_txt1.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
@@ -125,23 +108,28 @@ public class USER_login_screen extends javax.swing.JFrame {
         });
         jPanel1.add(email_txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 320, 20));
 
-        password_label1.setBackground(new java.awt.Color(105, 73, 50));
-        password_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        password_label1.setForeground(new java.awt.Color(105, 73, 50));
-        password_label1.setText("Password");
-        jPanel1.add(password_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 90, -1));
-
-        logout_btn.setBackground(new java.awt.Color(237, 234, 233));
-        logout_btn.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        logout_btn.setForeground(new java.awt.Color(140, 100, 75));
-        logout_btn.setText("Forgot your password?");
-        logout_btn.setBorder(null);
-        logout_btn.addActionListener(new java.awt.event.ActionListener() {
+        sec_ans.setBackground(new java.awt.Color(255, 255, 255));
+        sec_ans.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        sec_ans.setForeground(new java.awt.Color(105, 73, 50));
+        sec_ans.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logout_btnActionPerformed(evt);
+                sec_ansActionPerformed(evt);
             }
         });
-        jPanel1.add(logout_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 440, -1, -1));
+        jPanel1.add(sec_ans, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 480, 320, 20));
+
+        jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
+        jComboBox1.setEditable(true);
+        jComboBox1.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(105, 73, 50));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "What is your favorite thing?", "What is your mother's maiden name?", "Where did you graduate (high school / college)?" }));
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, 320, 20));
+
+        password_label.setBackground(new java.awt.Color(105, 73, 50));
+        password_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        password_label.setForeground(new java.awt.Color(105, 73, 50));
+        password_label.setText("Security Question");
+        jPanel1.add(password_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 160, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 520, 760));
 
@@ -155,22 +143,10 @@ public class USER_login_screen extends javax.swing.JFrame {
 
     private void return_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_return_btnActionPerformed
         // TODO add your handling code here:
-        USER_login_menu userloginmenu = new USER_login_menu();
+        USER_login_screen userloginmenu = new USER_login_screen();
         this.setVisible(false);
         userloginmenu.setVisible(true);
     }//GEN-LAST:event_return_btnActionPerformed
-
-    private void login_finish_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_finish_btnActionPerformed
-        // TODO add your handling code here:
-        if (email_txt.getText().isEmpty() && password_txt.getText().isEmpty()) { // This code will remain lol.
-            invalid.setText("Email or Password is Invalid!");
-        }
-        if (!email_txt.getText().isEmpty() && !password_txt.getText().isEmpty()) { // This is just placeholder code while we don't have the backend.
-            USER_booking userbooking = new USER_booking();
-            this.setVisible(false);
-            userbooking.setVisible(true);
-        }
-    }//GEN-LAST:event_login_finish_btnActionPerformed
 
     private void email_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email_txtActionPerformed
         // TODO add your handling code here:
@@ -180,12 +156,9 @@ public class USER_login_screen extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_email_txt1ActionPerformed
 
-    private void logout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btnActionPerformed
+    private void sec_ansActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sec_ansActionPerformed
         // TODO add your handling code here:
-        USER_login_menu userloginmenu = new USER_login_menu();
-        this.setVisible(false);
-        userloginmenu.setVisible(true);
-    }//GEN-LAST:event_logout_btnActionPerformed
+    }//GEN-LAST:event_sec_ansActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,14 +180,18 @@ public class USER_login_screen extends javax.swing.JFrame {
                     }
                 }
             } catch (ClassNotFoundException ex) {
-                java.util.logging.Logger.getLogger(USER_login_screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                java.util.logging.Logger.getLogger(USER_pass_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             } catch (InstantiationException ex) {
-                java.util.logging.Logger.getLogger(USER_login_screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                java.util.logging.Logger.getLogger(USER_pass_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             } catch (IllegalAccessException ex) {
-                java.util.logging.Logger.getLogger(USER_login_screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                java.util.logging.Logger.getLogger(USER_pass_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-                java.util.logging.Logger.getLogger(USER_login_screen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+                java.util.logging.Logger.getLogger(USER_pass_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             }
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
+            //</editor-fold>
             //</editor-fold>
             //</editor-fold>
             //</editor-fold>
@@ -224,20 +201,24 @@ public class USER_login_screen extends javax.swing.JFrame {
             /* Create and display the form */
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
-                    new USER_login_screen().setVisible(true);
+                    new USER_pass_view().setVisible(true);
                 }
             });
             
             
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(USER_login_screen.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(USER_pass_view.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            Logger.getLogger(USER_login_screen.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(USER_pass_view.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            Logger.getLogger(USER_login_screen.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(USER_pass_view.class.getName()).log(Level.SEVERE, null, ex);
         } catch (UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(USER_login_screen.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(USER_pass_view.class.getName()).log(Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -252,14 +233,13 @@ public class USER_login_screen extends javax.swing.JFrame {
     private javax.swing.JTextField email_txt;
     private javax.swing.JTextField email_txt1;
     private javax.swing.JLabel invalid;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton login_finish_btn;
-    private javax.swing.JButton logout_btn;
-    private javax.swing.JLabel password_label1;
-    private javax.swing.JTextField password_txt;
+    private javax.swing.JLabel password_label;
     private javax.swing.JButton return_btn;
+    private javax.swing.JTextField sec_ans;
     // End of variables declaration//GEN-END:variables
 }
