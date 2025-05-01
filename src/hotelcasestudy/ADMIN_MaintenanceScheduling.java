@@ -49,6 +49,7 @@ public class ADMIN_MaintenanceScheduling extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         logout_btn = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
+        return_btn911 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -149,6 +150,17 @@ public class ADMIN_MaintenanceScheduling extends javax.swing.JFrame {
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/LOGO NO BG - 2 (WHITE).png"))); // NOI18N
         jLabel10.setText("jLabel2");
 
+        return_btn911.setBackground(new java.awt.Color(140, 100, 75));
+        return_btn911.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        return_btn911.setForeground(new java.awt.Color(255, 255, 255));
+        return_btn911.setText("Return to Dashboard");
+        return_btn911.setBorder(null);
+        return_btn911.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                return_btn911ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -162,6 +174,8 @@ public class ADMIN_MaintenanceScheduling extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(return_btn911)
+                .addGap(42, 42, 42)
                 .addComponent(logout_btn)
                 .addGap(18, 18, 18))
         );
@@ -175,7 +189,8 @@ public class ADMIN_MaintenanceScheduling extends javax.swing.JFrame {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
                             .addComponent(logout_btn)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(return_btn911))))
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
@@ -332,6 +347,12 @@ obj.setRowFilter(RowFilter.regexFilter(jTextField5.getText().trim()));
 
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void return_btn911ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_return_btn911ActionPerformed
+        ADMIN_Dashboard admindashboard = new ADMIN_Dashboard();
+        this.dispose();
+        admindashboard.setVisible(true);
+    }//GEN-LAST:event_return_btn911ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -397,5 +418,6 @@ obj.setRowFilter(RowFilter.regexFilter(jTextField5.getText().trim()));
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JButton logout_btn;
+    private javax.swing.JButton return_btn911;
     // End of variables declaration//GEN-END:variables
 }
