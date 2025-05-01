@@ -29,7 +29,7 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        return_btn0 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -67,14 +67,14 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(103, 64, 37));
-        jButton2.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Home");
-        jButton2.setBorder(null);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        return_btn0.setBackground(new java.awt.Color(140, 100, 75));
+        return_btn0.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        return_btn0.setForeground(new java.awt.Color(255, 255, 255));
+        return_btn0.setText("Return to Dashboard");
+        return_btn0.setBorder(null);
+        return_btn0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                return_btn0ActionPerformed(evt);
             }
         });
 
@@ -84,13 +84,13 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(799, Short.MAX_VALUE))
+                .addContainerGap(813, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(36, 36, 36)
+                .addComponent(return_btn0)
+                .addGap(72, 72, 72)
                 .addComponent(jButton1)
-                .addGap(18, 18, 18))
+                .addGap(180, 180, 180))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,7 +101,7 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
                         .addGap(24, 24, 24)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1)
-                            .addComponent(jButton2))))
+                            .addComponent(return_btn0))))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -118,7 +118,7 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(467, 467, 467)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(443, Short.MAX_VALUE))
+                .addContainerGap(457, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,7 +227,7 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
                 .addGap(66, 66, 66)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(100, 100, 100))
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1460, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1474, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,12 +269,10 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        USER_login_menu userloginmenu = new USER_login_menu();
+        this.setVisible(false);
+        userloginmenu.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void ROOMTYPETF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ROOMTYPETF1ActionPerformed
         // TODO add your handling code here:
@@ -295,6 +293,13 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
     private void ADDBUTTONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDBUTTONActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ADDBUTTONActionPerformed
+
+    private void return_btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_return_btn0ActionPerformed
+        // TODO add your handling code here:
+        ADMIN_Dashboard admindashboard = new ADMIN_Dashboard();
+        this.dispose();
+        admindashboard.setVisible(true);
+    }//GEN-LAST:event_return_btn0ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -341,7 +346,6 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
     private javax.swing.JTextField ROOMTYPETF1;
     private javax.swing.JTextField STATUSTF;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -352,5 +356,6 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton return_btn0;
     // End of variables declaration//GEN-END:variables
 }
