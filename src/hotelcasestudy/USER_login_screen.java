@@ -184,7 +184,7 @@ public class USER_login_screen extends javax.swing.JFrame {
 
     private void logout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btnActionPerformed
         // TODO add your handling code here:
-        USER_login_menu userloginmenu = new USER_login_menu();
+       USER_pass_view userloginmenu = new USER_pass_view();
         this.setVisible(false);
         userloginmenu.setVisible(true);
     }//GEN-LAST:event_logout_btnActionPerformed
