@@ -35,6 +35,7 @@ public class USER_login_menu extends javax.swing.JFrame {
         login_popup = new javax.swing.JPopupMenu();
         member_item = new javax.swing.JMenuItem();
         admin_item = new javax.swing.JMenuItem();
+        admin_item1 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         signup_btn = new javax.swing.JButton();
         login_btn = new javax.swing.JButton();
@@ -63,6 +64,17 @@ public class USER_login_menu extends javax.swing.JFrame {
             }
         });
         login_popup.add(admin_item);
+
+        admin_item1.setBackground(new java.awt.Color(237, 234, 233));
+        admin_item1.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        admin_item1.setForeground(new java.awt.Color(104, 72, 50));
+        admin_item1.setText("Admin");
+        admin_item1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                admin_item1ActionPerformed(evt);
+            }
+        });
+        login_popup.add(admin_item1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Casa de Los Tropicos"); // NOI18N
@@ -142,6 +154,10 @@ public class USER_login_menu extends javax.swing.JFrame {
         adminlogin.setVisible(true);
     }//GEN-LAST:event_admin_itemActionPerformed
 
+    private void admin_item1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admin_item1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_admin_item1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -199,6 +215,7 @@ public class USER_login_menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem admin_item;
+    private javax.swing.JMenuItem admin_item1;
     private javax.swing.JLabel casa_logo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
