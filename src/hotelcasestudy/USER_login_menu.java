@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hotelcasestudy;
-import java.awt.Toolkit;
+
 import javax.swing.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,7 +19,7 @@ public class USER_login_menu extends javax.swing.JFrame {
      */
     public USER_login_menu() {
         initComponents();
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/App_Icon.png")));
+       
 
     }
 
@@ -39,10 +39,7 @@ public class USER_login_menu extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         signup_btn = new javax.swing.JButton();
         login_btn = new javax.swing.JButton();
-        casa_logo = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         testlabel = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
 
         member_item.setBackground(new java.awt.Color(237, 234, 233));
         member_item.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
@@ -109,16 +106,6 @@ public class USER_login_menu extends javax.swing.JFrame {
         jPanel1.add(login_btn);
         login_btn.setBounds(190, 420, 160, 49);
 
-        casa_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/Cas De Los NO BG (237x237).png"))); // NOI18N
-        casa_logo.setText("jLabel2");
-        jPanel1.add(casa_logo);
-        casa_logo.setBounds(140, 140, 235, 171);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/LOGO NO BG - 1.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(70, 310, 389, 86);
-
         testlabel.setBackground(new java.awt.Color(255, 51, 51));
         testlabel.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
         testlabel.setForeground(new java.awt.Color(255, 51, 51));
@@ -127,10 +114,6 @@ public class USER_login_menu extends javax.swing.JFrame {
         testlabel.setBounds(200, 600, 37, 16);
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 520, 760));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/TropicosImage1HD.png"))); // NOI18N
-        jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, -1, -1));
 
         setSize(new java.awt.Dimension(1360, 765));
         setLocationRelativeTo(null);
@@ -145,6 +128,29 @@ public class USER_login_menu extends javax.swing.JFrame {
 
     private void login_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_btnActionPerformed
         // TODO add your handling code here:
+        
+        
+        //
+        //
+        //
+        //
+        //
+        //
+        //
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+          
         login_popup.show(login_btn, 0, login_btn.getHeight());
     }//GEN-LAST:event_login_btnActionPerformed
 
@@ -171,8 +177,8 @@ public class USER_login_menu extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
 
-        try {
-            DBConnection db = new DBConnection(); // Allows this JFrame to connect to database.
+        try { // Allows this JFrame to connect to database.
+            // Allows this JFrame to connect to database.
             /* Set the Nimbus look and feel */
             //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
             /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -185,36 +191,28 @@ public class USER_login_menu extends javax.swing.JFrame {
                         break;
                     }
                 }
-            } catch (ClassNotFoundException ex) {
-                java.util.logging.Logger.getLogger(USER_login_menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            } catch (InstantiationException ex) {
-                java.util.logging.Logger.getLogger(USER_login_menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            } catch (IllegalAccessException ex) {
-                java.util.logging.Logger.getLogger(USER_login_menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
                 java.util.logging.Logger.getLogger(USER_login_menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             }
             //</editor-fold>
             //</editor-fold>
             
+            //</editor-fold>
+            //</editor-fold>
+            
             UIManager.setLookAndFeel("com.formdev.flatlaf.FlatLightLaf");
             /* Create and display the form */
-            java.awt.EventQueue.invokeLater(new Runnable() {
-                public void run() {
-                    new USER_login_menu().setVisible(true);
-                }
+            java.awt.EventQueue.invokeLater(() -> {
+                new USER_login_menu().setVisible(true);
             });
             
             
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(USER_login_menu.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            Logger.getLogger(USER_login_menu.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            Logger.getLogger(USER_login_menu.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
             Logger.getLogger(USER_login_menu.class.getName()).log(Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        
         //</editor-fold>
         //</editor-fold>
         
@@ -224,9 +222,6 @@ public class USER_login_menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem admin_item;
     private javax.swing.JMenuItem admin_item1;
-    private javax.swing.JLabel casa_logo;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton login_btn;
     private javax.swing.JPopupMenu login_popup;

@@ -17,7 +17,7 @@ public class ADMIN_ReservationManagement extends javax.swing.JFrame {
      */
     public ADMIN_ReservationManagement() {
         initComponents();
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/App_Icon.png")));
+      
     }
 
     /**
@@ -31,9 +31,7 @@ public class ADMIN_ReservationManagement extends javax.swing.JFrame {
 
         jPanel4 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         logout_btn91 = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
         return_btn911 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -70,9 +68,6 @@ public class ADMIN_ReservationManagement extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(226, 165, 79));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/Cas De Los NO BG 2.png"))); // NOI18N
-        jLabel9.setText("jLabel7");
-
         logout_btn91.setBackground(new java.awt.Color(140, 100, 75));
         logout_btn91.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         logout_btn91.setForeground(new java.awt.Color(255, 255, 255));
@@ -83,9 +78,6 @@ public class ADMIN_ReservationManagement extends javax.swing.JFrame {
                 logout_btn91ActionPerformed(evt);
             }
         });
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/LOGO NO BG - 2 (WHITE).png"))); // NOI18N
-        jLabel10.setText("jLabel2");
 
         return_btn911.setBackground(new java.awt.Color(140, 100, 75));
         return_btn911.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
@@ -106,11 +98,7 @@ public class ADMIN_ReservationManagement extends javax.swing.JFrame {
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(683, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(17, 1106, Short.MAX_VALUE)
                 .addComponent(return_btn911)
                 .addGap(62, 62, 62)
                 .addComponent(logout_btn91)
@@ -119,16 +107,14 @@ public class ADMIN_ReservationManagement extends javax.swing.JFrame {
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(2, 2, 2)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(logout_btn91)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(return_btn911))
-                .addContainerGap(8, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jLabel6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(logout_btn91)
+                            .addComponent(return_btn911)))
+                    .addComponent(jLabel6))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -294,7 +280,6 @@ public class ADMIN_ReservationManagement extends javax.swing.JFrame {
     private javax.swing.JButton AddButton;
     private javax.swing.JButton DeleteButton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -305,7 +290,6 @@ public class ADMIN_ReservationManagement extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;

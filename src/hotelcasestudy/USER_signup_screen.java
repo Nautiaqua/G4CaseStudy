@@ -3,23 +3,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hotelcasestudy;
-import java.awt.Toolkit;
+
 import javax.swing.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.sql.*;
+
 /**
  *
  * @author WINDOWS
  */
 
-public class USER_signup_screen extends javax.swing.JFrame {
+public class USER_signup_screen extends connect {
     
-    /**
-     * Creates new form login_menu
-     */
     public USER_signup_screen() {
         initComponents();
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/App_Icon.png")));
+        DoConnect();
+        
     }
 
     /**
@@ -34,15 +34,11 @@ public class USER_signup_screen extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         return_btn = new javax.swing.JButton();
         signup_finish_btn = new javax.swing.JButton();
-        casa_logo = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         invalid_confirm = new javax.swing.JLabel();
-        password_confirm_txt = new javax.swing.JTextField();
         email_txt = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         password_label = new javax.swing.JLabel();
         email_label1 = new javax.swing.JLabel();
-        password_txt = new javax.swing.JTextField();
         password_label1 = new javax.swing.JLabel();
         invalid_email = new javax.swing.JLabel();
         invalid_sec = new javax.swing.JLabel();
@@ -50,7 +46,12 @@ public class USER_signup_screen extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         sec_ans = new javax.swing.JTextField();
         invalid_password = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        password_txt = new javax.swing.JPasswordField();
+        password_confirm_txt = new javax.swing.JPasswordField();
+        lname = new javax.swing.JTextField();
+        email_label2 = new javax.swing.JLabel();
+        fname = new javax.swing.JTextField();
+        email_label3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Casa de Los Tropicos"); // NOI18N
@@ -69,7 +70,7 @@ public class USER_signup_screen extends javax.swing.JFrame {
                 return_btnActionPerformed(evt);
             }
         });
-        jPanel1.add(return_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 650, 160, 49));
+        jPanel1.add(return_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 660, 160, 49));
 
         signup_finish_btn.setBackground(new java.awt.Color(134, 97, 72));
         signup_finish_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -80,15 +81,7 @@ public class USER_signup_screen extends javax.swing.JFrame {
                 signup_finish_btnActionPerformed(evt);
             }
         });
-        jPanel1.add(signup_finish_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 590, 160, 49));
-
-        casa_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/Cas De Los NO BG (237x237).png"))); // NOI18N
-        casa_logo.setText("jLabel2");
-        jPanel1.add(casa_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 235, 171));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/LOGO NO BG - 1.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 389, 86));
+        jPanel1.add(signup_finish_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 660, 160, 49));
 
         invalid_confirm.setBackground(new java.awt.Color(105, 73, 50));
         invalid_confirm.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
@@ -96,17 +89,6 @@ public class USER_signup_screen extends javax.swing.JFrame {
         invalid_confirm.setToolTipText("");
         jPanel1.add(invalid_confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 440, -1, -1));
 
-        password_confirm_txt.setBackground(new java.awt.Color(255, 255, 255));
-        password_confirm_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        password_confirm_txt.setForeground(new java.awt.Color(105, 73, 50));
-        password_confirm_txt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                password_confirm_txtActionPerformed(evt);
-            }
-        });
-        jPanel1.add(password_confirm_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, 320, 20));
-
-        email_txt.setBackground(new java.awt.Color(255, 255, 255));
         email_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         email_txt.setForeground(new java.awt.Color(105, 73, 50));
         email_txt.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +96,7 @@ public class USER_signup_screen extends javax.swing.JFrame {
                 email_txtActionPerformed(evt);
             }
         });
-        jPanel1.add(email_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 320, 20));
+        jPanel1.add(email_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 440, 320, 20));
 
         jLabel3.setBackground(new java.awt.Color(105, 73, 50));
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
@@ -126,29 +108,19 @@ public class USER_signup_screen extends javax.swing.JFrame {
         password_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         password_label.setForeground(new java.awt.Color(105, 73, 50));
         password_label.setText("Security Question");
-        jPanel1.add(password_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 500, 160, -1));
+        jPanel1.add(password_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 580, 160, -1));
 
         email_label1.setBackground(new java.awt.Color(105, 73, 50));
         email_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         email_label1.setForeground(new java.awt.Color(105, 73, 50));
-        email_label1.setText("Email");
-        jPanel1.add(email_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 50, -1));
-
-        password_txt.setBackground(new java.awt.Color(255, 255, 255));
-        password_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        password_txt.setForeground(new java.awt.Color(105, 73, 50));
-        password_txt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                password_txtActionPerformed(evt);
-            }
-        });
-        jPanel1.add(password_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 320, 20));
+        email_label1.setText("Email:");
+        jPanel1.add(email_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 50, -1));
 
         password_label1.setBackground(new java.awt.Color(105, 73, 50));
         password_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         password_label1.setForeground(new java.awt.Color(105, 73, 50));
-        password_label1.setText("Password");
-        jPanel1.add(password_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, 90, -1));
+        password_label1.setText("Password:");
+        jPanel1.add(password_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 90, -1));
 
         invalid_email.setBackground(new java.awt.Color(105, 73, 50));
         invalid_email.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
@@ -165,17 +137,24 @@ public class USER_signup_screen extends javax.swing.JFrame {
         password_label2.setBackground(new java.awt.Color(105, 73, 50));
         password_label2.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         password_label2.setForeground(new java.awt.Color(105, 73, 50));
-        password_label2.setText("Confirm Password");
-        jPanel1.add(password_label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 440, 160, -1));
+        password_label2.setText("Confirm Password:");
+        jPanel1.add(password_label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 520, 160, -1));
 
-        jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setEditable(true);
         jComboBox1.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(105, 73, 50));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "What is your favorite thing?", "What is your mother's maiden name?", "Where did you graduate (high school / college)?" }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 520, 320, 20));
+        jComboBox1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox1ItemStateChanged(evt);
+            }
+        });
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 600, 320, 20));
 
-        sec_ans.setBackground(new java.awt.Color(255, 255, 255));
         sec_ans.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         sec_ans.setForeground(new java.awt.Color(105, 73, 50));
         sec_ans.addActionListener(new java.awt.event.ActionListener() {
@@ -183,19 +162,47 @@ public class USER_signup_screen extends javax.swing.JFrame {
                 sec_ansActionPerformed(evt);
             }
         });
-        jPanel1.add(sec_ans, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 550, 320, 20));
+        jPanel1.add(sec_ans, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 630, 320, 20));
 
         invalid_password.setBackground(new java.awt.Color(105, 73, 50));
         invalid_password.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         invalid_password.setForeground(new java.awt.Color(123, 24, 24));
         invalid_password.setToolTipText("");
         jPanel1.add(invalid_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 380, 160, -1));
+        jPanel1.add(password_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 320, -1));
+        jPanel1.add(password_confirm_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 540, 320, -1));
+
+        lname.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        lname.setForeground(new java.awt.Color(105, 73, 50));
+        lname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lnameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(lname, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 320, 20));
+
+        email_label2.setBackground(new java.awt.Color(105, 73, 50));
+        email_label2.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        email_label2.setForeground(new java.awt.Color(105, 73, 50));
+        email_label2.setText("Last Name:");
+        jPanel1.add(email_label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, 100, -1));
+
+        fname.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        fname.setForeground(new java.awt.Color(105, 73, 50));
+        fname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fnameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(fname, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 320, 20));
+
+        email_label3.setBackground(new java.awt.Color(105, 73, 50));
+        email_label3.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        email_label3.setForeground(new java.awt.Color(105, 73, 50));
+        email_label3.setText("First Name:");
+        jPanel1.add(email_label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 100, 20));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 520, 760));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/TropicosImage1HD.png"))); // NOI18N
-        jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, -1, -1));
 
         setSize(new java.awt.Dimension(1360, 765));
         setLocationRelativeTo(null);
@@ -209,16 +216,16 @@ public class USER_signup_screen extends javax.swing.JFrame {
     }//GEN-LAST:event_return_btnActionPerformed
 
     private void signup_finish_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signup_finish_btnActionPerformed
-        // TODO add your handling code here:
-        boolean email_check = false;
-        boolean password_check = false;
-        boolean password_confirm_check = false;
-        boolean sec_check = false;
+    boolean email_check = false;
+    boolean password_check = false;
+    boolean password_confirm_check = false;
+    boolean sec_check = false;
+  
         int password_length = password_txt.getText().length();
         
         if (email_txt.getText().isEmpty()) {
             invalid_email.setText("Must be a valid email!");
-        } else if (!email_txt.getText().contains("@gmail.com") || !email_txt.getText().contains("@yahoo.com") || !email_txt.getText().contains("@ue.ph")) {
+        } else if (!email_txt.getText().contains("@gmail.com") || !email_txt.getText().contains("@yahoo.com") || !email_txt.getText().contains("@ue.edu.ph")) {
             invalid_email.setText("Must be a valid email!");
         }
         
@@ -257,23 +264,95 @@ public class USER_signup_screen extends javax.swing.JFrame {
         if (email_check == true && password_check == true && password_confirm_check == true && sec_check == true) { // This is just placeholder code while we don't have the backend.
             System.out.println("This works");
         }
+        
+newEmail = email_txt.getText();
+newPass = password_txt.getText();
+newFname = fname.getText();
+newLname = lname.getText();
+newSA = sec_ans.getText();
+
+String selectedItem = jComboBox1.getSelectedItem().toString();
+newSQ = "";
+
+if (selectedItem.equals("What is your favorite thing?")) {
+    newSQ = "What is your favorite thing?";
+}
+if (selectedItem.equals("What is your mother's maiden name?")) {
+    newSQ = "What is your mother's maiden name?";
+}
+if (selectedItem.equals("Where did you graduate (high school / college)?")) {
+    newSQ = "Where did you graduate (high school / college)?";
+}
+
+
+boolean emailExists = false;
+
+try {
+    con.setAutoCommit(false);
+
+    stmt = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+    rs = stmt.executeQuery("SELECT * FROM USERS");
+
+    while (rs.next()) {
+        n = rs.getString("EMAIL");
+        if (newEmail.equals(n)) {
+            invalid_email.setText("Already used email");
+            temp_email = newEmail;
+            emailExists = true;
+            break;
+        }
+    }
+
+    rs.close();
+
+    if (!emailExists && sec_check && password_confirm_check && password_check && email_check) {
+  
+    rs = stmt.executeQuery("SELECT * FROM \"USERS\"");
+
+    rs.moveToInsertRow();
+    rs.updateString("FIRSTNAME", newFname);
+    rs.updateString("LASTNAME", newLname);
+    rs.updateString("EMAIL", newEmail);
+    rs.updateString("PASSWORD", newPass);
+    rs.updateString("SEC_ANSWER", newSA);
+    rs.updateString("SEC_CODE", newSQ);
+    rs.insertRow();
+
+    con.commit();
+    Refresh_RS_STMT();
+    System.out.println("Email is unique, user inserted.");
+}
+
+} catch (SQLException e) {
+    System.out.println(e);
+}
+
+
     }//GEN-LAST:event_signup_finish_btnActionPerformed
 
     private void email_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email_txtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_email_txtActionPerformed
 
-    private void password_confirm_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_confirm_txtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_password_confirm_txtActionPerformed
-
     private void sec_ansActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sec_ansActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_sec_ansActionPerformed
 
-    private void password_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_txtActionPerformed
+    private void lnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lnameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_password_txtActionPerformed
+    }//GEN-LAST:event_lnameActionPerformed
+
+    private void fnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fnameActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox1ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -343,23 +422,24 @@ public class USER_signup_screen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel casa_logo;
     private javax.swing.JLabel email_label1;
+    private javax.swing.JLabel email_label2;
+    private javax.swing.JLabel email_label3;
     private javax.swing.JTextField email_txt;
+    private javax.swing.JTextField fname;
     private javax.swing.JLabel invalid_confirm;
     private javax.swing.JLabel invalid_email;
     private javax.swing.JLabel invalid_password;
     private javax.swing.JLabel invalid_sec;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField password_confirm_txt;
+    private javax.swing.JTextField lname;
+    private javax.swing.JPasswordField password_confirm_txt;
     private javax.swing.JLabel password_label;
     private javax.swing.JLabel password_label1;
     private javax.swing.JLabel password_label2;
-    private javax.swing.JTextField password_txt;
+    private javax.swing.JPasswordField password_txt;
     private javax.swing.JButton return_btn;
     private javax.swing.JTextField sec_ans;
     private javax.swing.JButton signup_finish_btn;

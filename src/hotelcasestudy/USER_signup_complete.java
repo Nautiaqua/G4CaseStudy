@@ -19,7 +19,7 @@ public class USER_signup_complete extends javax.swing.JFrame {
      */
     public USER_signup_complete() {
         initComponents();
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/App_Icon.png")));
+  
     }
 
     /**
@@ -33,14 +33,11 @@ public class USER_signup_complete extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         signup_finish_btn = new javax.swing.JButton();
-        casa_logo = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         invalid_confirm = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         invalid_email = new javax.swing.JLabel();
         invalid_password = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Casa de Los Tropicos"); // NOI18N
@@ -58,12 +55,6 @@ public class USER_signup_complete extends javax.swing.JFrame {
                 signup_finish_btnActionPerformed(evt);
             }
         });
-
-        casa_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/Cas De Los NO BG (237x237).png"))); // NOI18N
-        casa_logo.setText("jLabel2");
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/LOGO NO BG - 1.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
 
         invalid_confirm.setBackground(new java.awt.Color(105, 73, 50));
         invalid_confirm.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
@@ -111,27 +102,17 @@ public class USER_signup_complete extends javax.swing.JFrame {
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(invalid_confirm))
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(230, 230, 230)
-                                .addComponent(invalid_email, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(70, 70, 70)
-                                .addComponent(casa_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(invalid_email, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(240, 240, 240)
-                        .addComponent(invalid_email))
-                    .addComponent(casa_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(340, 340, 340)
+                .addComponent(invalid_email)
+                .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(44, 44, 44)
@@ -151,10 +132,6 @@ public class USER_signup_complete extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 520, 760));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/TropicosImage1HD.png"))); // NOI18N
-        jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, -1, -1));
 
         setSize(new java.awt.Dimension(1360, 765));
         setLocationRelativeTo(null);
@@ -251,13 +228,10 @@ public class USER_signup_complete extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel casa_logo;
     private javax.swing.JLabel invalid_confirm;
     private javax.swing.JLabel invalid_email;
     private javax.swing.JLabel invalid_password;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton signup_finish_btn;

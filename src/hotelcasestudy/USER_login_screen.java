@@ -3,23 +3,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hotelcasestudy;
-import java.awt.Toolkit;
+
 import javax.swing.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.sql.*;
 /**
  *
  * @author WINDOWS
  */
 
-public class USER_login_screen extends javax.swing.JFrame {
+public class USER_login_screen extends connect {
     
-    /**
-     * Creates new form login_menu
-     */
+    
     public USER_login_screen() {
         initComponents();
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/App_Icon.png")));
+        DoConnect();
+        
     }
 
     /**
@@ -34,17 +34,14 @@ public class USER_login_screen extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         return_btn = new javax.swing.JButton();
         login_finish_btn = new javax.swing.JButton();
-        casa_logo = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         invalid = new javax.swing.JLabel();
-        password_txt = new javax.swing.JTextField();
         email_txt = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         email_label1 = new javax.swing.JLabel();
         email_txt1 = new javax.swing.JTextField();
         password_label1 = new javax.swing.JLabel();
         logout_btn = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        password_txt = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Casa de Los Tropicos"); // NOI18N
@@ -76,26 +73,12 @@ public class USER_login_screen extends javax.swing.JFrame {
         });
         jPanel1.add(login_finish_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 470, 160, 49));
 
-        casa_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/Cas De Los NO BG (237x237).png"))); // NOI18N
-        casa_logo.setText("jLabel2");
-        jPanel1.add(casa_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 235, 171));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/LOGO NO BG - 1.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 389, 86));
-
         invalid.setBackground(new java.awt.Color(105, 73, 50));
         invalid.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         invalid.setForeground(new java.awt.Color(123, 24, 24));
         invalid.setToolTipText("");
         jPanel1.add(invalid, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 230, -1));
 
-        password_txt.setBackground(new java.awt.Color(255, 255, 255));
-        password_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        password_txt.setForeground(new java.awt.Color(105, 73, 50));
-        jPanel1.add(password_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 320, 20));
-
-        email_txt.setBackground(new java.awt.Color(255, 255, 255));
         email_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         email_txt.setForeground(new java.awt.Color(105, 73, 50));
         email_txt.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +100,6 @@ public class USER_login_screen extends javax.swing.JFrame {
         email_label1.setText("Email");
         jPanel1.add(email_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 50, -1));
 
-        email_txt1.setBackground(new java.awt.Color(255, 255, 255));
         email_txt1.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         email_txt1.setForeground(new java.awt.Color(105, 73, 50));
         email_txt1.addActionListener(new java.awt.event.ActionListener() {
@@ -144,12 +126,9 @@ public class USER_login_screen extends javax.swing.JFrame {
             }
         });
         jPanel1.add(logout_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 440, -1, -1));
+        jPanel1.add(password_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 320, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 520, 760));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/TropicosImage1HD.png"))); // NOI18N
-        jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, -1, -1));
 
         setSize(new java.awt.Dimension(1360, 765));
         setLocationRelativeTo(null);
@@ -163,15 +142,45 @@ public class USER_login_screen extends javax.swing.JFrame {
     }//GEN-LAST:event_return_btnActionPerformed
 
     private void login_finish_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_finish_btnActionPerformed
-        // TODO add your handling code here:
-        if (email_txt.getText().isEmpty() && password_txt.getText().isEmpty()) { // This code will remain lol.
+if (email_txt.getText().isEmpty() && password_txt.getText().isEmpty()) { // This code will remain lol.
             invalid.setText("Email or Password is Invalid!");
         }
-        if (!email_txt.getText().isEmpty() && !password_txt.getText().isEmpty()) { // This is just placeholder code while we don't have the backend.
-            USER_booking userbooking = new USER_booking();
-            this.setVisible(false);
-            userbooking.setVisible(true);
+            if (!email_txt.getText().isEmpty() && !password_txt.getText().isEmpty()) { // This is just placeholder code while we don't have the backend.
+            
         }
+newEmail = email_txt.getText();
+newPass = password_txt.getText();
+
+try {
+    con.setAutoCommit(false);
+
+    stmt = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+    rs = stmt.executeQuery("SELECT * FROM USERS");
+
+    while (rs.next()) {
+        n = rs.getString("EMAIL");
+        u = rs.getString("PASSWORD");
+
+        if (newEmail.equals(n)) {
+            if (newPass.equals(u)) {
+                USER_booking userbooking = new USER_booking();
+                this.setVisible(false);
+                userbooking.setVisible(true);
+                break;
+            }
+        }
+        else{
+            invalid.setText("Email or Password is Invalid!");
+        }
+    }
+
+    rs.close();
+
+} catch (SQLException e) {
+    System.out.println(e);
+}
+
+
     }//GEN-LAST:event_login_finish_btnActionPerformed
 
     private void email_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email_txtActionPerformed
@@ -249,19 +258,16 @@ public class USER_login_screen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel casa_logo;
     private javax.swing.JLabel email_label1;
     private javax.swing.JTextField email_txt;
     private javax.swing.JTextField email_txt1;
     private javax.swing.JLabel invalid;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton login_finish_btn;
     private javax.swing.JButton logout_btn;
     private javax.swing.JLabel password_label1;
-    private javax.swing.JTextField password_txt;
+    private javax.swing.JPasswordField password_txt;
     private javax.swing.JButton return_btn;
     // End of variables declaration//GEN-END:variables
 }

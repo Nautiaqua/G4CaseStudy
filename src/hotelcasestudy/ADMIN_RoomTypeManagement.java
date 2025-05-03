@@ -17,7 +17,7 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
      */
     public ADMIN_RoomTypeManagement() {
         initComponents();
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/App_Icon.png")));
+        
     }
 
     /**

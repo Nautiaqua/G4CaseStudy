@@ -40,9 +40,7 @@ public class ADMIN_usermanagement extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         return_btn911 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -115,9 +113,6 @@ public class ADMIN_usermanagement extends javax.swing.JFrame {
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(1344, 70));
 
-        jLabel6.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(226, 165, 79));
-
         jButton2.setBackground(new java.awt.Color(140, 100, 75));
         jButton2.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -128,8 +123,6 @@ public class ADMIN_usermanagement extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/Cas De Los NO BG 2.png"))); // NOI18N
 
         return_btn911.setBackground(new java.awt.Color(140, 100, 75));
         return_btn911.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
@@ -147,12 +140,7 @@ public class ADMIN_usermanagement extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(683, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(16, 1141, Short.MAX_VALUE)
                 .addComponent(return_btn911)
                 .addGap(27, 27, 27)
                 .addComponent(jButton2)
@@ -165,12 +153,7 @@ public class ADMIN_usermanagement extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(return_btn911))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(20, 20, 20))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         jButton4.setBackground(new java.awt.Color(0, 0, 0));
@@ -381,9 +364,7 @@ obj.setRowFilter(RowFilter.regexFilter(jTextField1.getText().trim()));
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;

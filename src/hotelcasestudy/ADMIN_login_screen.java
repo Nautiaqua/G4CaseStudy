@@ -19,7 +19,7 @@ public class ADMIN_login_screen extends javax.swing.JFrame {
      */
     public ADMIN_login_screen() {
         initComponents();
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/App_Icon.png")));
+       
     }
 
     /**
@@ -34,15 +34,12 @@ public class ADMIN_login_screen extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         return_btn = new javax.swing.JButton();
         login_finish_btn = new javax.swing.JButton();
-        casa_logo = new javax.swing.JLabel();
         invalid = new javax.swing.JLabel();
         email_txt = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         password_label = new javax.swing.JLabel();
         email_label1 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         password_txt = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Casa de Los Tropicos"); // NOI18N
@@ -52,7 +49,6 @@ public class ADMIN_login_screen extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(140, 100, 75));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        return_btn.setBackground(new java.awt.Color(255, 255, 255));
         return_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         return_btn.setForeground(new java.awt.Color(134, 97, 72));
         return_btn.setText("RETURN");
@@ -63,7 +59,6 @@ public class ADMIN_login_screen extends javax.swing.JFrame {
         });
         jPanel1.add(return_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 530, 160, 49));
 
-        login_finish_btn.setBackground(new java.awt.Color(255, 255, 255));
         login_finish_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         login_finish_btn.setForeground(new java.awt.Color(134, 97, 72));
         login_finish_btn.setText("LOG IN");
@@ -74,17 +69,12 @@ public class ADMIN_login_screen extends javax.swing.JFrame {
         });
         jPanel1.add(login_finish_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 470, 160, 49));
 
-        casa_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/Cas De Los NO BG (237x237).png"))); // NOI18N
-        casa_logo.setText("jLabel2");
-        jPanel1.add(casa_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 235, 171));
-
         invalid.setBackground(new java.awt.Color(105, 73, 50));
         invalid.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         invalid.setForeground(new java.awt.Color(255, 51, 51));
         invalid.setToolTipText("");
         jPanel1.add(invalid, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 230, -1));
 
-        email_txt.setBackground(new java.awt.Color(255, 255, 255));
         email_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         email_txt.setForeground(new java.awt.Color(105, 73, 50));
         jPanel1.add(email_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 320, 26));
@@ -107,20 +97,11 @@ public class ADMIN_login_screen extends javax.swing.JFrame {
         email_label1.setText("Admin ID");
         jPanel1.add(email_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 80, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/LOGO NO BG - 1 (WHITE).png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 389, 86));
-
-        password_txt.setBackground(new java.awt.Color(255, 255, 255));
         password_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         password_txt.setForeground(new java.awt.Color(105, 73, 50));
         jPanel1.add(password_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 320, 26));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 520, 760));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/TropicosImage1HD.png"))); // NOI18N
-        jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, -1, -1));
 
         setSize(new java.awt.Dimension(1360, 765));
         setLocationRelativeTo(null);
@@ -326,13 +307,10 @@ public class ADMIN_login_screen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel casa_logo;
     private javax.swing.JLabel email_label1;
     private javax.swing.JTextField email_txt;
     private javax.swing.JLabel invalid;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton login_finish_btn;
     private javax.swing.JLabel password_label;

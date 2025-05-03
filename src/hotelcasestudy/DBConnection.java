@@ -13,8 +13,8 @@ import java.util.logging.Logger;
  * @author WINDOWS
  */
 public class DBConnection {
-    private static final String DRIVER ="org.apache.derby.jdbc.EmbeddedDriver";
-    private static final String JDBC_URL ="jdbc:derby:hotelcasestudy;create=true";
+    public static final String DRIVER ="org.apache.derby.jdbc.EmbeddedDriver";
+    public static String JDBC_URL ="jdbc:derby://localhost:1527/hotelcasestudy;create=true";
     
     Connection conn;
     

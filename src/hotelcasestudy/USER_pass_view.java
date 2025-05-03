@@ -4,6 +4,8 @@
  */
 package hotelcasestudy;
 import java.awt.Toolkit;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -12,14 +14,15 @@ import java.util.logging.Logger;
  * @author WINDOWS
  */
 
-public class USER_pass_view extends javax.swing.JFrame {
+public class USER_pass_view extends connect {
     
     /**
      * Creates new form login_menu
      */
     public USER_pass_view() {
         initComponents();
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/App_Icon.png")));
+        DoConnect();
+        
     }
 
     /**
@@ -33,17 +36,15 @@ public class USER_pass_view extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         return_btn = new javax.swing.JButton();
-        casa_logo = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         invalid = new javax.swing.JLabel();
         email_txt = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         email_label1 = new javax.swing.JLabel();
-        email_txt1 = new javax.swing.JTextField();
         sec_ans = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         password_label = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        pass = new javax.swing.JTextField();
+        getpass = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Casa de Los Tropicos"); // NOI18N
@@ -64,21 +65,12 @@ public class USER_pass_view extends javax.swing.JFrame {
         });
         jPanel1.add(return_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 520, 160, 49));
 
-        casa_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/Cas De Los NO BG (237x237).png"))); // NOI18N
-        casa_logo.setText("jLabel2");
-        jPanel1.add(casa_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 235, 171));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/LOGO NO BG - 1.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 389, 86));
-
         invalid.setBackground(new java.awt.Color(105, 73, 50));
         invalid.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         invalid.setForeground(new java.awt.Color(123, 24, 24));
         invalid.setToolTipText("");
         jPanel1.add(invalid, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 230, -1));
 
-        email_txt.setBackground(new java.awt.Color(255, 255, 255));
         email_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         email_txt.setForeground(new java.awt.Color(105, 73, 50));
         email_txt.addActionListener(new java.awt.event.ActionListener() {
@@ -100,17 +92,6 @@ public class USER_pass_view extends javax.swing.JFrame {
         email_label1.setText("Email");
         jPanel1.add(email_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, 50, -1));
 
-        email_txt1.setBackground(new java.awt.Color(255, 255, 255));
-        email_txt1.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        email_txt1.setForeground(new java.awt.Color(105, 73, 50));
-        email_txt1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                email_txt1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(email_txt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 320, 20));
-
-        sec_ans.setBackground(new java.awt.Color(255, 255, 255));
         sec_ans.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         sec_ans.setForeground(new java.awt.Color(105, 73, 50));
         sec_ans.addActionListener(new java.awt.event.ActionListener() {
@@ -120,11 +101,15 @@ public class USER_pass_view extends javax.swing.JFrame {
         });
         jPanel1.add(sec_ans, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 480, 320, 20));
 
-        jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
         jComboBox1.setEditable(true);
         jComboBox1.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(105, 73, 50));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "What is your favorite thing?", "What is your mother's maiden name?", "Where did you graduate (high school / college)?" }));
+        jComboBox1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox1ItemStateChanged(evt);
+            }
+        });
         jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, 320, 20));
 
         password_label.setBackground(new java.awt.Color(105, 73, 50));
@@ -133,11 +118,24 @@ public class USER_pass_view extends javax.swing.JFrame {
         password_label.setText("Security Question");
         jPanel1.add(password_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 160, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 520, 760));
+        pass.setEditable(false);
+        pass.setText("password");
+        pass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passActionPerformed(evt);
+            }
+        });
+        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 320, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/TropicosImage1HD.png"))); // NOI18N
-        jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, -1, -1));
+        getpass.setText("get password");
+        getpass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                getpassActionPerformed(evt);
+            }
+        });
+        jPanel1.add(getpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 520, 760));
 
         setSize(new java.awt.Dimension(1360, 765));
         setLocationRelativeTo(null);
@@ -151,16 +149,74 @@ public class USER_pass_view extends javax.swing.JFrame {
     }//GEN-LAST:event_return_btnActionPerformed
 
     private void email_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email_txtActionPerformed
-        // TODO add your handling code here:
+   
     }//GEN-LAST:event_email_txtActionPerformed
-
-    private void email_txt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email_txt1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_email_txt1ActionPerformed
 
     private void sec_ansActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sec_ansActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_sec_ansActionPerformed
+
+    private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passActionPerformed
+
+    private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox1ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ItemStateChanged
+
+    private void getpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getpassActionPerformed
+newEmail = email_txt.getText();
+newSA = sec_ans.getText();
+String selectedItem = jComboBox1.getSelectedItem().toString();
+newSQ = "";
+
+// Security question selection
+if (selectedItem.equals("What is your favorite thing?")) {
+    newSQ = "What is your favorite thing?";
+}
+if (selectedItem.equals("What is your mother's maiden name?")) {
+    newSQ = "What is your mother's maiden name?";
+}
+if (selectedItem.equals("Where did you graduate (high school / college)?")) {
+    newSQ = "Where did you graduate (high school / college)?";
+}
+
+try {
+    con.setAutoCommit(false);
+
+    stmt = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+    rs = stmt.executeQuery("SELECT * FROM USERS");
+
+    boolean found = false;
+
+    while (rs.next()) {
+        n = rs.getString("EMAIL");
+        u = rs.getString("SEC_CODE");
+        s = rs.getString("SEC_ANSWER");
+
+        if (newEmail.equals(n)) {
+            if (newSQ.equals(u)) {
+                if (newSA.equals(s)) {
+                    s = rs.getString("PASSWORD");
+                    pass.setText(s);
+                    found = true;
+                    break;
+                }
+            }
+        }
+    }
+
+    if (!found) {
+        invalid.setText("Email or security answer is invalid!");
+    }
+
+    rs.close();
+
+} catch (SQLException e) {
+    System.out.println(e);
+}
+
+    }//GEN-LAST:event_getpassActionPerformed
 
     /**
      * @param args the command line arguments
@@ -230,16 +286,14 @@ public class USER_pass_view extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel casa_logo;
     private javax.swing.JLabel email_label1;
     private javax.swing.JTextField email_txt;
-    private javax.swing.JTextField email_txt1;
+    private javax.swing.JToggleButton getpass;
     private javax.swing.JLabel invalid;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField pass;
     private javax.swing.JLabel password_label;
     private javax.swing.JButton return_btn;
     private javax.swing.JTextField sec_ans;

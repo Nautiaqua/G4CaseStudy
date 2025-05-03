@@ -4,7 +4,8 @@
  */
 package hotelcasestudy;
 
-import java.awt.Toolkit;
+import com.sun.jdi.connect.spi.Connection;
+import static hotelcasestudy.DBConnection.DRIVER;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -16,19 +17,23 @@ import javax.swing.table.TableRowSorter;
 
 
 
+
+
+
+
 /**
  *
  * @author nejac
  */
 public class ADMIN_room_management extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ADMIN_USERMANAGEMENT
-     */
+    
     public ADMIN_room_management() {
         initComponents();
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/App_Icon.png")));
         buttonGroup1.add(yes);
+        
+        
+
     }
 
     /**
@@ -57,9 +62,7 @@ public class ADMIN_room_management extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         logout_btn = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
         return_btn = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -197,9 +200,6 @@ public class ADMIN_room_management extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(226, 165, 79));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/Cas De Los NO BG 2.png"))); // NOI18N
-        jLabel7.setText("jLabel7");
-
         logout_btn.setBackground(new java.awt.Color(140, 100, 75));
         logout_btn.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         logout_btn.setForeground(new java.awt.Color(255, 255, 255));
@@ -210,9 +210,6 @@ public class ADMIN_room_management extends javax.swing.JFrame {
                 logout_btnActionPerformed(evt);
             }
         });
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/LOGO NO BG - 2 (WHITE).png"))); // NOI18N
-        jLabel8.setText("jLabel2");
 
         return_btn.setBackground(new java.awt.Color(140, 100, 75));
         return_btn.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
@@ -233,11 +230,7 @@ public class ADMIN_room_management extends javax.swing.JFrame {
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(683, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(17, 1150, Short.MAX_VALUE)
                 .addComponent(return_btn)
                 .addGap(18, 18, 18)
                 .addComponent(logout_btn)
@@ -249,13 +242,11 @@ public class ADMIN_room_management extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
+                        .addGap(19, 19, 19)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
                             .addComponent(logout_btn)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(return_btn))))
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -307,7 +298,6 @@ public class ADMIN_room_management extends javax.swing.JFrame {
 
     private void addroomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addroomActionPerformed
 String yes1="";
-
     if (yes.isSelected()){
             yes1="yes";
         }
@@ -333,6 +323,8 @@ else{
                         model.addRow(new Object[]{jTextField1.getText(),jTextField2.getText(),jTextField3.getText(),yes1,jTextField4.getText()});   
 }
 }
+
+
     }//GEN-LAST:event_addroomActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -421,6 +413,10 @@ JOptionPane.showMessageDialog(this,"Please select Single Row For Delete.");
      */
     public static void main(String args[]) {
 
+
+
+        
+    
         try {
             DBConnection bConnection = new DBConnection(); // Allows this JFrame to connect to database.
             /* Set the Nimbus look and feel */
@@ -479,8 +475,6 @@ JOptionPane.showMessageDialog(this,"Please select Single Row For Delete.");
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

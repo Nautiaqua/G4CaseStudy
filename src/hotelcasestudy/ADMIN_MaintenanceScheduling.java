@@ -23,7 +23,7 @@ public class ADMIN_MaintenanceScheduling extends javax.swing.JFrame {
      */
     public ADMIN_MaintenanceScheduling() {
         initComponents();
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/App_Icon.png")));
+        
     }
 
     /**
@@ -46,9 +46,7 @@ public class ADMIN_MaintenanceScheduling extends javax.swing.JFrame {
         jTextField5 = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         logout_btn = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
         return_btn911 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -133,9 +131,6 @@ public class ADMIN_MaintenanceScheduling extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(226, 165, 79));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/Cas De Los NO BG 2.png"))); // NOI18N
-        jLabel9.setText("jLabel7");
-
         logout_btn.setBackground(new java.awt.Color(140, 100, 75));
         logout_btn.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         logout_btn.setForeground(new java.awt.Color(255, 255, 255));
@@ -146,9 +141,6 @@ public class ADMIN_MaintenanceScheduling extends javax.swing.JFrame {
                 logout_btnActionPerformed(evt);
             }
         });
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/LOGO NO BG - 2 (WHITE).png"))); // NOI18N
-        jLabel10.setText("jLabel2");
 
         return_btn911.setBackground(new java.awt.Color(140, 100, 75));
         return_btn911.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
@@ -169,11 +161,7 @@ public class ADMIN_MaintenanceScheduling extends javax.swing.JFrame {
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(683, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(17, 1126, Short.MAX_VALUE)
                 .addComponent(return_btn911)
                 .addGap(42, 42, 42)
                 .addComponent(logout_btn)
@@ -185,13 +173,11 @@ public class ADMIN_MaintenanceScheduling extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
+                        .addGap(19, 19, 19)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
                             .addComponent(logout_btn)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(return_btn911))))
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -401,13 +387,11 @@ obj.setRowFilter(RowFilter.regexFilter(jTextField5.getText().trim()));
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
