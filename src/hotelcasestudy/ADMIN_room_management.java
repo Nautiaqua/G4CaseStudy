@@ -4,8 +4,7 @@
  */
 package hotelcasestudy;
 
-import com.sun.jdi.connect.spi.Connection;
-import static hotelcasestudy.DBConnection.DRIVER;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;

@@ -220,7 +220,7 @@ public class USER_signup_screen extends connect {
     boolean password_check = false;
     boolean password_confirm_check = false;
     boolean sec_check = false;
-  
+ 
         int password_length = password_txt.getText().length();
         
         if (email_txt.getText().isEmpty()) {
@@ -229,7 +229,7 @@ public class USER_signup_screen extends connect {
             invalid_email.setText("Must be a valid email!");
         }
         
-        if (email_txt.getText().contains("@gmail.com") || email_txt.getText().contains("@yahoo.com") || email_txt.getText().contains("@ue.ph")) { // Checks and invalids if it nly contains the @ part.
+        if (email_txt.getText().contains("@gmail.com") || email_txt.getText().contains("@yahoo.com") || email_txt.getText().contains("@ue.ph")) { 
             if ("@yahoo.com".equals(email_txt.getText()) || "@gmail.com".equals(email_txt.getText()) || "@ue.ph".equals(email_txt.getText())){
                 invalid_email.setText("Must be a valid email!");
             } else {
@@ -270,10 +270,8 @@ newPass = password_txt.getText();
 newFname = fname.getText();
 newLname = lname.getText();
 newSA = sec_ans.getText();
-
 String selectedItem = jComboBox1.getSelectedItem().toString();
 newSQ = "";
-
 if (selectedItem.equals("What is your favorite thing?")) {
     newSQ = "What is your favorite thing?";
 }
@@ -283,13 +281,9 @@ if (selectedItem.equals("What is your mother's maiden name?")) {
 if (selectedItem.equals("Where did you graduate (high school / college)?")) {
     newSQ = "Where did you graduate (high school / college)?";
 }
-
-
 boolean emailExists = false;
-
 try {
     con.setAutoCommit(false);
-
     stmt = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
     rs = stmt.executeQuery("SELECT * FROM USERS");
 
@@ -302,13 +296,9 @@ try {
             break;
         }
     }
-
     rs.close();
-
     if (!emailExists && sec_check && password_confirm_check && password_check && email_check) {
-  
     rs = stmt.executeQuery("SELECT * FROM \"USERS\"");
-
     rs.moveToInsertRow();
     rs.updateString("FIRSTNAME", newFname);
     rs.updateString("LASTNAME", newLname);
@@ -317,7 +307,6 @@ try {
     rs.updateString("SEC_ANSWER", newSA);
     rs.updateString("SEC_CODE", newSQ);
     rs.insertRow();
-
     con.commit();
     Refresh_RS_STMT();
     System.out.println("Email is unique, user inserted.");
@@ -325,12 +314,9 @@ try {
     this.setVisible(false);
     userlogin.setVisible(true);
 }
-
 } catch (SQLException e) {
     System.out.println(e);
 }
-
-
     }//GEN-LAST:event_signup_finish_btnActionPerformed
 
     private void email_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email_txtActionPerformed

@@ -3,22 +3,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hotelcasestudy;
-import java.awt.Toolkit;
+
+import java.sql.SQLException;
 import javax.swing.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.sql.*;
 /**
  *
  * @author WINDOWS
  */
 
-public class ADMIN_login_screen extends javax.swing.JFrame {
+public class ADMIN_login_screen extends connect {
     
     /**
      * Creates new form login_menu
      */
     public ADMIN_login_screen() {
         initComponents();
+        DoConnect();
        
     }
 
@@ -121,10 +124,40 @@ public class ADMIN_login_screen extends javax.swing.JFrame {
         }
         if (!email_txt.getText().isEmpty() && !email_txt.getText().isEmpty()) { // This is just placeholder code while we don't have the backend.
             System.out.println("This works");
-            ADMIN_Dashboard admindashboard = new ADMIN_Dashboard();
-            this.setVisible(false);
-            admindashboard.setVisible(true);
+            
         }
+        newEmail = email_txt.getText();
+        newPass = password_txt.getText();
+
+        try {
+            con.setAutoCommit(false);
+
+            stmt = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            rs = stmt.executeQuery("SELECT * FROM ADMIN");
+
+            while (rs.next()) {
+                n = rs.getString("ADMIN_ID");
+                u = rs.getString("PASSWORD");
+
+                if (newEmail.equals(n)) {
+                    if (newPass.equals(u)) {
+                        ADMIN_Dashboard admindashboard = new ADMIN_Dashboard();
+                        this.setVisible(false);
+                        admindashboard.setVisible(true);
+                        break;
+                    }
+                }
+                else{
+                    invalid.setText("Email or Password is Invalid!");
+                }
+            }
+
+            rs.close();
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
     }//GEN-LAST:event_login_finish_btnActionPerformed
 
     /**
