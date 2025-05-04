@@ -321,6 +321,9 @@ try {
     con.commit();
     Refresh_RS_STMT();
     System.out.println("Email is unique, user inserted.");
+    USER_signup_complete userlogin = new USER_signup_complete();
+    this.setVisible(false);
+    userlogin.setVisible(true);
 }
 
 } catch (SQLException e) {
