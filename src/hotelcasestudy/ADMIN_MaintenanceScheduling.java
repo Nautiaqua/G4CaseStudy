@@ -4,15 +4,16 @@
  */
 package hotelcasestudy;
 
-import java.awt.Toolkit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import hotelcasestudy.connect;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
+import java.sql.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.HashSet;
 
 
 
@@ -20,15 +21,48 @@ import javax.swing.table.TableRowSorter;
  *
  * @author nejac
  */
-public class ADMIN_MaintenanceScheduling extends javax.swing.JFrame {
-
+public class ADMIN_MaintenanceScheduling extends connect {
+DefaultTableModel model = new DefaultTableModel() {
+    @Override
+    public boolean isCellEditable(int row, int column) {
+        return false; 
+    }
+};
+int x=0;
     /**
      * Creates new form ADMIN_USERMANAGEMENT
      */
     public ADMIN_MaintenanceScheduling() {
         initComponents();
-        
+        DoConnect();
+        Select();
+     
     }
+    public void Select(){
+        String [] columnsNames = {"MAIN_ID" ,"ROOM_NUMBER","STATUS","MAINTENANCE_DATE"};
+        model.setColumnIdentifiers(columnsNames);
+        model.setRowCount(0);
+
+        try{
+            String query = "SELECT * FROM MAINTENANCE";
+            stmt = con.createStatement();
+            rs = stmt.executeQuery(query);
+            while(rs.next()){
+                i=rs.getString("ROOM");
+                s=rs.getString("STATUS");
+                n=rs.getString("MAINTENANCE_DATE");
+                a=rs.getString("MAIN_ID");
+                model.addRow(new Object []{a,i,s,n});
+                x++;
+        rom.setEditable(true);  
+        stat.setEditable(true);
+        main.setEditable(true);
+            }
+        }catch(SQLException err){
+            
+        }
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -41,26 +75,27 @@ public class ADMIN_MaintenanceScheduling extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel3 = new javax.swing.JPanel();
+        rom = new javax.swing.JTextField();
+        stat = new javax.swing.JTextField();
+        main = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        logout_btn = new javax.swing.JButton();
+        return_btn911 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         addroom = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButton5 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        logout_btn = new javax.swing.JButton();
-        return_btn911 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        roomn = new javax.swing.JTextField();
+        statu = new javax.swing.JTextField();
+        maint = new javax.swing.JTextField();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -73,62 +108,81 @@ public class ADMIN_MaintenanceScheduling extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
+        rom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                romActionPerformed(evt);
+            }
+        });
+
+        main.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mainActionPerformed(evt);
+            }
+        });
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(237, 234, 233));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+        jPanel4.setBackground(new java.awt.Color(140, 100, 75));
+        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel4.setPreferredSize(new java.awt.Dimension(1344, 70));
 
-            },
-            new String [] {
-                "ROOM NUMBER", "STATUS", "MAINTENANCE DATE"
-            }
-        ));
-        jTable1.setGridColor(new java.awt.Color(0, 0, 0));
-        jTable1.setInheritsPopupMenu(true);
-        jTable1.setRowHeight(30);
-        jTable1.setShowGrid(true);
-        jTable1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jTable1PropertyChange(evt);
-            }
-        });
-        jScrollPane2.setViewportView(jTable1);
+        jLabel6.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(226, 165, 79));
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 118, 748, 460));
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        logout_btn.setBackground(new java.awt.Color(140, 100, 75));
+        logout_btn.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        logout_btn.setForeground(new java.awt.Color(255, 255, 255));
+        logout_btn.setText("Log Out");
+        logout_btn.setBorder(null);
+        logout_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                logout_btnActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 277, 20));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 277, 20));
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        return_btn911.setBackground(new java.awt.Color(140, 100, 75));
+        return_btn911.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        return_btn911.setForeground(new java.awt.Color(255, 255, 255));
+        return_btn911.setText("Return to Dashboard");
+        return_btn911.setBorder(null);
+        return_btn911.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                return_btn911ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 277, 20));
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
-        jTextField5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextField5KeyPressed(evt);
-            }
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextField5KeyReleased(evt);
-            }
-        });
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 610, 750, -1));
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(683, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(17, 1126, Short.MAX_VALUE)
+                .addComponent(return_btn911)
+                .addGap(42, 42, 42)
+                .addComponent(logout_btn)
+                .addGap(18, 18, 18))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(logout_btn)
+                            .addComponent(return_btn911))))
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel11.setBackground(new java.awt.Color(105, 73, 50));
         jLabel11.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
@@ -163,104 +217,58 @@ public class ADMIN_MaintenanceScheduling extends javax.swing.JFrame {
                 addroomActionPerformed(evt);
             }
         });
-        jPanel1.add(addroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 150, 50));
+        jPanel1.add(addroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 150, 40));
 
-        jButton3.setBackground(new java.awt.Color(134, 97, 72));
-        jButton3.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("EDIT");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jTable1.setModel(model);
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 750, -1));
+
+        jButton5.setBackground(new java.awt.Color(0, 0, 0));
+        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("D E L E T E  U S E R");
+        jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButton5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 150, 50));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 440, -1, -1));
 
-        jButton4.setBackground(new java.awt.Color(134, 97, 72));
-        jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jButton4.setBackground(new java.awt.Color(0, 0, 0));
+        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("COMPLETE");
+        jButton4.setText("E D I T ");
+        jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 430, 160, 50));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, -1, -1));
 
-        jPanel4.setBackground(new java.awt.Color(140, 100, 75));
-        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel4.setPreferredSize(new java.awt.Dimension(1344, 70));
-
-        jLabel6.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(226, 165, 79));
-
-        logout_btn.setBackground(new java.awt.Color(140, 100, 75));
-        logout_btn.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        logout_btn.setForeground(new java.awt.Color(255, 255, 255));
-        logout_btn.setText("Log Out");
-        logout_btn.setBorder(null);
-        logout_btn.addActionListener(new java.awt.event.ActionListener() {
+        jTextField4.setBackground(new java.awt.Color(217, 217, 217));
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logout_btnActionPerformed(evt);
+                jTextField4ActionPerformed(evt);
             }
         });
-
-        return_btn911.setBackground(new java.awt.Color(140, 100, 75));
-        return_btn911.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        return_btn911.setForeground(new java.awt.Color(255, 255, 255));
-        return_btn911.setText("Return to Dashboard");
-        return_btn911.setBorder(null);
-        return_btn911.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                return_btn911ActionPerformed(evt);
+        jTextField4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField4KeyReleased(evt);
             }
         });
+        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 620, 650, -1));
+        jPanel1.add(roomn, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 170, -1));
+        jPanel1.add(statu, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 350, 170, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_topleft.png"))); // NOI18N
-        jLabel3.setText("jLabel2");
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_whitesmall.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(570, Short.MAX_VALUE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(return_btn911)
-                        .addGap(18, 18, 18)
-                        .addComponent(logout_btn)
-                        .addGap(17, 17, 17))))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(logout_btn)
-                            .addComponent(return_btn911)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
-        );
-
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        maint.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                maintActionPerformed(evt);
+            }
+        });
+        jPanel1.add(maint, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 390, 170, -1));
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -268,92 +276,9 @@ public class ADMIN_MaintenanceScheduling extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTable1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jTable1PropertyChange
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTable1PropertyChange
+    private void mainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-
-    }//GEN-LAST:event_jTextField3ActionPerformed
-
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
-    private void addroomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addroomActionPerformed
-
-        if (jTextField1.getText().isEmpty()||jTextField2.getText().isEmpty()||jTextField3.getText().isEmpty()||jTextField3.getText().isEmpty()){
-        }
-        else{
-
-            String text = jTextField1.getText();
-            String text2 = jTextField3.getText();
-            boolean exists = false;
-            DefaultTableModel model =(DefaultTableModel)jTable1.getModel();
-            for (int i = 0; i < model.getRowCount(); i++) {
-                if (model.getValueAt(i, 0).equals(text)&& model.getValueAt(i,2).equals(text2)) {
-                    exists = true;
-                    break;
-                }
-            }
-
-            if (exists) {
-
-            } else{
-                model.addRow(new Object[]{jTextField1.getText(),jTextField2.getText(),jTextField3.getText(),jTextField3.getText()});
-            }
-        }
-    }//GEN-LAST:event_addroomActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
-        int i =jTable1.getSelectedRow();
-        DefaultTableModel model=(DefaultTableModel)jTable1.getModel();
-        if (i>=0)
-        {
-            model.setValueAt(jTextField1.getText(),i,0);
-            model.setValueAt(jTextField2.getText(),i,1);
-            model.setValueAt(jTextField3.getText(),i,2);
-        }else{
-            JOptionPane.showMessageDialog(null,"Error");
-        }
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        DefaultTableModel tblmodel=(DefaultTableModel) jTable1.getModel();
-
-if(jTable1.getSelectedRowCount()==1){
-tblmodel.removeRow(jTable1.getSelectedRow());
-}else{
-if(jTable1.getRowCount()==1){
-JOptionPane.showMessageDialog(this,"Table is Empty.");
-}else{
-JOptionPane.showMessageDialog(this,"Please select Single Row For Delete.");
-}
-}
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jTextField5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField5KeyPressed
-
-    }//GEN-LAST:event_jTextField5KeyPressed
-
-    private void jTextField5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField5KeyReleased
-    DefaultTableModel model=(DefaultTableModel)jTable1.getModel();
-TableRowSorter<DefaultTableModel>obj=new TableRowSorter<>(model);
-jTable1.setRowSorter(obj);
-obj.setRowFilter(RowFilter.regexFilter(jTextField5.getText().trim()));
-
-    }//GEN-LAST:event_jTextField5KeyReleased
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void return_btn911ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_return_btn911ActionPerformed
-        ADMIN_Dashboard admindashboard = new ADMIN_Dashboard();
-        this.dispose();
-        admindashboard.setVisible(true);
-    }//GEN-LAST:event_return_btn911ActionPerformed
+    }//GEN-LAST:event_mainActionPerformed
 
     private void logout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btnActionPerformed
         // TODO add your handling code here:
@@ -362,58 +287,239 @@ obj.setRowFilter(RowFilter.regexFilter(jTextField5.getText().trim()));
         userloginmenu.setVisible(true);
     }//GEN-LAST:event_logout_btnActionPerformed
 
+    private void addroomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addroomActionPerformed
+
+int resID = 1;
+newEmail = roomn.getText();  // This is ROOM_NUMBER, should be integer
+newPass = statu.getText();  // STATUS
+newFname = maint.getText(); // MAINTENANCE_DATE
+boolean emailExists = false;
+try {
+    con.setAutoCommit(false);
+    stmt = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+    ResultSet rs = stmt.executeQuery("SELECT * FROM MAINTENANCE");
+    HashSet<Integer> existingIds = new HashSet<>();
+    while (rs.next()) {
+        s = rs.getString("ROOM");
+        existingIds.add(rs.getInt("MAIN_ID"));
+    while (existingIds.contains(resID)) {
+        resID++;
+    }
+        String existingDate = rs.getString("MAINTENANCE_DATE");
+        if ((s == null ? newEmail == null : s.equals(newEmail)) && existingDate.equals(newFname)) {
+            JOptionPane.showMessageDialog(null, "Invalid input.");
+            emailExists = true;
+            break;
+        }
+    }
+    rs.close();
+
+    if (!emailExists) {
+        rs = stmt.executeQuery("SELECT * FROM MAINTENANCE");
+        rs.moveToInsertRow();
+
+        // Parse date
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        java.util.Date parsedDate = sdf.parse(newFname); // from JTextField 'main'
+        java.sql.Date sqlDate = new java.sql.Date(parsedDate.getTime());
+
+        // Parse room number as integer
+        int roomNumber = Integer.parseInt(newEmail.trim());
+
+        rs.updateDate("MAINTENANCE_DATE", sqlDate);
+        rs.updateInt("ROOM", roomNumber);      
+        rs.updateInt("MAIN_ID", resID);// INTEGER
+        rs.updateString("STATUS", newPass);              // VARCHAR / TEXT
+        rs.insertRow();
+        
+
+        con.commit();
+        Select(); // Optional: refresh result set
+
+        System.out.println("Inserted maintenance record successfully.");
+    }
+
+} catch (ParseException pe) {
+    JOptionPane.showMessageDialog(null, "Invalid date format. Use YYYY-MM-DD.");
+    pe.printStackTrace();
+} catch (NumberFormatException ne) {
+    JOptionPane.showMessageDialog(null, "Room number must be an integer.");
+    ne.printStackTrace();
+} catch (SQLException e) {
+    JOptionPane.showMessageDialog(null, "Database error: " + e.getMessage());
+    e.printStackTrace();
+}
+rom.setEditable(true);  // For example, make 'rom' text field editable
+stat.setEditable(true);
+main.setEditable(true);
+
+
+    }//GEN-LAST:event_addroomActionPerformed
+
+    private void romActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_romActionPerformed
+
+    }//GEN-LAST:event_romActionPerformed
+
+    private void return_btn911ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_return_btn911ActionPerformed
+        ADMIN_Dashboard admindashboard = new ADMIN_Dashboard();
+        this.dispose();
+        admindashboard.setVisible(true);
+    }//GEN-LAST:event_return_btn911ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+
+        int e = jTable1.getSelectedRow();
+DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+if (e >= 0) {
+    String idToDelete = String.valueOf(model.getValueAt(e, 0)).trim();  // Assuming ID is at column 0
+    System.out.println("Deleting ID: '" + idToDelete + "'");
+    try {
+        String sql = "DELETE FROM MAINTENANCE WHERE MAIN_ID = ?";
+        System.out.println("Executing SQL: " + sql + " with ID: " + idToDelete);
+        PreparedStatement pst = con.prepareStatement(sql);
+        pst.setInt(1, Integer.parseInt(idToDelete));  // Convert to int if ID is numeric
+        int rowsAffected = pst.executeUpdate();
+        System.out.println("Rows affected: " + rowsAffected);
+        if (rowsAffected > 0) {
+            model.removeRow(e);
+            JOptionPane.showMessageDialog(null, "Deleted successfully.");
+        } else {
+            JOptionPane.showMessageDialog(null, "No matching ID found in database.");
+        }
+        con.commit();
+    } catch (SQLException a) {
+        JOptionPane.showMessageDialog(null, "Database delete failed: " + a.getMessage());
+        a.printStackTrace();
+    } catch (NumberFormatException nfe) {
+        JOptionPane.showMessageDialog(null, "Invalid ID format: " + nfe.getMessage());
+    }
+} else {
+    JOptionPane.showMessageDialog(null, "Please select a row to delete.");
+}
+
+
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+int e = jTable1.getSelectedRow(); // Assume jTable1 displays ROOM, STATUS, MAINTENANCE_DATE
+
+if (e >= 0) {
+    // Get current values from the selected row
+    String room1 = (String) jTable1.getValueAt(e, 1);  // ROOM_NUMBER (as String)
+    String status1 = (String) jTable1.getValueAt(e, 2); // STATUS
+    String date1 = (String) jTable1.getValueAt(e, 3);   // MAINTENANCE_DATE
+
+    // Set current values to input fields
+    rom.setText(room1);
+    stat.setText(status1);
+    main.setText(date1);
+
+    // Ensure the text fields are editable before showing the dialog
+    rom.setEditable(true);
+    stat.setEditable(true);
+    main.setEditable(true);
+
+    // Show confirmation dialog with input fields
+    int option = JOptionPane.showConfirmDialog(null, new Object[] {
+        "Room Number:", rom,
+        "Status:", stat,
+        "Maintenance Date (YYYY-MM-DD):", main
+    }, "Edit Maintenance Record", JOptionPane.OK_CANCEL_OPTION);
+
+    if (option == JOptionPane.OK_OPTION) {
+        // Get new values from input fields
+        String newRoom = rom.getText().trim();
+        String newStatus = stat.getText().trim();
+        String newDate = main.getText().trim();
+
+        // Validate input
+        if (newRoom.isEmpty() || newStatus.isEmpty() || newDate.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "All fields must be filled out.");
+            return;
+        }
+
+        if (!newRoom.matches("\\d+")) {
+            JOptionPane.showMessageDialog(null, "Room number must be an integer.");
+            return;
+        }
+
+        try {
+            int roomNumber = Integer.parseInt(newRoom);
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            java.util.Date parsedDate = sdf.parse(newDate);
+            java.sql.Date sqlDate = new java.sql.Date(parsedDate.getTime());
+
+            String sql = "UPDATE MAINTENANCE SET ROOM = ?, STATUS = ?, MAINTENANCE_DATE = ? " +
+                         "WHERE ROOM = ? AND MAINTENANCE_DATE = ?";
+            PreparedStatement pst = con.prepareStatement(sql);
+            pst.setInt(1, roomNumber);
+            pst.setString(2, newStatus);
+            pst.setDate(3, sqlDate);
+            pst.setInt(4, Integer.parseInt(room1.trim()));
+            pst.setDate(5, java.sql.Date.valueOf(date1.trim()));
+
+            int rowsAffected = pst.executeUpdate();
+
+            if (rowsAffected > 0) {
+                // Update table model
+                jTable1.setValueAt(newRoom, e, 1);
+                jTable1.setValueAt(newStatus, e, 2);
+                jTable1.setValueAt(newDate, e, 3);
+                JOptionPane.showMessageDialog(null, "Maintenance record updated successfully.");
+                con.commit();
+            } else {
+                JOptionPane.showMessageDialog(null, "No matching record found in the database.");
+            }
+
+        } catch (ParseException pe) {
+            JOptionPane.showMessageDialog(null, "Invalid date format. Use YYYY-MM-DD.");
+        } catch (SQLException se) {
+            JOptionPane.showMessageDialog(null, "Database error: " + se.getMessage());
+            se.printStackTrace();
+        }
+    }
+} else {
+    JOptionPane.showMessageDialog(null, "Please select a row to edit.");
+}
+
+
+
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jTextField4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyReleased
+        DefaultTableModel model=(DefaultTableModel)jTable1.getModel();
+        TableRowSorter<DefaultTableModel>obj=new TableRowSorter<>(model);
+        jTable1.setRowSorter(obj);
+        obj.setRowFilter(RowFilter.regexFilter(rom.getText().trim()));
+    }//GEN-LAST:event_jTextField4KeyReleased
+
+    private void maintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maintActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_maintActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
         try {
-            /* Set the Nimbus look and feel */
-            //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-            /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-            * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-            */
-            try {
-                for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                    if ("Nimbus".equals(info.getName())) {
-                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                        break;
-                    }
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
                 }
-            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-                java.util.logging.Logger.getLogger(ADMIN_MaintenanceScheduling.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             }
-            //</editor-fold>
-            //</editor-fold>
-            //</editor-fold>
-            //</editor-fold>
-            //</editor-fold>
-            //</editor-fold>
-            //</editor-fold>
-            //</editor-fold>
-            
-            //</editor-fold>
-            //</editor-fold>
-            //</editor-fold>
-            //</editor-fold>
-            //</editor-fold>
-            //</editor-fold>
-            //</editor-fold>
-            //</editor-fold>
-            UIManager.setLookAndFeel("com.formdev.flatlaf.FlatLightLaf");
-            
-            /* Create and display the form */
-            java.awt.EventQueue.invokeLater(() -> {
-                new ADMIN_MaintenanceScheduling().setVisible(true);
-            });
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ADMIN_MaintenanceScheduling.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            Logger.getLogger(ADMIN_MaintenanceScheduling.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            Logger.getLogger(ADMIN_MaintenanceScheduling.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(ADMIN_MaintenanceScheduling.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(ADMIN_MaintenanceScheduling.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -423,30 +529,45 @@ obj.setRowFilter(RowFilter.regexFilter(jTextField5.getText().trim()));
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> {
+            new ADMIN_MaintenanceScheduling().setVisible(true);
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addroom;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField4;
     private javax.swing.JButton logout_btn;
+    private javax.swing.JTextField main;
+    private javax.swing.JTextField maint;
     private javax.swing.JButton return_btn911;
+    private javax.swing.JTextField rom;
+    private javax.swing.JTextField roomn;
+    private javax.swing.JTextField stat;
+    private javax.swing.JTextField statu;
     // End of variables declaration//GEN-END:variables
 }
