@@ -535,20 +535,15 @@ try {
     con.setAutoCommit(false);
     stmt = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
     rs = stmt.executeQuery("SELECT RESERVATION_ID FROM RESERVATIONS");
-
-    // Find the next available RESERVATION_ID
     HashSet<Integer> existingIds = new HashSet<>();
     while (rs.next()) {
         existingIds.add(rs.getInt("RESERVATION_ID"));
     }
     rs.close();
 
-    // Increment resID until it's not in existing IDs
     while (existingIds.contains(resID)) {
         resID++;
     }
-
-    // Insert new reservation
     rs = stmt.executeQuery("SELECT * FROM RESERVATIONS");
     rs.moveToInsertRow();
     rs.updateInt("RESERVATION_ID", resID);
