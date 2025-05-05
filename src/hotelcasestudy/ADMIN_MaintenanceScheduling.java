@@ -4,6 +4,9 @@
  */
 package hotelcasestudy;
 
+import hotelcasestudy.ADMIN_Dashboard;
+import hotelcasestudy.USER_login_menu;
+import hotelcasestudy.connect;
 import hotelcasestudy.connect;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;

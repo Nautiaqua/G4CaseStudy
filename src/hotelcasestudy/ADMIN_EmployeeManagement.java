@@ -4,22 +4,56 @@
  */
 package hotelcasestudy;
 
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import java.sql.*;
+import javax.swing.RowFilter;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
  * @author Nardz Ablaza
  */
-public class ADMIN_EmployeeManagement extends javax.swing.JFrame {
-
+public class ADMIN_EmployeeManagement extends connect {
+DefaultTableModel MODEL = new DefaultTableModel() {
+    @Override
+    public boolean isCellEditable(int row, int column) {
+        return false; 
+    }
+};
+    int x=0;
     /**
      * Creates new form ADMIN_UserManagement
      */
     public ADMIN_EmployeeManagement() {
         initComponents();
+        DoConnect();
+        Select();
+    }
+    public void Select(){
+        String [] columnsNames = {"ADMIN_ID","PASSWORD","EMAIL","CREATED_ON"};
+        MODEL.setColumnIdentifiers(columnsNames);
+        try{
+            String query = "SELECT * FROM ADMIN";
+            stmt = con.createStatement();
+            rs = stmt.executeQuery(query);
+            while(rs.next()){
+                i=rs.getString("ADMIN_ID");
+                s=rs.getString("PASSWORD");
+                n=rs.getString("EMAIL");
+                u=rs.getString("CREATED_ON");
+                MODEL.addRow(new Object []{i,s,n,u});
+                x++;
+                        
+            }
+        }catch(SQLException err){
+            
+        }
     }
 
     /**
@@ -33,8 +67,6 @@ public class ADMIN_EmployeeManagement extends javax.swing.JFrame {
 
         remove_warning = new javax.swing.JPopupMenu();
         remove_text = new javax.swing.JMenuItem();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         logout_btn = new javax.swing.JButton();
@@ -42,7 +74,6 @@ public class ADMIN_EmployeeManagement extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         background = new javax.swing.JPanel();
-        BT2 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         TF7 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -52,7 +83,11 @@ public class ADMIN_EmployeeManagement extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        deletetype = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jTextField4 = new javax.swing.JTextField();
 
         remove_text.setBackground(new java.awt.Color(237, 234, 233));
         remove_text.setFont(new java.awt.Font("Liberation Sans", 1, 12)); // NOI18N
@@ -68,18 +103,6 @@ public class ADMIN_EmployeeManagement extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ADMIN ID", "PASSWORD", "EMAIL", "CREATED ON"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(567, 105, 724, 600));
 
         jPanel4.setBackground(new java.awt.Color(140, 100, 75));
         jPanel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -160,17 +183,6 @@ public class ADMIN_EmployeeManagement extends javax.swing.JFrame {
         background.setForeground(new java.awt.Color(237, 234, 233));
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BT2.setBackground(new java.awt.Color(134, 97, 72));
-        BT2.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        BT2.setForeground(new java.awt.Color(255, 255, 255));
-        BT2.setText("ADD");
-        BT2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BT2ActionPerformed(evt);
-            }
-        });
-        background.add(BT2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, 130, 50));
-
         jLabel5.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(134, 97, 72));
         jLabel5.setText("Email:");
@@ -212,26 +224,53 @@ public class ADMIN_EmployeeManagement extends javax.swing.JFrame {
         jLabel4.setText("Password:");
         background.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, 20));
 
-        deletetype.setBackground(new java.awt.Color(134, 97, 72));
-        deletetype.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        deletetype.setForeground(new java.awt.Color(255, 255, 255));
-        deletetype.setText("DELETE EMPLOYEE");
-        deletetype.addActionListener(new java.awt.event.ActionListener() {
+        jTable2.setModel(MODEL);
+        jScrollPane2.setViewportView(jTable2);
+
+        background.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 120, 620, -1));
+
+        jButton4.setBackground(new java.awt.Color(0, 0, 0));
+        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("E D I T ");
+        jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deletetypeActionPerformed(evt);
+                jButton4ActionPerformed(evt);
             }
         });
-        background.add(deletetype, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 410, 230, 50));
+        background.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, -1, -1));
+
+        jButton5.setBackground(new java.awt.Color(0, 0, 0));
+        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("D E L E T E  U S E R");
+        jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        background.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, -1, -1));
+
+        jTextField4.setBackground(new java.awt.Color(217, 217, 217));
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+        jTextField4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField4KeyReleased(evt);
+            }
+        });
+        background.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 570, 650, 30));
 
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1360, 690));
 
         setSize(new java.awt.Dimension(1360, 765));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void BT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BT2ActionPerformed
 
     private void TF6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TF6ActionPerformed
         // TODO add your handling code here:
@@ -254,13 +293,104 @@ public class ADMIN_EmployeeManagement extends javax.swing.JFrame {
         admindashboard.setVisible(true);
     }//GEN-LAST:event_return_btn911ActionPerformed
 
-    private void deletetypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletetypeActionPerformed
-        remove_warning.show(deletetype, 0, deletetype.getHeight());
-    }//GEN-LAST:event_deletetypeActionPerformed
-
     private void remove_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remove_textActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_remove_textActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        int e = jTable2.getSelectedRow();
+        if (e >= 0) {
+            String fname1 = (String) jTable2.getValueAt(e, 0);
+            String lname1 = (String) jTable2.getValueAt(e, 1);
+            String email1 = (String) jTable2.getValueAt(e, 2);
+            TF5.setText(fname1);
+            TF1.setText(lname1);
+            TF7.setText(email1);
+            int option = JOptionPane.showConfirmDialog(null, new Object[] {
+                "ADMIN_ID:", TF5,
+                "PASSWORD:", TF1,
+                "EMAIL:", TF7,
+            }, "Edit User", JOptionPane.OK_CANCEL_OPTION);
+            if (option == JOptionPane.OK_OPTION) {
+                String newFname = TF5.getText().trim();
+                String newLname = TF1.getText().trim();
+                String newEmail = TF7.getText().trim().toLowerCase();
+                if (newFname.isEmpty() || newLname.isEmpty() || newEmail.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "All fields must be filled out.");
+                    return;
+                }
+                try {
+                    String sql = "UPDATE ADMIN SET ADMIN_ID = ?, PASSWORD = ?, EMAIL = ?";
+                    PreparedStatement pst = con.prepareStatement(sql);
+                    pst.setString(1, newFname);
+                    pst.setString(2, newLname);
+                    pst.setString(3, newEmail.toLowerCase().trim());
+                    int rowsAffected = pst.executeUpdate();
+                    System.out.println("Rows affected: " + rowsAffected);
+                    if (rowsAffected > 0) {
+                        jTable2.setValueAt(newFname, e, 0);
+                        jTable2.setValueAt(newLname, e, 1);
+                        jTable2.setValueAt(newEmail, e, 2);
+                        JOptionPane.showMessageDialog(null, "Updated successfully.");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No matching email found in the database.");
+                    }
+                    con.commit();
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(null, "Error updating database: " + ex.getMessage());
+                    ex.printStackTrace();
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Please select a row to edit.");
+        }
+
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+
+        int e = jTable2.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+
+        if (e >= 0) {
+            String idToDelete = String.valueOf(model.getValueAt(e, 0)).trim();  // Assuming ID is at column 0
+            System.out.println("Deleting ID: '" + idToDelete + "'");
+            try {
+                String sql = "DELETE FROM ADMIN WHERE ADMIN_ID = ?";
+                System.out.println("Executing SQL: " + sql + " with ID: " + idToDelete);
+                PreparedStatement pst = con.prepareStatement(sql);
+                pst.setInt(1, Integer.parseInt(idToDelete));  // Convert to int if ID is numeric
+                int rowsAffected = pst.executeUpdate();
+                System.out.println("Rows affected: " + rowsAffected);
+                if (rowsAffected > 0) {
+                    model.removeRow(e);
+                    JOptionPane.showMessageDialog(null, "Deleted successfully.");
+                } else {
+                    JOptionPane.showMessageDialog(null, "No matching ID found in database.");
+                }
+                con.commit();
+            } catch (SQLException a) {
+                JOptionPane.showMessageDialog(null, "Database delete failed: " + a.getMessage());
+                a.printStackTrace();
+            } catch (NumberFormatException nfe) {
+                JOptionPane.showMessageDialog(null, "Invalid ID format: " + nfe.getMessage());
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Please select a row to delete.");
+        }
+
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jTextField4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyReleased
+        DefaultTableModel model=(DefaultTableModel)jTable2.getModel();
+        TableRowSorter<DefaultTableModel>obj=new TableRowSorter<>(model);
+        jTable2.setRowSorter(obj);
+        obj.setRowFilter(RowFilter.regexFilter(jTextField4.getText().trim()));
+    }//GEN-LAST:event_jTextField4KeyReleased
 
     /**
      * @param args the command line arguments
@@ -317,13 +447,13 @@ public class ADMIN_EmployeeManagement extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BT2;
     private javax.swing.JTextField TF1;
     private javax.swing.JTextField TF5;
     private javax.swing.JTextField TF6;
     private javax.swing.JTextField TF7;
     private javax.swing.JPanel background;
-    private javax.swing.JButton deletetype;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -333,8 +463,9 @@ public class ADMIN_EmployeeManagement extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTextField jTextField4;
     private javax.swing.JButton logout_btn;
     private javax.swing.JMenuItem remove_text;
     private javax.swing.JPopupMenu remove_warning;

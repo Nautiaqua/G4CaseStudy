@@ -4,7 +4,12 @@
  */
 package hotelcasestudy;
 
-import java.awt.Toolkit;
+import java.sql.ResultSet;
+import java.sql.Timestamp;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
@@ -14,16 +19,45 @@ import javax.swing.UnsupportedLookAndFeelException;
  *
  * @author Nardz Ablaza
  */
-public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
-
+public class ADMIN_RoomTypeManagement extends connect {
+DefaultTableModel model = new DefaultTableModel() {
+    @Override
+    public boolean isCellEditable(int row, int column) {
+        return false; 
+    }
+};
+    int x=0;
     /**
      * Creates new form ADMIN_RoomTypeManagement
      */
     public ADMIN_RoomTypeManagement() {
         initComponents();
-        
+        DoConnect();
+        Select();
     }
-
+    public void Select(){
+        String [] columnsNames = {"TYPE_ID","NAME","DESCRIPTION","NUM_BEDS","BED_TYPE","MAX_OCCUPANCY","BASE_PRICE"};
+        model.setColumnIdentifiers(columnsNames);
+        model.setRowCount(0);
+        try{
+            String query = "SELECT * FROM ROOM_TYPE";
+            stmt = con.createStatement();
+            rs = stmt.executeQuery(query);
+            while(rs.next()){
+                i=rs.getString("TYPE_ID");
+                s=rs.getString("NAME");
+                n=rs.getString("DESCRIPTION");
+                u=rs.getString("NUM_BEDS");
+                a=rs.getString("BED_TYPE");
+                r=rs.getString("MAX_OCCUPANCY");
+                q=rs.getString("BASE_PRICE");
+                model.addRow(new Object []{i,s,n,u,a,r,q});
+                x++;              
+            }
+        }catch(SQLException err){
+            
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,6 +69,13 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
 
         remove_warning = new javax.swing.JPopupMenu();
         remove_text = new javax.swing.JMenuItem();
+        max = new javax.swing.JTextField();
+        bed = new javax.swing.JTextField();
+        num = new javax.swing.JTextField();
+        price = new javax.swing.JTextField();
+        name = new javax.swing.JTextField();
+        type = new javax.swing.JTextField();
+        desc = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         logout_btn2 = new javax.swing.JButton();
@@ -42,19 +83,26 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         background = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        ROOMTYPETABLE = new javax.swing.JTable();
-        DESCTF = new javax.swing.JTextField();
-        ROOMTYPETF1 = new javax.swing.JTextField();
-        BEDNOTF1 = new javax.swing.JTextField();
         created_in = new javax.swing.JLabel();
         type_label1 = new javax.swing.JLabel();
         desc_label = new javax.swing.JLabel();
         bednum_label = new javax.swing.JLabel();
-        DATETF = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         addtype = new javax.swing.JButton();
         deletetype = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        bednum_label1 = new javax.swing.JLabel();
+        bednum_label2 = new javax.swing.JLabel();
+        bednum_label3 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        max1 = new javax.swing.JTextField();
+        bed1 = new javax.swing.JTextField();
+        num1 = new javax.swing.JTextField();
+        price1 = new javax.swing.JTextField();
+        name1 = new javax.swing.JTextField();
+        type1 = new javax.swing.JTextField();
+        desc1 = new javax.swing.JTextField();
 
         remove_text.setBackground(new java.awt.Color(237, 234, 233));
         remove_text.setFont(new java.awt.Font("Liberation Sans", 1, 12)); // NOI18N
@@ -66,6 +114,36 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
             }
         });
         remove_warning.add(remove_text);
+
+        max.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                maxActionPerformed(evt);
+            }
+        });
+
+        bed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bedActionPerformed(evt);
+            }
+        });
+
+        num.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numActionPerformed(evt);
+            }
+        });
+
+        name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameActionPerformed(evt);
+            }
+        });
+
+        type.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                typeActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -150,43 +228,10 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
         background.setForeground(new java.awt.Color(255, 255, 255));
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ROOMTYPETABLE.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "ROOM TYPE", "BED NO.", "CREATED_IN", "DESCRIPTION"
-            }
-        ));
-        ROOMTYPETABLE.setSelectionBackground(new java.awt.Color(0, 0, 0));
-        ROOMTYPETABLE.setShowGrid(true);
-        jScrollPane1.setViewportView(ROOMTYPETABLE);
-
-        background.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, 800, 590));
-        background.add(DESCTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 440, 180));
-
-        ROOMTYPETF1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ROOMTYPETF1ActionPerformed(evt);
-            }
-        });
-        background.add(ROOMTYPETF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 300, 20));
-
-        BEDNOTF1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BEDNOTF1ActionPerformed(evt);
-            }
-        });
-        background.add(BEDNOTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 300, 20));
-
         created_in.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         created_in.setForeground(new java.awt.Color(105, 73, 50));
-        created_in.setText("Created In:");
-        background.add(created_in, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, 20));
+        created_in.setText("num:");
+        background.add(created_in, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, 20));
 
         type_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         type_label1.setForeground(new java.awt.Color(105, 73, 50));
@@ -196,13 +241,12 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
         desc_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         desc_label.setForeground(new java.awt.Color(105, 73, 50));
         desc_label.setText("Description:");
-        background.add(desc_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, 20));
+        background.add(desc_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, -1, 20));
 
         bednum_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         bednum_label.setForeground(new java.awt.Color(105, 73, 50));
-        bednum_label.setText("Bed No.:");
-        background.add(bednum_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, 20));
-        background.add(DATETF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 300, 20));
+        bednum_label.setText("max");
+        background.add(bednum_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, -1, 20));
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(105, 73, 50));
@@ -218,7 +262,7 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
                 addtypeActionPerformed(evt);
             }
         });
-        background.add(addtype, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, 150, 50));
+        background.add(addtype, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 610, 150, 50));
 
         deletetype.setBackground(new java.awt.Color(134, 97, 72));
         deletetype.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -229,7 +273,75 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
                 deletetypeActionPerformed(evt);
             }
         });
-        background.add(deletetype, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 520, 170, 50));
+        background.add(deletetype, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 610, 170, 50));
+
+        jTable1.setModel(model);
+        jScrollPane2.setViewportView(jTable1);
+
+        background.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 77, 730, 580));
+
+        bednum_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        bednum_label1.setForeground(new java.awt.Color(105, 73, 50));
+        bednum_label1.setText("name:");
+        background.add(bednum_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, 20));
+
+        bednum_label2.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        bednum_label2.setForeground(new java.awt.Color(105, 73, 50));
+        bednum_label2.setText("price");
+        background.add(bednum_label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, 20));
+
+        bednum_label3.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        bednum_label3.setForeground(new java.awt.Color(105, 73, 50));
+        bednum_label3.setText("bed");
+        background.add(bednum_label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, -1, 20));
+
+        jButton4.setBackground(new java.awt.Color(134, 97, 72));
+        jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("EDIT");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        background.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 610, 120, 50));
+
+        max1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                max1ActionPerformed(evt);
+            }
+        });
+        background.add(max1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, 300, 20));
+
+        bed1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bed1ActionPerformed(evt);
+            }
+        });
+        background.add(bed1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 300, 20));
+
+        num1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                num1ActionPerformed(evt);
+            }
+        });
+        background.add(num1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 300, 20));
+        background.add(price1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 300, 20));
+
+        name1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                name1ActionPerformed(evt);
+            }
+        });
+        background.add(name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 300, 20));
+
+        type1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                type1ActionPerformed(evt);
+            }
+        });
+        background.add(type1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 300, 20));
+        background.add(desc1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 440, 110));
 
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1350, 700));
 
@@ -237,13 +349,13 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ROOMTYPETF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ROOMTYPETF1ActionPerformed
+    private void typeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ROOMTYPETF1ActionPerformed
+    }//GEN-LAST:event_typeActionPerformed
 
-    private void BEDNOTF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BEDNOTF1ActionPerformed
+    private void maxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BEDNOTF1ActionPerformed
+    }//GEN-LAST:event_maxActionPerformed
 
     private void logout_btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btn2ActionPerformed
         // TODO add your handling code here:
@@ -259,7 +371,59 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_return_btn913ActionPerformed
 
     private void addtypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addtypeActionPerformed
-        // This has no code - nautia
+String newtype = type1.getText();
+String newname = name1.getText();
+String newdesc = desc1.getText();
+String newnum = num1.getText();
+String newbed = bed1.getText();
+String newmax = max1.getText();
+String newpri = price1.getText();
+boolean condition = false;
+
+try {
+    con.setAutoCommit(false);
+    stmt = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+    ResultSet rs = stmt.executeQuery("SELECT * FROM ROOM_TYPE");
+
+    while (rs.next()) {
+        String existingTypeId = rs.getString("TYPE_ID");
+        if (newtype.equals(existingTypeId)) {
+            JOptionPane.showMessageDialog(null, "TYPE ID already used");
+            condition = true;
+            break;
+        }
+    }
+    rs.close();
+
+    if (!condition) {
+        rs = stmt.executeQuery("SELECT * FROM ROOM_TYPE");
+        rs.moveToInsertRow();
+
+        rs.updateInt("TYPE_ID", Integer.parseInt(newtype));
+        rs.updateString("NAME", newname);
+        rs.updateString("DESCRIPTION", newdesc);
+        rs.updateInt("NUM_BEDS", Integer.parseInt(newnum));
+        rs.updateString("BED_TYPE", newbed);
+        rs.updateInt("MAX_OCCUPANCY", Integer.parseInt(newmax));
+        rs.updateDouble("BASE_PRICE", Double.parseDouble(newpri));
+        rs.updateTimestamp("CREATED_ON", new Timestamp(System.currentTimeMillis()));
+
+        rs.insertRow();
+        con.commit();
+        Select(); // Refresh table
+
+        JOptionPane.showMessageDialog(null, "Inserted room type successfully.");
+    }
+
+} catch (NumberFormatException ne) {
+    JOptionPane.showMessageDialog(null, "Invalid number format: " + ne.getMessage());
+    ne.printStackTrace();
+} catch (SQLException e) {
+    JOptionPane.showMessageDialog(null, "Database error: " + e.getMessage());
+    e.printStackTrace();
+}
+
+
     }//GEN-LAST:event_addtypeActionPerformed
 
     private void deletetypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletetypeActionPerformed
@@ -267,8 +431,155 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_deletetypeActionPerformed
 
     private void remove_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remove_textActionPerformed
-        // TODO add your handling code here:
+       int e = jTable1.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+        if (e >= 0) {
+            String idToDelete = String.valueOf(model.getValueAt(e, 0)).trim();  // Assuming ID is at column 0
+            System.out.println("Deleting ID: '" + idToDelete + "'");
+            try {
+                String sql = "DELETE FROM ROOM_TYPE WHERE TYPE_ID = ?";
+                System.out.println("Executing SQL: " + sql + " with ID: " + idToDelete);
+                PreparedStatement pst = con.prepareStatement(sql);
+                pst.setInt(1, Integer.parseInt(idToDelete));  // Convert to int if ID is numeric
+                int rowsAffected = pst.executeUpdate();
+                System.out.println("Rows affected: " + rowsAffected);
+                if (rowsAffected > 0) {
+                    model.removeRow(e);
+                    JOptionPane.showMessageDialog(null, "Deleted successfully.");
+                } else {
+                    JOptionPane.showMessageDialog(null, "No matching ID found in database.");
+                }
+                con.commit();
+            } catch (SQLException a) {
+                JOptionPane.showMessageDialog(null, "Database delete failed: " + a.getMessage());
+                a.printStackTrace();
+            } catch (NumberFormatException nfe) {
+                JOptionPane.showMessageDialog(null, "Invalid ID format: " + nfe.getMessage());
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Please select a row to delete.");
+        }
     }//GEN-LAST:event_remove_textActionPerformed
+
+    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameActionPerformed
+
+    private void numActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numActionPerformed
+
+    private void bedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bedActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bedActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+       int selectedRow = jTable1.getSelectedRow();
+if (selectedRow >= 0) {
+    // Get existing values from the table
+    String typeId = jTable1.getValueAt(selectedRow, 0).toString();
+    String nameVal = jTable1.getValueAt(selectedRow, 1).toString();
+    String descVal = jTable1.getValueAt(selectedRow, 2).toString();
+    String numBeds = jTable1.getValueAt(selectedRow, 3).toString();
+    String bedType = jTable1.getValueAt(selectedRow, 4).toString();
+    String maxOccupancy = jTable1.getValueAt(selectedRow, 5).toString();
+    String basePrice = jTable1.getValueAt(selectedRow, 6).toString();
+
+    // Populate form fields (you should have matching JTextFields for these)
+    type.setText(typeId);
+    name.setText(nameVal);
+    desc.setText(descVal);
+    num.setText(numBeds);
+    bed.setText(bedType);
+    max.setText(maxOccupancy);
+    price.setText(basePrice);
+
+    int option = JOptionPane.showConfirmDialog(null, new Object[]{
+        "TYPE ID:", type,
+        "NAME:", name,
+        "DESCRIPTION:", desc,
+        "NUMBER OF BEDS:", num,
+        "BED TYPE:", bed,
+        "MAX OCCUPANCY:", max,
+        "BASE PRICE:", price
+    }, "Edit Room Type", JOptionPane.OK_CANCEL_OPTION);
+
+    if (option == JOptionPane.OK_OPTION) {
+        String newType = type.getText().trim();
+        String newName = name.getText().trim();
+        String newDesc = desc.getText().trim();
+        String newNum = num.getText().trim();
+        String newBed = bed.getText().trim();
+        String newMax = max.getText().trim();
+        String newPrice = price.getText().trim();
+
+        if (newType.isEmpty() || newName.isEmpty() || newDesc.isEmpty() || newNum.isEmpty() || newBed.isEmpty() || newMax.isEmpty() || newPrice.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "All fields must be filled out.");
+            return;
+        }
+
+        try {
+            String updateSQL = "UPDATE ROOM_TYPE SET NAME = ?, DESCRIPTION = ?, NUM_BEDS = ?, BED_TYPE = ?, MAX_OCCUPANCY = ?, BASE_PRICE = ? WHERE TYPE_ID = ?";
+            PreparedStatement pst = con.prepareStatement(updateSQL);
+            pst.setString(1, newName);
+            pst.setString(2, newDesc);
+            pst.setInt(3, Integer.parseInt(newNum));
+            pst.setString(4, newBed);
+            pst.setInt(5, Integer.parseInt(newMax));
+            pst.setDouble(6, Double.parseDouble(newPrice));
+            pst.setInt(7, Integer.parseInt(newType));
+
+            int rowsUpdated = pst.executeUpdate();
+
+            if (rowsUpdated > 0) {
+                jTable1.setValueAt(newType, selectedRow, 0);
+                jTable1.setValueAt(newName, selectedRow, 1);
+                jTable1.setValueAt(newDesc, selectedRow, 2);
+                jTable1.setValueAt(newNum, selectedRow, 3);
+                jTable1.setValueAt(newBed, selectedRow, 4);
+                jTable1.setValueAt(newMax, selectedRow, 5);
+                jTable1.setValueAt(newPrice, selectedRow, 6);
+                JOptionPane.showMessageDialog(null, "Room type updated successfully.");
+            } else {
+                JOptionPane.showMessageDialog(null, "Room type not found.");
+            }
+            con.commit();
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error updating room type: " + ex.getMessage());
+            ex.printStackTrace();
+        } catch (NumberFormatException nfe) {
+            JOptionPane.showMessageDialog(null, "Numeric fields must contain valid numbers.");
+        }
+    }
+
+} else {
+    JOptionPane.showMessageDialog(null, "Please select a row to edit.");
+}
+
+
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void max1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_max1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_max1ActionPerformed
+
+    private void bed1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bed1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bed1ActionPerformed
+
+    private void num1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_num1ActionPerformed
+
+    private void name1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_name1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_name1ActionPerformed
+
+    private void type1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_type1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_type1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -318,27 +629,41 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField BEDNOTF1;
-    private javax.swing.JTextField DATETF;
-    private javax.swing.JTextField DESCTF;
-    private javax.swing.JTable ROOMTYPETABLE;
-    private javax.swing.JTextField ROOMTYPETF1;
     private javax.swing.JButton addtype;
     private javax.swing.JPanel background;
+    private javax.swing.JTextField bed;
+    private javax.swing.JTextField bed1;
     private javax.swing.JLabel bednum_label;
+    private javax.swing.JLabel bednum_label1;
+    private javax.swing.JLabel bednum_label2;
+    private javax.swing.JLabel bednum_label3;
     private javax.swing.JLabel created_in;
     private javax.swing.JButton deletetype;
+    private javax.swing.JTextField desc;
+    private javax.swing.JTextField desc1;
     private javax.swing.JLabel desc_label;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JButton logout_btn2;
+    private javax.swing.JTextField max;
+    private javax.swing.JTextField max1;
+    private javax.swing.JTextField name;
+    private javax.swing.JTextField name1;
+    private javax.swing.JTextField num;
+    private javax.swing.JTextField num1;
+    private javax.swing.JTextField price;
+    private javax.swing.JTextField price1;
     private javax.swing.JMenuItem remove_text;
     private javax.swing.JPopupMenu remove_warning;
     private javax.swing.JButton return_btn913;
+    private javax.swing.JTextField type;
+    private javax.swing.JTextField type1;
     private javax.swing.JLabel type_label1;
     // End of variables declaration//GEN-END:variables
 }

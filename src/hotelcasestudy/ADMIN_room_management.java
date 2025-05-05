@@ -49,8 +49,6 @@ public class ADMIN_room_management extends javax.swing.JFrame {
         remove_warning = new javax.swing.JPopupMenu();
         remove_text = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         addroom = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
@@ -73,6 +71,8 @@ public class ADMIN_room_management extends javax.swing.JFrame {
         return_btn913 = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -101,27 +101,6 @@ public class ADMIN_room_management extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(237, 234, 233));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "room number", "name", "phone", "reserved", "date"
-            }
-        ));
-        jTable1.setGridColor(new java.awt.Color(0, 0, 0));
-        jTable1.setInheritsPopupMenu(true);
-        jTable1.setRowHeight(30);
-        jTable1.setShowGrid(true);
-        jTable1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jTable1PropertyChange(evt);
-            }
-        });
-        jScrollPane2.setViewportView(jTable1);
-
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 110, 748, 460));
 
         addroom.setBackground(new java.awt.Color(134, 97, 72));
         addroom.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -317,6 +296,11 @@ public class ADMIN_room_management extends javax.swing.JFrame {
 
         jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        jTable2.setModel(model);
+        jScrollPane1.setViewportView(jTable2);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, 750, -1));
+
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         setSize(new java.awt.Dimension(1358, 764));
@@ -361,10 +345,6 @@ else{
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
 
     }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jTable1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jTable1PropertyChange
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTable1PropertyChange
 
     private void yesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yesActionPerformed
 
@@ -505,8 +485,8 @@ JOptionPane.showMessageDialog(null,"Error");
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;

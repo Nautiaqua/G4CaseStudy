@@ -79,6 +79,17 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
 
         remove_warning = new javax.swing.JPopupMenu();
         remove_text = new javax.swing.JMenuItem();
+        user = new javax.swing.JTextField();
+        room = new javax.swing.JTextField();
+        roomt = new javax.swing.JTextField();
+        ci = new javax.swing.JTextField();
+        co = new javax.swing.JTextField();
+        total = new javax.swing.JTextField();
+        date = new javax.swing.JTextField();
+        time = new javax.swing.JTextField();
+        stat = new javax.swing.JTextField();
+        child = new javax.swing.JSpinner();
+        adult = new javax.swing.JSpinner();
         jPanel6 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         logout_btn2 = new javax.swing.JButton();
@@ -91,30 +102,9 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
         jLabel1 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        user = new javax.swing.JTextField();
-        room = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        roomt = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        ci = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        co = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        total = new javax.swing.JTextField();
-        jLabel19 = new javax.swing.JLabel();
-        date = new javax.swing.JTextField();
-        jLabel17 = new javax.swing.JLabel();
-        time = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
-        stat = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        child = new javax.swing.JSpinner();
-        jLabel21 = new javax.swing.JLabel();
-        adult = new javax.swing.JSpinner();
-        jLabel22 = new javax.swing.JLabel();
-        stat1 = new javax.swing.JTextField();
+        rev = new javax.swing.JTextField();
+        jToggleButton1 = new javax.swing.JToggleButton();
 
         remove_text.setBackground(new java.awt.Color(237, 234, 233));
         remove_text.setFont(new java.awt.Font("Liberation Sans", 1, 12)); // NOI18N
@@ -126,6 +116,22 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
             }
         });
         remove_warning.add(remove_text);
+
+        user.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userActionPerformed(evt);
+            }
+        });
+
+        room.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                roomActionPerformed(evt);
+            }
+        });
+
+        child.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+
+        adult.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -242,93 +248,25 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
         });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 550, 170, 50));
 
-        jLabel11.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel11.setText("User:");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, 20));
-
-        jLabel12.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel12.setText("Room No.:");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, 20));
-
-        user.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userActionPerformed(evt);
-            }
-        });
-        jPanel1.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 310, 20));
-
-        room.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                roomActionPerformed(evt);
-            }
-        });
-        jPanel1.add(room, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 310, 20));
-
-        jLabel13.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel13.setText("Room Type:");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, 20));
-        jPanel1.add(roomt, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 310, 20));
-
-        jLabel15.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel15.setText("Check-In:");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 80, -1));
-        jPanel1.add(ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 310, 20));
-
-        jLabel14.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel14.setText("Check-Out:");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 100, -1));
-        jPanel1.add(co, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 310, 20));
-
-        jLabel16.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel16.setText("Price:");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, 20));
-        jPanel1.add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, 310, 20));
-
-        jLabel19.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel19.setText("Date-Res:");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
-        jPanel1.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 310, 20));
-
-        jLabel17.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel17.setText("Created-In:");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, -1));
-        jPanel1.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 310, 20));
-
-        jLabel18.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel18.setText("Status:");
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, -1, -1));
-        jPanel1.add(stat, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, 310, 20));
-
         jLabel20.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(105, 73, 50));
         jLabel20.setText("Total Revenue");
         jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 480, -1, 20));
 
-        child.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
-        jPanel1.add(child, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 500, -1, 30));
+        rev.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                revActionPerformed(evt);
+            }
+        });
+        jPanel1.add(rev, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, 230, 20));
 
-        jLabel21.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel21.setText("Adults:");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, -1, -1));
-
-        adult.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
-        jPanel1.add(adult, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, -1, 30));
-
-        jLabel22.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel22.setText("Children:");
-        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 480, -1, 20));
-        jPanel1.add(stat1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, 230, 20));
+        jToggleButton1.setText("jToggleButton1");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 460, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1344, 690));
 
@@ -486,6 +424,27 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
 
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void revActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_revActionPerformed
+        
+    }//GEN-LAST:event_revActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        double totalSum = 0.0;
+
+for (int row = 0; row < jTable1.getRowCount(); row++) {
+    Object value = jTable1.getValueAt(row, 3); // Column 3 = TOTAL_PRICE
+    if (value != null) {
+        try {
+            totalSum += Double.parseDouble(value.toString());
+        } catch (NumberFormatException ex) {
+            System.out.println("Invalid total at row " + row + ": " + value);
+        }
+    }
+}
+rev.setText("Total of all reservations: ₱" + String.format("%.2f", totalSum));
+
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -543,32 +502,22 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JButton logout_btn2;
     private javax.swing.JMenuItem remove_text;
     private javax.swing.JPopupMenu remove_warning;
     private javax.swing.JButton return_btn913;
+    private javax.swing.JTextField rev;
     private javax.swing.JTextField room;
     private javax.swing.JTextField roomt;
     private javax.swing.JTextField stat;
-    private javax.swing.JTextField stat1;
     private javax.swing.JTextField time;
     private javax.swing.JTextField total;
     private javax.swing.JTextField user;
