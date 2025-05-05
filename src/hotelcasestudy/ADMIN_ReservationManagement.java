@@ -13,6 +13,10 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -73,237 +77,247 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel6 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        logout_btn2 = new javax.swing.JButton();
+        return_btn913 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        user = new javax.swing.JTextField();
-        room = new javax.swing.JTextField();
-        roomt = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        user = new javax.swing.JTextField();
+        room = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
+        roomt = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
         ci = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         co = new javax.swing.JTextField();
-        total = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        date = new javax.swing.JTextField();
-        time = new javax.swing.JTextField();
-        stat = new javax.swing.JTextField();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
+        total = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        date = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        time = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        stat = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
         child = new javax.swing.JSpinner();
+        jLabel21 = new javax.swing.JLabel();
         adult = new javax.swing.JSpinner();
-        jButton4 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        logout_btn91 = new javax.swing.JButton();
-        return_btn911 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel6.setBackground(new java.awt.Color(140, 100, 75));
+        jPanel6.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel6.setPreferredSize(new java.awt.Dimension(1344, 70));
+
+        jLabel8.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(226, 165, 79));
+
+        logout_btn2.setBackground(new java.awt.Color(140, 100, 75));
+        logout_btn2.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        logout_btn2.setForeground(new java.awt.Color(255, 255, 255));
+        logout_btn2.setText("Log Out");
+        logout_btn2.setBorder(null);
+        logout_btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logout_btn2ActionPerformed(evt);
+            }
+        });
+
+        return_btn913.setBackground(new java.awt.Color(140, 100, 75));
+        return_btn913.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        return_btn913.setForeground(new java.awt.Color(255, 255, 255));
+        return_btn913.setText("Return to Dashboard");
+        return_btn913.setBorder(null);
+        return_btn913.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                return_btn913ActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_topleft.png"))); // NOI18N
+        jLabel9.setText("jLabel2");
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_whitesmall.png"))); // NOI18N
+        jLabel10.setText("jLabel1");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(570, Short.MAX_VALUE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(return_btn913)
+                        .addGap(18, 18, 18)
+                        .addComponent(logout_btn2)
+                        .addGap(17, 17, 17))))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(logout_btn2)
+                            .addComponent(return_btn913)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
+        );
+
+        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Book Antiqua", 1, 36)); // NOI18N
+        jTable1.setModel(tbModel1);
+        jScrollPane1.setViewportView(jTable1);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1872, 1872, 1872))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 30, 800, 590));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 70, 1344, 80));
-        getContentPane().add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, 110, 30));
+        jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel1.setText("Reservation Management");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 579, -1));
+
+        jButton4.setBackground(new java.awt.Color(134, 97, 72));
+        jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("EDIT");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 550, 120, 50));
+
+        jButton3.setBackground(new java.awt.Color(134, 97, 72));
+        jButton3.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("DELETE USER");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 550, 170, 50));
+
+        jLabel11.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel11.setText("User:");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, 20));
+
+        jLabel12.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel12.setText("Room No.:");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, 20));
+
+        user.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userActionPerformed(evt);
+            }
+        });
+        jPanel1.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 310, 20));
 
         room.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 roomActionPerformed(evt);
             }
         });
-        getContentPane().add(room, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, 110, 30));
-        getContentPane().add(roomt, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, 110, 20));
+        jPanel1.add(room, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 310, 20));
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel11.setText("USER");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, -1, 30));
+        jLabel13.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel13.setText("Room Type:");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, 20));
+        jPanel1.add(roomt, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 310, 20));
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel12.setText("ROOM NO.");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, -1, 30));
+        jLabel15.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel15.setText("Check-In:");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 80, -1));
+        jPanel1.add(ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 310, 20));
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel13.setText("ROOM TYPE");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, -1, 30));
-        getContentPane().add(ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 200, 110, -1));
+        jLabel14.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel14.setText("Check-Out:");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 100, -1));
+        jPanel1.add(co, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 310, 20));
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel14.setText("CHECK-OUT");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 150, -1));
-        getContentPane().add(co, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 250, 110, -1));
-        getContentPane().add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 300, 110, -1));
+        jLabel16.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel16.setText("Price:");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, 20));
+        jPanel1.add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, 310, 20));
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel15.setText("CHECK-IN");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 190, 140, -1));
+        jLabel19.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel19.setText("Date-Res:");
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
+        jPanel1.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 310, 20));
 
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel16.setText("PRICE");
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, -1, -1));
-        getContentPane().add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 200, 106, 37));
-        getContentPane().add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 250, 106, 37));
-        getContentPane().add(stat, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 300, 106, -1));
+        jLabel17.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel17.setText("Created-In:");
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, -1));
+        jPanel1.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 310, 20));
 
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel17.setText("CREATED-IN");
-        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 250, -1, -1));
+        jLabel18.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel18.setText("Status:");
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, -1, -1));
+        jPanel1.add(stat, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, 310, 20));
 
-        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel18.setText("STATUS");
-        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 290, -1, -1));
-
-        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel19.setText("DATE-RES");
-        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 200, -1, -1));
-
-        jTable1.setModel(tbModel1);
-        jScrollPane1.setViewportView(jTable1);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 1250, -1));
-
-        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel20.setText("CHILDREN");
-        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 200, -1, -1));
-
-        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel21.setText("ADULTS");
-        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 250, -1, -1));
+        jLabel20.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel20.setText("Children:");
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 480, -1, 20));
 
         child.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
-        getContentPane().add(child, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 200, -1, -1));
+        jPanel1.add(child, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 500, -1, 30));
+
+        jLabel21.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel21.setText("Adults:");
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, -1, -1));
 
         adult.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
-        getContentPane().add(adult, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 260, -1, -1));
+        jPanel1.add(adult, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, -1, 30));
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 0));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("E D I T ");
-        jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, -1, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1344, 690));
 
-        jPanel4.setBackground(new java.awt.Color(140, 100, 75));
-        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel4.setPreferredSize(new java.awt.Dimension(1344, 70));
-
-        jLabel6.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(226, 165, 79));
-
-        logout_btn91.setBackground(new java.awt.Color(140, 100, 75));
-        logout_btn91.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        logout_btn91.setForeground(new java.awt.Color(255, 255, 255));
-        logout_btn91.setText("Log Out");
-        logout_btn91.setBorder(null);
-        logout_btn91.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logout_btn91ActionPerformed(evt);
-            }
-        });
-
-        return_btn911.setBackground(new java.awt.Color(140, 100, 75));
-        return_btn911.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        return_btn911.setForeground(new java.awt.Color(255, 255, 255));
-        return_btn911.setText("Return to Dashboard");
-        return_btn911.setBorder(null);
-        return_btn911.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                return_btn911ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(return_btn911)
-                .addGap(62, 62, 62)
-                .addComponent(logout_btn91)
-                .addGap(18, 18, 18))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(logout_btn91)
-                            .addComponent(return_btn911)))
-                    .addComponent(jLabel6))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        jButton3.setBackground(new java.awt.Color(0, 0, 0));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("D E L E T E  U S E R");
-        jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, -1, -1));
-
-        pack();
+        setSize(new java.awt.Dimension(1360, 765));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void logout_btn91ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btn91ActionPerformed
-        // TODO add your handling code here:
-        USER_login_menu userloginmenu = new USER_login_menu();
-        this.setVisible(false);
-        userloginmenu.setVisible(true);
-    }//GEN-LAST:event_logout_btn91ActionPerformed
 
     private void roomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roomActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_roomActionPerformed
-
-    private void return_btn911ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_return_btn911ActionPerformed
-        ADMIN_Dashboard admindashboard = new ADMIN_Dashboard();
-        this.dispose();
-        admindashboard.setVisible(true);
-    }//GEN-LAST:event_return_btn911ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 int e = jTable1.getSelectedRow();
@@ -432,39 +446,68 @@ if (e >= 0) {
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void logout_btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btn2ActionPerformed
+        // TODO add your handling code here:
+        USER_login_menu userloginmenu = new USER_login_menu();
+        this.setVisible(false);
+        userloginmenu.setVisible(true);
+    }//GEN-LAST:event_logout_btn2ActionPerformed
+
+    private void return_btn913ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_return_btn913ActionPerformed
+        ADMIN_Dashboard admindashboard = new ADMIN_Dashboard();
+        this.dispose();
+        admindashboard.setVisible(true);
+    }//GEN-LAST:event_return_btn913ActionPerformed
+
+    private void userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ADMIN_ReservationManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ADMIN_ReservationManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ADMIN_ReservationManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ADMIN_ReservationManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ADMIN_ReservationManagement().setVisible(true);
+        try {
+            /* Set the Nimbus look and feel */
+            //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+            /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+            * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+            */
+            try {
+                for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                    if ("Nimbus".equals(info.getName())) {
+                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                        break;
+                    }
+                }
+            } catch (ClassNotFoundException ex) {
+                java.util.logging.Logger.getLogger(ADMIN_ReservationManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            } catch (InstantiationException ex) {
+                java.util.logging.Logger.getLogger(ADMIN_ReservationManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            } catch (IllegalAccessException ex) {
+                java.util.logging.Logger.getLogger(ADMIN_ReservationManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+                java.util.logging.Logger.getLogger(ADMIN_ReservationManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             }
-        });
+            //</editor-fold>
+            UIManager.setLookAndFeel("com.formdev.flatlaf.FlatLightLaf");
+            
+            /* Create and display the form */
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    new ADMIN_ReservationManagement().setVisible(true);
+                }
+            });
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ADMIN_ReservationManagement.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(ADMIN_ReservationManagement.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(ADMIN_ReservationManagement.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(ADMIN_ReservationManagement.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -476,6 +519,7 @@ if (e >= 0) {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -485,15 +529,28 @@ if (e >= 0) {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JButton logout_btn91;
+    private javax.swing.JButton logout_btn;
+    private javax.swing.JButton logout_btn1;
+    private javax.swing.JButton logout_btn2;
     private javax.swing.JButton return_btn911;
+    private javax.swing.JButton return_btn912;
+    private javax.swing.JButton return_btn913;
     private javax.swing.JTextField room;
     private javax.swing.JTextField roomt;
     private javax.swing.JTextField stat;

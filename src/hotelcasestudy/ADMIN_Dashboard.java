@@ -38,10 +38,6 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
         reservation_history = new javax.swing.JMenuItem();
         revenue_report = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        logout_btn = new javax.swing.JButton();
-        return_btn911 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         room_type_management = new javax.swing.JButton();
         maint_sched = new javax.swing.JButton();
@@ -50,6 +46,11 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
         user_management = new javax.swing.JButton();
         employee_management = new javax.swing.JButton();
         report_btn = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        logout_btn = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         dailystats.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         dailystats.setForeground(new java.awt.Color(104, 72, 50));
@@ -70,62 +71,6 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(237, 234, 233));
-
-        jPanel4.setBackground(new java.awt.Color(140, 100, 75));
-        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel4.setPreferredSize(new java.awt.Dimension(1344, 70));
-
-        jLabel6.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(226, 165, 79));
-
-        logout_btn.setBackground(new java.awt.Color(140, 100, 75));
-        logout_btn.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        logout_btn.setForeground(new java.awt.Color(255, 255, 255));
-        logout_btn.setText("Log Out");
-        logout_btn.setBorder(null);
-        logout_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logout_btnActionPerformed(evt);
-            }
-        });
-
-        return_btn911.setBackground(new java.awt.Color(140, 100, 75));
-        return_btn911.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        return_btn911.setForeground(new java.awt.Color(255, 255, 255));
-        return_btn911.setText("Return to Dashboard");
-        return_btn911.setBorder(null);
-        return_btn911.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                return_btn911ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(683, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(return_btn911)
-                .addGap(49, 49, 49)
-                .addComponent(logout_btn)
-                .addGap(18, 18, 18))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(logout_btn)
-                            .addComponent(return_btn911))))
-                .addContainerGap(35, Short.MAX_VALUE))
-        );
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(105, 73, 50));
@@ -201,6 +146,65 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
             }
         });
 
+        jPanel4.setBackground(new java.awt.Color(140, 100, 75));
+        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel4.setPreferredSize(new java.awt.Dimension(1344, 70));
+
+        jLabel6.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(226, 165, 79));
+
+        logout_btn.setBackground(new java.awt.Color(140, 100, 75));
+        logout_btn.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        logout_btn.setForeground(new java.awt.Color(255, 255, 255));
+        logout_btn.setText("Log Out");
+        logout_btn.setBorder(null);
+        logout_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logout_btnActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_topleft.png"))); // NOI18N
+        jLabel3.setText("jLabel2");
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_whitesmall.png"))); // NOI18N
+        jLabel4.setText("jLabel1");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(570, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(logout_btn)
+                        .addGap(17, 17, 17))))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGap(0, 4, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(logout_btn)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -208,8 +212,8 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(450, 450, 450)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(report_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(employee_management, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -219,13 +223,13 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
                     .addComponent(maint_sched, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(room_type_management, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(445, 445, 445))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(138, 138, 138)
+                .addGap(124, 124, 124)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(maint_sched)
@@ -241,7 +245,7 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
                 .addComponent(employee_management)
                 .addGap(18, 18, 18)
                 .addComponent(report_btn)
-                .addGap(0, 161, Short.MAX_VALUE))
+                .addGap(0, 175, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -258,13 +262,6 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1360, 765));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void logout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btnActionPerformed
-        // TODO add your handling code here:
-        USER_login_menu userloginmenu = new USER_login_menu();
-        this.setVisible(false);
-        userloginmenu.setVisible(true);
-    }//GEN-LAST:event_logout_btnActionPerformed
 
     private void report_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_report_btnActionPerformed
         // TODO add your handling code here:
@@ -300,22 +297,23 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
 
     private void user_managementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_user_managementActionPerformed
         // TODO add your handling code here:
-         ADMIN_usermanagement userloginmenu = new ADMIN_usermanagement();
+        ADMIN_usermanagement userloginmenu = new ADMIN_usermanagement();
         this.setVisible(false);
         userloginmenu.setVisible(true);
     }//GEN-LAST:event_user_managementActionPerformed
 
     private void employee_managementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employee_managementActionPerformed
-  USER_login_menu userloginmenu = new USER_login_menu();
+        USER_login_menu userloginmenu = new USER_login_menu();
         this.setVisible(false);
         userloginmenu.setVisible(true);
     }//GEN-LAST:event_employee_managementActionPerformed
 
-    private void return_btn911ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_return_btn911ActionPerformed
-        ADMIN_Dashboard admindashboard = new ADMIN_Dashboard();
-        this.dispose();
-        admindashboard.setVisible(true);
-    }//GEN-LAST:event_return_btn911ActionPerformed
+    private void logout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btnActionPerformed
+        // TODO add your handling code here:
+        USER_login_menu userloginmenu = new USER_login_menu();
+        this.setVisible(false);
+        userloginmenu.setVisible(true);
+    }//GEN-LAST:event_logout_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -371,6 +369,8 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
     private javax.swing.JMenuItem dailystats;
     private javax.swing.JButton employee_management;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
@@ -380,7 +380,6 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
     private javax.swing.JPopupMenu report_popup;
     private javax.swing.JMenuItem reservation_history;
     private javax.swing.JButton resv_management;
-    private javax.swing.JButton return_btn911;
     private javax.swing.JMenuItem revenue_report;
     private javax.swing.JButton room_management;
     private javax.swing.JButton room_type_management;
