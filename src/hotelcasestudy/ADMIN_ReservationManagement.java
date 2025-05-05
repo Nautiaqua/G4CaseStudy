@@ -77,6 +77,8 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        remove_warning = new javax.swing.JPopupMenu();
+        remove_text = new javax.swing.JMenuItem();
         jPanel6 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         logout_btn2 = new javax.swing.JButton();
@@ -111,6 +113,17 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
         child = new javax.swing.JSpinner();
         jLabel21 = new javax.swing.JLabel();
         adult = new javax.swing.JSpinner();
+
+        remove_text.setBackground(new java.awt.Color(237, 234, 233));
+        remove_text.setFont(new java.awt.Font("Liberation Sans", 1, 12)); // NOI18N
+        remove_text.setForeground(new java.awt.Color(255, 51, 51));
+        remove_text.setText("CONFIRM REMOVE");
+        remove_text.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                remove_textActionPerformed(evt);
+            }
+        });
+        remove_warning.add(remove_text);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -191,14 +204,14 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
 
         getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(237, 234, 233));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setModel(tbModel1);
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 30, 800, 590));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, 810, 590));
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(105, 73, 50));
@@ -413,37 +426,7 @@ if (e >= 0) {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
-        int e = jTable1.getSelectedRow();
-DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-
-if (e >= 0) {
-    String idToDelete = String.valueOf(model.getValueAt(e, 0)).trim();  // Assuming ID is at column 0
-    System.out.println("Deleting ID: '" + idToDelete + "'");
-    try {
-        String sql = "DELETE FROM RESERVATIONS WHERE RESERVATION_ID = ?";
-        System.out.println("Executing SQL: " + sql + " with ID: " + idToDelete);
-        PreparedStatement pst = con.prepareStatement(sql);
-        pst.setInt(1, Integer.parseInt(idToDelete));  // Convert to int if ID is numeric
-        int rowsAffected = pst.executeUpdate();
-        System.out.println("Rows affected: " + rowsAffected);
-        if (rowsAffected > 0) {
-            model.removeRow(e);
-            JOptionPane.showMessageDialog(null, "Deleted successfully.");
-        } else {
-            JOptionPane.showMessageDialog(null, "No matching ID found in database.");
-        }
-        con.commit();
-    } catch (SQLException a) {
-        JOptionPane.showMessageDialog(null, "Database delete failed: " + a.getMessage());
-        a.printStackTrace();
-    } catch (NumberFormatException nfe) {
-        JOptionPane.showMessageDialog(null, "Invalid ID format: " + nfe.getMessage());
-    }
-} else {
-    JOptionPane.showMessageDialog(null, "Please select a row to delete.");
-}
-
+        remove_warning.show(jButton3, 0, jButton3.getHeight());
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void logout_btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btn2ActionPerformed
@@ -462,6 +445,39 @@ if (e >= 0) {
     private void userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_userActionPerformed
+
+    private void remove_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remove_textActionPerformed
+        // TODO add your handling code here:
+        int e = jTable1.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+        if (e >= 0) {
+            String idToDelete = String.valueOf(model.getValueAt(e, 0)).trim();  // Assuming ID is at column 0
+            System.out.println("Deleting ID: '" + idToDelete + "'");
+            try {
+                String sql = "DELETE FROM RESERVATIONS WHERE RESERVATION_ID = ?";
+                System.out.println("Executing SQL: " + sql + " with ID: " + idToDelete);
+                PreparedStatement pst = con.prepareStatement(sql);
+                pst.setInt(1, Integer.parseInt(idToDelete));  // Convert to int if ID is numeric
+                int rowsAffected = pst.executeUpdate();
+                System.out.println("Rows affected: " + rowsAffected);
+                if (rowsAffected > 0) {
+                    model.removeRow(e);
+                    JOptionPane.showMessageDialog(null, "Deleted successfully.");
+                } else {
+                    JOptionPane.showMessageDialog(null, "No matching ID found in database.");
+                }
+                con.commit();
+            } catch (SQLException a) {
+                JOptionPane.showMessageDialog(null, "Database delete failed: " + a.getMessage());
+                a.printStackTrace();
+            } catch (NumberFormatException nfe) {
+                JOptionPane.showMessageDialog(null, "Invalid ID format: " + nfe.getMessage());
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Please select a row to delete.");
+        }
+    }//GEN-LAST:event_remove_textActionPerformed
 
     /**
      * @param args the command line arguments
@@ -529,27 +545,17 @@ if (e >= 0) {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JButton logout_btn;
-    private javax.swing.JButton logout_btn1;
     private javax.swing.JButton logout_btn2;
-    private javax.swing.JButton return_btn911;
-    private javax.swing.JButton return_btn912;
+    private javax.swing.JMenuItem remove_text;
+    private javax.swing.JPopupMenu remove_warning;
     private javax.swing.JButton return_btn913;
     private javax.swing.JTextField room;
     private javax.swing.JTextField roomt;

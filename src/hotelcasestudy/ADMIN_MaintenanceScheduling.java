@@ -163,7 +163,7 @@ public class ADMIN_MaintenanceScheduling extends javax.swing.JFrame {
                 addroomActionPerformed(evt);
             }
         });
-        jPanel1.add(addroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 150, 40));
+        jPanel1.add(addroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 150, 50));
 
         jButton3.setBackground(new java.awt.Color(134, 97, 72));
         jButton3.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -174,7 +174,7 @@ public class ADMIN_MaintenanceScheduling extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 150, 40));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 150, 50));
 
         jButton4.setBackground(new java.awt.Color(134, 97, 72));
         jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -185,7 +185,7 @@ public class ADMIN_MaintenanceScheduling extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 430, 160, 40));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 430, 160, 50));
 
         jPanel4.setBackground(new java.awt.Color(140, 100, 75));
         jPanel4.setForeground(new java.awt.Color(255, 255, 255));

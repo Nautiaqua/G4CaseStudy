@@ -5,6 +5,10 @@
 package hotelcasestudy;
 
 import java.awt.Toolkit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -29,257 +33,209 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        return_btn0 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        remove_warning = new javax.swing.JPopupMenu();
+        remove_text = new javax.swing.JMenuItem();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        logout_btn2 = new javax.swing.JButton();
+        return_btn913 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        background = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ROOMTYPETABLE = new javax.swing.JTable();
-        ROOMTF = new javax.swing.JTextField();
-        DATETF = new javax.swing.JTextField();
+        DESCTF = new javax.swing.JTextField();
         ROOMTYPETF1 = new javax.swing.JTextField();
-        STATUSTF = new javax.swing.JTextField();
         BEDNOTF1 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        ADDBUTTON = new javax.swing.JButton();
-        DELBUTTON = new javax.swing.JButton();
+        created_in = new javax.swing.JLabel();
+        type_label1 = new javax.swing.JLabel();
+        desc_label = new javax.swing.JLabel();
+        bednum_label = new javax.swing.JLabel();
+        DATETF = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        addtype = new javax.swing.JButton();
+        deletetype = new javax.swing.JButton();
+
+        remove_text.setBackground(new java.awt.Color(237, 234, 233));
+        remove_text.setFont(new java.awt.Font("Liberation Sans", 1, 12)); // NOI18N
+        remove_text.setForeground(new java.awt.Color(255, 51, 51));
+        remove_text.setText("CONFIRM REMOVE");
+        remove_text.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                remove_textActionPerformed(evt);
+            }
+        });
+        remove_warning.add(remove_text);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(140, 100, 75));
-        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel2.setPreferredSize(new java.awt.Dimension(1344, 70));
+        jPanel6.setBackground(new java.awt.Color(140, 100, 75));
+        jPanel6.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel6.setPreferredSize(new java.awt.Dimension(1344, 70));
 
-        jLabel6.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(226, 165, 79));
+        jLabel10.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(226, 165, 79));
 
-        jButton1.setBackground(new java.awt.Color(103, 64, 37));
-        jButton1.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Log Out");
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        logout_btn2.setBackground(new java.awt.Color(140, 100, 75));
+        logout_btn2.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        logout_btn2.setForeground(new java.awt.Color(255, 255, 255));
+        logout_btn2.setText("Log Out");
+        logout_btn2.setBorder(null);
+        logout_btn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                logout_btn2ActionPerformed(evt);
             }
         });
 
-        return_btn0.setBackground(new java.awt.Color(140, 100, 75));
-        return_btn0.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        return_btn0.setForeground(new java.awt.Color(255, 255, 255));
-        return_btn0.setText("Return to Dashboard");
-        return_btn0.setBorder(null);
-        return_btn0.addActionListener(new java.awt.event.ActionListener() {
+        return_btn913.setBackground(new java.awt.Color(140, 100, 75));
+        return_btn913.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        return_btn913.setForeground(new java.awt.Color(255, 255, 255));
+        return_btn913.setText("Return to Dashboard");
+        return_btn913.setBorder(null);
+        return_btn913.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                return_btn0ActionPerformed(evt);
+                return_btn913ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(813, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(return_btn0)
-                .addGap(72, 72, 72)
-                .addComponent(jButton1)
-                .addGap(180, 180, 180))
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_topleft.png"))); // NOI18N
+        jLabel11.setText("jLabel2");
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_whitesmall.png"))); // NOI18N
+        jLabel12.setText("jLabel1");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(570, Short.MAX_VALUE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(return_btn913)
+                        .addGap(18, 18, 18)
+                        .addComponent(logout_btn2)
+                        .addGap(17, 17, 17))))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(return_btn0))))
-                .addContainerGap(30, Short.MAX_VALUE))
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addGap(0, 4, Short.MAX_VALUE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(logout_btn2)
+                            .addComponent(return_btn913)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
         );
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Book Antiqua", 1, 36)); // NOI18N
-        jLabel1.setText("ROOM TYPE MANAGEMENT");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(467, 467, 467)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(457, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
-        );
+        background.setBackground(new java.awt.Color(237, 234, 233));
+        background.setForeground(new java.awt.Color(255, 255, 255));
+        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ROOMTYPETABLE.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "ROOM NO.", "ROOM TYPE", "STATUS", "BED NO.", "DATE ADDED"
+                "ROOM TYPE", "BED NO.", "CREATED_IN", "DESCRIPTION"
             }
         ));
         ROOMTYPETABLE.setSelectionBackground(new java.awt.Color(0, 0, 0));
         ROOMTYPETABLE.setShowGrid(true);
         jScrollPane1.setViewportView(ROOMTYPETABLE);
 
+        background.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, 800, 620));
+        background.add(DESCTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 440, 180));
+
         ROOMTYPETF1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ROOMTYPETF1ActionPerformed(evt);
             }
         });
-
-        STATUSTF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                STATUSTFActionPerformed(evt);
-            }
-        });
+        background.add(ROOMTYPETF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 300, 20));
 
         BEDNOTF1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BEDNOTF1ActionPerformed(evt);
             }
         });
+        background.add(BEDNOTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 300, 20));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setText("STATUS");
+        created_in.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        created_in.setForeground(new java.awt.Color(105, 73, 50));
+        created_in.setText("Created In:");
+        background.add(created_in, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, 20));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel4.setText("ROOM NO.");
+        type_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        type_label1.setForeground(new java.awt.Color(105, 73, 50));
+        type_label1.setText("Room Type:");
+        background.add(type_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, 20));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel5.setText("ROOM TYPE");
+        desc_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        desc_label.setForeground(new java.awt.Color(105, 73, 50));
+        desc_label.setText("Description:");
+        background.add(desc_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, 20));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel8.setText("BED NO.");
+        bednum_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        bednum_label.setForeground(new java.awt.Color(105, 73, 50));
+        bednum_label.setText("Bed No.:");
+        background.add(bednum_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, 20));
+        background.add(DATETF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 300, 20));
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel9.setText("DATE ADDED");
+        jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel1.setText("Room Type Management");
+        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 440, -1));
 
-        ADDBUTTON.setBackground(new java.awt.Color(20, 20, 20));
-        ADDBUTTON.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        ADDBUTTON.setForeground(new java.awt.Color(255, 231, 194));
-        ADDBUTTON.setText("+ ADD");
-        ADDBUTTON.addActionListener(new java.awt.event.ActionListener() {
+        addtype.setBackground(new java.awt.Color(134, 97, 72));
+        addtype.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        addtype.setForeground(new java.awt.Color(255, 255, 255));
+        addtype.setText("ADD TYPE");
+        addtype.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ADDBUTTONActionPerformed(evt);
+                addtypeActionPerformed(evt);
             }
         });
+        background.add(addtype, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, 150, 50));
 
-        DELBUTTON.setBackground(new java.awt.Color(20, 20, 20));
-        DELBUTTON.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        DELBUTTON.setForeground(new java.awt.Color(255, 231, 194));
-        DELBUTTON.setText("- DELETE");
-        DELBUTTON.addActionListener(new java.awt.event.ActionListener() {
+        deletetype.setBackground(new java.awt.Color(134, 97, 72));
+        deletetype.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        deletetype.setForeground(new java.awt.Color(255, 255, 255));
+        deletetype.setText("DELETE TYPE");
+        deletetype.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DELBUTTONActionPerformed(evt);
+                deletetypeActionPerformed(evt);
             }
         });
+        background.add(deletetype, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 520, 170, 50));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel4)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(ADDBUTTON, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(149, 149, 149)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(DELBUTTON, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(DATETF)
-                    .addComponent(BEDNOTF1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(STATUSTF, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ROOMTYPETF1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                            .addComponent(ROOMTF, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(66, 66, 66)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(100, 100, 100))
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1474, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ROOMTF, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ROOMTYPETF1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(STATUSTF, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addGap(35, 35, 35)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(BEDNOTF1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8))
-                        .addGap(46, 46, 46)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(DATETF, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel9))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(DELBUTTON, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ADDBUTTON, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(47, Short.MAX_VALUE))
-        );
+        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1350, 700));
 
-        pack();
+        setSize(new java.awt.Dimension(1360, 765));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        USER_login_menu userloginmenu = new USER_login_menu();
-        this.setVisible(false);
-        userloginmenu.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void ROOMTYPETF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ROOMTYPETF1ActionPerformed
         // TODO add your handling code here:
@@ -289,80 +245,100 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BEDNOTF1ActionPerformed
 
-    private void DELBUTTONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DELBUTTONActionPerformed
+    private void logout_btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btn2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_DELBUTTONActionPerformed
+        USER_login_menu userloginmenu = new USER_login_menu();
+        this.setVisible(false);
+        userloginmenu.setVisible(true);
+    }//GEN-LAST:event_logout_btn2ActionPerformed
 
-    private void STATUSTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_STATUSTFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_STATUSTFActionPerformed
-
-    private void ADDBUTTONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDBUTTONActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ADDBUTTONActionPerformed
-
-    private void return_btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_return_btn0ActionPerformed
-        // TODO add your handling code here:
+    private void return_btn913ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_return_btn913ActionPerformed
         ADMIN_Dashboard admindashboard = new ADMIN_Dashboard();
         this.dispose();
         admindashboard.setVisible(true);
-    }//GEN-LAST:event_return_btn0ActionPerformed
+    }//GEN-LAST:event_return_btn913ActionPerformed
+
+    private void addtypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addtypeActionPerformed
+        // This has no code - nautia
+    }//GEN-LAST:event_addtypeActionPerformed
+
+    private void deletetypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletetypeActionPerformed
+        remove_warning.show(deletetype, 0, deletetype.getHeight());
+    }//GEN-LAST:event_deletetypeActionPerformed
+
+    private void remove_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remove_textActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_remove_textActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ADMIN_RoomTypeManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ADMIN_RoomTypeManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ADMIN_RoomTypeManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ADMIN_RoomTypeManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ADMIN_RoomTypeManagement().setVisible(true);
+        try {
+            /* Set the Nimbus look and feel */
+            //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+            /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+            * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+            */
+            try {
+                for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                    if ("Nimbus".equals(info.getName())) {
+                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                        break;
+                    }
+                }
+            } catch (ClassNotFoundException ex) {
+                java.util.logging.Logger.getLogger(ADMIN_RoomTypeManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            } catch (InstantiationException ex) {
+                java.util.logging.Logger.getLogger(ADMIN_RoomTypeManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            } catch (IllegalAccessException ex) {
+                java.util.logging.Logger.getLogger(ADMIN_RoomTypeManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+                java.util.logging.Logger.getLogger(ADMIN_RoomTypeManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             }
-        });
+            //</editor-fold>
+            UIManager.setLookAndFeel("com.formdev.flatlaf.FlatLightLaf");
+            
+            /* Create and display the form */
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    new ADMIN_RoomTypeManagement().setVisible(true);
+                }
+            });
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ADMIN_RoomTypeManagement.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(ADMIN_RoomTypeManagement.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(ADMIN_RoomTypeManagement.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(ADMIN_RoomTypeManagement.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ADDBUTTON;
     private javax.swing.JTextField BEDNOTF1;
     private javax.swing.JTextField DATETF;
-    private javax.swing.JButton DELBUTTON;
-    private javax.swing.JTextField ROOMTF;
+    private javax.swing.JTextField DESCTF;
     private javax.swing.JTable ROOMTYPETABLE;
     private javax.swing.JTextField ROOMTYPETF1;
-    private javax.swing.JTextField STATUSTF;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton addtype;
+    private javax.swing.JPanel background;
+    private javax.swing.JLabel bednum_label;
+    private javax.swing.JLabel created_in;
+    private javax.swing.JButton deletetype;
+    private javax.swing.JLabel desc_label;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton return_btn0;
+    private javax.swing.JButton logout_btn2;
+    private javax.swing.JMenuItem remove_text;
+    private javax.swing.JPopupMenu remove_warning;
+    private javax.swing.JButton return_btn913;
+    private javax.swing.JLabel type_label1;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,14 +1,20 @@
-Mon May 05 14:20:14 GMT+08:00 2025 : Apache Derby Network Server - 10.17.1.0 - (1913217) started and ready to accept connections on port 1527
+Mon May 05 18:23:54 PST 2025 : Apache Derby Network Server - 10.17.1.0 - (1913217) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Mon May 05 14:20:15 GMT+08:00 2025:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-0196-9f1a-2bb1-ffffe97dc7c4 
-on database directory A:\java activitieds\master\hotelcasestudy with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@11a4022a 
-Loaded from file:/C:/Users/nejac/Downloads/javaderby/db-derby-10.17.1.0-bin/lib/derby.jar
+Mon May 05 18:23:54 PST 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-0196-9ff9-407b-fffff167ffe3 
+on database directory C:\Users\WINDOWS\Documents\NetBeansProjects\CaseStudy\G4CaseStudy\hotelcasestudy with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@11a4022a 
+Loaded from file:/C:/Users/WINDOWS/Documents/NetBeansProjects/CaseStudy/G4CaseStudy/db-derby-10.17.1.0-bin/lib/derby.jar
 java.vendor=Oracle Corporation
-java.runtime.version=24.0.1+9-30
-user.dir=C:\Users\nejac\Downloads\javaderby\db-derby-10.17.1.0-bin
+java.runtime.version=24+36-3646
+user.dir=C:\Users\WINDOWS\Documents\NetBeansProjects\CaseStudy\G4CaseStudy\db-derby-10.17.1.0-bin
 os.name=Windows 11
 os.arch=amd64
 os.version=10.0
-derby.system.home=A:\java activitieds\master
+derby.system.home=C:\Users\WINDOWS\Documents\NetBeansProjects\CaseStudy\G4CaseStudy
 Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Mon May 05 18:56:30 PST 2025: Shutting down Derby engine
+----------------------------------------------------------------
+Mon May 05 18:56:30 PST 2025:
+Shutting down instance a816c00e-0196-9ff9-407b-fffff167ffe3 on database directory C:\Users\WINDOWS\Documents\NetBeansProjects\CaseStudy\G4CaseStudy\hotelcasestudy with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@11a4022a 
+----------------------------------------------------------------
