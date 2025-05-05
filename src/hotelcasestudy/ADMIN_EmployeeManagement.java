@@ -47,14 +47,14 @@ public class ADMIN_EmployeeManagement extends javax.swing.JFrame {
 
             },
             new String [] {
-                "EMPLOYEE NAME", "EMPLOYEE ID", "EMAIL", "OCCUPATION"
+                "ADMIN ID", "PASSWORD", "EMAIL", "CREATED ON"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(134, 97, 72));
-        jLabel4.setText("Employee ID");
+        jLabel4.setText("Password");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(134, 97, 72));
@@ -62,11 +62,11 @@ public class ADMIN_EmployeeManagement extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(134, 97, 72));
-        jLabel7.setText("Employee Name");
+        jLabel7.setText("Admin ID");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(134, 97, 72));
-        jLabel8.setText("Occupation");
+        jLabel8.setText("Created On");
 
         BT0.setBackground(new java.awt.Color(134, 97, 72));
         BT0.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -130,7 +130,7 @@ public class ADMIN_EmployeeManagement extends javax.swing.JFrame {
                         .addComponent(BT0, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(71, 71, 71)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 724, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
