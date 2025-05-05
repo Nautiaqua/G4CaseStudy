@@ -46,12 +46,13 @@ public class ADMIN_room_management extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
+        remove_warning = new javax.swing.JPopupMenu();
+        remove_text = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         addroom = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
@@ -69,6 +70,7 @@ public class ADMIN_room_management extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jLabel14 = new javax.swing.JLabel();
+        deletetype = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -80,6 +82,17 @@ public class ADMIN_room_management extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 690, Short.MAX_VALUE)
         );
+
+        remove_text.setBackground(new java.awt.Color(237, 234, 233));
+        remove_text.setFont(new java.awt.Font("Liberation Sans", 1, 12)); // NOI18N
+        remove_text.setForeground(new java.awt.Color(255, 51, 51));
+        remove_text.setText("CONFIRM REMOVE");
+        remove_text.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                remove_textActionPerformed(evt);
+            }
+        });
+        remove_warning.add(remove_text);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -117,7 +130,7 @@ public class ADMIN_room_management extends javax.swing.JFrame {
                 addroomActionPerformed(evt);
             }
         });
-        jPanel1.add(addroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 150, 40));
+        jPanel1.add(addroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 150, 50));
 
         jButton3.setBackground(new java.awt.Color(134, 97, 72));
         jButton3.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -128,18 +141,7 @@ public class ADMIN_room_management extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 460, 150, 40));
-
-        jButton4.setBackground(new java.awt.Color(134, 97, 72));
-        jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("DELETE");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, 150, 40));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 460, 150, 50));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -285,6 +287,17 @@ public class ADMIN_room_management extends javax.swing.JFrame {
         jLabel14.setText("Room Number:");
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
 
+        deletetype.setBackground(new java.awt.Color(134, 97, 72));
+        deletetype.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        deletetype.setForeground(new java.awt.Color(255, 255, 255));
+        deletetype.setText("DELETE");
+        deletetype.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deletetypeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(deletetype, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, 150, 50));
+
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         setSize(new java.awt.Dimension(1358, 764));
@@ -367,20 +380,6 @@ JOptionPane.showMessageDialog(null,"Error");
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-   DefaultTableModel tblmodel=(DefaultTableModel) jTable1.getModel();
-
-if(jTable1.getSelectedRowCount()==1){
-tblmodel.removeRow(jTable1.getSelectedRow());
-}else{
-if(jTable1.getRowCount()==1){
-JOptionPane.showMessageDialog(this,"Table is Empty.");
-}else{
-JOptionPane.showMessageDialog(this,"Please select Single Row For Delete.");
-}
-}
-    }//GEN-LAST:event_jButton4ActionPerformed
-
     private void logout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btnActionPerformed
         // TODO add your handling code here:
         USER_login_menu userloginmenu = new USER_login_menu();
@@ -407,6 +406,15 @@ JOptionPane.showMessageDialog(this,"Please select Single Row For Delete.");
         obj.setRowFilter(RowFilter.regexFilter(jTextField5.getText().trim()));
     }//GEN-LAST:event_jTextField5KeyReleased
 
+    private void deletetypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletetypeActionPerformed
+        remove_warning.show(deletetype, 0, deletetype.getHeight());
+    }//GEN-LAST:event_deletetypeActionPerformed
+
+    private void remove_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remove_textActionPerformed
+        // TODO add your handling code here:
+        // THIS NEEDS DELETION CODE.
+    }//GEN-LAST:event_remove_textActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -417,7 +425,6 @@ JOptionPane.showMessageDialog(this,"Please select Single Row For Delete.");
         
     
         try {
-            DBConnection bConnection = new DBConnection(); // Allows this JFrame to connect to database.
             /* Set the Nimbus look and feel */
             //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
             /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -465,8 +472,8 @@ JOptionPane.showMessageDialog(this,"Please select Single Row For Delete.");
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addroom;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton deletetype;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -486,6 +493,8 @@ JOptionPane.showMessageDialog(this,"Please select Single Row For Delete.");
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JButton logout_btn;
+    private javax.swing.JMenuItem remove_text;
+    private javax.swing.JPopupMenu remove_warning;
     private javax.swing.JButton return_btn;
     private javax.swing.JRadioButton yes;
     // End of variables declaration//GEN-END:variables
