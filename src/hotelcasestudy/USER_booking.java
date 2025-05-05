@@ -45,7 +45,6 @@ public class USER_booking extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         logout = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
@@ -94,17 +93,6 @@ public class USER_booking extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(236, 234, 232));
-        jButton3.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(103, 64, 37));
-        jButton3.setText("Venues");
-        jButton3.setBorder(null);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
         jButton4.setBackground(new java.awt.Color(236, 234, 232));
         jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         jButton4.setForeground(new java.awt.Color(103, 64, 37));
@@ -142,14 +130,12 @@ public class USER_booking extends javax.swing.JFrame {
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 656, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 716, Short.MAX_VALUE)
                 .addComponent(jButton6)
                 .addGap(18, 18, 18)
                 .addComponent(jButton4)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addGap(18, 18, 18)
-                .addComponent(jButton3)
                 .addGap(18, 18, 18)
                 .addComponent(logout)
                 .addGap(17, 17, 17))
@@ -166,7 +152,6 @@ public class USER_booking extends javax.swing.JFrame {
                         .addGap(20, 20, 20)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(logout)
-                            .addComponent(jButton3)
                             .addComponent(jButton2)
                             .addComponent(jButton4)
                             .addComponent(jButton6))))
@@ -258,7 +243,7 @@ public class USER_booking extends javax.swing.JFrame {
         invalid.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(invalid, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 110, -1));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 600, -1, -1));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 580, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/BG_booking.png"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -311,10 +296,6 @@ boolean b=false;
         this.dispose();
         description.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -381,7 +362,6 @@ boolean b=false;
     private com.toedter.calendar.JDateChooser datechoose;
     private javax.swing.JLabel invalid;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;

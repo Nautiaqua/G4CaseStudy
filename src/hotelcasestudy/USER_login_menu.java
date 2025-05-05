@@ -39,7 +39,9 @@ public class USER_login_menu extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         signup_btn = new javax.swing.JButton();
         login_btn = new javax.swing.JButton();
-        testlabel = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        casa_icon = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         member_item.setBackground(new java.awt.Color(237, 234, 233));
         member_item.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
@@ -80,7 +82,7 @@ public class USER_login_menu extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(237, 234, 233));
-        jPanel1.setLayout(null);
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         signup_btn.setBackground(new java.awt.Color(134, 97, 72));
         signup_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -91,8 +93,7 @@ public class USER_login_menu extends javax.swing.JFrame {
                 signup_btnActionPerformed(evt);
             }
         });
-        jPanel1.add(signup_btn);
-        signup_btn.setBounds(190, 480, 160, 49);
+        jPanel1.add(signup_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 500, 160, 49));
 
         login_btn.setBackground(new java.awt.Color(134, 97, 72));
         login_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -103,17 +104,21 @@ public class USER_login_menu extends javax.swing.JFrame {
                 login_btnActionPerformed(evt);
             }
         });
-        jPanel1.add(login_btn);
-        login_btn.setBounds(190, 420, 160, 49);
+        jPanel1.add(login_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 440, 160, 49));
 
-        testlabel.setBackground(new java.awt.Color(255, 51, 51));
-        testlabel.setFont(new java.awt.Font("Segoe UI Emoji", 0, 12)); // NOI18N
-        testlabel.setForeground(new java.awt.Color(255, 51, 51));
-        testlabel.setText("jLabel2");
-        jPanel1.add(testlabel);
-        testlabel.setBounds(200, 600, 37, 16);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownbig.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 390, 80));
+
+        casa_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_medium.png"))); // NOI18N
+        casa_icon.setText("jLabel1");
+        jPanel1.add(casa_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 240, 180));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 520, 760));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/BG_booking.png"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, -10, -1, -1));
 
         setSize(new java.awt.Dimension(1360, 765));
         setLocationRelativeTo(null);
@@ -222,11 +227,13 @@ public class USER_login_menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem admin_item;
     private javax.swing.JMenuItem admin_item1;
+    private javax.swing.JLabel casa_icon;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton login_btn;
     private javax.swing.JPopupMenu login_popup;
     private javax.swing.JMenuItem member_item;
     private javax.swing.JButton signup_btn;
-    private javax.swing.JLabel testlabel;
     // End of variables declaration//GEN-END:variables
 }

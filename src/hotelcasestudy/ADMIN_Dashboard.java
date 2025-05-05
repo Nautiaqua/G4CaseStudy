@@ -34,7 +34,6 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         report_popup = new javax.swing.JPopupMenu();
-        dailystats = new javax.swing.JMenuItem();
         reservation_history = new javax.swing.JMenuItem();
         revenue_report = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
@@ -51,11 +50,6 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
         logout_btn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-
-        dailystats.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        dailystats.setForeground(new java.awt.Color(104, 72, 50));
-        dailystats.setText("Daily Statistics");
-        report_popup.add(dailystats);
 
         reservation_history.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         reservation_history.setForeground(new java.awt.Color(104, 72, 50));
@@ -366,7 +360,6 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem dailystats;
     private javax.swing.JButton employee_management;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
