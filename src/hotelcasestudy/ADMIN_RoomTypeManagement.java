@@ -166,7 +166,7 @@ public class ADMIN_RoomTypeManagement extends javax.swing.JFrame {
         ROOMTYPETABLE.setShowGrid(true);
         jScrollPane1.setViewportView(ROOMTYPETABLE);
 
-        background.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, 800, 620));
+        background.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, 800, 590));
         background.add(DESCTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 440, 180));
 
         ROOMTYPETF1.addActionListener(new java.awt.event.ActionListener() {
