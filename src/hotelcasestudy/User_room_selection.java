@@ -654,7 +654,6 @@ else{
     ci=check_in.getText();
     co=check_out.getText();
         User_Checkout loginmenu = new User_Checkout();
-        this.dispose();
         loginmenu.setVisible(true);
 }
     }//GEN-LAST:event_jButton1ActionPerformed
