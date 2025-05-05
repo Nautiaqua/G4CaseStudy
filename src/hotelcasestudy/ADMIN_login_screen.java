@@ -45,6 +45,7 @@ public class ADMIN_login_screen extends connect {
         password_txt = new javax.swing.JTextField();
         casa_icon = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Casa de Los Tropicos"); // NOI18N
@@ -84,7 +85,7 @@ public class ADMIN_login_screen extends connect {
 
         email_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         email_txt.setForeground(new java.awt.Color(105, 73, 50));
-        jPanel1.add(email_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 320, 26));
+        jPanel1.add(email_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 320, 20));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
@@ -102,11 +103,11 @@ public class ADMIN_login_screen extends connect {
         email_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         email_label1.setForeground(new java.awt.Color(255, 255, 255));
         email_label1.setText("Admin ID");
-        jPanel1.add(email_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, 80, -1));
+        jPanel1.add(email_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, 80, 20));
 
         password_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         password_txt.setForeground(new java.awt.Color(105, 73, 50));
-        jPanel1.add(password_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, 320, 26));
+        jPanel1.add(password_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, 320, 20));
 
         casa_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_medium.png"))); // NOI18N
         casa_icon.setText("jLabel1");
@@ -117,6 +118,10 @@ public class ADMIN_login_screen extends connect {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 390, 80));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 520, 760));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/BG_NewAdminLogin.png"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, -190, -1, -1));
 
         setSize(new java.awt.Dimension(1360, 765));
         setLocationRelativeTo(null);
@@ -358,6 +363,7 @@ public class ADMIN_login_screen extends connect {
     private javax.swing.JLabel invalid;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton login_finish_btn;
     private javax.swing.JLabel password_label;

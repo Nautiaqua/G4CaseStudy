@@ -41,6 +41,9 @@ public class USER_login_screen extends connect {
         password_label1 = new javax.swing.JLabel();
         logout_btn = new javax.swing.JButton();
         password_txt = new javax.swing.JPasswordField();
+        casa_icon = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Casa de Los Tropicos"); // NOI18N
@@ -118,7 +121,19 @@ public class USER_login_screen extends connect {
         jPanel1.add(logout_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 470, -1, -1));
         jPanel1.add(password_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, 320, 20));
 
+        casa_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_medium.png"))); // NOI18N
+        casa_icon.setText("jLabel1");
+        jPanel1.add(casa_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 240, 180));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownbig.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 390, 80));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 520, 760));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/BG_booking.png"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, -10, -1, -1));
 
         setSize(new java.awt.Dimension(1360, 765));
         setLocationRelativeTo(null);
@@ -245,10 +260,13 @@ try {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel casa_icon;
     private javax.swing.JLabel email_label1;
     private javax.swing.JTextField email_txt;
     private javax.swing.JLabel invalid;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton login_finish_btn;
     private javax.swing.JButton logout_btn;

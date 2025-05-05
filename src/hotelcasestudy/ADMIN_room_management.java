@@ -60,10 +60,6 @@ public class ADMIN_room_management extends javax.swing.JFrame {
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        logout_btn = new javax.swing.JButton();
-        return_btn = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -71,6 +67,12 @@ public class ADMIN_room_management extends javax.swing.JFrame {
         jCheckBox1 = new javax.swing.JCheckBox();
         jLabel14 = new javax.swing.JLabel();
         deletetype = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        logout_btn2 = new javax.swing.JButton();
+        return_btn913 = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -194,64 +196,6 @@ public class ADMIN_room_management extends javax.swing.JFrame {
         jLabel9.setText("Reserve:");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, -1, -1));
 
-        jPanel3.setBackground(new java.awt.Color(140, 100, 75));
-        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel3.setPreferredSize(new java.awt.Dimension(1344, 70));
-
-        jLabel6.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(226, 165, 79));
-
-        logout_btn.setBackground(new java.awt.Color(140, 100, 75));
-        logout_btn.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        logout_btn.setForeground(new java.awt.Color(255, 255, 255));
-        logout_btn.setText("Log Out");
-        logout_btn.setBorder(null);
-        logout_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logout_btnActionPerformed(evt);
-            }
-        });
-
-        return_btn.setBackground(new java.awt.Color(140, 100, 75));
-        return_btn.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        return_btn.setForeground(new java.awt.Color(255, 255, 255));
-        return_btn.setText("Return to Dashboard");
-        return_btn.setBorder(null);
-        return_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                return_btnActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(683, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(17, 1150, Short.MAX_VALUE)
-                .addComponent(return_btn)
-                .addGap(18, 18, 18)
-                .addComponent(logout_btn)
-                .addGap(18, 18, 18))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(logout_btn)
-                            .addComponent(return_btn))))
-                .addContainerGap(35, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
         jLabel10.setBackground(new java.awt.Color(105, 73, 50));
         jLabel10.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(105, 73, 50));
@@ -297,6 +241,81 @@ public class ADMIN_room_management extends javax.swing.JFrame {
             }
         });
         jPanel1.add(deletetype, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, 150, 50));
+
+        jPanel6.setBackground(new java.awt.Color(140, 100, 75));
+        jPanel6.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel6.setPreferredSize(new java.awt.Dimension(1344, 70));
+
+        jLabel15.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(226, 165, 79));
+
+        logout_btn2.setBackground(new java.awt.Color(140, 100, 75));
+        logout_btn2.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        logout_btn2.setForeground(new java.awt.Color(255, 255, 255));
+        logout_btn2.setText("Log Out");
+        logout_btn2.setBorder(null);
+        logout_btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logout_btn2ActionPerformed(evt);
+            }
+        });
+
+        return_btn913.setBackground(new java.awt.Color(140, 100, 75));
+        return_btn913.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        return_btn913.setForeground(new java.awt.Color(255, 255, 255));
+        return_btn913.setText("Return to Dashboard");
+        return_btn913.setBorder(null);
+        return_btn913.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                return_btn913ActionPerformed(evt);
+            }
+        });
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_topleft.png"))); // NOI18N
+        jLabel16.setText("jLabel2");
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_whitesmall.png"))); // NOI18N
+        jLabel17.setText("jLabel1");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(570, Short.MAX_VALUE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(return_btn913)
+                        .addGap(18, 18, 18)
+                        .addComponent(logout_btn2)
+                        .addGap(17, 17, 17))))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addGap(0, 4, Short.MAX_VALUE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel16)
+                            .addComponent(logout_btn2)
+                            .addComponent(return_btn913)
+                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
+        );
+
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -380,20 +399,6 @@ JOptionPane.showMessageDialog(null,"Error");
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
-    private void logout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btnActionPerformed
-        // TODO add your handling code here:
-        USER_login_menu userloginmenu = new USER_login_menu();
-        this.setVisible(false);
-        userloginmenu.setVisible(true);
-    }//GEN-LAST:event_logout_btnActionPerformed
-
-    private void return_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_return_btnActionPerformed
-        // TODO add your handling code here:
-        ADMIN_Dashboard admindashboard = new ADMIN_Dashboard();
-        this.dispose();
-        admindashboard.setVisible(true);
-    }//GEN-LAST:event_return_btnActionPerformed
-
     private void jTextField5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField5KeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5KeyPressed
@@ -414,6 +419,19 @@ JOptionPane.showMessageDialog(null,"Error");
         // TODO add your handling code here:
         // THIS NEEDS DELETION CODE.
     }//GEN-LAST:event_remove_textActionPerformed
+
+    private void logout_btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btn2ActionPerformed
+        // TODO add your handling code here:
+        USER_login_menu userloginmenu = new USER_login_menu();
+        this.setVisible(false);
+        userloginmenu.setVisible(true);
+    }//GEN-LAST:event_logout_btn2ActionPerformed
+
+    private void return_btn913ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_return_btn913ActionPerformed
+        ADMIN_Dashboard admindashboard = new ADMIN_Dashboard();
+        this.dispose();
+        admindashboard.setVisible(true);
+    }//GEN-LAST:event_return_btn913ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -480,11 +498,13 @@ JOptionPane.showMessageDialog(null,"Error");
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
@@ -492,10 +512,10 @@ JOptionPane.showMessageDialog(null,"Error");
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JButton logout_btn;
+    private javax.swing.JButton logout_btn2;
     private javax.swing.JMenuItem remove_text;
     private javax.swing.JPopupMenu remove_warning;
-    private javax.swing.JButton return_btn;
+    private javax.swing.JButton return_btn913;
     private javax.swing.JRadioButton yes;
     // End of variables declaration//GEN-END:variables
 }
