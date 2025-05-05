@@ -42,7 +42,14 @@ public class USER_booking extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenu1 = new javax.swing.JMenu();
-        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        logout = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -53,12 +60,7 @@ public class USER_booking extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         datechoose = new com.toedter.calendar.JDateChooser();
         invalid = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        logout = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         jMenu1.setText("jMenu1");
 
@@ -66,9 +68,109 @@ public class USER_booking extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(194, 204, 196));
-        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.setBackground(new java.awt.Color(236, 234, 232));
+        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel2.setPreferredSize(new java.awt.Dimension(1344, 70));
+
+        logout.setBackground(new java.awt.Color(236, 234, 232));
+        logout.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        logout.setForeground(new java.awt.Color(103, 64, 37));
+        logout.setText("Log Out");
+        logout.setBorder(null);
+        logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutActionPerformed(evt);
+            }
+        });
+
+        jButton2.setBackground(new java.awt.Color(236, 234, 232));
+        jButton2.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(103, 64, 37));
+        jButton2.setText("Rooms");
+        jButton2.setBorder(null);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setBackground(new java.awt.Color(236, 234, 232));
+        jButton3.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(103, 64, 37));
+        jButton3.setText("Venues");
+        jButton3.setBorder(null);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setBackground(new java.awt.Color(236, 234, 232));
+        jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(103, 64, 37));
+        jButton4.setText("About Us");
+        jButton4.setBorder(null);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton6.setBackground(new java.awt.Color(236, 234, 232));
+        jButton6.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(103, 64, 37));
+        jButton6.setText("Current Bookings");
+        jButton6.setBorder(null);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownsmall.png"))); // NOI18N
+        jLabel3.setText("jLabel1");
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_topleft.png"))); // NOI18N
+        jLabel4.setText("jLabel2");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 655, Short.MAX_VALUE)
+                .addComponent(jButton6)
+                .addGap(18, 18, 18)
+                .addComponent(jButton4)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addGap(18, 18, 18)
+                .addComponent(jButton3)
+                .addGap(18, 18, 18)
+                .addComponent(logout)
+                .addGap(18, 18, 18))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(4, 4, 4)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton6)
+                    .addComponent(jButton4)
+                    .addComponent(logout)
+                    .addComponent(jButton3)
+                    .addComponent(jButton2)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel4)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 70));
 
         jPanel3.setBackground(new java.awt.Color(105, 73, 50));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -153,126 +255,15 @@ public class USER_booking extends javax.swing.JFrame {
         invalid.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(invalid, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 110, -1));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 485, -1, -1));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 600, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1344, -1));
-
-        jPanel2.setBackground(new java.awt.Color(236, 234, 232));
-        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel2.setPreferredSize(new java.awt.Dimension(1344, 70));
-
-        logout.setBackground(new java.awt.Color(236, 234, 232));
-        logout.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        logout.setForeground(new java.awt.Color(103, 64, 37));
-        logout.setText("Log Out");
-        logout.setBorder(null);
-        logout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logoutActionPerformed(evt);
-            }
-        });
-
-        jButton2.setBackground(new java.awt.Color(236, 234, 232));
-        jButton2.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(103, 64, 37));
-        jButton2.setText("Rooms");
-        jButton2.setBorder(null);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setBackground(new java.awt.Color(236, 234, 232));
-        jButton3.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(103, 64, 37));
-        jButton3.setText("Venues");
-        jButton3.setBorder(null);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        jButton4.setBackground(new java.awt.Color(236, 234, 232));
-        jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(103, 64, 37));
-        jButton4.setText("About Us");
-        jButton4.setBorder(null);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-
-        jButton6.setBackground(new java.awt.Color(236, 234, 232));
-        jButton6.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(103, 64, 37));
-        jButton6.setText("Current Bookings");
-        jButton6.setBorder(null);
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(982, Short.MAX_VALUE)
-                .addComponent(jButton6)
-                .addGap(18, 18, 18)
-                .addComponent(jButton4)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addGap(18, 18, 18)
-                .addComponent(logout)
-                .addGap(18, 18, 18))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(logout)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jButton6))
-                .addContainerGap(35, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 70));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/BG_booking.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, -20, -1, -1));
 
         setSize(new java.awt.Dimension(1360, 765));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
-        // TODO add your handling code here:
-        USER_login_menu loginmenu = new USER_login_menu();
-        this.dispose();
-        loginmenu.setVisible(true);
-    }//GEN-LAST:event_logoutActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        USER_description description = new USER_description();
-        this.dispose();
-        description.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
 boolean a=false;
@@ -310,6 +301,28 @@ boolean b=false;
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        USER_description description = new USER_description();
+        this.dispose();
+        description.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
+        // TODO add your handling code here:
+        USER_login_menu loginmenu = new USER_login_menu();
+        this.dispose();
+        loginmenu.setVisible(true);
+    }//GEN-LAST:event_logoutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -372,8 +385,10 @@ boolean b=false;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

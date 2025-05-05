@@ -303,9 +303,9 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_user_managementActionPerformed
 
     private void employee_managementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employee_managementActionPerformed
-        USER_login_menu userloginmenu = new USER_login_menu();
+        ADMIN_EmployeeManagement employeemanagement = new ADMIN_EmployeeManagement();
         this.setVisible(false);
-        userloginmenu.setVisible(true);
+        employeemanagement.setVisible(true);
     }//GEN-LAST:event_employee_managementActionPerformed
 
     private void logout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btnActionPerformed

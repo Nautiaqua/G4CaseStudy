@@ -58,6 +58,7 @@ public class ADMIN_sign_up extends connect {
         jPanel1.setBackground(new java.awt.Color(140, 100, 75));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        return_btn.setBackground(new java.awt.Color(237, 234, 233));
         return_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         return_btn.setForeground(new java.awt.Color(134, 97, 72));
         return_btn.setText("RETURN");
@@ -68,6 +69,7 @@ public class ADMIN_sign_up extends connect {
         });
         jPanel1.add(return_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 530, 160, 49));
 
+        login_finish_btn.setBackground(new java.awt.Color(237, 234, 233));
         login_finish_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         login_finish_btn.setForeground(new java.awt.Color(134, 97, 72));
         login_finish_btn.setText("LOG IN");
@@ -94,9 +96,9 @@ public class ADMIN_sign_up extends connect {
         jPanel1.add(adminid, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 320, 26));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Liberation Sans", 3, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("sign up");
+        jLabel3.setText("Employee Sign Up");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, -1, -1));
 
         password_label.setBackground(new java.awt.Color(105, 73, 50));
@@ -118,7 +120,7 @@ public class ADMIN_sign_up extends connect {
         password_label1.setBackground(new java.awt.Color(105, 73, 50));
         password_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         password_label1.setForeground(new java.awt.Color(255, 255, 255));
-        password_label1.setText("email");
+        password_label1.setText("Email");
         jPanel1.add(password_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 90, -1));
 
         email_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
