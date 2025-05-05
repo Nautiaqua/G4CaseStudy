@@ -1,5 +1,11 @@
 package hotelcasestudy;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.HashSet;
+
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -9,15 +15,18 @@ package hotelcasestudy;
  *
  * @author Lenovo
  */
-public class User_Checkout extends javax.swing.JFrame {
+public class User_Checkout extends connect  {
+      
+   public User_Checkout() {
+    
+    initComponents();
+    DoConnect();
+    
 
-    /**
-     * Creates new form User_Checkout
-     */
-    public User_Checkout() {
-        initComponents();
-    }
+ 
+}
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -55,8 +64,6 @@ public class User_Checkout extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
@@ -217,9 +224,7 @@ public class User_Checkout extends javax.swing.JFrame {
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText(" Card Number");
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
         jTextField1.setText("card number ------------------------------");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -231,9 +236,7 @@ public class User_Checkout extends javax.swing.JFrame {
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Billing Address");
 
-        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
         jTextField2.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
         jTextField2.setText("Security code");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -245,9 +248,7 @@ public class User_Checkout extends javax.swing.JFrame {
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("Pin");
 
-        jTextField3.setBackground(new java.awt.Color(255, 255, 255));
         jTextField3.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
         jTextField3.setText("Pin----");
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -259,9 +260,7 @@ public class User_Checkout extends javax.swing.JFrame {
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Security Code");
 
-        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
         jTextField4.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
         jTextField4.setText("Security code");
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -269,11 +268,14 @@ public class User_Checkout extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 17)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Check Out");
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -363,12 +365,6 @@ public class User_Checkout extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(226, 165, 79));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/Cas De Los NO BG 2.png"))); // NOI18N
-        jLabel12.setText("jLabel7");
-
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotelcasestudy/Images/LOGO NO BG - 2.png"))); // NOI18N
-        jLabel13.setText("jLabel2");
-
         jButton4.setBackground(new java.awt.Color(236, 234, 232));
         jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         jButton4.setForeground(new java.awt.Color(103, 64, 37));
@@ -432,13 +428,9 @@ public class User_Checkout extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(683, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(17, 903, Short.MAX_VALUE)
                 .addComponent(jButton4)
                 .addGap(39, 39, 39)
                 .addComponent(jButton10)
@@ -455,17 +447,15 @@ public class User_Checkout extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
+                        .addGap(19, 19, 19)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton7)
                             .addComponent(jButton8)
                             .addComponent(jButton9)
                             .addComponent(jButton4)
                             .addComponent(jButton10)))
                     .addComponent(jLabel11))
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -530,6 +520,65 @@ public class User_Checkout extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+int resID = 1; // Start from 1 or whatever default you prefer
+boolean emailExists = false;
+
+newEmail =  USER_login_screen.acc;
+newcheckout = User_room_selection.co;;
+newcheckin = User_room_selection.ci;
+newchild = USER_booking.chi;
+newadult = USER_booking.adu;
+newdate = new java.sql.Date(USER_booking.dat.getTime());
+
+try {
+    con.setAutoCommit(false);
+    stmt = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+    rs = stmt.executeQuery("SELECT RESERVATION_ID FROM RESERVATIONS");
+
+    // Find the next available RESERVATION_ID
+    HashSet<Integer> existingIds = new HashSet<>();
+    while (rs.next()) {
+        existingIds.add(rs.getInt("RESERVATION_ID"));
+    }
+    rs.close();
+
+    // Increment resID until it's not in existing IDs
+    while (existingIds.contains(resID)) {
+        resID++;
+    }
+
+    // Insert new reservation
+    rs = stmt.executeQuery("SELECT * FROM RESERVATIONS");
+    rs.moveToInsertRow();
+    rs.updateInt("RESERVATION_ID", resID);
+    rs.updateString("USER_EMAIL", newEmail);
+    rs.updateString("CHECKIN", newcheckin);
+    rs.updateString("CHECKOUT", newcheckout);
+    rs.updateString("STATUS", "payed");
+    rs.updateInt("CHILDREN", newchild);
+    rs.updateInt("ADULTS", newadult);
+    rs.updateDate("DATE_RES", newdate);
+    rs.updateTimestamp("CREATED_ON", new Timestamp(System.currentTimeMillis()));
+    rs.insertRow();
+
+    con.commit();
+    Refresh_RS_STMT();
+
+    System.out.println("Reservation inserted with ID: " + resID);
+    USER_signup_complete userlogin = new USER_signup_complete();
+    this.setVisible(false);
+    userlogin.setVisible(true);
+
+} catch (SQLException e) {
+    System.out.println("SQL Error: " + e);
+    if (con != null) try { con.rollback(); } catch (SQLException rollbackEx) {
+        System.out.println("Rollback failed: " + rollbackEx);
+    }
+}
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -559,7 +608,8 @@ public class User_Checkout extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new User_Checkout().setVisible(true);
+            User_Checkout checkoutScreen = new User_Checkout();
+            checkoutScreen.setVisible(true);    
         });
     }
 
@@ -574,8 +624,6 @@ public class User_Checkout extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;

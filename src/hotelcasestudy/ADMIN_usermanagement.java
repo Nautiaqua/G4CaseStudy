@@ -12,7 +12,12 @@ import java.sql.*;
  * @author Asus
  */
 public class ADMIN_usermanagement extends connect {
-    DefaultTableModel tbModel=new DefaultTableModel();
+    DefaultTableModel tbModel = new DefaultTableModel() {
+    @Override
+    public boolean isCellEditable(int row, int column) {
+        return false; 
+    }
+};
     int x=0;
    
     public ADMIN_usermanagement() {

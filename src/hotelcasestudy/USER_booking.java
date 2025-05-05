@@ -5,20 +5,28 @@
 package hotelcasestudy;
 
 import java.awt.Toolkit;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import com.toedter.calendar.JDateChooser;
+
+
 
 /**
  *
  * @author nejac
  */
 public class USER_booking extends javax.swing.JFrame {
+    public static int adu;
+    public static int chi;
+    public static Date dat;
 
-    /**
-     * Creates new form booking
-     */
+
     public USER_booking() {
         initComponents();
         
@@ -39,9 +47,7 @@ public class USER_booking extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         adult_spinner = new javax.swing.JSpinner();
-        room_spinner = new javax.swing.JSpinner();
         child_spinner = new javax.swing.JSpinner();
-        jLabel5 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
@@ -76,19 +82,7 @@ public class USER_booking extends javax.swing.JFrame {
 
         adult_spinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
-        room_spinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, 10, 1));
-        room_spinner.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                room_spinnerStateChanged(evt);
-            }
-        });
-
         child_spinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
-
-        jLabel5.setBackground(new java.awt.Color(105, 73, 50));
-        jLabel5.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel5.setText("Rooms");
 
         jLabel10.setBackground(new java.awt.Color(105, 73, 50));
         jLabel10.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
@@ -119,19 +113,15 @@ public class USER_booking extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(datechoose, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(41, 41, 41)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(room_spinner, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(adult_spinner, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(adult_spinner, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addComponent(child_spinner, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(child_spinner, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
+                .addGap(59, 59, 59)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(27, Short.MAX_VALUE))
         );
@@ -140,19 +130,15 @@ public class USER_booking extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(child_spinner))
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(adult_spinner))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(room_spinner))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(adult_spinner)
+                            .addComponent(child_spinner)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -289,21 +275,37 @@ public class USER_booking extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-        int room = (int) room_spinner.getValue();
+boolean a=false;
+boolean b=false;
         int adult = (int) adult_spinner.getValue();
         int child = (int) child_spinner.getValue();
-        
-        if (datechoose.getDate() == null || room == 0 || adult == 0) {
+       
+
+        if (datechoose.getDate() == null || adult == 0) {
             invalid.setText("Invalid Selection!");
         } else {
             System.out.println("This works.");
+            adu=adult;
+            chi=child;
+            dat=datechoose.getDate();
+            b=true;
+            a=true;
         }
+        if(a&b){
+            User_room_selection description = new User_room_selection();
+            this.dispose();
+            description.setVisible(true);
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void room_spinnerStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_room_spinnerStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_room_spinnerStateChanged
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
@@ -370,13 +372,11 @@ public class USER_booking extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JButton logout;
-    private javax.swing.JSpinner room_spinner;
     // End of variables declaration//GEN-END:variables
 }

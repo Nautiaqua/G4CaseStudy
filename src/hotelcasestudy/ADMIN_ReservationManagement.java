@@ -4,22 +4,66 @@
  */
 package hotelcasestudy;
 
-import java.awt.Toolkit;
+
+import java.sql.SQLException;
+
+
+import javax.swing.JOptionPane;
+
+import javax.swing.table.DefaultTableModel;
+
+import java.sql.*;
 
 /**
  *
  * @author Nardz Ablaza
  */
-public class ADMIN_ReservationManagement extends javax.swing.JFrame {
-
-    /**
-     * Creates new form ADMIN_ReservationManagement
-     */
+public class ADMIN_ReservationManagement extends connect {
+DefaultTableModel tbModel1 = new DefaultTableModel() {
+    @Override
+    public boolean isCellEditable(int row, int column) {
+        return false; 
+    }
+};
+    int x=0;
+    
     public ADMIN_ReservationManagement() {
         initComponents();
+        DoConnect();
+        Select();
       
     }
+ public void Select() {
+    String[] columnsNames = {"RESERVATION_ID", "USER_EMAIL", "ROOM_ID", "TOTAL_PRICE", "STATUS", "CREATED_ON", "ADULTS", "CHILDREN", "DATE_RES", "CHECKOUT", "CHECKIN"};
+    tbModel1.setColumnIdentifiers(columnsNames);
+    try {
+        String query = "SELECT * FROM reservations";
+        stmt = con.createStatement();
+        rs = stmt.executeQuery(query);
 
+        while (rs.next()) {
+            i = rs.getString("RESERVATION_ID");
+            s = rs.getString("USER_EMAIL");
+            n = rs.getString("ROOM_ID");
+            u = rs.getString("TOTAL_PRICE");
+            q = rs.getString("STATUS");
+            a = rs.getString("CREATED_ON");
+            w = rs.getString("ADULTS");
+            e = rs.getString("CHILDREN");
+            r = rs.getString("DATE_RES");
+            d = rs.getString("CHECKOUT");
+            f = rs.getString("CHECKIN");
+
+            tbModel1.addRow(new Object[]{i, s, n, u, q, a, w, e, r, d, f});
+            x++;
+        }
+
+        // OPTIONAL: Set the model to your table if not already done
+        jTable1.setModel(tbModel1); // Replace jTable1 with your actual JTable variable
+    } catch (SQLException err) {
+        err.printStackTrace(); // Show the error so you can debug
+    }
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,37 +73,147 @@ public class ADMIN_ReservationManagement extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        user = new javax.swing.JTextField();
+        room = new javax.swing.JTextField();
+        roomt = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        ci = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        co = new javax.swing.JTextField();
+        total = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        date = new javax.swing.JTextField();
+        time = new javax.swing.JTextField();
+        stat = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        child = new javax.swing.JSpinner();
+        adult = new javax.swing.JSpinner();
+        jButton4 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         logout_btn91 = new javax.swing.JButton();
         return_btn911 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        DeleteButton = new javax.swing.JButton();
-        AddButton = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setFont(new java.awt.Font("Book Antiqua", 1, 36)); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1872, 1872, 1872))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 70, 1344, 80));
+        getContentPane().add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 190, 110, 30));
+
+        room.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                roomActionPerformed(evt);
+            }
+        });
+        getContentPane().add(room, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, 110, 30));
+        getContentPane().add(roomt, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, 110, 20));
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel11.setText("USER");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, -1, 30));
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel12.setText("ROOM NO.");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, -1, 30));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel13.setText("ROOM TYPE");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, -1, 30));
+        getContentPane().add(ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 200, 110, -1));
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel14.setText("CHECK-OUT");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 150, -1));
+        getContentPane().add(co, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 250, 110, -1));
+        getContentPane().add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 300, 110, -1));
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel15.setText("CHECK-IN");
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 190, 140, -1));
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel16.setText("PRICE");
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, -1, -1));
+        getContentPane().add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 200, 106, 37));
+        getContentPane().add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 250, 106, 37));
+        getContentPane().add(stat, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 300, 106, -1));
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel17.setText("CREATED-IN");
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 250, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel18.setText("STATUS");
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 290, -1, -1));
+
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel19.setText("DATE-RES");
+        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 200, -1, -1));
+
+        jTable1.setModel(tbModel1);
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 1250, -1));
+
+        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel20.setText("CHILDREN");
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 200, -1, -1));
+
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel21.setText("ADULTS");
+        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 250, -1, -1));
+
+        child.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        getContentPane().add(child, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 200, -1, -1));
+
+        adult.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        getContentPane().add(adult, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 260, -1, -1));
+
+        jButton4.setBackground(new java.awt.Color(0, 0, 0));
+        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("E D I T ");
+        jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, -1, -1));
 
         jPanel4.setBackground(new java.awt.Color(140, 100, 75));
         jPanel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -96,9 +250,9 @@ public class ADMIN_ReservationManagement extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(683, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(17, 1106, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(return_btn911)
                 .addGap(62, 62, 62)
                 .addComponent(logout_btn91)
@@ -114,112 +268,22 @@ public class ADMIN_ReservationManagement extends javax.swing.JFrame {
                             .addComponent(logout_btn91)
                             .addComponent(return_btn911)))
                     .addComponent(jLabel6))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
-
-        jLabel1.setFont(new java.awt.Font("Book Antiqua", 1, 36)); // NOI18N
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(325, 325, 325))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1344, 80));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "USER", "ROOM NO.", "ROOM TYPE", "CHECK IN", "CHECK OUT", "PRICE", "PAYMENT", "CREATED-IN", "STATUS"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 339, 1204, 372));
-
-        DeleteButton.setBackground(new java.awt.Color(20, 20, 20));
-        DeleteButton.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        DeleteButton.setForeground(new java.awt.Color(255, 231, 194));
-        DeleteButton.setText("- DELETE");
-        getContentPane().add(DeleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 265, 162, 62));
-
-        AddButton.setBackground(new java.awt.Color(20, 20, 20));
-        AddButton.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        AddButton.setForeground(new java.awt.Color(255, 231, 194));
-        AddButton.setText("+ ADD");
-        getContentPane().add(AddButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 185, 162, 62));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(464, 192, 184, 34));
-
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.setBackground(new java.awt.Color(0, 0, 0));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("D E L E T E  U S E R");
+        jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(464, 240, 184, 37));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(464, 295, 184, -1));
-
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel11.setText("USER");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 196, -1, -1));
-
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel12.setText("ROOM NO.");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 251, -1, -1));
-
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel13.setText("ROOM TYPE");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(306, 295, -1, -1));
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(856, 196, 148, -1));
-
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel14.setText("CHECK-OUT");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(694, 251, -1, -1));
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(856, 245, 148, -1));
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(856, 295, 148, -1));
-
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel15.setText("CHECK-IN");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(701, 194, -1, -1));
-
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel16.setText("PRICE");
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(724, 295, -1, -1));
-        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1171, 191, 106, 37));
-        getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1171, 240, 106, 37));
-        getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1171, 295, 106, -1));
-
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel17.setText("CREATED-IN");
-        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(1016, 251, -1, -1));
-
-        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel18.setText("STATUS");
-        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(1071, 295, -1, -1));
-
-        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel19.setText("PAYMENT");
-        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(1043, 202, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -231,15 +295,142 @@ public class ADMIN_ReservationManagement extends javax.swing.JFrame {
         userloginmenu.setVisible(true);
     }//GEN-LAST:event_logout_btn91ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void roomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roomActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_roomActionPerformed
 
     private void return_btn911ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_return_btn911ActionPerformed
         ADMIN_Dashboard admindashboard = new ADMIN_Dashboard();
         this.dispose();
         admindashboard.setVisible(true);
     }//GEN-LAST:event_return_btn911ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+int e = jTable1.getSelectedRow();
+if (e >= 0) {
+    String users = (String) jTable1.getValueAt(e, 1);  
+    String roomid = (String) jTable1.getValueAt(e, 2); 
+    String totalp = (String) jTable1.getValueAt(e, 3);  
+    String status = (String) jTable1.getValueAt(e, 4);   
+    String adult1 = (String) jTable1.getValueAt(e, 6);  
+    String child1 = (String) jTable1.getValueAt(e, 7);   
+    String dateres = (String) jTable1.getValueAt(e, 8);  
+    String checkout = (String) jTable1.getValueAt(e, 9); 
+    String checkin = (String) jTable1.getValueAt(e, 10); 
+    user.setText(users);
+    room.setText(roomid);
+    total.setText(totalp);
+    stat.setText(status);
+    try {
+    adult.setValue(Integer.parseInt(adult1.trim()));
+    child.setValue(Integer.parseInt(child1.trim()));
+} catch (NumberFormatException ex) {
+    JOptionPane.showMessageDialog(null, "Adults and Children must be numeric values.");
+    return;
+}
+
+    date.setText(dateres);
+    co.setText(checkout);
+    ci.setText(checkin);
+    int option = JOptionPane.showConfirmDialog(null, new Object[] {
+        "USER:", user,
+        "ROOMID:", room,
+        "TOTAL:", total,
+        "STATUS:", stat,
+        "ADULT:", adult,
+        "CHILD:", child,
+        "DATE:", date,
+        "CHECKOUT:", co,
+        "CHECKIN:", ci,
+    }, "Edit User", JOptionPane.OK_CANCEL_OPTION);
+    if (option == JOptionPane.OK_OPTION) {
+        String newuser = user.getText().trim().toLowerCase();
+        String newroom = room.getText().trim();
+        String newtotal = total.getText().trim();
+        String newstat = stat.getText().trim();
+        String newadult = String.valueOf(adult.getValue()).trim();
+        String newchild = String.valueOf(child.getValue()).trim();
+        String newdate = date.getText().trim();
+        String newco = co.getText().trim();
+        String newci = ci.getText().trim();
+        if (newuser.isEmpty() || newroom.isEmpty() || newtotal.isEmpty() || newstat.isEmpty() || newadult.isEmpty() || newchild.isEmpty()|| newdate.isEmpty()|| newco.isEmpty()|| newci.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "All fields must be filled out.");
+            return;
+        }
+        try {
+            String sql = "UPDATE RESERVATIONS SET ROOM_ID = ?, TOTAL_PRICE = ?, STATUS = ?, ADULTS = ?, CHILDREN = ?, DATE_RES = ?, CHECKOUT = ?, CHECKIN = ? WHERE LOWER(TRIM(USER_EMAIL)) = ?";
+            PreparedStatement pst = con.prepareStatement(sql);
+            pst.setString(1, newroom);
+            pst.setString(2, newtotal);
+            pst.setString(3, newstat);
+            pst.setInt(4, Integer.parseInt(newadult));
+            pst.setInt(5, Integer.parseInt(newchild));
+            pst.setString(6, newdate);
+            pst.setString(7, newco);
+            pst.setString(8, newci);
+            pst.setString(9, newuser);
+            int rowsAffected = pst.executeUpdate();
+            System.out.println("Rows affected: " + rowsAffected);
+            if (rowsAffected > 0) {
+                jTable1.setValueAt(newuser, e, 1);
+                jTable1.setValueAt(newroom, e, 2);
+                jTable1.setValueAt(newtotal, e, 3);
+                jTable1.setValueAt(newstat, e, 4);
+                jTable1.setValueAt(newadult, e, 6);
+                jTable1.setValueAt(newchild, e, 7);
+                jTable1.setValueAt(newdate, e, 8);
+                jTable1.setValueAt(newco, e, 9);
+                jTable1.setValueAt(newci, e, 10);
+                JOptionPane.showMessageDialog(null, "Updated successfully.");
+            } else {
+                JOptionPane.showMessageDialog(null, "No matching email found in the database.");
+            }
+            con.commit();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error updating database: " + ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
+} else {
+    JOptionPane.showMessageDialog(null, "Please select a row to edit.");
+}
+
+
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+
+        int e = jTable1.getSelectedRow();
+DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+if (e >= 0) {
+    String idToDelete = String.valueOf(model.getValueAt(e, 0)).trim();  // Assuming ID is at column 0
+    System.out.println("Deleting ID: '" + idToDelete + "'");
+    try {
+        String sql = "DELETE FROM RESERVATIONS WHERE RESERVATION_ID = ?";
+        System.out.println("Executing SQL: " + sql + " with ID: " + idToDelete);
+        PreparedStatement pst = con.prepareStatement(sql);
+        pst.setInt(1, Integer.parseInt(idToDelete));  // Convert to int if ID is numeric
+        int rowsAffected = pst.executeUpdate();
+        System.out.println("Rows affected: " + rowsAffected);
+        if (rowsAffected > 0) {
+            model.removeRow(e);
+            JOptionPane.showMessageDialog(null, "Deleted successfully.");
+        } else {
+            JOptionPane.showMessageDialog(null, "No matching ID found in database.");
+        }
+        con.commit();
+    } catch (SQLException a) {
+        JOptionPane.showMessageDialog(null, "Database delete failed: " + a.getMessage());
+        a.printStackTrace();
+    } catch (NumberFormatException nfe) {
+        JOptionPane.showMessageDialog(null, "Invalid ID format: " + nfe.getMessage());
+    }
+} else {
+    JOptionPane.showMessageDialog(null, "Please select a row to delete.");
+}
+
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,8 +468,13 @@ public class ADMIN_ReservationManagement extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AddButton;
-    private javax.swing.JButton DeleteButton;
+    private javax.swing.JSpinner adult;
+    private javax.swing.JSpinner child;
+    private javax.swing.JTextField ci;
+    private javax.swing.JTextField co;
+    private javax.swing.JTextField date;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -289,21 +485,22 @@ public class ADMIN_ReservationManagement extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JButton logout_btn91;
     private javax.swing.JButton return_btn911;
+    private javax.swing.JTextField room;
+    private javax.swing.JTextField roomt;
+    private javax.swing.JTextField stat;
+    private javax.swing.JTextField time;
+    private javax.swing.JTextField total;
+    private javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
+
+   
 }

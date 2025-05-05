@@ -14,7 +14,7 @@ import java.sql.*;
  */
 
 public class USER_login_screen extends connect {
-    
+    public static String acc;
     
     public USER_login_screen() {
         initComponents();
@@ -166,6 +166,7 @@ try {
                 USER_booking userbooking = new USER_booking();
                 this.setVisible(false);
                 userbooking.setVisible(true);
+                acc=newEmail;
                 break;
             }
         }

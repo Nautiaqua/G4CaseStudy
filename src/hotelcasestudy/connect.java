@@ -13,9 +13,15 @@ public class connect extends javax.swing.JFrame {
     Statement stmt;
     ResultSet rs;
     DefaultTableModel LoginModel=new DefaultTableModel();
-    String newID,newEmail,newPass,newFname,newLname,newSQ,newSA,s,i,n,u,q,a,temp_email;
-    String newEmail1,newPass1;
-    
+    String newID,newEmail,newPass,newFname,newLname,newSQ,newSA,s,i,n,u,q,a,w,e,r,d,f,temp_email,newcheckout,newcheckin;
+    int newchild,newadult;
+    Date newdate;
+    //User_room_selection.co=checkout;
+        //User_room_selection.ci=checkin;
+        //USER_booking.adu=adult;
+        //USER_booking.chi=child;
+       // USER_booking.dat=date;
+        //USER_login_screen.acc=email;
     public void DoConnect(){
         try{
             String Host ="jdbc:derby://localhost:1527/hotelcasestudy;create=true";
