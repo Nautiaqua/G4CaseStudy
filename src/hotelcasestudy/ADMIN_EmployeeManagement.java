@@ -67,22 +67,16 @@ DefaultTableModel MODEL = new DefaultTableModel() {
 
         remove_warning = new javax.swing.JPopupMenu();
         remove_text = new javax.swing.JMenuItem();
+        TF7 = new javax.swing.JTextField();
+        TF6 = new javax.swing.JTextField();
+        TF5 = new javax.swing.JTextField();
+        TF1 = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         logout_btn = new javax.swing.JButton();
         return_btn911 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         background = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        TF7 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        TF6 = new javax.swing.JTextField();
-        TF5 = new javax.swing.JTextField();
-        TF1 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
@@ -99,6 +93,18 @@ DefaultTableModel MODEL = new DefaultTableModel() {
             }
         });
         remove_warning.add(remove_text);
+
+        TF7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TF7ActionPerformed(evt);
+            }
+        });
+
+        TF6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TF6ActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -133,32 +139,20 @@ DefaultTableModel MODEL = new DefaultTableModel() {
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_topleft.png"))); // NOI18N
-        jLabel3.setText("jLabel2");
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_whitesmall.png"))); // NOI18N
-        jLabel2.setText("jLabel1");
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(570, Short.MAX_VALUE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(return_btn911)
-                        .addGap(18, 18, 18)
-                        .addComponent(logout_btn)
-                        .addGap(17, 17, 17))))
+                .addGap(113, 113, 113)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(570, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap(1158, Short.MAX_VALUE)
+                .addComponent(return_btn911)
+                .addGap(18, 18, 18)
+                .addComponent(logout_btn)
+                .addGap(17, 17, 17))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,12 +162,10 @@ DefaultTableModel MODEL = new DefaultTableModel() {
                         .addComponent(jLabel6)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addGap(0, 4, Short.MAX_VALUE)
+                        .addGap(0, 50, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
                             .addComponent(logout_btn)
-                            .addComponent(return_btn911)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(return_btn911))))
                 .addContainerGap())
         );
 
@@ -183,46 +175,10 @@ DefaultTableModel MODEL = new DefaultTableModel() {
         background.setForeground(new java.awt.Color(237, 234, 233));
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(134, 97, 72));
-        jLabel5.setText("Email:");
-        background.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, -1, 20));
-
-        TF7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TF7ActionPerformed(evt);
-            }
-        });
-        background.add(TF7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, 260, 20));
-
-        jLabel8.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(134, 97, 72));
-        jLabel8.setText("Created On:");
-        background.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, -1, 20));
-
-        TF6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TF6ActionPerformed(evt);
-            }
-        });
-        background.add(TF6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, 260, 20));
-        background.add(TF5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 260, 20));
-        background.add(TF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, 260, 20));
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(134, 97, 72));
-        jLabel7.setText("Admin ID:");
-        background.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, -1, 20));
-
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(134, 97, 72));
         jLabel1.setText("Employee Management");
         background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 418, 40));
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(134, 97, 72));
-        jLabel4.setText("Password:");
-        background.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, 20));
 
         jTable2.setModel(MODEL);
         jScrollPane2.setViewportView(jTable2);
@@ -239,7 +195,7 @@ DefaultTableModel MODEL = new DefaultTableModel() {
                 jButton4ActionPerformed(evt);
             }
         });
-        background.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, -1, -1));
+        background.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, -1, -1));
 
         jButton5.setBackground(new java.awt.Color(0, 0, 0));
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -251,7 +207,7 @@ DefaultTableModel MODEL = new DefaultTableModel() {
                 jButton5ActionPerformed(evt);
             }
         });
-        background.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, -1, -1));
+        background.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, -1, -1));
 
         jTextField4.setBackground(new java.awt.Color(217, 217, 217));
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
@@ -298,52 +254,118 @@ DefaultTableModel MODEL = new DefaultTableModel() {
     }//GEN-LAST:event_remove_textActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        int e = jTable2.getSelectedRow();
-        if (e >= 0) {
-            String fname1 = (String) jTable2.getValueAt(e, 0);
-            String lname1 = (String) jTable2.getValueAt(e, 1);
-            String email1 = (String) jTable2.getValueAt(e, 2);
-            TF5.setText(fname1);
-            TF1.setText(lname1);
-            TF7.setText(email1);
-            int option = JOptionPane.showConfirmDialog(null, new Object[] {
-                "ADMIN_ID:", TF5,
-                "PASSWORD:", TF1,
-                "EMAIL:", TF7,
-            }, "Edit User", JOptionPane.OK_CANCEL_OPTION);
-            if (option == JOptionPane.OK_OPTION) {
-                String newFname = TF5.getText().trim();
-                String newLname = TF1.getText().trim();
-                String newEmail = TF7.getText().trim().toLowerCase();
-                if (newFname.isEmpty() || newLname.isEmpty() || newEmail.isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "All fields must be filled out.");
-                    return;
-                }
-                try {
-                    String sql = "UPDATE ADMIN SET ADMIN_ID = ?, PASSWORD = ?, EMAIL = ?";
-                    PreparedStatement pst = con.prepareStatement(sql);
-                    pst.setString(1, newFname);
-                    pst.setString(2, newLname);
-                    pst.setString(3, newEmail.toLowerCase().trim());
-                    int rowsAffected = pst.executeUpdate();
-                    System.out.println("Rows affected: " + rowsAffected);
-                    if (rowsAffected > 0) {
-                        jTable2.setValueAt(newFname, e, 0);
-                        jTable2.setValueAt(newLname, e, 1);
-                        jTable2.setValueAt(newEmail, e, 2);
-                        JOptionPane.showMessageDialog(null, "Updated successfully.");
-                    } else {
-                        JOptionPane.showMessageDialog(null, "No matching email found in the database.");
-                    }
-                    con.commit();
-                } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(null, "Error updating database: " + ex.getMessage());
-                    ex.printStackTrace();
-                }
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Please select a row to edit.");
+       int e = jTable2.getSelectedRow();
+if (e >= 0) {
+    String fname1 = (String) jTable2.getValueAt(e, 0);
+    String lname1 = (String) jTable2.getValueAt(e, 1);
+    String email1 = (String) jTable2.getValueAt(e, 2);
+
+    TF5.setText(fname1); // ADMIN_ID
+    TF1.setText(lname1); // PASSWORD
+    TF7.setText(email1); // EMAIL
+
+    int option = JOptionPane.showConfirmDialog(null, new Object[] {
+        "ADMIN_ID:", TF5,
+        "PASSWORD:", TF1,
+        "EMAIL:", TF7,
+    }, "Edit User", JOptionPane.OK_CANCEL_OPTION);
+
+    if (option == JOptionPane.OK_OPTION) {
+        String newFname = TF5.getText().trim(); // ADMIN_ID
+        String newLname = TF1.getText().trim(); // PASSWORD
+        String newEmail = TF7.getText().trim().toLowerCase();
+
+        // Basic validation
+        if (newFname.isEmpty() || newLname.isEmpty() || newEmail.isEmpty() ||
+            (!newEmail.endsWith("@gmail.com") && !newEmail.endsWith("@yahoo.com") && !newEmail.endsWith("@ue.edu.ph"))) {
+            JOptionPane.showMessageDialog(null, "All fields must be filled out with a valid email.");
+            return;
         }
+
+        int newAdminId;
+        try {
+            newAdminId = Integer.parseInt(newFname);
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "ADMIN_ID must be a number.");
+            return;
+        }
+
+        boolean duplicateExists = false;
+
+        try {
+            con.setAutoCommit(false);
+            stmt = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            rs = stmt.executeQuery("SELECT * FROM ADMIN");
+
+            while (rs.next()) {
+                int existingId = rs.getInt("ADMIN_ID");
+                String existingEmail = rs.getString("EMAIL");
+
+                // Skip current row being edited
+                if (existingId == Integer.parseInt(fname1)) {
+                    continue;
+                }
+
+                if (newAdminId == existingId) {
+                    JOptionPane.showMessageDialog(null, "All fields must be filled out with a valid email.");
+                    duplicateExists = true;
+                }
+
+                if (newEmail.equals(existingEmail)) {
+                    JOptionPane.showMessageDialog(null, "All fields must be filled out with a valid email.");
+                    duplicateExists = true;
+                }
+
+                if (duplicateExists) break;
+            }
+
+            if (duplicateExists) {
+                con.rollback();
+                return;
+            }
+
+        } catch (SQLException a) {
+            System.out.println("SQL Error: " + a);
+            JOptionPane.showMessageDialog(null, "All fields must be filled out with a valid email.");
+            return;
+        }
+
+        try {
+            String updateSql = "UPDATE ADMIN SET ADMIN_ID = ?, PASSWORD = ?, EMAIL = ? WHERE ADMIN_ID = ?";
+            PreparedStatement pst = con.prepareStatement(updateSql);
+
+            pst.setInt(1, newAdminId);
+            pst.setString(2, newLname);
+            pst.setString(3, newEmail);
+            pst.setInt(4, Integer.parseInt(fname1)); // original ADMIN_ID
+
+            int rowsAffected = pst.executeUpdate();
+            System.out.println("Rows affected: " + rowsAffected);
+
+            if (rowsAffected > 0) {
+                jTable2.setValueAt(String.valueOf(newAdminId), e, 0);
+                jTable2.setValueAt(newLname, e, 1);
+                jTable2.setValueAt(newEmail, e, 2);
+                JOptionPane.showMessageDialog(null, "Updated successfully.");
+            } else {
+                JOptionPane.showMessageDialog(null, "No matching record found to update.");
+            }
+
+            con.commit();
+        } catch (SQLException ex) {
+            try {
+                con.rollback();
+            } catch (SQLException rollbackEx) {
+                rollbackEx.printStackTrace();
+            }
+            JOptionPane.showMessageDialog(null, "Error updating database: " + ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
+} else {
+    JOptionPane.showMessageDialog(null, "Please select a row to edit.");
+}
+
 
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -455,13 +477,7 @@ DefaultTableModel MODEL = new DefaultTableModel() {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable2;
