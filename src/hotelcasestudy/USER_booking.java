@@ -14,6 +14,8 @@ import javax.swing.UnsupportedLookAndFeelException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import com.toedter.calendar.JDateChooser;
+import static hotelcasestudy.User_room_selection.ci;
+import static hotelcasestudy.User_room_selection.co;
 
 
 
@@ -258,8 +260,16 @@ boolean a=false;
 boolean b=false;
         int adult = (int) adult_spinner.getValue();
         int child = (int) child_spinner.getValue();
-       
+       SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
+Date today = new Date();
+Date checkInDate = datechoose.getDate();
+
+if (checkInDate == null) {
+    invalid.setText("Please select both check-in and check-out dates.");
+} else if (checkInDate.before(today)) {
+    invalid.setText("You can only book for future dates.");
+} else {
         if (datechoose.getDate() == null || adult == 0) {
             invalid.setText("Invalid Selection!");
         } else {
@@ -276,7 +286,7 @@ boolean b=false;
             description.setVisible(true);
         }
         
-        
+}
         
         
         

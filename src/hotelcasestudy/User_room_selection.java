@@ -4,6 +4,8 @@
  */
 package hotelcasestudy;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 /**
  *
  * @author Lenovo
@@ -41,11 +43,11 @@ public class User_room_selection extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        check_in = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        check_out = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         invalid = new javax.swing.JLabel();
+        check_in = new com.toedter.calendar.JDateChooser();
+        check_out = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -174,18 +176,10 @@ public class User_room_selection extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(140, 100, 75));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        check_in.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                check_inActionPerformed(evt);
-            }
-        });
-        jPanel1.add(check_in, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 180, -1));
-
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Check-In Date");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
-        jPanel1.add(check_out, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 180, -1));
 
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -194,6 +188,8 @@ public class User_room_selection extends javax.swing.JFrame {
 
         invalid.setText("jLabel5");
         jPanel1.add(invalid, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, -1, -1));
+        jPanel1.add(check_in, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 180, -1));
+        jPanel1.add(check_out, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, 180, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 920, 690));
 
@@ -201,20 +197,28 @@ public class User_room_selection extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-if (check_in.getText().isEmpty()||check_in.getText().isEmpty()){
-   invalid.setText("STUPID"); 
-}
-else{
-    ci=check_in.getText();
-    co=check_out.getText();
-        User_Checkout loginmenu = new User_Checkout();
-        loginmenu.setVisible(true);
-}
-    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void check_inActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_check_inActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_check_inActionPerformed
+
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+Date today = new Date();
+Date checkInDate = check_in.getDate();
+Date checkOutDate = check_out.getDate();
+
+if (checkInDate == null || checkOutDate == null) {
+    invalid.setText("Please select both check-in and check-out dates.");
+} else if (checkInDate.before(today) || checkOutDate.before(today)) {
+    invalid.setText("You can only book for future dates.");
+} else if (!checkOutDate.after(checkInDate)) {
+    invalid.setText("Check-out must be after check-in.");
+} else {
+     ci = sdf.format(checkInDate);
+     co = sdf.format(checkOutDate);
+    User_Checkout loginmenu = new User_Checkout();
+    loginmenu.setVisible(true);
+}
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
@@ -277,8 +281,8 @@ else{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField check_in;
-    private javax.swing.JTextField check_out;
+    private com.toedter.calendar.JDateChooser check_in;
+    private com.toedter.calendar.JDateChooser check_out;
     private javax.swing.JLabel invalid;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton13;

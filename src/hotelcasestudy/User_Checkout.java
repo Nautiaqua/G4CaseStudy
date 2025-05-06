@@ -214,9 +214,10 @@ try {
     Refresh_RS_STMT();
 
     System.out.println("Reservation inserted with ID: " + resID);
-    USER_signup_complete userlogin = new USER_signup_complete();
+    User_Checkout userloginmenu = new User_Checkout();
     this.setVisible(false);
-    userlogin.setVisible(true);
+    userloginmenu.setVisible(false);
+    
 
 } catch (SQLException e) {
     System.out.println("SQL Error: " + e);

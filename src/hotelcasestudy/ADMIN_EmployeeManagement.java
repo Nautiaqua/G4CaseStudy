@@ -261,29 +261,23 @@ if (e >= 0) {
     String fname1 = (String) jTable2.getValueAt(e, 0);
     String lname1 = (String) jTable2.getValueAt(e, 1);
     String email1 = (String) jTable2.getValueAt(e, 2);
-
-    TF5.setText(fname1); // ADMIN_ID
-    TF1.setText(lname1); // PASSWORD
-    TF7.setText(email1); // EMAIL
-
+    TF5.setText(fname1); // ayusin nyo admin id to
+    TF1.setText(lname1); // eto password
+    TF7.setText(email1); // eto email tinatamad naako mag bago ng variables eh WAHAHAHAHAHAH
     int option = JOptionPane.showConfirmDialog(null, new Object[] {
         "ADMIN_ID:", TF5,
         "PASSWORD:", TF1,
         "EMAIL:", TF7,
     }, "Edit User", JOptionPane.OK_CANCEL_OPTION);
-
     if (option == JOptionPane.OK_OPTION) {
-        String newFname = TF5.getText().trim(); // ADMIN_ID
-        String newLname = TF1.getText().trim(); // PASSWORD
+        String newFname = TF5.getText().trim(); // same lang dito basahin nyo lang yung code
+        String newLname = TF1.getText().trim(); // >:/
         String newEmail = TF7.getText().trim().toLowerCase();
-
-        // Basic validation
         if (newFname.isEmpty() || newLname.isEmpty() || newEmail.isEmpty() ||
             (!newEmail.endsWith("@gmail.com") && !newEmail.endsWith("@yahoo.com") && !newEmail.endsWith("@ue.edu.ph"))) {
-            JOptionPane.showMessageDialog(null, "All fields must be filled out with a valid email.");
+            JOptionPane.showMessageDialog(null, "INVALID INPUT");
             return;
         }
-
         int newAdminId;
         try {
             newAdminId = Integer.parseInt(newFname);
@@ -291,9 +285,7 @@ if (e >= 0) {
             JOptionPane.showMessageDialog(null, "ADMIN_ID must be a number.");
             return;
         }
-
         boolean duplicateExists = false;
-
         try {
             con.setAutoCommit(false);
             stmt = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
@@ -302,25 +294,19 @@ if (e >= 0) {
             while (rs.next()) {
                 int existingId = rs.getInt("ADMIN_ID");
                 String existingEmail = rs.getString("EMAIL");
-
-                // Skip current row being edited
                 if (existingId == Integer.parseInt(fname1)) {
                     continue;
                 }
-
                 if (newAdminId == existingId) {
-                    JOptionPane.showMessageDialog(null, "All fields must be filled out with a valid email.");
+                    JOptionPane.showMessageDialog(null, "EXISTING ID CAN'T BE USED");
                     duplicateExists = true;
                 }
-
-                if (newEmail.equals(existingEmail)) {
-                    JOptionPane.showMessageDialog(null, "All fields must be filled out with a valid email.");
+            if (newEmail.equals(existingEmail)) {
+                    JOptionPane.showMessageDialog(null, "EXISTING EMAIL CAN'T BE USED");
                     duplicateExists = true;
                 }
-
                 if (duplicateExists) break;
             }
-
             if (duplicateExists) {
                 con.rollback();
                 return;
@@ -331,37 +317,32 @@ if (e >= 0) {
             JOptionPane.showMessageDialog(null, "All fields must be filled out with a valid email.");
             return;
         }
-
         try {
             String updateSql = "UPDATE ADMIN SET ADMIN_ID = ?, PASSWORD = ?, EMAIL = ? WHERE ADMIN_ID = ?";
             PreparedStatement pst = con.prepareStatement(updateSql);
-
             pst.setInt(1, newAdminId);
             pst.setString(2, newLname);
-            pst.setString(3, newEmail);
-            pst.setInt(4, Integer.parseInt(fname1)); // original ADMIN_ID
-
+    pst.setString(3, newEmail);
+            pst.setInt(4, Integer.parseInt(fname1));
             int rowsAffected = pst.executeUpdate();
             System.out.println("Rows affected: " + rowsAffected);
-
             if (rowsAffected > 0) {
-                jTable2.setValueAt(String.valueOf(newAdminId), e, 0);
-                jTable2.setValueAt(newLname, e, 1);
-                jTable2.setValueAt(newEmail, e, 2);
+jTable2.setValueAt(String.valueOf(newAdminId), e, 0);
+jTable2.setValueAt(newLname, e, 1);
+jTable2.setValueAt(newEmail, e, 2);
                 JOptionPane.showMessageDialog(null, "Updated successfully.");
             } else {
                 JOptionPane.showMessageDialog(null, "No matching record found to update.");
             }
-
             con.commit();
         } catch (SQLException ex) {
             try {
                 con.rollback();
-            } catch (SQLException rollbackEx) {
+  } catch (SQLException rollbackEx) {
                 rollbackEx.printStackTrace();
             }
             JOptionPane.showMessageDialog(null, "Error updating database: " + ex.getMessage());
-            ex.printStackTrace();
+         ex.printStackTrace();
         }
     }
 } else {
@@ -372,18 +353,16 @@ if (e >= 0) {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-
-        int e = jTable2.getSelectedRow();
+int e = jTable2.getSelectedRow();
         DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
-
         if (e >= 0) {
-            String idToDelete = String.valueOf(model.getValueAt(e, 0)).trim();  // Assuming ID is at column 0
+            String idToDelete = String.valueOf(model.getValueAt(e, 0)).trim();
             System.out.println("Deleting ID: '" + idToDelete + "'");
             try {
                 String sql = "DELETE FROM ADMIN WHERE ADMIN_ID = ?";
                 System.out.println("Executing SQL: " + sql + " with ID: " + idToDelete);
                 PreparedStatement pst = con.prepareStatement(sql);
-                pst.setInt(1, Integer.parseInt(idToDelete));  // Convert to int if ID is numeric
+                pst.setInt(1, Integer.parseInt(idToDelete));
                 int rowsAffected = pst.executeUpdate();
                 System.out.println("Rows affected: " + rowsAffected);
                 if (rowsAffected > 0) {
@@ -402,7 +381,6 @@ if (e >= 0) {
         } else {
             JOptionPane.showMessageDialog(null, "Please select a row to delete.");
         }
-
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed

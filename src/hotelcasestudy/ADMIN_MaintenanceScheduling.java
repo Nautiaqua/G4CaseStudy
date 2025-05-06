@@ -7,16 +7,16 @@ package hotelcasestudy;
 import hotelcasestudy.ADMIN_Dashboard;
 import hotelcasestudy.USER_login_menu;
 import hotelcasestudy.connect;
-import hotelcasestudy.connect;
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashSet;
+import javax.swing.JOptionPane;
 
 
 
@@ -57,9 +57,6 @@ int x=0;
                 a=rs.getString("MAIN_ID");
                 model.addRow(new Object []{a,i,s,n});
                 x++;
-        rom.setEditable(true);  
-        stat.setEditable(true);
-        main.setEditable(true);
             }
         }catch(SQLException err){
             
@@ -80,9 +77,9 @@ int x=0;
         jPanel3 = new javax.swing.JPanel();
         rom = new javax.swing.JTextField();
         stat = new javax.swing.JTextField();
-        main = new javax.swing.JTextField();
         remove_warning = new javax.swing.JPopupMenu();
         remove_text = new javax.swing.JMenuItem();
+        main = new com.toedter.calendar.JDateChooser();
         jPanel1 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -96,13 +93,13 @@ int x=0;
         jTextField4 = new javax.swing.JTextField();
         roomn = new javax.swing.JTextField();
         statu = new javax.swing.JTextField();
-        maint = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         logout_btn2 = new javax.swing.JButton();
         return_btn913 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        maint = new com.toedter.calendar.JDateChooser();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -118,12 +115,6 @@ int x=0;
         rom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 romActionPerformed(evt);
-            }
-        });
-
-        main.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainActionPerformed(evt);
             }
         });
 
@@ -179,7 +170,6 @@ int x=0;
         });
         jPanel1.add(addroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 150, 50));
 
-        jTable1.setBackground(new java.awt.Color(255, 255, 255));
         jTable1.setModel(model);
         jScrollPane1.setViewportView(jTable1);
 
@@ -207,7 +197,6 @@ int x=0;
         });
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 100, 50));
 
-        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField4ActionPerformed(evt);
@@ -221,13 +210,6 @@ int x=0;
         jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, 450, -1));
         jPanel1.add(roomn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 240, -1));
         jPanel1.add(statu, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, 240, -1));
-
-        maint.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                maintActionPerformed(evt);
-            }
-        });
-        jPanel1.add(maint, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, 240, -1));
 
         jPanel6.setBackground(new java.awt.Color(140, 100, 75));
         jPanel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -303,6 +285,7 @@ int x=0;
         );
 
         jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(maint, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, 240, -1));
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -310,77 +293,102 @@ int x=0;
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void mainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainActionPerformed
-
-    }//GEN-LAST:event_mainActionPerformed
-
     private void addroomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addroomActionPerformed
 
-int resID = 1;
-newEmail = roomn.getText();  // This is ROOM_NUMBER, should be integer
-newPass = statu.getText();  // STATUS
-newFname = maint.getText(); // MAINTENANCE_DATE
-boolean emailExists = false;
-try {
-    con.setAutoCommit(false);
-    stmt = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-    ResultSet rs = stmt.executeQuery("SELECT * FROM MAINTENANCE");
-    HashSet<Integer> existingIds = new HashSet<>();
-    while (rs.next()) {
-        s = rs.getString("ROOM");
-        existingIds.add(rs.getInt("MAIN_ID"));
-    while (existingIds.contains(resID)) {
-        resID++;
+int e = jTable1.getSelectedRow();
+if (e >= 0) {
+    String room1 = (String) jTable1.getValueAt(e, 1);
+    String status1 = (String) jTable1.getValueAt(e, 2);
+    String date1 = (String) jTable1.getValueAt(e, 3);
+
+    rom.setText(room1);
+    stat.setText(status1);
+
+    try {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        java.util.Date parsedDate = sdf.parse(date1);
+        main.setDate(parsedDate);
+    } catch (ParseException pe) {
+        JOptionPane.showMessageDialog(null, "Failed to parse the maintenance date.");
+        return;
     }
-        String existingDate = rs.getString("MAINTENANCE_DATE");
-        if ((s == null ? newEmail == null : s.equals(newEmail)) && existingDate.equals(newFname)) {
-            JOptionPane.showMessageDialog(null, "Invalid input.");
-            emailExists = true;
-            break;
+
+    rom.setEditable(true);
+    stat.setEditable(true);
+
+    int option = JOptionPane.showConfirmDialog(null, new Object[]{
+        "Room Number:", rom,
+        "Status:", stat,
+        "Maintenance Date:", main
+    }, "Edit Maintenance Record", JOptionPane.OK_CANCEL_OPTION);
+
+    if (option == JOptionPane.OK_OPTION) {
+        String roomInput = rom.getText().trim();
+        String status = stat.getText().trim();
+        java.util.Date selectedDate = main.getDate(); // JDateChooser
+        Date today = new Date();
+
+        if (roomInput.isEmpty() || status.isEmpty() || selectedDate == null || selectedDate.before(today)) {
+            JOptionPane.showMessageDialog(null, "Invalid entry.");
+            return;
+        }
+
+        if (!roomInput.matches("\\d+")) {
+            JOptionPane.showMessageDialog(null, "Room number must be an integer.");
+            return;
+        }
+
+        try {
+            int roomNumber = Integer.parseInt(roomInput);
+            java.sql.Date sqlDate = new java.sql.Date(selectedDate.getTime());
+            java.sql.Date originalDate = java.sql.Date.valueOf(date1.trim());
+
+            // Check for duplicate
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM MAINTENANCE");
+            boolean recordExists = false;
+            while (rs.next()) {
+                int existingRoom = rs.getInt("ROOM");
+                Date existingMaintDate = rs.getDate("MAINTENANCE_DATE");
+
+                if (existingRoom == roomNumber && existingMaintDate.equals(sqlDate)) {
+                    JOptionPane.showMessageDialog(null, "A maintenance record already exists for this room and date.");
+                    recordExists = true;
+                    break;
+                }
+            }
+            rs.close();
+
+            if (recordExists) return;
+
+            String sql = "UPDATE MAINTENANCE SET ROOM = ?, STATUS = ?, MAINTENANCE_DATE = ? " +
+                         "WHERE ROOM = ? AND MAINTENANCE_DATE = ?";
+            PreparedStatement pst = con.prepareStatement(sql);
+            pst.setInt(1, roomNumber);
+            pst.setString(2, status);
+            pst.setDate(3, sqlDate);
+            pst.setInt(4, Integer.parseInt(room1.trim()));
+            pst.setDate(5, java.sql.Date.valueOf(date1.trim()));
+
+            int rowsAffected = pst.executeUpdate();
+            if (rowsAffected > 0) {
+                jTable1.setValueAt(roomInput, e, 1);
+             jTable1.setValueAt(new SimpleDateFormat("yyyy-MM-dd").format(selectedDate), e, 3);
+             jTable1.setValueAt(status, e, 2);
+               JOptionPane.showMessageDialog(null, "Maintenance record updated successfully.");
+                con.commit();
+          } else {
+            JOptionPane.showMessageDialog(null, "No matching record found in the database.");
+           }
+
+        } catch (SQLException | NumberFormatException ex) {
+        JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
+           ex.printStackTrace();
         }
     }
-    rs.close();
-
-    if (!emailExists) {
-        rs = stmt.executeQuery("SELECT * FROM MAINTENANCE");
-        rs.moveToInsertRow();
-
-        // Parse date
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        java.util.Date parsedDate = sdf.parse(newFname); // from JTextField 'main'
-        java.sql.Date sqlDate = new java.sql.Date(parsedDate.getTime());
-
-        // Parse room number as integer
-        int roomNumber = Integer.parseInt(newEmail.trim());
-
-        rs.updateDate("MAINTENANCE_DATE", sqlDate);
-        rs.updateInt("ROOM", roomNumber);      
-        rs.updateInt("MAIN_ID", resID);// INTEGER
-        rs.updateString("STATUS", newPass);              // VARCHAR / TEXT
-        rs.insertRow();
-        
-
-        con.commit();
-        Select(); // Optional: refresh result set
-
-        System.out.println("Inserted maintenance record successfully.");
-    }
-
-} catch (ParseException pe) {
-    JOptionPane.showMessageDialog(null, "Invalid date format. Use YYYY-MM-DD.");
-    pe.printStackTrace();
-} catch (NumberFormatException ne) {
-    JOptionPane.showMessageDialog(null, "Room number must be an integer.");
-    ne.printStackTrace();
-} catch (SQLException e) {
-    JOptionPane.showMessageDialog(null, "Database error: " + e.getMessage());
-    e.printStackTrace();
+} else {
+    JOptionPane.showMessageDialog(null, "Please select a row to edit.");
 }
-rom.setEditable(true);  // For example, make 'rom' text field editable
-stat.setEditable(true);
-main.setEditable(true);
-
-
     }//GEN-LAST:event_addroomActionPerformed
 
     private void romActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_romActionPerformed
@@ -394,87 +402,101 @@ main.setEditable(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-int e = jTable1.getSelectedRow(); // Assume jTable1 displays ROOM, STATUS, MAINTENANCE_DATE
-
+int e = jTable1.getSelectedRow();
 if (e >= 0) {
-    // Get current values from the selected row
-    String room1 = (String) jTable1.getValueAt(e, 1);  // ROOM_NUMBER (as String)
-    String status1 = (String) jTable1.getValueAt(e, 2); // STATUS
-    String date1 = (String) jTable1.getValueAt(e, 3);   // MAINTENANCE_DATE
+    String room1 = (String) jTable1.getValueAt(e, 1);
+    String status1 = (String) jTable1.getValueAt(e, 2);
+    String date1 = (String) jTable1.getValueAt(e, 3);
 
-    // Set current values to input fields
     rom.setText(room1);
     stat.setText(status1);
-    main.setText(date1);
 
-    // Ensure the text fields are editable before showing the dialog
+    try {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        java.util.Date parsedDate = sdf.parse(date1);
+        main.setDate(parsedDate);
+    } catch (ParseException pe) {
+        JOptionPane.showMessageDialog(null, "Failed to parse the maintenance date.");
+        return;
+    }
+
     rom.setEditable(true);
     stat.setEditable(true);
-    main.setEditable(true);
 
-    // Show confirmation dialog with input fields
-    int option = JOptionPane.showConfirmDialog(null, new Object[] {
+    int option = JOptionPane.showConfirmDialog(null, new Object[]{
         "Room Number:", rom,
         "Status:", stat,
-        "Maintenance Date (YYYY-MM-DD):", main
+        "Maintenance Date:", main
     }, "Edit Maintenance Record", JOptionPane.OK_CANCEL_OPTION);
 
     if (option == JOptionPane.OK_OPTION) {
-        // Get new values from input fields
-        String newRoom = rom.getText().trim();
-        String newStatus = stat.getText().trim();
-        String newDate = main.getText().trim();
+        String roomInput = rom.getText().trim();
+        String status = stat.getText().trim();
+        java.util.Date selectedDate = main.getDate(); // JDateChooser
+        Date today = new Date();
 
-        // Validate input
-        if (newRoom.isEmpty() || newStatus.isEmpty() || newDate.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "All fields must be filled out.");
+        if (roomInput.isEmpty() || status.isEmpty() || selectedDate == null || selectedDate.before(today)) {
+            JOptionPane.showMessageDialog(null, "Invalid entry.");
             return;
         }
 
-        if (!newRoom.matches("\\d+")) {
+        if (!roomInput.matches("\\d+")) {
             JOptionPane.showMessageDialog(null, "Room number must be an integer.");
             return;
         }
 
         try {
-            int roomNumber = Integer.parseInt(newRoom);
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            java.util.Date parsedDate = sdf.parse(newDate);
-            java.sql.Date sqlDate = new java.sql.Date(parsedDate.getTime());
+            int roomNumber = Integer.parseInt(roomInput);
+            java.sql.Date sqlDate = new java.sql.Date(selectedDate.getTime());
+            java.sql.Date originalDate = java.sql.Date.valueOf(date1.trim());
+
+            // Check for duplicate
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM MAINTENANCE");
+            boolean recordExists = false;
+            while (rs.next()) {
+                int existingRoom = rs.getInt("ROOM");
+                Date existingMaintDate = rs.getDate("MAINTENANCE_DATE");
+
+                if (existingRoom == roomNumber && existingMaintDate.equals(sqlDate)) {
+                    JOptionPane.showMessageDialog(null, "A maintenance record already exists for this room and date.");
+                    recordExists = true;
+                    break;
+                }
+            }
+            rs.close();
+
+            if (recordExists) return;
 
             String sql = "UPDATE MAINTENANCE SET ROOM = ?, STATUS = ?, MAINTENANCE_DATE = ? " +
                          "WHERE ROOM = ? AND MAINTENANCE_DATE = ?";
             PreparedStatement pst = con.prepareStatement(sql);
             pst.setInt(1, roomNumber);
-            pst.setString(2, newStatus);
+            pst.setString(2, status);
             pst.setDate(3, sqlDate);
             pst.setInt(4, Integer.parseInt(room1.trim()));
             pst.setDate(5, java.sql.Date.valueOf(date1.trim()));
 
             int rowsAffected = pst.executeUpdate();
-
             if (rowsAffected > 0) {
-                // Update table model
-                jTable1.setValueAt(newRoom, e, 1);
-                jTable1.setValueAt(newStatus, e, 2);
-                jTable1.setValueAt(newDate, e, 3);
+                jTable1.setValueAt(roomInput, e, 1);
+                jTable1.setValueAt(status, e, 2);
+                jTable1.setValueAt(new SimpleDateFormat("yyyy-MM-dd").format(selectedDate), e, 3);
                 JOptionPane.showMessageDialog(null, "Maintenance record updated successfully.");
                 con.commit();
             } else {
                 JOptionPane.showMessageDialog(null, "No matching record found in the database.");
             }
 
-        } catch (ParseException pe) {
-            JOptionPane.showMessageDialog(null, "Invalid date format. Use YYYY-MM-DD.");
-        } catch (SQLException se) {
-            JOptionPane.showMessageDialog(null, "Database error: " + se.getMessage());
-            se.printStackTrace();
+        } catch (SQLException | NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
+            ex.printStackTrace();
         }
     }
+
 } else {
     JOptionPane.showMessageDialog(null, "Please select a row to edit.");
 }
-
 
 
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -489,10 +511,6 @@ if (e >= 0) {
         jTable1.setRowSorter(obj);
         obj.setRowFilter(RowFilter.regexFilter(rom.getText().trim()));
     }//GEN-LAST:event_jTextField4KeyReleased
-
-    private void maintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maintActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_maintActionPerformed
 
     private void logout_btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btn2ActionPerformed
         // TODO add your handling code here:
@@ -516,7 +534,7 @@ if (e >= 0) {
             String idToDelete = String.valueOf(model.getValueAt(e, 0)).trim();  // Assuming ID is at column 0
             System.out.println("Deleting ID: '" + idToDelete + "'");
             try {
-                String sql = "DELETE FROM RESERVATIONS WHERE RESERVATION_ID = ?";
+                String sql = "DELETE FROM MAINTENANCE WHERE MAIN_ID = ?";
                 System.out.println("Executing SQL: " + sql + " with ID: " + idToDelete);
                 PreparedStatement pst = con.prepareStatement(sql);
                 pst.setInt(1, Integer.parseInt(idToDelete));  // Convert to int if ID is numeric
@@ -602,8 +620,8 @@ if (e >= 0) {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JButton logout_btn2;
-    private javax.swing.JTextField main;
-    private javax.swing.JTextField maint;
+    private com.toedter.calendar.JDateChooser main;
+    private com.toedter.calendar.JDateChooser maint;
     private javax.swing.JMenuItem remove_text;
     private javax.swing.JPopupMenu remove_warning;
     private javax.swing.JButton return_btn913;
