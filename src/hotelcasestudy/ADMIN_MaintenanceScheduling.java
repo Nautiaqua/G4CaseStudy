@@ -295,100 +295,64 @@ int x=0;
 
     private void addroomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addroomActionPerformed
 
-int e = jTable1.getSelectedRow();
-if (e >= 0) {
-    String room1 = (String) jTable1.getValueAt(e, 1);
-    String status1 = (String) jTable1.getValueAt(e, 2);
-    String date1 = (String) jTable1.getValueAt(e, 3);
-
-    rom.setText(room1);
-    stat.setText(status1);
-
-    try {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        java.util.Date parsedDate = sdf.parse(date1);
-        main.setDate(parsedDate);
-    } catch (ParseException pe) {
-        JOptionPane.showMessageDialog(null, "Failed to parse the maintenance date.");
-        return;
+int resID = 1;
+boolean recordExists = false;
+try {
+    con.setAutoCommit(false);
+    stmt = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+    String roomInput = roomn.getText().trim();
+    String status = statu.getText().trim(); 
+    Date selectedDate = maint.getDate(); 
+    Date today = new Date();
+    
+    int roomNumber = Integer.parseInt(roomInput);
+    java.sql.Date sqlDate = new java.sql.Date(selectedDate.getTime());
+    ResultSet rs = stmt.executeQuery("SELECT * FROM MAINTENANCE");
+    HashSet<Integer> existingIds = new HashSet<>();
+    while (rs.next()) {
+        existingIds.add(rs.getInt("MAIN_ID"));
+        int existingRoom = rs.getInt("ROOM");
+        Date existingMaintDate = rs.getDate("MAINTENANCE_DATE");
+        if (existingRoom == roomNumber && existingMaintDate.equals(sqlDate)) {
+            JOptionPane.showMessageDialog(null, "A maintenance record already exists for this room and date.");
+            recordExists = true;
+            
+        }
+        if(roomInput.isEmpty()||status.isEmpty()||selectedDate==null||selectedDate.before(today)){
+        JOptionPane.showMessageDialog(null, "Invalid entry");
+        recordExists = true;
+        break;
+        
     }
-
-    rom.setEditable(true);
-    stat.setEditable(true);
-
-    int option = JOptionPane.showConfirmDialog(null, new Object[]{
-        "Room Number:", rom,
-        "Status:", stat,
-        "Maintenance Date:", main
-    }, "Edit Maintenance Record", JOptionPane.OK_CANCEL_OPTION);
-
-    if (option == JOptionPane.OK_OPTION) {
-        String roomInput = rom.getText().trim();
-        String status = stat.getText().trim();
-        java.util.Date selectedDate = main.getDate(); // JDateChooser
-        Date today = new Date();
-
-        if (roomInput.isEmpty() || status.isEmpty() || selectedDate == null || selectedDate.before(today)) {
-            JOptionPane.showMessageDialog(null, "Invalid entry.");
-            return;
-        }
-
-        if (!roomInput.matches("\\d+")) {
-            JOptionPane.showMessageDialog(null, "Room number must be an integer.");
-            return;
-        }
-
-        try {
-            int roomNumber = Integer.parseInt(roomInput);
-            java.sql.Date sqlDate = new java.sql.Date(selectedDate.getTime());
-            java.sql.Date originalDate = java.sql.Date.valueOf(date1.trim());
-
-            // Check for duplicate
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM MAINTENANCE");
-            boolean recordExists = false;
-            while (rs.next()) {
-                int existingRoom = rs.getInt("ROOM");
-                Date existingMaintDate = rs.getDate("MAINTENANCE_DATE");
-
-                if (existingRoom == roomNumber && existingMaintDate.equals(sqlDate)) {
-                    JOptionPane.showMessageDialog(null, "A maintenance record already exists for this room and date.");
-                    recordExists = true;
-                    break;
-                }
-            }
-            rs.close();
-
-            if (recordExists) return;
-
-            String sql = "UPDATE MAINTENANCE SET ROOM = ?, STATUS = ?, MAINTENANCE_DATE = ? " +
-                         "WHERE ROOM = ? AND MAINTENANCE_DATE = ?";
-            PreparedStatement pst = con.prepareStatement(sql);
-            pst.setInt(1, roomNumber);
-            pst.setString(2, status);
-            pst.setDate(3, sqlDate);
-            pst.setInt(4, Integer.parseInt(room1.trim()));
-            pst.setDate(5, java.sql.Date.valueOf(date1.trim()));
-
-            int rowsAffected = pst.executeUpdate();
-            if (rowsAffected > 0) {
-                jTable1.setValueAt(roomInput, e, 1);
-             jTable1.setValueAt(new SimpleDateFormat("yyyy-MM-dd").format(selectedDate), e, 3);
-             jTable1.setValueAt(status, e, 2);
-               JOptionPane.showMessageDialog(null, "Maintenance record updated successfully.");
-                con.commit();
-          } else {
-            JOptionPane.showMessageDialog(null, "No matching record found in the database.");
-           }
-
-        } catch (SQLException | NumberFormatException ex) {
-        JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
-           ex.printStackTrace();
-        }
+        
     }
-} else {
-    JOptionPane.showMessageDialog(null, "Please select a row to edit.");
+    rs.close();
+    while (existingIds.contains(resID)) {
+        resID++;
+    }
+    if (!recordExists) {
+    rs = stmt.executeQuery("SELECT * FROM MAINTENANCE");
+    rs.moveToInsertRow();
+    rs.updateInt("MAIN_ID", resID);
+    rs.updateInt("ROOM", roomNumber);
+    rs.updateDate("MAINTENANCE_DATE", sqlDate);
+    rs.updateString("STATUS", status);
+    rs.insertRow();  
+    con.commit();   
+    Select();        
+    JOptionPane.showMessageDialog(null, "Maintenance record inserted successfully.");
 }
+
+
+
+} catch (NumberFormatException ne) {
+    JOptionPane.showMessageDialog(null, "Room number must be an integer.");
+    ne.printStackTrace();
+} catch (SQLException e) {
+    JOptionPane.showMessageDialog(null, "Database error: " + e.getMessage());
+    e.printStackTrace();
+}
+
     }//GEN-LAST:event_addroomActionPerformed
 
     private void romActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_romActionPerformed
@@ -411,10 +375,11 @@ if (e >= 0) {
     rom.setText(room1);
     stat.setText(status1);
 
+    // Parse and set date to JDateChooser
     try {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         java.util.Date parsedDate = sdf.parse(date1);
-        main.setDate(parsedDate);
+        main.setDate(parsedDate); // main is JDateChooser
     } catch (ParseException pe) {
         JOptionPane.showMessageDialog(null, "Failed to parse the maintenance date.");
         return;
@@ -430,57 +395,39 @@ if (e >= 0) {
     }, "Edit Maintenance Record", JOptionPane.OK_CANCEL_OPTION);
 
     if (option == JOptionPane.OK_OPTION) {
-        String roomInput = rom.getText().trim();
-        String status = stat.getText().trim();
-        java.util.Date selectedDate = main.getDate(); // JDateChooser
-        Date today = new Date();
+        String newRoom = rom.getText().trim();
+        String newStatus = stat.getText().trim();
+        java.util.Date selectedDate = main.getDate(); // from JDateChooser
 
-        if (roomInput.isEmpty() || status.isEmpty() || selectedDate == null || selectedDate.before(today)) {
-            JOptionPane.showMessageDialog(null, "Invalid entry.");
+        if (newRoom.isEmpty() || newStatus.isEmpty() || selectedDate == null) {
+            JOptionPane.showMessageDialog(null, "All fields must be filled out.");
             return;
         }
 
-        if (!roomInput.matches("\\d+")) {
+        if (!newRoom.matches("\\d+")) {
             JOptionPane.showMessageDialog(null, "Room number must be an integer.");
             return;
         }
 
         try {
-            int roomNumber = Integer.parseInt(roomInput);
+            int roomNumber = Integer.parseInt(newRoom);
             java.sql.Date sqlDate = new java.sql.Date(selectedDate.getTime());
             java.sql.Date originalDate = java.sql.Date.valueOf(date1.trim());
-
-            // Check for duplicate
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM MAINTENANCE");
-            boolean recordExists = false;
-            while (rs.next()) {
-                int existingRoom = rs.getInt("ROOM");
-                Date existingMaintDate = rs.getDate("MAINTENANCE_DATE");
-
-                if (existingRoom == roomNumber && existingMaintDate.equals(sqlDate)) {
-                    JOptionPane.showMessageDialog(null, "A maintenance record already exists for this room and date.");
-                    recordExists = true;
-                    break;
-                }
-            }
-            rs.close();
-
-            if (recordExists) return;
 
             String sql = "UPDATE MAINTENANCE SET ROOM = ?, STATUS = ?, MAINTENANCE_DATE = ? " +
                          "WHERE ROOM = ? AND MAINTENANCE_DATE = ?";
             PreparedStatement pst = con.prepareStatement(sql);
             pst.setInt(1, roomNumber);
-            pst.setString(2, status);
+            pst.setString(2, newStatus);
             pst.setDate(3, sqlDate);
             pst.setInt(4, Integer.parseInt(room1.trim()));
-            pst.setDate(5, java.sql.Date.valueOf(date1.trim()));
+            pst.setDate(5, originalDate);
 
             int rowsAffected = pst.executeUpdate();
             if (rowsAffected > 0) {
-                jTable1.setValueAt(roomInput, e, 1);
-                jTable1.setValueAt(status, e, 2);
+                // Update JTable values
+                jTable1.setValueAt(newRoom, e, 1);
+                jTable1.setValueAt(newStatus, e, 2);
                 jTable1.setValueAt(new SimpleDateFormat("yyyy-MM-dd").format(selectedDate), e, 3);
                 JOptionPane.showMessageDialog(null, "Maintenance record updated successfully.");
                 con.commit();
@@ -488,12 +435,11 @@ if (e >= 0) {
                 JOptionPane.showMessageDialog(null, "No matching record found in the database.");
             }
 
-        } catch (SQLException | NumberFormatException ex) {
-            JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
-            ex.printStackTrace();
+        } catch (SQLException se) {
+            JOptionPane.showMessageDialog(null, "Database error: " + se.getMessage());
+            se.printStackTrace();
         }
     }
-
 } else {
     JOptionPane.showMessageDialog(null, "Please select a row to edit.");
 }
@@ -577,6 +523,14 @@ if (e >= 0) {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ADMIN_MaintenanceScheduling.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
