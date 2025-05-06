@@ -7,13 +7,17 @@ package hotelcasestudy;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
-import javax.swing.RowFilter;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import hotelcasestudy.ADMIN_Dashboard;
+import hotelcasestudy.USER_login_menu;
+import hotelcasestudy.connect;
+import java.sql.SQLException;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
-
+import java.sql.*;
+import javax.swing.JOptionPane;
 
 
 
@@ -24,17 +28,41 @@ import javax.swing.table.TableRowSorter;
  *
  * @author nejac
  */
-public class ADMIN_room_management extends javax.swing.JFrame {
-
+public class ADMIN_room_management extends connect {
+DefaultTableModel model = new DefaultTableModel() {
+    @Override
+    public boolean isCellEditable(int row, int column) {
+        return false; 
+    }
+};
+    int x=0;
     
     public ADMIN_room_management() {
         initComponents();
-        buttonGroup1.add(yes);
+        DoConnect();
+        Select();
         
         
 
     }
-
+public void Select(){
+        String [] columnsNames = {"ROOM_ID","TYPE_ID"};
+        model.setColumnIdentifiers(columnsNames);
+        model.setRowCount(0);
+        try{
+            String query = "SELECT * FROM ROOMS";
+            stmt = con.createStatement();
+            rs = stmt.executeQuery(query);
+            while(rs.next()){
+                i=rs.getString("ROOM_ID");
+                s=rs.getString("TYPE_ID");
+                model.addRow(new Object []{i,s});
+                x++;              
+            }
+        }catch(SQLException err){
+            
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -48,19 +76,12 @@ public class ADMIN_room_management extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         remove_warning = new javax.swing.JPopupMenu();
         remove_text = new javax.swing.JMenuItem();
+        id = new javax.swing.JTextField();
+        ty = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        yes = new javax.swing.JRadioButton();
-        jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
         jLabel14 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
@@ -69,7 +90,12 @@ public class ADMIN_room_management extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jTable1 = new javax.swing.JTable();
+        addroom = new javax.swing.JButton();
+        deletetype = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        ty1 = new javax.swing.JTextField();
+        id1 = new javax.swing.JTextField();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -93,41 +119,17 @@ public class ADMIN_room_management extends javax.swing.JFrame {
         });
         remove_warning.add(remove_text);
 
+        id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idActionPerformed(evt);
+            }
+        });
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(237, 234, 233));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 277, 20));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 277, 20));
-
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 277, 20));
-
-        yes.setText("Yes");
-        yes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                yesActionPerformed(evt);
-            }
-        });
-        jPanel1.add(yes, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 420, -1, -1));
-
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 277, 20));
 
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,12 +146,6 @@ public class ADMIN_room_management extends javax.swing.JFrame {
         });
         jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 600, 750, -1));
 
-        jLabel9.setBackground(new java.awt.Color(105, 73, 50));
-        jLabel9.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel9.setText("Reserve:");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, -1, -1));
-
         jLabel10.setBackground(new java.awt.Color(105, 73, 50));
         jLabel10.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(105, 73, 50));
@@ -159,30 +155,13 @@ public class ADMIN_room_management extends javax.swing.JFrame {
         jLabel11.setBackground(new java.awt.Color(105, 73, 50));
         jLabel11.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel11.setText("Name:");
+        jLabel11.setText("ROOM TYPE:");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, -1, -1));
-
-        jLabel12.setBackground(new java.awt.Color(105, 73, 50));
-        jLabel12.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel12.setText("Phone No.:");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, -1, -1));
-
-        jLabel13.setBackground(new java.awt.Color(105, 73, 50));
-        jLabel13.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel13.setText("Date:");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, -1, -1));
-
-        jCheckBox1.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        jCheckBox1.setForeground(new java.awt.Color(105, 73, 50));
-        jCheckBox1.setText("Yes");
-        jPanel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, -1, -1));
 
         jLabel14.setBackground(new java.awt.Color(105, 73, 50));
         jLabel14.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel14.setText("Room Number:");
+        jLabel14.setText("ROOM ID:");
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
 
         jPanel6.setBackground(new java.awt.Color(140, 100, 75));
@@ -260,17 +239,45 @@ public class ADMIN_room_management extends javax.swing.JFrame {
 
         jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane1.setViewportView(jTable2);
+        jTable1.setModel(model);
+        jScrollPane1.setViewportView(jTable1);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, 750, -1));
+
+        addroom.setBackground(new java.awt.Color(134, 97, 72));
+        addroom.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        addroom.setForeground(new java.awt.Color(255, 255, 255));
+        addroom.setText("ADD ROOM");
+        addroom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addroomActionPerformed(evt);
+            }
+        });
+        jPanel1.add(addroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 150, 50));
+
+        deletetype.setBackground(new java.awt.Color(134, 97, 72));
+        deletetype.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        deletetype.setForeground(new java.awt.Color(255, 255, 255));
+        deletetype.setText("DELETE TYPE");
+        deletetype.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deletetypeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(deletetype, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, 170, 50));
+
+        jButton4.setBackground(new java.awt.Color(134, 97, 72));
+        jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("EDIT");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 120, 50));
+        jPanel1.add(ty1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, 277, 20));
+        jPanel1.add(id1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, 277, 20));
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -278,21 +285,9 @@ public class ADMIN_room_management extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
 
-    }//GEN-LAST:event_jTextField3ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void yesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yesActionPerformed
-
-    }//GEN-LAST:event_yesActionPerformed
-
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_idActionPerformed
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
@@ -304,15 +299,42 @@ public class ADMIN_room_management extends javax.swing.JFrame {
 
     private void jTextField5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField5KeyReleased
         // TODO add your handling code here:
-        DefaultTableModel model=(DefaultTableModel)jTable2.getModel();
+        DefaultTableModel model=(DefaultTableModel)jTable1.getModel();
         TableRowSorter<DefaultTableModel>obj=new TableRowSorter<>(model);
-        jTable2.setRowSorter(obj);
+        jTable1.setRowSorter(obj);
         obj.setRowFilter(RowFilter.regexFilter(jTextField5.getText().trim()));
     }//GEN-LAST:event_jTextField5KeyReleased
 
     private void remove_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remove_textActionPerformed
-        // TODO add your handling code here:
-        // THIS NEEDS DELETION CODE.
+          int e = jTable1.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+        if (e >= 0) {
+            String idToDelete = String.valueOf(model.getValueAt(e, 0)).trim();  // Assuming ID is at column 0
+            System.out.println("Deleting ID: '" + idToDelete + "'");
+            try {
+                String sql = "DELETE FROM ROOMS WHERE ROOM_ID = ?";
+                System.out.println("Executing SQL: " + sql + " with ID: " + idToDelete);
+                PreparedStatement pst = con.prepareStatement(sql);
+                pst.setInt(1, Integer.parseInt(idToDelete));  // Convert to int if ID is numeric
+                int rowsAffected = pst.executeUpdate();
+                System.out.println("Rows affected: " + rowsAffected);
+                if (rowsAffected > 0) {
+                    model.removeRow(e);
+                    JOptionPane.showMessageDialog(null, "Deleted successfully.");
+                } else {
+                    JOptionPane.showMessageDialog(null, "No matching ID found in database.");
+                }
+                con.commit();
+            } catch (SQLException a) {
+                JOptionPane.showMessageDialog(null, "Database delete failed: " + a.getMessage());
+                a.printStackTrace();
+            } catch (NumberFormatException nfe) {
+                JOptionPane.showMessageDialog(null, "Invalid ID format: " + nfe.getMessage());
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Please select a row to delete.");
+        }
     }//GEN-LAST:event_remove_textActionPerformed
 
     private void logout_btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btn2ActionPerformed
@@ -327,6 +349,114 @@ public class ADMIN_room_management extends javax.swing.JFrame {
         this.dispose();
         admindashboard.setVisible(true);
     }//GEN-LAST:event_return_btn913ActionPerformed
+
+    private void addroomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addroomActionPerformed
+boolean recordExists = false;
+try {
+    con.setAutoCommit(false);
+    stmt = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+    String roomi = id1.getText().trim();  
+    String roomt = ty1.getText().trim(); 
+    if (roomi.isEmpty() || roomt.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "All fields must be filled.");
+        return;
+    }
+    int roomid = Integer.parseInt(roomi);
+    int typeid = Integer.parseInt(roomt);
+    ResultSet rs = stmt.executeQuery("SELECT ROOM_ID FROM ROOMS WHERE ROOM_ID = " + roomid);
+    if (rs.next()) {
+        JOptionPane.showMessageDialog(null, "Room ID already exists.");
+        rs.close();
+        return;
+    }
+    rs.close();
+    rs = stmt.executeQuery("SELECT * FROM ROOMS");
+    rs.moveToInsertRow();
+    rs.updateInt("ROOM_ID", roomid);
+    rs.updateInt("TYPE_ID", typeid);
+    rs.insertRow();
+    con.commit();
+    Select(); 
+    JOptionPane.showMessageDialog(null, "Room added successfully.");
+} catch (NumberFormatException ne) {
+    JOptionPane.showMessageDialog(null, "Room ID and Type ID must be integers.");
+    ne.printStackTrace();
+} catch (SQLException e) {
+    JOptionPane.showMessageDialog(null, "Database error: " + e.getMessage());
+    e.printStackTrace();
+}
+    }//GEN-LAST:event_addroomActionPerformed
+
+    private void deletetypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletetypeActionPerformed
+        remove_warning.show(deletetype, 0, deletetype.getHeight());
+    }//GEN-LAST:event_deletetypeActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+      int selectedRow = jTable1.getSelectedRow();
+if (selectedRow >= 0) {
+    String oldRoomId = jTable1.getValueAt(selectedRow, 0).toString(); 
+    String oldTypeId = jTable1.getValueAt(selectedRow, 1).toString();
+    id.setText(oldRoomId);
+    ty.setText(oldTypeId);
+    int option = JOptionPane.showConfirmDialog(null, new Object[] {
+        "Room ID:", id,
+        "Type ID:", ty
+    }, "Edit Room", JOptionPane.OK_CANCEL_OPTION);
+
+    if (option == JOptionPane.OK_OPTION) {
+        String newRoomId = id.getText().trim();
+        String newTypeId = ty.getText().trim();
+
+        if (newRoomId.isEmpty() || newTypeId.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "All fields must be filled out.");
+            return;
+        }
+        try {
+            int roomIdInt = Integer.parseInt(newRoomId);
+            int typeIdInt = Integer.parseInt(newTypeId);
+            boolean duplicate = false;
+            Statement stmtCheck = con.createStatement();
+            ResultSet rsCheck = stmtCheck.executeQuery("SELECT ROOM_ID FROM ROOMS");
+            while (rsCheck.next()) {
+                int existingId = rsCheck.getInt("ROOM_ID");
+                if (existingId == roomIdInt && existingId != Integer.parseInt(oldRoomId)) {
+                    duplicate = true;
+                    break;
+                }
+            }
+            rsCheck.close();
+            stmtCheck.close();
+
+            if (duplicate) {
+                JOptionPane.showMessageDialog(null, "Room ID already exists.");
+                return;
+            }
+            String updateSQL = "UPDATE ROOMS SET ROOM_ID = ?, TYPE_ID = ? WHERE ROOM_ID = ?";
+            PreparedStatement pst = con.prepareStatement(updateSQL);
+            pst.setInt(1, roomIdInt);
+            pst.setInt(2, typeIdInt);
+            pst.setInt(3, Integer.parseInt(oldRoomId));
+
+            int rowsUpdated = pst.executeUpdate();
+            if (rowsUpdated > 0) {
+                jTable1.setValueAt(typeIdInt, selectedRow, 1);
+                jTable1.setValueAt(roomIdInt, selectedRow, 0);
+                JOptionPane.showMessageDialog(null, "Room updated successfully.");
+                con.commit();
+            } else {
+                JOptionPane.showMessageDialog(null, "No matching record found.");
+            }
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Room ID and Type ID must be integers.");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Database error: " + ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
+} else {
+    JOptionPane.showMessageDialog(null, "Please select a row to edit.");
+}
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -383,31 +513,29 @@ public class ADMIN_room_management extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addroom;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JButton deletetype;
+    private javax.swing.JTextField id;
+    private javax.swing.JTextField id1;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JButton logout_btn2;
     private javax.swing.JMenuItem remove_text;
     private javax.swing.JPopupMenu remove_warning;
     private javax.swing.JButton return_btn913;
-    private javax.swing.JRadioButton yes;
+    private javax.swing.JTextField ty;
+    private javax.swing.JTextField ty1;
     // End of variables declaration//GEN-END:variables
 }

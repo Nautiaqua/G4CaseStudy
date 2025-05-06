@@ -475,27 +475,23 @@ try {
     }//GEN-LAST:event_bedActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       int selectedRow = jTable1.getSelectedRow();
+ int selectedRow = jTable1.getSelectedRow();
 if (selectedRow >= 0) {
-    // Get existing values from the table
-    String typeId = jTable1.getValueAt(selectedRow, 0).toString();
+    String oldTypeId = jTable1.getValueAt(selectedRow, 0).toString();
     String nameVal = jTable1.getValueAt(selectedRow, 1).toString();
     String descVal = jTable1.getValueAt(selectedRow, 2).toString();
     String numBeds = jTable1.getValueAt(selectedRow, 3).toString();
     String bedType = jTable1.getValueAt(selectedRow, 4).toString();
     String maxOccupancy = jTable1.getValueAt(selectedRow, 5).toString();
     String basePrice = jTable1.getValueAt(selectedRow, 6).toString();
-
-    // Populate form fields (you should have matching JTextFields for these)
-    type.setText(typeId);
+    type.setText(oldTypeId);
     name.setText(nameVal);
     desc.setText(descVal);
     num.setText(numBeds);
     bed.setText(bedType);
     max.setText(maxOccupancy);
     price.setText(basePrice);
-
-    int option = JOptionPane.showConfirmDialog(null, new Object[]{
+    int option = JOptionPane.showConfirmDialog(null, new Object[] {
         "TYPE ID:", type,
         "NAME:", name,
         "DESCRIPTION:", desc,
@@ -504,7 +500,6 @@ if (selectedRow >= 0) {
         "MAX OCCUPANCY:", max,
         "BASE PRICE:", price
     }, "Edit Room Type", JOptionPane.OK_CANCEL_OPTION);
-
     if (option == JOptionPane.OK_OPTION) {
         String newType = type.getText().trim();
         String newName = name.getText().trim();
@@ -513,27 +508,42 @@ if (selectedRow >= 0) {
         String newBed = bed.getText().trim();
         String newMax = max.getText().trim();
         String newPrice = price.getText().trim();
-
         if (newType.isEmpty() || newName.isEmpty() || newDesc.isEmpty() || newNum.isEmpty() || newBed.isEmpty() || newMax.isEmpty() || newPrice.isEmpty()) {
             JOptionPane.showMessageDialog(null, "All fields must be filled out.");
             return;
         }
-
         try {
-            String updateSQL = "UPDATE ROOM_TYPE SET NAME = ?, DESCRIPTION = ?, NUM_BEDS = ?, BED_TYPE = ?, MAX_OCCUPANCY = ?, BASE_PRICE = ? WHERE TYPE_ID = ?";
+            int newTypeInt = Integer.parseInt(newType);
+            Statement checkStmt = con.createStatement();
+            ResultSet checkRs = checkStmt.executeQuery("SELECT TYPE_ID FROM ROOM_TYPE");
+            boolean duplicate = false;
+            while (checkRs.next()) {
+                int existingId = checkRs.getInt("TYPE_ID");
+                if (existingId == newTypeInt && existingId != Integer.parseInt(oldTypeId)) {
+                    duplicate = true;
+                    break;
+                }
+            }
+            checkRs.close();
+            checkStmt.close();
+
+            if (duplicate) {
+                JOptionPane.showMessageDialog(null, "TYPE ID already exists.");
+                return;
+            }
+            String updateSQL = "UPDATE ROOM_TYPE SET TYPE_ID = ?, NAME = ?, DESCRIPTION = ?, NUM_BEDS = ?, BED_TYPE = ?, MAX_OCCUPANCY = ?, BASE_PRICE = ? WHERE TYPE_ID = ?";
             PreparedStatement pst = con.prepareStatement(updateSQL);
-            pst.setString(1, newName);
-            pst.setString(2, newDesc);
-            pst.setInt(3, Integer.parseInt(newNum));
-            pst.setString(4, newBed);
-            pst.setInt(5, Integer.parseInt(newMax));
-            pst.setDouble(6, Double.parseDouble(newPrice));
-            pst.setInt(7, Integer.parseInt(newType));
-
+            pst.setInt(1, newTypeInt);
+            pst.setString(2, newName);
+            pst.setString(3, newDesc);
+            pst.setInt(4, Integer.parseInt(newNum));
+            pst.setString(5, newBed);
+            pst.setInt(6, Integer.parseInt(newMax));
+            pst.setDouble(7, Double.parseDouble(newPrice));
+            pst.setInt(8, Integer.parseInt(oldTypeId));
             int rowsUpdated = pst.executeUpdate();
-
             if (rowsUpdated > 0) {
-                jTable1.setValueAt(newType, selectedRow, 0);
+                jTable1.setValueAt(newTypeInt, selectedRow, 0);
                 jTable1.setValueAt(newName, selectedRow, 1);
                 jTable1.setValueAt(newDesc, selectedRow, 2);
                 jTable1.setValueAt(newNum, selectedRow, 3);
@@ -541,10 +551,10 @@ if (selectedRow >= 0) {
                 jTable1.setValueAt(newMax, selectedRow, 5);
                 jTable1.setValueAt(newPrice, selectedRow, 6);
                 JOptionPane.showMessageDialog(null, "Room type updated successfully.");
+                con.commit();
             } else {
                 JOptionPane.showMessageDialog(null, "Room type not found.");
             }
-            con.commit();
 
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error updating room type: " + ex.getMessage());
@@ -557,8 +567,6 @@ if (selectedRow >= 0) {
 } else {
     JOptionPane.showMessageDialog(null, "Please select a row to edit.");
 }
-
-
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void max1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_max1ActionPerformed
