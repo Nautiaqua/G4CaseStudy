@@ -216,15 +216,16 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTable1.setBackground(new java.awt.Color(255, 255, 255));
         jTable1.setModel(tbModel1);
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, 810, 590));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 1300, 510));
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(105, 73, 50));
         jLabel1.setText("Revenue Report");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 579, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 280, -1));
 
         jButton4.setBackground(new java.awt.Color(134, 97, 72));
         jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -235,7 +236,7 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 550, 120, 50));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 120, 50));
 
         jButton3.setBackground(new java.awt.Color(134, 97, 72));
         jButton3.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -246,27 +247,30 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 550, 170, 50));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 170, 50));
 
         jLabel20.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(105, 73, 50));
         jLabel20.setText("Total Revenue");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 480, -1, 20));
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, 280, 20));
 
         rev.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 revActionPerformed(evt);
             }
         });
-        jPanel1.add(rev, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, 230, 20));
+        jPanel1.add(rev, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 80, 400, 20));
 
-        jToggleButton1.setText("jToggleButton1");
+        jToggleButton1.setBackground(new java.awt.Color(134, 97, 72));
+        jToggleButton1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jToggleButton1.setText("CALCULATE");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 460, -1, -1));
+        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, 160, 50));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1344, 690));
 

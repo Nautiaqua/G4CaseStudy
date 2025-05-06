@@ -81,11 +81,9 @@ int x=0;
         rom = new javax.swing.JTextField();
         stat = new javax.swing.JTextField();
         main = new javax.swing.JTextField();
+        remove_warning = new javax.swing.JPopupMenu();
+        remove_text = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        logout_btn = new javax.swing.JButton();
-        return_btn911 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -99,6 +97,12 @@ int x=0;
         roomn = new javax.swing.JTextField();
         statu = new javax.swing.JTextField();
         maint = new javax.swing.JTextField();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        logout_btn2 = new javax.swing.JButton();
+        return_btn913 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -123,69 +127,22 @@ int x=0;
             }
         });
 
+        remove_text.setBackground(new java.awt.Color(237, 234, 233));
+        remove_text.setFont(new java.awt.Font("Liberation Sans", 1, 12)); // NOI18N
+        remove_text.setForeground(new java.awt.Color(255, 51, 51));
+        remove_text.setText("CONFIRM REMOVE");
+        remove_text.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                remove_textActionPerformed(evt);
+            }
+        });
+        remove_warning.add(remove_text);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(237, 234, 233));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel4.setBackground(new java.awt.Color(140, 100, 75));
-        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel4.setPreferredSize(new java.awt.Dimension(1344, 70));
-
-        jLabel6.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(226, 165, 79));
-
-        logout_btn.setBackground(new java.awt.Color(140, 100, 75));
-        logout_btn.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        logout_btn.setForeground(new java.awt.Color(255, 255, 255));
-        logout_btn.setText("Log Out");
-        logout_btn.setBorder(null);
-        logout_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logout_btnActionPerformed(evt);
-            }
-        });
-
-        return_btn911.setBackground(new java.awt.Color(140, 100, 75));
-        return_btn911.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        return_btn911.setForeground(new java.awt.Color(255, 255, 255));
-        return_btn911.setText("Return to Dashboard");
-        return_btn911.setBorder(null);
-        return_btn911.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                return_btn911ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(683, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(17, 1126, Short.MAX_VALUE)
-                .addComponent(return_btn911)
-                .addGap(42, 42, 42)
-                .addComponent(logout_btn)
-                .addGap(18, 18, 18))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(logout_btn)
-                            .addComponent(return_btn911))))
-                .addContainerGap(35, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel11.setBackground(new java.awt.Color(105, 73, 50));
         jLabel11.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
@@ -220,38 +177,37 @@ int x=0;
                 addroomActionPerformed(evt);
             }
         });
-        jPanel1.add(addroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 150, 40));
+        jPanel1.add(addroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 150, 50));
 
+        jTable1.setBackground(new java.awt.Color(255, 255, 255));
         jTable1.setModel(model);
         jScrollPane1.setViewportView(jTable1);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 750, -1));
 
-        jButton5.setBackground(new java.awt.Color(0, 0, 0));
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton5.setBackground(new java.awt.Color(134, 97, 72));
+        jButton5.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("D E L E T E  U S E R");
-        jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton5.setText("DELETE USER");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 440, -1, -1));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 180, 50));
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 0));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton4.setBackground(new java.awt.Color(134, 97, 72));
+        jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("E D I T ");
-        jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton4.setText("EDIT");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, -1, -1));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 100, 50));
 
-        jTextField4.setBackground(new java.awt.Color(217, 217, 217));
+        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField4ActionPerformed(evt);
@@ -262,16 +218,91 @@ int x=0;
                 jTextField4KeyReleased(evt);
             }
         });
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 620, 650, -1));
-        jPanel1.add(roomn, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 170, -1));
-        jPanel1.add(statu, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 350, 170, -1));
+        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, 450, -1));
+        jPanel1.add(roomn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 240, -1));
+        jPanel1.add(statu, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, 240, -1));
 
         maint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 maintActionPerformed(evt);
             }
         });
-        jPanel1.add(maint, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 390, 170, -1));
+        jPanel1.add(maint, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, 240, -1));
+
+        jPanel6.setBackground(new java.awt.Color(140, 100, 75));
+        jPanel6.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel6.setPreferredSize(new java.awt.Dimension(1344, 70));
+
+        jLabel8.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(226, 165, 79));
+
+        logout_btn2.setBackground(new java.awt.Color(140, 100, 75));
+        logout_btn2.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        logout_btn2.setForeground(new java.awt.Color(255, 255, 255));
+        logout_btn2.setText("Log Out");
+        logout_btn2.setBorder(null);
+        logout_btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logout_btn2ActionPerformed(evt);
+            }
+        });
+
+        return_btn913.setBackground(new java.awt.Color(140, 100, 75));
+        return_btn913.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        return_btn913.setForeground(new java.awt.Color(255, 255, 255));
+        return_btn913.setText("Return to Dashboard");
+        return_btn913.setBorder(null);
+        return_btn913.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                return_btn913ActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_topleft.png"))); // NOI18N
+        jLabel9.setText("jLabel2");
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_whitesmall.png"))); // NOI18N
+        jLabel10.setText("jLabel1");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(570, Short.MAX_VALUE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(return_btn913)
+                        .addGap(18, 18, 18)
+                        .addComponent(logout_btn2)
+                        .addGap(17, 17, 17))))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(logout_btn2)
+                            .addComponent(return_btn913)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
+        );
+
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -282,13 +313,6 @@ int x=0;
     private void mainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainActionPerformed
 
     }//GEN-LAST:event_mainActionPerformed
-
-    private void logout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btnActionPerformed
-        // TODO add your handling code here:
-        USER_login_menu userloginmenu = new USER_login_menu();
-        this.setVisible(false);
-        userloginmenu.setVisible(true);
-    }//GEN-LAST:event_logout_btnActionPerformed
 
     private void addroomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addroomActionPerformed
 
@@ -363,44 +387,9 @@ main.setEditable(true);
 
     }//GEN-LAST:event_romActionPerformed
 
-    private void return_btn911ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_return_btn911ActionPerformed
-        ADMIN_Dashboard admindashboard = new ADMIN_Dashboard();
-        this.dispose();
-        admindashboard.setVisible(true);
-    }//GEN-LAST:event_return_btn911ActionPerformed
-
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-
-        int e = jTable1.getSelectedRow();
-DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-
-if (e >= 0) {
-    String idToDelete = String.valueOf(model.getValueAt(e, 0)).trim();  // Assuming ID is at column 0
-    System.out.println("Deleting ID: '" + idToDelete + "'");
-    try {
-        String sql = "DELETE FROM MAINTENANCE WHERE MAIN_ID = ?";
-        System.out.println("Executing SQL: " + sql + " with ID: " + idToDelete);
-        PreparedStatement pst = con.prepareStatement(sql);
-        pst.setInt(1, Integer.parseInt(idToDelete));  // Convert to int if ID is numeric
-        int rowsAffected = pst.executeUpdate();
-        System.out.println("Rows affected: " + rowsAffected);
-        if (rowsAffected > 0) {
-            model.removeRow(e);
-            JOptionPane.showMessageDialog(null, "Deleted successfully.");
-        } else {
-            JOptionPane.showMessageDialog(null, "No matching ID found in database.");
-        }
-        con.commit();
-    } catch (SQLException a) {
-        JOptionPane.showMessageDialog(null, "Database delete failed: " + a.getMessage());
-        a.printStackTrace();
-    } catch (NumberFormatException nfe) {
-        JOptionPane.showMessageDialog(null, "Invalid ID format: " + nfe.getMessage());
-    }
-} else {
-    JOptionPane.showMessageDialog(null, "Please select a row to delete.");
-}
-
+        remove_warning.show(jButton5, 0, jButton5.getHeight());
+        
 
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -505,6 +494,52 @@ if (e >= 0) {
         // TODO add your handling code here:
     }//GEN-LAST:event_maintActionPerformed
 
+    private void logout_btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btn2ActionPerformed
+        // TODO add your handling code here:
+        USER_login_menu userloginmenu = new USER_login_menu();
+        this.setVisible(false);
+        userloginmenu.setVisible(true);
+    }//GEN-LAST:event_logout_btn2ActionPerformed
+
+    private void return_btn913ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_return_btn913ActionPerformed
+        ADMIN_Dashboard admindashboard = new ADMIN_Dashboard();
+        this.dispose();
+        admindashboard.setVisible(true);
+    }//GEN-LAST:event_return_btn913ActionPerformed
+
+    private void remove_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remove_textActionPerformed
+        // TODO add your handling code here:
+        int e = jTable1.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+        if (e >= 0) {
+            String idToDelete = String.valueOf(model.getValueAt(e, 0)).trim();  // Assuming ID is at column 0
+            System.out.println("Deleting ID: '" + idToDelete + "'");
+            try {
+                String sql = "DELETE FROM RESERVATIONS WHERE RESERVATION_ID = ?";
+                System.out.println("Executing SQL: " + sql + " with ID: " + idToDelete);
+                PreparedStatement pst = con.prepareStatement(sql);
+                pst.setInt(1, Integer.parseInt(idToDelete));  // Convert to int if ID is numeric
+                int rowsAffected = pst.executeUpdate();
+                System.out.println("Rows affected: " + rowsAffected);
+                if (rowsAffected > 0) {
+                    model.removeRow(e);
+                    JOptionPane.showMessageDialog(null, "Deleted successfully.");
+                } else {
+                    JOptionPane.showMessageDialog(null, "No matching ID found in database.");
+                }
+                con.commit();
+            } catch (SQLException a) {
+                JOptionPane.showMessageDialog(null, "Database delete failed: " + a.getMessage());
+                a.printStackTrace();
+            } catch (NumberFormatException nfe) {
+                JOptionPane.showMessageDialog(null, "Invalid ID format: " + nfe.getMessage());
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Please select a row to delete.");
+        }
+    }//GEN-LAST:event_remove_textActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -553,21 +588,25 @@ if (e >= 0) {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JButton logout_btn;
+    private javax.swing.JButton logout_btn2;
     private javax.swing.JTextField main;
     private javax.swing.JTextField maint;
-    private javax.swing.JButton return_btn911;
+    private javax.swing.JMenuItem remove_text;
+    private javax.swing.JPopupMenu remove_warning;
+    private javax.swing.JButton return_btn913;
     private javax.swing.JTextField rom;
     private javax.swing.JTextField roomn;
     private javax.swing.JTextField stat;

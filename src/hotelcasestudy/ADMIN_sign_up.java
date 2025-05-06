@@ -49,6 +49,9 @@ public class ADMIN_sign_up extends connect {
         password_label1 = new javax.swing.JLabel();
         email_txt = new javax.swing.JTextField();
         invalid_email = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        casa_icon = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Casa de Los Tropicos"); // NOI18N
@@ -67,7 +70,7 @@ public class ADMIN_sign_up extends connect {
                 return_btnActionPerformed(evt);
             }
         });
-        jPanel1.add(return_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 530, 160, 49));
+        jPanel1.add(return_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 610, 160, 49));
 
         login_finish_btn.setBackground(new java.awt.Color(237, 234, 233));
         login_finish_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -78,7 +81,7 @@ public class ADMIN_sign_up extends connect {
                 login_finish_btnActionPerformed(evt);
             }
         });
-        jPanel1.add(login_finish_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 470, 160, 49));
+        jPanel1.add(login_finish_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 550, 160, 49));
 
         invalid.setBackground(new java.awt.Color(105, 73, 50));
         invalid.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -93,39 +96,39 @@ public class ADMIN_sign_up extends connect {
                 adminidActionPerformed(evt);
             }
         });
-        jPanel1.add(adminid, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 320, 26));
+        jPanel1.add(adminid, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, 320, 26));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Employee Sign Up");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, -1, -1));
 
         password_label.setBackground(new java.awt.Color(105, 73, 50));
         password_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         password_label.setForeground(new java.awt.Color(255, 255, 255));
         password_label.setText("Password");
-        jPanel1.add(password_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 90, -1));
+        jPanel1.add(password_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, 90, -1));
 
         email_label1.setBackground(new java.awt.Color(105, 73, 50));
         email_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         email_label1.setForeground(new java.awt.Color(255, 255, 255));
         email_label1.setText("Admin ID");
-        jPanel1.add(email_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 80, -1));
+        jPanel1.add(email_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 80, -1));
 
         pass.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         pass.setForeground(new java.awt.Color(105, 73, 50));
-        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, 320, 26));
+        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, 320, 26));
 
         password_label1.setBackground(new java.awt.Color(105, 73, 50));
         password_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         password_label1.setForeground(new java.awt.Color(255, 255, 255));
         password_label1.setText("Email");
-        jPanel1.add(password_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 90, -1));
+        jPanel1.add(password_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 490, 90, -1));
 
         email_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         email_txt.setForeground(new java.awt.Color(105, 73, 50));
-        jPanel1.add(email_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 320, 26));
+        jPanel1.add(email_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 510, 320, 26));
 
         invalid_email.setBackground(new java.awt.Color(105, 73, 50));
         invalid_email.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -133,7 +136,19 @@ public class ADMIN_sign_up extends connect {
         invalid_email.setToolTipText("");
         jPanel1.add(invalid_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 230, 10));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_whitebig.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 390, 80));
+
+        casa_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_medium.png"))); // NOI18N
+        casa_icon.setText("jLabel1");
+        jPanel1.add(casa_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 240, 180));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 520, 760));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/BG_NewAdminLogin.png"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, -190, -1, -1));
 
         setSize(new java.awt.Dimension(1360, 765));
         setLocationRelativeTo(null);
@@ -287,11 +302,14 @@ try {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField adminid;
+    private javax.swing.JLabel casa_icon;
     private javax.swing.JLabel email_label1;
     private javax.swing.JTextField email_txt;
     private javax.swing.JLabel invalid;
     private javax.swing.JLabel invalid_email;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton login_finish_btn;
     private javax.swing.JTextField pass;

@@ -299,6 +299,9 @@ boolean b=false;
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        USER_descriptionroom roomdesc = new USER_descriptionroom();
+        this.dispose();
+        roomdesc.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed

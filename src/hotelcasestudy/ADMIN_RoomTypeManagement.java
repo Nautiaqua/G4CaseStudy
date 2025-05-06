@@ -230,28 +230,28 @@ DefaultTableModel model = new DefaultTableModel() {
 
         created_in.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         created_in.setForeground(new java.awt.Color(105, 73, 50));
-        created_in.setText("num:");
-        background.add(created_in, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, 20));
+        created_in.setText("Num:");
+        background.add(created_in, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, 20));
 
         type_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         type_label1.setForeground(new java.awt.Color(105, 73, 50));
         type_label1.setText("Room Type:");
-        background.add(type_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, 20));
+        background.add(type_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, 20));
 
         desc_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         desc_label.setForeground(new java.awt.Color(105, 73, 50));
         desc_label.setText("Description:");
-        background.add(desc_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, -1, 20));
+        background.add(desc_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, -1, 20));
 
         bednum_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         bednum_label.setForeground(new java.awt.Color(105, 73, 50));
-        bednum_label.setText("max");
-        background.add(bednum_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, -1, 20));
+        bednum_label.setText("Max:");
+        background.add(bednum_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, 20));
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(105, 73, 50));
         jLabel1.setText("Room Type Management");
-        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 440, -1));
+        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 440, -1));
 
         addtype.setBackground(new java.awt.Color(134, 97, 72));
         addtype.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -262,7 +262,7 @@ DefaultTableModel model = new DefaultTableModel() {
                 addtypeActionPerformed(evt);
             }
         });
-        background.add(addtype, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 610, 150, 50));
+        background.add(addtype, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, 150, 50));
 
         deletetype.setBackground(new java.awt.Color(134, 97, 72));
         deletetype.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -273,7 +273,7 @@ DefaultTableModel model = new DefaultTableModel() {
                 deletetypeActionPerformed(evt);
             }
         });
-        background.add(deletetype, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 610, 170, 50));
+        background.add(deletetype, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 550, 170, 50));
 
         jTable1.setModel(model);
         jScrollPane2.setViewportView(jTable1);
@@ -282,18 +282,18 @@ DefaultTableModel model = new DefaultTableModel() {
 
         bednum_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         bednum_label1.setForeground(new java.awt.Color(105, 73, 50));
-        bednum_label1.setText("name:");
-        background.add(bednum_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, 20));
+        bednum_label1.setText("Name:");
+        background.add(bednum_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, 20));
 
         bednum_label2.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         bednum_label2.setForeground(new java.awt.Color(105, 73, 50));
-        bednum_label2.setText("price");
-        background.add(bednum_label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, 20));
+        bednum_label2.setText("Price:");
+        background.add(bednum_label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, 20));
 
         bednum_label3.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         bednum_label3.setForeground(new java.awt.Color(105, 73, 50));
-        bednum_label3.setText("bed");
-        background.add(bednum_label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, -1, 20));
+        bednum_label3.setText("Beds:");
+        background.add(bednum_label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, 20));
 
         jButton4.setBackground(new java.awt.Color(134, 97, 72));
         jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -304,44 +304,44 @@ DefaultTableModel model = new DefaultTableModel() {
                 jButton4ActionPerformed(evt);
             }
         });
-        background.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 610, 120, 50));
+        background.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 550, 120, 50));
 
         max1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 max1ActionPerformed(evt);
             }
         });
-        background.add(max1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, 300, 20));
+        background.add(max1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 300, 20));
 
         bed1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bed1ActionPerformed(evt);
             }
         });
-        background.add(bed1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 300, 20));
+        background.add(bed1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 300, 20));
 
         num1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 num1ActionPerformed(evt);
             }
         });
-        background.add(num1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 300, 20));
-        background.add(price1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 300, 20));
+        background.add(num1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 300, 20));
+        background.add(price1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 300, 20));
 
         name1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 name1ActionPerformed(evt);
             }
         });
-        background.add(name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 300, 20));
+        background.add(name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 300, 20));
 
         type1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 type1ActionPerformed(evt);
             }
         });
-        background.add(type1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 300, 20));
-        background.add(desc1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 440, 110));
+        background.add(type1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 300, 20));
+        background.add(desc1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 440, 110));
 
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1350, 700));
 

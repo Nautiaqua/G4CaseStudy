@@ -33,15 +33,6 @@ public class USER_descriptionroom extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jPanel11 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         logout1 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -49,63 +40,74 @@ public class USER_descriptionroom extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(null);
-
-        jPanel2.setBackground(new java.awt.Color(236, 234, 232));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel4.setBackground(new java.awt.Color(105, 73, 50));
-        jLabel4.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel4.setText("Standard");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        getContentPane().add(jPanel2);
-        jPanel2.setBounds(60, 100, 280, 640);
-
-        jPanel9.setBackground(new java.awt.Color(236, 234, 232));
-        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel5.setBackground(new java.awt.Color(105, 73, 50));
-        jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel5.setText("Double");
-        jPanel9.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        getContentPane().add(jPanel9);
-        jPanel9.setBounds(370, 100, 280, 640);
-
-        jPanel10.setBackground(new java.awt.Color(236, 234, 232));
-        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel6.setBackground(new java.awt.Color(105, 73, 50));
-        jLabel6.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel6.setText("Premium");
-        jPanel10.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        getContentPane().add(jPanel10);
-        jPanel10.setBounds(680, 100, 280, 640);
-
-        jPanel11.setBackground(new java.awt.Color(236, 234, 232));
-        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel3.setBackground(new java.awt.Color(105, 73, 50));
-        jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel3.setText("Deluxe");
-        jPanel11.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        getContentPane().add(jPanel11);
-        jPanel11.setBounds(990, 100, 280, 640);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/BG_NewUserLogin.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 70, 1541, 1000);
 
         jPanel4.setBackground(new java.awt.Color(236, 234, 232));
         jPanel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -161,6 +163,17 @@ public class USER_descriptionroom extends javax.swing.JFrame {
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_topleft.png"))); // NOI18N
         jLabel14.setText("jLabel2");
 
+        jButton6.setBackground(new java.awt.Color(236, 234, 232));
+        jButton6.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(103, 64, 37));
+        jButton6.setText("Return");
+        jButton6.setBorder(null);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -170,7 +183,9 @@ public class USER_descriptionroom extends javax.swing.JFrame {
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 716, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 661, Short.MAX_VALUE)
+                .addComponent(jButton6)
+                .addGap(18, 18, 18)
                 .addComponent(jButton8)
                 .addGap(18, 18, 18)
                 .addComponent(jButton7)
@@ -194,12 +209,355 @@ public class USER_descriptionroom extends javax.swing.JFrame {
                             .addComponent(logout1)
                             .addComponent(jButton5)
                             .addComponent(jButton7)
-                            .addComponent(jButton8))))
+                            .addComponent(jButton8)
+                            .addComponent(jButton6))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel4);
         jPanel4.setBounds(0, 0, 1344, 70);
+
+        jPanel1.setBackground(new java.awt.Color(140, 100, 75));
+
+        jPanel2.setBackground(new java.awt.Color(236, 234, 232));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/IMAGE_Standard.jpg"))); // NOI18N
+        jLabel9.setText("jLabel8");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 270, -1));
+
+        jLabel7.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel7.setText("everything the hotel offers!");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 270, 20));
+
+        jLabel12.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel12.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel12.setText("Standard");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel15.setText("Get a taste of luxury with the standard");
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 270, -1));
+
+        jLabel16.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel16.setText("that's seeking a luxury get-away for a few");
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 270, -1));
+
+        jLabel17.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel17.setText("room! This room is perfect for a couple");
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 270, -1));
+
+        jLabel18.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel18.setText("days!");
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 270, -1));
+
+        jLabel19.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel19.setText("1 bedroom with a King or 2 Double beds");
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 270, 20));
+
+        jLabel20.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel20.setText("1 bathroom, and a dining space.");
+        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 270, 20));
+
+        jLabel21.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel21.setText("Comes with the standard free wifi, a TV,");
+        jPanel2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 270, 20));
+
+        jLabel49.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel49.setText("free room service, and access to");
+        jPanel2.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 270, 20));
+
+        jLabel26.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel26.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel26.setText("₱3,000.00 / night");
+        jPanel2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
+
+        jLabel51.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel51.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel51.setText("2 people max");
+        jPanel2.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
+
+        jPanel9.setBackground(new java.awt.Color(236, 234, 232));
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel5.setText("Double");
+        jPanel9.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/IMAGE_Double.jpg"))); // NOI18N
+        jLabel10.setText("jLabel8");
+        jPanel9.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 270, -1));
+
+        jLabel29.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel29.setText("to free caviar per night!");
+        jPanel9.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 270, 20));
+
+        jLabel30.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel30.setText("Aside from having what the standard room");
+        jPanel9.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 270, 20));
+
+        jLabel24.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel24.setText("two rooms, each with their own amenities!");
+        jPanel9.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 270, -1));
+
+        jLabel27.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel27.setText("2 bedrooms with a King or 3 Double");
+        jPanel9.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 280, 20));
+
+        jLabel28.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel28.setText("room.");
+        jPanel9.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 270, 20));
+
+        jLabel23.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel23.setText("The double package features a room with");
+        jPanel9.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 270, -1));
+
+        jLabel22.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel22.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel22.setText("₱7,000.00 / night");
+        jPanel9.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
+
+        jLabel25.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel25.setText("This is perfect for a group of four or more!");
+        jPanel9.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 270, -1));
+
+        jLabel50.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel50.setText("beds, 2 bathrooms, and a kitchenette per");
+        jPanel9.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 270, 20));
+
+        jLabel52.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel52.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel52.setText("6 people max");
+        jPanel9.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
+
+        jLabel54.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel54.setText("already has, the double package is privy");
+        jPanel9.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 270, 20));
+
+        jPanel10.setBackground(new java.awt.Color(236, 234, 232));
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel6.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel6.setText("Premium");
+        jPanel10.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/IMAGE_Premium.png"))); // NOI18N
+        jLabel11.setText("jLabel8");
+        jPanel10.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 270, -1));
+
+        jLabel38.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel38.setText("are comparable to a small luxury house, all");
+        jPanel10.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 270, -1));
+
+        jLabel31.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel31.setText("lunch, and dinner!");
+        jPanel10.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 270, 20));
+
+        jLabel33.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel33.setText("The amenities inside the premium package");
+        jPanel10.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 270, -1));
+
+        jLabel37.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel37.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel37.setText("₱15,000.00 / night");
+        jPanel10.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 232, -1, 20));
+
+        jLabel39.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel39.setText("yours for however long you wish to stay!");
+        jPanel10.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 270, -1));
+
+        jLabel35.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel35.setText("with a dining space.");
+        jPanel10.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 270, 20));
+
+        jLabel32.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel32.setText("Aside from the perks of standard and");
+        jPanel10.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 270, 20));
+
+        jLabel34.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel34.setText("4 bedrooms with a King or two Double");
+        jPanel10.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 270, 20));
+
+        jLabel36.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel36.setText("Pure luxury comes with the premium room.");
+        jPanel10.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 270, -1));
+
+        jLabel53.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel53.setText("beds each, 4 bathrooms, and a lounge");
+        jPanel10.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 270, 20));
+
+        jLabel55.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel55.setText("double, the premium package gets access");
+        jPanel10.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 270, 20));
+
+        jLabel56.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel56.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel56.setText("to a team of chefs of which you can");
+        jPanel10.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 270, 20));
+
+        jLabel57.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel57.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel57.setText("request meals from during breakfast,");
+        jPanel10.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, 270, 20));
+
+        jLabel58.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel58.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel58.setText("12 people max");
+        jPanel10.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
+
+        jPanel11.setBackground(new java.awt.Color(236, 234, 232));
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel3.setText("Deluxe");
+        jPanel11.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/IMAGE_Deluxe.jpg"))); // NOI18N
+        jLabel8.setText("jLabel8");
+        jPanel11.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 270, -1));
+
+        jLabel41.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel41.setText("a small team of 4 personal assistants.");
+        jPanel11.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, 270, 20));
+
+        jLabel45.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel45.setText("massive lounge area.");
+        jPanel11.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 270, 20));
+
+        jLabel46.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel46.setText("The deluxe room has the perks of the");
+        jPanel11.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 270, 20));
+
+        jLabel42.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel42.setText("package! This is perfect for a massive");
+        jPanel11.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 270, -1));
+
+        jLabel48.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel48.setText("Live the life of royalty with our deluxe");
+        jPanel11.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 270, -1));
+
+        jLabel40.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel40.setText("luxurious party of people!");
+        jPanel11.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 270, -1));
+
+        jLabel43.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel43.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel43.setText("₱50,000.00 / night");
+        jPanel11.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
+
+        jLabel47.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel47.setText("6 bedroom with a King or three Double");
+        jPanel11.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 270, 20));
+
+        jLabel4.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel4.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel4.setText("16 people max");
+        jPanel11.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
+
+        jLabel59.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel59.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel59.setText("beds, a bathroom for each bedroom, a");
+        jPanel11.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 270, 20));
+
+        jLabel60.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel60.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel60.setText("banquet room, a mini indoor garden, and");
+        jPanel11.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 270, 20));
+
+        jLabel61.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel61.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel61.setText("previous three room types, but also has");
+        jPanel11.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 270, 20));
+
+        jLabel62.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel62.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel62.setText("heightened security, soundproofing, and");
+        jPanel11.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 270, 20));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(60, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 70, 1350, 690);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/BG_NewUserLogin.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 70, 1541, 1000);
 
         setSize(new java.awt.Dimension(1360, 765));
         setLocationRelativeTo(null);
@@ -223,6 +581,13 @@ public class USER_descriptionroom extends javax.swing.JFrame {
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        USER_booking bookings = new USER_booking();
+        this.dispose();
+        bookings.setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,15 +625,70 @@ public class USER_descriptionroom extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
