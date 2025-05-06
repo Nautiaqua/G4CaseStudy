@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class connect extends javax.swing.JFrame {
     Connection con;
     Statement stmt;
-    ResultSet rs;
+    ResultSet rs,rsDup;
     DefaultTableModel LoginModel=new DefaultTableModel();
     String newID,newEmail,newPass,newFname,newLname,newSQ,newSA,s,i,n,u,q,a,w,e,r,d,f,temp_email,newcheckout,newcheckin;
     int newchild,newadult;

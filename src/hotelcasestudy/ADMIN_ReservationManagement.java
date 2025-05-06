@@ -6,15 +6,18 @@ package hotelcasestudy;
 
 
 import java.awt.Toolkit;
-import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
-
+import javax.swing.UnsupportedLookAndFeelException;              
+import java.text.ParseException;       
+import java.text.SimpleDateFormat;
+import java.util.Date;                 
+import java.util.concurrent.TimeUnit;  
+import java.sql.PreparedStatement;   
+import java.sql.SQLException;        
 /**
  *
  * @author Nardz Ablaza
@@ -252,6 +255,7 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
 int e = jTable1.getSelectedRow();
 if (e >= 0) {
+    // Extract current values
     String users = (String) jTable1.getValueAt(e, 1);  
     String roomid = (String) jTable1.getValueAt(e, 2); 
     String totalp = (String) jTable1.getValueAt(e, 3);  
@@ -261,21 +265,23 @@ if (e >= 0) {
     String dateres = (String) jTable1.getValueAt(e, 8);  
     String checkout = (String) jTable1.getValueAt(e, 9); 
     String checkin = (String) jTable1.getValueAt(e, 10); 
+
+    // Set UI components
     user.setText(users);
     room.setText(roomid);
     total.setText(totalp);
     stat.setText(status);
     try {
-    adult.setValue(Integer.parseInt(adult1.trim()));
-    child.setValue(Integer.parseInt(child1.trim()));
-} catch (NumberFormatException ex) {
-    JOptionPane.showMessageDialog(null, "Adults and Children must be numeric values.");
-    return;
-}
-
+        adult.setValue(Integer.parseInt(adult1.trim()));
+        child.setValue(Integer.parseInt(child1.trim()));
+    } catch (NumberFormatException ex) {
+        JOptionPane.showMessageDialog(null, "Adults and Children must be numeric values.");
+        return;
+    }
     date.setText(dateres);
     co.setText(checkout);
     ci.setText(checkin);
+
     int option = JOptionPane.showConfirmDialog(null, new Object[] {
         "USER:", user,
         "ROOMID:", room,
@@ -287,22 +293,72 @@ if (e >= 0) {
         "CHECKOUT:", co,
         "CHECKIN:", ci,
     }, "Edit User", JOptionPane.OK_CANCEL_OPTION);
+
     if (option == JOptionPane.OK_OPTION) {
+        // Fetch new inputs
         String newuser = user.getText().trim().toLowerCase();
         String newroom = room.getText().trim();
-        String newtotal = total.getText().trim();
         String newstat = stat.getText().trim();
         String newadult = String.valueOf(adult.getValue()).trim();
         String newchild = String.valueOf(child.getValue()).trim();
         String newdate = date.getText().trim();
         String newco = co.getText().trim();
         String newci = ci.getText().trim();
-        if (newuser.isEmpty() || newroom.isEmpty() || newtotal.isEmpty() || newstat.isEmpty() || newadult.isEmpty() || newchild.isEmpty()|| newdate.isEmpty()|| newco.isEmpty()|| newci.isEmpty()) {
+
+        if (newuser.isEmpty() || newroom.isEmpty() || newstat.isEmpty() ||
+            newadult.isEmpty() || newchild.isEmpty() || newdate.isEmpty() || newco.isEmpty() || newci.isEmpty()) {
             JOptionPane.showMessageDialog(null, "All fields must be filled out.");
             return;
         }
+
+        // ➕ START: Recalculate total if room or dates changed
+        String newtotal = totalp;  // Default to old total
+
+        if (!newroom.equals(roomid) || !newco.equals(checkout) || !newci.equals(checkin)) {
+            try {
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                Date inDate = sdf.parse(newci);
+                Date outDate = sdf.parse(newco);
+
+                long diffInMillis = outDate.getTime() - inDate.getTime();
+                long numOfDays = TimeUnit.DAYS.convert(diffInMillis, TimeUnit.MILLISECONDS);
+
+                int rate = switch (newroom) {
+                    case "1" -> 3000;
+                    case "2" -> 7000;
+                    case "3" -> 15000;
+                    case "4" -> 50000;
+                    default -> 0;
+                };
+
+                if (rate == 0) {
+                    JOptionPane.showMessageDialog(null, "Invalid room ID.");
+                    return;
+                }
+
+                if (numOfDays <= 0) {
+                    JOptionPane.showMessageDialog(null, "Check-out must be after check-in.");
+                    return;
+                }
+
+                newtotal = String.valueOf(rate * (int) numOfDays);
+                total.setText(newtotal);  // Update visible field too
+
+            } catch (ParseException ex) {
+                JOptionPane.showMessageDialog(null, "Date format error: " + ex.getMessage());
+                return;
+            }
+        }
+        // ➕ END: Recalculate total if changed
+
         try {
-            String sql = "UPDATE RESERVATIONS SET ROOM_ID = ?, TOTAL_PRICE = ?, STATUS = ?, ADULTS = ?, CHILDREN = ?, DATE_RES = ?, CHECKOUT = ?, CHECKIN = ? WHERE LOWER(TRIM(USER_EMAIL)) = ?";
+            String sql = """
+                UPDATE RESERVATIONS 
+                SET ROOM_ID = ?, TOTAL_PRICE = ?, STATUS = ?, 
+                    ADULTS = ?, CHILDREN = ?, DATE_RES = ?, 
+                    CHECKOUT = ?, CHECKIN = ? 
+                WHERE LOWER(TRIM(USER_EMAIL)) = ?""";
+            
             PreparedStatement pst = con.prepareStatement(sql);
             pst.setString(1, newroom);
             pst.setString(2, newtotal);
@@ -313,8 +369,10 @@ if (e >= 0) {
             pst.setString(7, newco);
             pst.setString(8, newci);
             pst.setString(9, newuser);
+
             int rowsAffected = pst.executeUpdate();
             System.out.println("Rows affected: " + rowsAffected);
+
             if (rowsAffected > 0) {
                 jTable1.setValueAt(newuser, e, 1);
                 jTable1.setValueAt(newroom, e, 2);
@@ -330,6 +388,7 @@ if (e >= 0) {
                 JOptionPane.showMessageDialog(null, "No matching email found in the database.");
             }
             con.commit();
+            
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error updating database: " + ex.getMessage());
             ex.printStackTrace();
