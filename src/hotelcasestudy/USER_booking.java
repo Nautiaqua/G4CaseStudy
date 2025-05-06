@@ -4,18 +4,13 @@
  */
 package hotelcasestudy;
 
-import java.awt.Toolkit;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import com.toedter.calendar.JDateChooser;
-import static hotelcasestudy.User_room_selection.ci;
-import static hotelcasestudy.User_room_selection.co;
 
 
 
@@ -31,9 +26,14 @@ public class USER_booking extends javax.swing.JFrame {
 
     public USER_booking() {
         initComponents();
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
+        setDateToToday();
+        
     }
-
+public void setDateToToday() {
+    Date today = new Date();
+    datechoose.setDate(today);
+    datechoose.setEnabled(false);
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -256,44 +256,32 @@ public class USER_booking extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-boolean a=false;
-boolean b=false;
-        int adult = (int) adult_spinner.getValue();
-        int child = (int) child_spinner.getValue();
-       SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+boolean a = false;
+boolean b = false;
+
+int adult = (int) adult_spinner.getValue();
+int child = (int) child_spinner.getValue();
+
 
 Date today = new Date();
-Date checkInDate = datechoose.getDate();
+dat = today; 
 
-if (checkInDate == null) {
-    invalid.setText("Please select both check-in and check-out dates.");
-} else if (checkInDate.before(today)) {
-    invalid.setText("You can only book for future dates.");
+if (adult == 0) {
+    invalid.setText("Invalid Selection!");
 } else {
-        if (datechoose.getDate() == null || adult == 0) {
-            invalid.setText("Invalid Selection!");
-        } else {
-            System.out.println("This works.");
-            adu=adult;
-            chi=child;
-            dat=datechoose.getDate();
-            b=true;
-            a=true;
-        }
-        if(a&b){
-            User_room_selection description = new User_room_selection();
-            this.dispose();
-            description.setVisible(true);
-        }
-        
+    System.out.println("This works.");
+    adu = adult;
+    chi = child;
+    b = true;
+    a = true;
 }
-        
-        
-        
-        
-        
-        
-        
+
+if (a && b) {
+    User_room_selection description = new User_room_selection();
+    this.dispose();
+    description.setVisible(true);
+}
+
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed

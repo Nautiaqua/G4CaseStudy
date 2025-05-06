@@ -1,6 +1,5 @@
 package hotelcasestudy;
 
-import java.awt.Toolkit;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -26,7 +25,7 @@ public class User_Checkout extends connect  {
     
     initComponents();
     DoConnect();
-    this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
+    
 
  
 }
@@ -175,16 +174,16 @@ public class User_Checkout extends connect  {
     }//GEN-LAST:event_billaddActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-int resID = 1; // Start from 1 or whatever default you prefer
+int resID = 1;
 boolean emailExists = false;
-
-newEmail =  USER_login_screen.acc;
-newcheckout = User_room_selection.co;;
+newEmail = USER_login_screen.acc;
+newcheckout = User_room_selection.co;
 newcheckin = User_room_selection.ci;
 newchild = USER_booking.chi;
 newadult = USER_booking.adu;
+int newroomid = User_room_selection.id;
+int newtotal = User_room_selection.rm;
 newdate = new java.sql.Date(USER_booking.dat.getTime());
-
 try {
     con.setAutoCommit(false);
     stmt = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
@@ -194,7 +193,6 @@ try {
         existingIds.add(rs.getInt("RESERVATION_ID"));
     }
     rs.close();
-
     while (existingIds.contains(resID)) {
         resID++;
     }
@@ -207,23 +205,23 @@ try {
     rs.updateString("STATUS", "payed");
     rs.updateInt("CHILDREN", newchild);
     rs.updateInt("ADULTS", newadult);
+    rs.updateInt("ROOM_ID", newroomid);     
+    rs.updateInt("TOTAL_PRICE", newtotal);           
     rs.updateDate("DATE_RES", newdate);
     rs.updateTimestamp("CREATED_ON", new Timestamp(System.currentTimeMillis()));
     rs.insertRow();
-
     con.commit();
     Refresh_RS_STMT();
-
     System.out.println("Reservation inserted with ID: " + resID);
     User_Checkout userloginmenu = new User_Checkout();
     this.setVisible(false);
     userloginmenu.setVisible(false);
-    
-
 } catch (SQLException e) {
     System.out.println("SQL Error: " + e);
-    if (con != null) try { con.rollback(); } catch (SQLException rollbackEx) {
-        System.out.println("Rollback failed: " + rollbackEx);
+    if (con != null) {
+        try { con.rollback(); } catch (SQLException rollbackEx) {
+            System.out.println("Rollback failed: " + rollbackEx);
+        }
     }
 }
 

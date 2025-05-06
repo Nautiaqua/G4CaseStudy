@@ -4,26 +4,39 @@
  */
 package hotelcasestudy;
 
-import java.awt.Toolkit;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 /**
  *
  * @author Lenovo
  */
-public class User_room_selection extends javax.swing.JFrame {
+public class User_room_selection extends connect {
     public static String ci;
     public static String co;
-
+    public static int id;
+    public static int rm;
+    public static  boolean room1=(false);
+    public static boolean room2=(false);
+    public static boolean room3=(false);
+    public static boolean room4=(false);
+    
     /**
      * Creates new form User_room_selection
      */
     public User_room_selection() {
         initComponents();
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
+        DoConnect();
+       
     }
 
     /**
@@ -62,9 +75,7 @@ public class User_room_selection extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
-        check_in = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        check_out = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         invalid = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
@@ -118,6 +129,8 @@ public class User_room_selection extends javax.swing.JFrame {
         jLabel53 = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
+        check_in = new com.toedter.calendar.JDateChooser();
+        check_out = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -322,18 +335,10 @@ public class User_room_selection extends javax.swing.JFrame {
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        check_in.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                check_inActionPerformed(evt);
-            }
-        });
-        jPanel1.add(check_in, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 180, -1));
-
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Check-In Date");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
-        jPanel1.add(check_out, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 180, -1));
 
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -443,6 +448,11 @@ public class User_room_selection extends javax.swing.JFrame {
         add_premium.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
         add_premium.setForeground(new java.awt.Color(255, 255, 255));
         add_premium.setText("ADD");
+        add_premium.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_premiumActionPerformed(evt);
+            }
+        });
         jPanel9.add(add_premium, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 170, -1, -1));
 
         jLabel38.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
@@ -505,6 +515,11 @@ public class User_room_selection extends javax.swing.JFrame {
         add_double.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
         add_double.setForeground(new java.awt.Color(255, 255, 255));
         add_double.setText("ADD");
+        add_double.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_doubleActionPerformed(evt);
+            }
+        });
         jPanel8.add(add_double, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 170, -1, -1));
 
         jLabel30.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
@@ -567,6 +582,11 @@ public class User_room_selection extends javax.swing.JFrame {
         deluxe.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
         deluxe.setForeground(new java.awt.Color(255, 255, 255));
         deluxe.setText("ADD");
+        deluxe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deluxeActionPerformed(evt);
+            }
+        });
         jPanel10.add(deluxe, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 170, -1, -1));
 
         jLabel46.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
@@ -622,6 +642,8 @@ public class User_room_selection extends javax.swing.JFrame {
         jPanel10.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, -1, -1));
 
         jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 770, 860, 210));
+        jPanel1.add(check_in, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 140, -1));
+        jPanel1.add(check_out, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 140, -1));
 
         jScrollPane1.setViewportView(jPanel1);
 
@@ -632,20 +654,84 @@ public class User_room_selection extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-if (check_in.getText().isEmpty()||check_in.getText().isEmpty()){
-   invalid.setText("STUPID"); 
-}
-else{
-    ci=check_in.getText();
-    co=check_out.getText();
-        User_Checkout loginmenu = new User_Checkout();
-        loginmenu.setVisible(true);
-}
-    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void check_inActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_check_inActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_check_inActionPerformed
+
+
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+Date inDate = check_in.getDate();
+Date outDate = check_out.getDate();
+
+if (inDate == null || outDate == null) {
+    invalid.setText("Please select check-in and check-out dates.");
+    return;
+}
+
+// Validation: Check-in must not be in the past, and check-out must be after check-in
+Date today = new Date();
+if (inDate.before(today)) {
+    invalid.setText("Check-in date cannot be in the past.");
+    return;
+}
+
+if (!outDate.after(inDate)) {
+    invalid.setText("Check-out date must be after check-in date.");
+    return;
+}
+
+java.sql.Date sqlCheckIn = new java.sql.Date(inDate.getTime());
+java.sql.Date sqlCheckOut = new java.sql.Date(outDate.getTime());
+
+if (room1) {
+    rm = 3000;
+    id = 1;
+} else if (room2) {
+    rm = 7000;
+    id = 2;
+} else if (room3) {
+    rm = 15000;
+    id = 3;
+} else if (room4) {
+    rm = 50000;
+    id = 4;
+} else {
+    invalid.setText("No room selected.");
+    return;
+}
+
+try {
+    String query = "SELECT * FROM RESERVATIONS WHERE ROOM_ID = ? AND NOT (CHECKOUT <= ? OR CHECKIN >= ?)";
+    PreparedStatement pst = con.prepareStatement(query);
+    pst.setInt(1, id);
+    pst.setDate(2, sqlCheckIn); 
+    pst.setDate(3, sqlCheckOut);
+
+
+    ResultSet rs = pst.executeQuery();
+
+    if (rs.next()) {
+        JOptionPane.showMessageDialog(null, "Room already reserved for selected dates.");
+        return;
+    }
+
+    // If not reserved, proceed
+    User_room_selection.ci = sdf.format(inDate);
+    User_room_selection.co = sdf.format(outDate);
+    User_room_selection.id = id;
+    User_room_selection.rm = rm;
+
+    User_Checkout loginmenu = new User_Checkout();
+    loginmenu.setVisible(true);
+    this.dispose();
+
+} catch (SQLException e) {
+    JOptionPane.showMessageDialog(null, "Database error: " + e.getMessage());
+    e.printStackTrace();
+}
+
+
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
@@ -674,8 +760,24 @@ else{
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void add_standardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_standardActionPerformed
-        // TODO add your handling code here:
+        
+        room1=true;
     }//GEN-LAST:event_add_standardActionPerformed
+
+    private void add_doubleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_doubleActionPerformed
+        
+        room2=true;
+    }//GEN-LAST:event_add_doubleActionPerformed
+
+    private void add_premiumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_premiumActionPerformed
+       
+        room3=true;
+    }//GEN-LAST:event_add_premiumActionPerformed
+
+    private void deluxeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deluxeActionPerformed
+       
+        room4=true;
+    }//GEN-LAST:event_deluxeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -729,8 +831,8 @@ else{
     private javax.swing.JButton add_double;
     private javax.swing.JButton add_premium;
     private javax.swing.JButton add_standard;
-    private javax.swing.JTextField check_in;
-    private javax.swing.JTextField check_out;
+    private com.toedter.calendar.JDateChooser check_in;
+    private com.toedter.calendar.JDateChooser check_out;
     private javax.swing.JButton deluxe;
     private javax.swing.Box.Filler filler1;
     private javax.swing.JLabel invalid;
