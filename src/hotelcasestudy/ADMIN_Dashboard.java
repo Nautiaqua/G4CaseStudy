@@ -63,12 +63,15 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(237, 234, 233));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(105, 73, 50));
         jLabel1.setText("Admin Dashboard");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(409, 194, -1, -1));
 
         room_type_management.setBackground(new java.awt.Color(140, 100, 75));
         room_type_management.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
@@ -79,6 +82,7 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
                 room_type_managementActionPerformed(evt);
             }
         });
+        jPanel1.add(room_type_management, new org.netbeans.lib.awtextra.AbsoluteConstraints(409, 289, 430, -1));
 
         maint_sched.setBackground(new java.awt.Color(140, 100, 75));
         maint_sched.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
@@ -89,6 +93,7 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
                 maint_schedActionPerformed(evt);
             }
         });
+        jPanel1.add(maint_sched, new org.netbeans.lib.awtextra.AbsoluteConstraints(409, 242, 430, -1));
 
         room_management.setBackground(new java.awt.Color(140, 100, 75));
         room_management.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
@@ -99,6 +104,7 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
                 room_managementActionPerformed(evt);
             }
         });
+        jPanel1.add(room_management, new org.netbeans.lib.awtextra.AbsoluteConstraints(409, 336, 430, -1));
 
         resv_management.setBackground(new java.awt.Color(140, 100, 75));
         resv_management.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
@@ -109,6 +115,7 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
                 resv_managementActionPerformed(evt);
             }
         });
+        jPanel1.add(resv_management, new org.netbeans.lib.awtextra.AbsoluteConstraints(409, 383, 430, -1));
 
         user_management.setBackground(new java.awt.Color(140, 100, 75));
         user_management.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
@@ -119,6 +126,7 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
                 user_managementActionPerformed(evt);
             }
         });
+        jPanel1.add(user_management, new org.netbeans.lib.awtextra.AbsoluteConstraints(409, 430, 430, -1));
 
         employee_management.setBackground(new java.awt.Color(140, 100, 75));
         employee_management.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
@@ -129,6 +137,7 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
                 employee_managementActionPerformed(evt);
             }
         });
+        jPanel1.add(employee_management, new org.netbeans.lib.awtextra.AbsoluteConstraints(409, 477, 430, -1));
 
         report_btn.setBackground(new java.awt.Color(140, 100, 75));
         report_btn.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
@@ -139,6 +148,7 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
                 report_btnActionPerformed(evt);
             }
         });
+        jPanel1.add(report_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(409, 524, 430, -1));
 
         jPanel4.setBackground(new java.awt.Color(140, 100, 75));
         jPanel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -199,61 +209,11 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(450, 450, 450)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(report_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(employee_management, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(user_management, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(resv_management, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(room_management, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(maint_sched, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(room_type_management, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(124, 124, 124)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(maint_sched)
-                .addGap(18, 18, 18)
-                .addComponent(room_type_management)
-                .addGap(18, 18, 18)
-                .addComponent(room_management)
-                .addGap(18, 18, 18)
-                .addComponent(resv_management)
-                .addGap(18, 18, 18)
-                .addComponent(user_management)
-                .addGap(18, 18, 18)
-                .addComponent(employee_management)
-                .addGap(18, 18, 18)
-                .addComponent(report_btn)
-                .addGap(0, 175, Short.MAX_VALUE))
-        );
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 760));
 
-        setSize(new java.awt.Dimension(1360, 765));
+        setSize(new java.awt.Dimension(1358, 764));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -292,7 +252,7 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
     private void user_managementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_user_managementActionPerformed
 
         ADMIN_usermanagement userloginmenu = new ADMIN_usermanagement();
-        this.setVisible(false);
+        this.dispose();
         userloginmenu.setVisible(true);
     }//GEN-LAST:event_user_managementActionPerformed
 

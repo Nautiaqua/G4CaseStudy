@@ -245,8 +245,8 @@ public class USER_signup_screen extends connect {
             invalid_email.setText("Must be a valid email!");
         }
         
-        if (email_txt.getText().contains("@gmail.com") || email_txt.getText().contains("@yahoo.com") || email_txt.getText().contains("@ue.ph")) { 
-            if ("@yahoo.com".equals(email_txt.getText()) || "@gmail.com".equals(email_txt.getText()) || "@ue.ph".equals(email_txt.getText())){
+        if (email_txt.getText().contains("@gmail.com") || email_txt.getText().contains("@yahoo.com") || email_txt.getText().contains("@ue.edu.ph")) { 
+            if ("@yahoo.com".equals(email_txt.getText()) || "@gmail.com".equals(email_txt.getText()) || "@ue.edu.ph".equals(email_txt.getText())){
                 invalid_email.setText("Must be a valid email!");
             } else {
                 email_check = true;

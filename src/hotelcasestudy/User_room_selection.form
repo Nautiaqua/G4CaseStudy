@@ -67,7 +67,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="25" green="40" red="67" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Total: &#x20b1;0.00"/>
+            <Property name="text" type="java.lang.String" value="Total: P0.00"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -335,7 +335,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="40" y="10" width="-1" height="-1"/>
+              <AbsoluteConstraints x="30" y="10" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -726,11 +726,11 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="32" green="49" red="69" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="&#x20b1;3,000.00 / night"/>
+                    <Property name="text" type="java.lang.String" value="P3,000.00 / night"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="710" y="10" width="-1" height="-1"/>
+                      <AbsoluteConstraints x="700" y="10" width="-1" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -954,11 +954,11 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="32" green="49" red="69" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="&#x20b1;15,000.00 / night"/>
+                    <Property name="text" type="java.lang.String" value="P15,000.00 / night"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="700" y="10" width="-1" height="-1"/>
+                      <AbsoluteConstraints x="690" y="10" width="-1" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1157,11 +1157,11 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="32" green="49" red="69" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="&#x20b1;7,000.00 / night"/>
+                    <Property name="text" type="java.lang.String" value="P7,000.00 / night"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="710" y="10" width="-1" height="-1"/>
+                      <AbsoluteConstraints x="700" y="10" width="-1" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1360,11 +1360,11 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="32" green="49" red="69" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="&#x20b1;50,000.00 / night"/>
+                    <Property name="text" type="java.lang.String" value="P50,000.00 / night"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="700" y="10" width="-1" height="-1"/>
+                      <AbsoluteConstraints x="690" y="10" width="-1" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>

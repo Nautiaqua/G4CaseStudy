@@ -141,7 +141,7 @@ public class User_room_selection extends connect {
 
         total.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
         total.setForeground(new java.awt.Color(103, 64, 37));
-        total.setText("Total: ₱0.00");
+        total.setText("Total: P0.00");
         jPanel2.add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(134, 97, 72));
@@ -246,7 +246,7 @@ public class User_room_selection extends connect {
                 jToggleButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
+        jPanel2.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 70, 430, 690));
 
@@ -399,8 +399,8 @@ public class User_room_selection extends connect {
         jLabel28.setBackground(new java.awt.Color(105, 73, 50));
         jLabel28.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel28.setText("₱3,000.00 / night");
-        jPanel7.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, -1, -1));
+        jLabel28.setText("P3,000.00 / night");
+        jPanel7.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, -1, -1));
 
         jLabel56.setBackground(new java.awt.Color(105, 73, 50));
         jLabel56.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
@@ -481,8 +481,8 @@ public class User_room_selection extends connect {
         jLabel55.setBackground(new java.awt.Color(105, 73, 50));
         jLabel55.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jLabel55.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel55.setText("₱15,000.00 / night");
-        jPanel9.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, -1, -1));
+        jLabel55.setText("P15,000.00 / night");
+        jPanel9.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 10, -1, -1));
 
         jLabel57.setBackground(new java.awt.Color(105, 73, 50));
         jLabel57.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
@@ -548,8 +548,8 @@ public class User_room_selection extends connect {
         jLabel37.setBackground(new java.awt.Color(105, 73, 50));
         jLabel37.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jLabel37.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel37.setText("₱7,000.00 / night");
-        jPanel8.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, -1, -1));
+        jLabel37.setText("P7,000.00 / night");
+        jPanel8.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, -1, -1));
 
         jLabel58.setBackground(new java.awt.Color(105, 73, 50));
         jLabel58.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
@@ -615,8 +615,8 @@ public class User_room_selection extends connect {
         jLabel53.setBackground(new java.awt.Color(105, 73, 50));
         jLabel53.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jLabel53.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel53.setText("₱50,000.00 / night");
-        jPanel10.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, -1, -1));
+        jLabel53.setText("P50,000.00 / night");
+        jPanel10.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 10, -1, -1));
 
         jLabel54.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
         jLabel54.setForeground(new java.awt.Color(103, 64, 37));
