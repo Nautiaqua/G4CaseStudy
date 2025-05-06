@@ -31,7 +31,7 @@ public class USER_booking extends javax.swing.JFrame {
 
     public USER_booking() {
         initComponents();
-        
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
     }
 
     /**

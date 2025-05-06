@@ -1,5 +1,6 @@
 package hotelcasestudy;
 
+import java.awt.Toolkit;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -25,7 +26,7 @@ public class User_Checkout extends connect  {
     
     initComponents();
     DoConnect();
-    
+    this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
 
  
 }

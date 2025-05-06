@@ -5,6 +5,7 @@
 package hotelcasestudy;
 
 
+import java.awt.Toolkit;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -31,7 +32,7 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
         initComponents();
         DoConnect();
         Select();
-      
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
     }
  public void Select() {
     String[] columnsNames = {"RESERVATION_ID", "USER_EMAIL", "ROOM_ID", "TOTAL_PRICE", "STATUS", "CREATED_ON", "ADULTS", "CHILDREN", "DATE_RES", "CHECKOUT", "CHECKIN"};

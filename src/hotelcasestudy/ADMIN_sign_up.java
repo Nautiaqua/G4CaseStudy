@@ -25,7 +25,7 @@ public class ADMIN_sign_up extends connect {
     public ADMIN_sign_up() {
         initComponents();
         DoConnect();
-       
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
     }
 
     /**

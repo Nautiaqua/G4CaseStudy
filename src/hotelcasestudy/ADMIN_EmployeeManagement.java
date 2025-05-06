@@ -4,6 +4,7 @@
  */
 package hotelcasestudy;
 
+import java.awt.Toolkit;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,6 +35,7 @@ DefaultTableModel MODEL = new DefaultTableModel() {
         initComponents();
         DoConnect();
         Select();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
     }
     public void Select(){
         String [] columnsNames = {"ADMIN_ID","PASSWORD","EMAIL","CREATED_ON"};

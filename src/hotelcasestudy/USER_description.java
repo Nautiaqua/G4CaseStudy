@@ -21,7 +21,7 @@ public class USER_description extends javax.swing.JFrame {
      */
     public USER_description() {
         initComponents();
-        
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
     }
 
     /**

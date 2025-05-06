@@ -21,7 +21,7 @@ public class USER_descriptionroom extends javax.swing.JFrame {
      */
     public USER_descriptionroom() {
         initComponents();
-        
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
     }
 
     /**

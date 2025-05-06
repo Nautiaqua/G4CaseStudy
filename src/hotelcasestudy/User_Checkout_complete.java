@@ -19,7 +19,7 @@ public class User_Checkout_complete extends javax.swing.JFrame {
      */
     public User_Checkout_complete() {
         initComponents();
-  
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
     }
 
     /**

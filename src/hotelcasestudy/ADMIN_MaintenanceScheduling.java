@@ -7,6 +7,7 @@ package hotelcasestudy;
 import hotelcasestudy.ADMIN_Dashboard;
 import hotelcasestudy.USER_login_menu;
 import hotelcasestudy.connect;
+import java.awt.Toolkit;
 import java.sql.SQLException;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
@@ -16,7 +17,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 
 
@@ -39,7 +44,7 @@ int x=0;
         initComponents();
         DoConnect();
         Select();
-     
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
     }
     public void Select(){
         String [] columnsNames = {"MAIN_ID" ,"ROOM_NUMBER","STATUS","MAINTENANCE_DATE"};
@@ -508,22 +513,15 @@ if (e >= 0) {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+    try {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ADMIN_MaintenanceScheduling.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+        * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+        */
+        UIManager.setLookAndFeel("com.formdev.flatlaf.FlatLightLaf");
         //</editor-fold>
+        
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -553,6 +551,15 @@ if (e >= 0) {
         java.awt.EventQueue.invokeLater(() -> {
             new ADMIN_MaintenanceScheduling().setVisible(true);
         });
+    } catch (ClassNotFoundException ex) {
+        Logger.getLogger(ADMIN_MaintenanceScheduling.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (InstantiationException ex) {
+        Logger.getLogger(ADMIN_MaintenanceScheduling.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (IllegalAccessException ex) {
+        Logger.getLogger(ADMIN_MaintenanceScheduling.class.getName()).log(Level.SEVERE, null, ex);
+    } catch (UnsupportedLookAndFeelException ex) {
+        Logger.getLogger(ADMIN_MaintenanceScheduling.class.getName()).log(Level.SEVERE, null, ex);
+    }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

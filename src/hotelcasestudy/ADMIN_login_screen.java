@@ -4,6 +4,7 @@
  */
 package hotelcasestudy;
 
+import java.awt.Toolkit;
 import java.sql.SQLException;
 import javax.swing.*;
 import java.util.logging.Level;
@@ -22,7 +23,7 @@ public class ADMIN_login_screen extends connect {
     public ADMIN_login_screen() {
         initComponents();
         DoConnect();
-       
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
     }
 
     /**

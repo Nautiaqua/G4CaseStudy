@@ -22,7 +22,7 @@ public class USER_pass_view extends connect {
     public USER_pass_view() {
         initComponents();
         DoConnect();
-        
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
     }
 
     /**

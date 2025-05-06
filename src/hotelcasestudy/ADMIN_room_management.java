@@ -12,6 +12,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 import hotelcasestudy.ADMIN_Dashboard;
 import hotelcasestudy.USER_login_menu;
 import hotelcasestudy.connect;
+import java.awt.Toolkit;
 import java.sql.SQLException;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
@@ -41,7 +42,7 @@ DefaultTableModel model = new DefaultTableModel() {
         initComponents();
         DoConnect();
         Select();
-        
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
         
 
     }
@@ -462,8 +463,6 @@ if (selectedRow >= 0) {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-
-
 
         
     

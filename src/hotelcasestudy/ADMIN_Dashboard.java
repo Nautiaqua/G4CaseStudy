@@ -21,7 +21,7 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
      */
     public ADMIN_Dashboard() {
         initComponents();
-        
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
     }
 
     /**

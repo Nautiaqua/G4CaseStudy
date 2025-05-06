@@ -19,7 +19,7 @@ public class USER_signup_complete extends javax.swing.JFrame {
      */
     public USER_signup_complete() {
         initComponents();
-  
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
     }
 
     /**

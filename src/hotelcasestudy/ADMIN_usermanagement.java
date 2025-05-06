@@ -1,6 +1,7 @@
 
 package hotelcasestudy;
 
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
@@ -28,6 +29,7 @@ public class ADMIN_usermanagement extends connect {
         initComponents();
         DoConnect();
         Select();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
         
         if ("What is your favorite thing?".equals(secquesbox.getSelectedItem().toString())) {
             System.out.println("OWRKING");

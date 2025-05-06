@@ -4,6 +4,7 @@
  */
 package hotelcasestudy;
 
+import java.awt.Toolkit;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
 import java.sql.SQLException;
@@ -34,6 +35,7 @@ DefaultTableModel model = new DefaultTableModel() {
         initComponents();
         DoConnect();
         Select();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
     }
     public void Select(){
         String [] columnsNames = {"TYPE_ID","NAME","DESCRIPTION","NUM_BEDS","BED_TYPE","MAX_OCCUPANCY","BASE_PRICE"};
