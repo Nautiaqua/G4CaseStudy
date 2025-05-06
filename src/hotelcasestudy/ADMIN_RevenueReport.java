@@ -100,11 +100,9 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jLabel20 = new javax.swing.JLabel();
-        rev = new javax.swing.JTextField();
+        rev = new javax.swing.JLabel();
         jToggleButton1 = new javax.swing.JToggleButton();
+        jLabel21 = new javax.swing.JLabel();
 
         remove_text.setBackground(new java.awt.Color(237, 234, 233));
         remove_text.setFont(new java.awt.Font("Liberation Sans", 1, 12)); // NOI18N
@@ -216,7 +214,6 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setBackground(new java.awt.Color(255, 255, 255));
         jTable1.setModel(tbModel1);
         jScrollPane1.setViewportView(jTable1);
 
@@ -227,39 +224,10 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
         jLabel1.setText("Revenue Report");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 280, -1));
 
-        jButton4.setBackground(new java.awt.Color(134, 97, 72));
-        jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("EDIT");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 120, 50));
-
-        jButton3.setBackground(new java.awt.Color(134, 97, 72));
-        jButton3.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("DELETE USER");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 170, 50));
-
-        jLabel20.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel20.setText("Total Revenue");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, 280, 20));
-
-        rev.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                revActionPerformed(evt);
-            }
-        });
-        jPanel1.add(rev, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 80, 400, 20));
+        rev.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        rev.setForeground(new java.awt.Color(105, 73, 50));
+        rev.setText("₱00.00");
+        jPanel1.add(rev, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 280, 20));
 
         jToggleButton1.setBackground(new java.awt.Color(134, 97, 72));
         jToggleButton1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -270,7 +238,12 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
                 jToggleButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, 160, 50));
+        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 160, 50));
+
+        jLabel21.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel21.setText("Total Revenue:");
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 280, 20));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1344, 690));
 
@@ -332,106 +305,6 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
         }
     }//GEN-LAST:event_remove_textActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        remove_warning.show(jButton3, 0, jButton3.getHeight());
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        int e = jTable1.getSelectedRow();
-        if (e >= 0) {
-            String users = (String) jTable1.getValueAt(e, 1);
-            String roomid = (String) jTable1.getValueAt(e, 2);
-            String totalp = (String) jTable1.getValueAt(e, 3);
-            String status = (String) jTable1.getValueAt(e, 4);
-            String adult1 = (String) jTable1.getValueAt(e, 6);
-            String child1 = (String) jTable1.getValueAt(e, 7);
-            String dateres = (String) jTable1.getValueAt(e, 8);
-            String checkout = (String) jTable1.getValueAt(e, 9);
-            String checkin = (String) jTable1.getValueAt(e, 10);
-            user.setText(users);
-            room.setText(roomid);
-            total.setText(totalp);
-            stat.setText(status);
-            try {
-                adult.setValue(Integer.parseInt(adult1.trim()));
-                child.setValue(Integer.parseInt(child1.trim()));
-            } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(null, "Adults and Children must be numeric values.");
-                return;
-            }
-
-            date.setText(dateres);
-            co.setText(checkout);
-            ci.setText(checkin);
-            int option = JOptionPane.showConfirmDialog(null, new Object[] {
-                "USER:", user,
-                "ROOMID:", room,
-                "TOTAL:", total,
-                "STATUS:", stat,
-                "ADULT:", adult,
-                "CHILD:", child,
-                "DATE:", date,
-                "CHECKOUT:", co,
-                "CHECKIN:", ci,
-            }, "Edit User", JOptionPane.OK_CANCEL_OPTION);
-            if (option == JOptionPane.OK_OPTION) {
-                String newuser = user.getText().trim().toLowerCase();
-                String newroom = room.getText().trim();
-                String newtotal = total.getText().trim();
-                String newstat = stat.getText().trim();
-                String newadult = String.valueOf(adult.getValue()).trim();
-                String newchild = String.valueOf(child.getValue()).trim();
-                String newdate = date.getText().trim();
-                String newco = co.getText().trim();
-                String newci = ci.getText().trim();
-                if (newuser.isEmpty() || newroom.isEmpty() || newtotal.isEmpty() || newstat.isEmpty() || newadult.isEmpty() || newchild.isEmpty()|| newdate.isEmpty()|| newco.isEmpty()|| newci.isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "All fields must be filled out.");
-                    return;
-                }
-                try {
-                    String sql = "UPDATE RESERVATIONS SET ROOM_ID = ?, TOTAL_PRICE = ?, STATUS = ?, ADULTS = ?, CHILDREN = ?, DATE_RES = ?, CHECKOUT = ?, CHECKIN = ? WHERE LOWER(TRIM(USER_EMAIL)) = ?";
-                    PreparedStatement pst = con.prepareStatement(sql);
-                    pst.setString(1, newroom);
-                    pst.setString(2, newtotal);
-                    pst.setString(3, newstat);
-                    pst.setInt(4, Integer.parseInt(newadult));
-                    pst.setInt(5, Integer.parseInt(newchild));
-                    pst.setString(6, newdate);
-                    pst.setString(7, newco);
-                    pst.setString(8, newci);
-                    pst.setString(9, newuser);
-                    int rowsAffected = pst.executeUpdate();
-                    System.out.println("Rows affected: " + rowsAffected);
-                    if (rowsAffected > 0) {
-                        jTable1.setValueAt(newuser, e, 1);
-                        jTable1.setValueAt(newroom, e, 2);
-                        jTable1.setValueAt(newtotal, e, 3);
-                        jTable1.setValueAt(newstat, e, 4);
-                        jTable1.setValueAt(newadult, e, 6);
-                        jTable1.setValueAt(newchild, e, 7);
-                        jTable1.setValueAt(newdate, e, 8);
-                        jTable1.setValueAt(newco, e, 9);
-                        jTable1.setValueAt(newci, e, 10);
-                        JOptionPane.showMessageDialog(null, "Updated successfully.");
-                    } else {
-                        JOptionPane.showMessageDialog(null, "No matching email found in the database.");
-                    }
-                    con.commit();
-                } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(null, "Error updating database: " + ex.getMessage());
-                    ex.printStackTrace();
-                }
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Please select a row to edit.");
-        }
-
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void revActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_revActionPerformed
-        
-    }//GEN-LAST:event_revActionPerformed
-
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         double totalSum = 0.0;
 
@@ -445,7 +318,7 @@ for (int row = 0; row < jTable1.getRowCount(); row++) {
         }
     }
 }
-rev.setText("Total of all reservations: ₱" + String.format("%.2f", totalSum));
+rev.setText("₱" + String.format("%.2f", totalSum));
 
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
@@ -502,11 +375,9 @@ rev.setText("Total of all reservations: ₱" + String.format("%.2f", totalSum));
     private javax.swing.JTextField ci;
     private javax.swing.JTextField co;
     private javax.swing.JTextField date;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -518,7 +389,7 @@ rev.setText("Total of all reservations: ₱" + String.format("%.2f", totalSum));
     private javax.swing.JMenuItem remove_text;
     private javax.swing.JPopupMenu remove_warning;
     private javax.swing.JButton return_btn913;
-    private javax.swing.JTextField rev;
+    private javax.swing.JLabel rev;
     private javax.swing.JTextField room;
     private javax.swing.JTextField roomt;
     private javax.swing.JTextField stat;
