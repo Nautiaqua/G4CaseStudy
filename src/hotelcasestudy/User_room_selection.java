@@ -320,7 +320,6 @@ public class User_room_selection extends javax.swing.JFrame {
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        check_in.setBackground(new java.awt.Color(255, 255, 255));
         check_in.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 check_inActionPerformed(evt);
@@ -332,8 +331,6 @@ public class User_room_selection extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Check-In Date");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
-
-        check_out.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(check_out, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 180, -1));
 
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
@@ -356,6 +353,11 @@ public class User_room_selection extends javax.swing.JFrame {
         add_standard.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
         add_standard.setForeground(new java.awt.Color(255, 255, 255));
         add_standard.setText("ADD");
+        add_standard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_standardActionPerformed(evt);
+            }
+        });
         jPanel7.add(add_standard, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 170, -1, -1));
 
         jLabel21.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
@@ -479,8 +481,8 @@ public class User_room_selection extends javax.swing.JFrame {
         jLabel55.setBackground(new java.awt.Color(105, 73, 50));
         jLabel55.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jLabel55.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel55.setText("₱7,000.00 / night");
-        jPanel9.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, -1, -1));
+        jLabel55.setText("₱15,000.00 / night");
+        jPanel9.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, -1, -1));
 
         jLabel57.setBackground(new java.awt.Color(105, 73, 50));
         jLabel57.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
@@ -668,6 +670,10 @@ else{
         this.dispose();
         bookings.setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void add_standardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_standardActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_standardActionPerformed
 
     /**
      * @param args the command line arguments
