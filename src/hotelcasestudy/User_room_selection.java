@@ -4,8 +4,11 @@
  */
 package hotelcasestudy;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
 /**
  *
  * @author Lenovo
@@ -31,52 +34,216 @@ public class User_room_selection extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane2 = new javax.swing.JScrollPane();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         logout = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
+        check_in = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        check_out = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         invalid = new javax.swing.JLabel();
-        check_in = new com.toedter.calendar.JDateChooser();
-        check_out = new com.toedter.calendar.JDateChooser();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        add_standard = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
+        jPanel14 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        add_premium = new javax.swing.JButton();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        add_double = new javax.swing.JButton();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        deluxe = new javax.swing.JButton();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(237, 234, 233));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Historic", 1, 20)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(103, 64, 37));
-        jLabel3.setText("YOUR CART:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 31, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(103, 64, 37));
         jLabel4.setText("Total: ₱0.00");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 64, -1, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(103, 64, 37));
-        jButton1.setFont(new java.awt.Font("Segoe UI Historic", 1, 22)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(134, 97, 72));
+        jButton1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Check Out");
-        jButton1.setBorder(null);
+        jButton1.setText("CHECK OUT");
         jButton1.setBorderPainted(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 40, 119, 45));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 160, 45));
+
+        jPanel4.setBackground(new java.awt.Color(237, 234, 233));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI Historic", 1, 20)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel5.setText("YOUR CART:");
+        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 31, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel6.setText("Total: ₱0.00");
+        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 64, -1, -1));
+
+        jButton2.setBackground(new java.awt.Color(103, 64, 37));
+        jButton2.setFont(new java.awt.Font("Segoe UI Historic", 1, 22)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Check Out");
+        jButton2.setBorder(null);
+        jButton2.setBorderPainted(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 40, 119, 45));
+
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 70, 430, 690));
+
+        jPanel5.setBackground(new java.awt.Color(237, 234, 233));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI Historic", 1, 20)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel7.setText("YOUR CART:");
+        jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 31, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel8.setText("Total: ₱0.00");
+        jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 64, -1, -1));
+
+        jButton3.setBackground(new java.awt.Color(103, 64, 37));
+        jButton3.setFont(new java.awt.Font("Segoe UI Historic", 1, 22)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("Check Out");
+        jButton3.setBorder(null);
+        jButton3.setBorderPainted(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 40, 119, 45));
+
+        jPanel6.setBackground(new java.awt.Color(237, 234, 233));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI Historic", 1, 20)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel9.setText("YOUR CART:");
+        jPanel6.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 31, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel10.setText("Total: ₱0.00");
+        jPanel6.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 64, -1, -1));
+
+        jButton4.setBackground(new java.awt.Color(103, 64, 37));
+        jButton4.setFont(new java.awt.Font("Segoe UI Historic", 1, 22)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Check Out");
+        jButton4.setBorder(null);
+        jButton4.setBorderPainted(false);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 40, 119, 45));
+
+        jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 70, 430, 690));
+
+        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 70, 430, 690));
+
+        jLabel15.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel15.setText("Your Cart:");
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 31, 120, -1));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable1);
+
+        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 370, 120));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 70, 430, 690));
 
@@ -95,44 +262,22 @@ public class User_room_selection extends javax.swing.JFrame {
             }
         });
 
-        jButton13.setBackground(new java.awt.Color(236, 234, 232));
-        jButton13.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        jButton13.setForeground(new java.awt.Color(103, 64, 37));
-        jButton13.setText("Rooms");
-        jButton13.setBorder(null);
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
-            }
-        });
-
-        jButton14.setBackground(new java.awt.Color(236, 234, 232));
-        jButton14.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        jButton14.setForeground(new java.awt.Color(103, 64, 37));
-        jButton14.setText("About Us");
-        jButton14.setBorder(null);
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
-            }
-        });
-
-        jButton15.setBackground(new java.awt.Color(236, 234, 232));
-        jButton15.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        jButton15.setForeground(new java.awt.Color(103, 64, 37));
-        jButton15.setText("Current Bookings");
-        jButton15.setBorder(null);
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
-            }
-        });
-
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownsmall.png"))); // NOI18N
         jLabel16.setText("jLabel1");
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_topleft.png"))); // NOI18N
         jLabel20.setText("jLabel2");
+
+        jButton6.setBackground(new java.awt.Color(236, 234, 232));
+        jButton6.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(103, 64, 37));
+        jButton6.setText("Return");
+        jButton6.setBorder(null);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -143,12 +288,8 @@ public class User_room_selection extends javax.swing.JFrame {
                 .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 716, Short.MAX_VALUE)
-                .addComponent(jButton15)
-                .addGap(18, 18, 18)
-                .addComponent(jButton14)
-                .addGap(18, 18, 18)
-                .addComponent(jButton13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 902, Short.MAX_VALUE)
+                .addComponent(jButton6)
                 .addGap(18, 18, 18)
                 .addComponent(logout)
                 .addGap(17, 17, 17))
@@ -165,60 +306,342 @@ public class User_room_selection extends javax.swing.JFrame {
                         .addGap(20, 20, 20)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(logout)
-                            .addComponent(jButton13)
-                            .addComponent(jButton14)
-                            .addComponent(jButton15))))
+                            .addComponent(jButton6))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 70));
 
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
         jPanel1.setBackground(new java.awt.Color(140, 100, 75));
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        check_in.setBackground(new java.awt.Color(255, 255, 255));
+        check_in.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                check_inActionPerformed(evt);
+            }
+        });
+        jPanel1.add(check_in, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 180, -1));
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Check-In Date");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
+        check_out.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(check_out, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 180, -1));
+
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Check-Out Date");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
 
-        invalid.setText("jLabel5");
-        jPanel1.add(invalid, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, -1, -1));
-        jPanel1.add(check_in, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 180, -1));
-        jPanel1.add(check_out, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, 180, -1));
+        invalid.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        invalid.setForeground(new java.awt.Color(204, 0, 0));
+        jPanel1.add(invalid, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 920, 690));
+        jPanel7.setBackground(new java.awt.Color(237, 234, 233));
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pack();
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/IMAGE_Standard.jpg"))); // NOI18N
+        jLabel11.setText("jLabel11");
+        jPanel7.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 16, 270, -1));
+
+        add_standard.setBackground(new java.awt.Color(134, 97, 72));
+        add_standard.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        add_standard.setForeground(new java.awt.Color(255, 255, 255));
+        add_standard.setText("ADD");
+        jPanel7.add(add_standard, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 170, -1, -1));
+
+        jLabel21.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel21.setText("seeking a luxury getaway for a few days!");
+        jPanel7.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, 540, -1));
+
+        jLabel22.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel22.setText("access to everything the hotel offers!");
+        jPanel7.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 450, -1));
+
+        jLabel23.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel23.setText("1 bathroom, and a dining space.");
+        jPanel7.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 270, 20));
+
+        jLabel24.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel24.setText("1 bedroom with a King or 2 Double beds");
+        jPanel7.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 270, 20));
+
+        jLabel25.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel25.setText("Get a taste of luxury with the standard room! This room is perfect for a couple that's");
+        jPanel7.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 540, -1));
+
+        jLabel26.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel26.setText("Comes with the standard free wifi, a TV, free room service, and");
+        jPanel7.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 450, -1));
+
+        jLabel27.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel27.setText("Standard");
+        jPanel7.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 210, -1));
+
+        jLabel29.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel29.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel29.setText("₱3,000.00 / night");
+        jPanel7.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
+
+        jLabel28.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel28.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel28.setText("₱3,000.00 / night");
+        jPanel7.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, -1, -1));
+
+        jLabel56.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel56.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel56.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel56.setText("2 max");
+        jPanel7.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, -1, -1));
+
+        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 860, 210));
+
+        jPanel14.setBackground(new java.awt.Color(140, 100, 75));
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 860, Short.MAX_VALUE)
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 980, -1, 40));
+
+        jPanel9.setBackground(new java.awt.Color(237, 234, 233));
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/IMAGE_Premium.png"))); // NOI18N
+        jLabel13.setText("jLabel11");
+        jPanel9.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 16, 270, -1));
+
+        add_premium.setBackground(new java.awt.Color(134, 97, 72));
+        add_premium.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        add_premium.setForeground(new java.awt.Color(255, 255, 255));
+        add_premium.setText("ADD");
+        jPanel9.add(add_premium, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 170, -1, -1));
+
+        jLabel38.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel38.setText("Premium");
+        jPanel9.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 210, -1));
+
+        jLabel39.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel39.setText("Pure luxury comes with the premium room. The amenities inside the premium package");
+        jPanel9.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 540, -1));
+
+        jLabel40.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel40.setText("are comparable to a modest luxury house, all yours for however long you wish to stay!");
+        jPanel9.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, 540, -1));
+
+        jLabel41.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel41.setText("4 bedrooms with a King or 2 Double beds each");
+        jPanel9.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 460, 20));
+
+        jLabel42.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel42.setText("4 bathrooms, and a lounge room with a dining space.");
+        jPanel9.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 430, 20));
+
+        jLabel43.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel43.setText("Aside from the perks of standard and double, the premium package gets access");
+        jPanel9.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 530, -1));
+
+        jLabel44.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel44.setText("to a team of chefs of which you can request meals from anytime!");
+        jPanel9.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 450, -1));
+
+        jLabel55.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel55.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel55.setText("₱7,000.00 / night");
+        jPanel9.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, -1, -1));
+
+        jLabel57.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel57.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel57.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel57.setText("14 max");
+        jPanel9.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, -1, -1));
+
+        jPanel1.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 860, 210));
+
+        jPanel8.setBackground(new java.awt.Color(237, 234, 233));
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/IMAGE_Double.jpg"))); // NOI18N
+        jLabel12.setText("jLabel11");
+        jPanel8.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 16, 270, -1));
+
+        add_double.setBackground(new java.awt.Color(134, 97, 72));
+        add_double.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        add_double.setForeground(new java.awt.Color(255, 255, 255));
+        add_double.setText("ADD");
+        jPanel8.add(add_double, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 170, -1, -1));
+
+        jLabel30.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel30.setText("package is privy to free caviar per night!");
+        jPanel8.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 450, -1));
+
+        jLabel31.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel31.setText("Aside from having what the standard room already has, the double");
+        jPanel8.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 450, -1));
+
+        jLabel32.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel32.setText("2 bathrooms, and a kitchenette per room.");
+        jPanel8.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 270, 20));
+
+        jLabel33.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel33.setText("2 bedrooms with a King or 3 Double beds");
+        jPanel8.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 270, 20));
+
+        jLabel34.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel34.setText("seeking a luxury getaway for a few days!");
+        jPanel8.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, 540, -1));
+
+        jLabel35.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel35.setText("The double package features a room with two rooms, each with their own amenities!");
+        jPanel8.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 540, -1));
+
+        jLabel36.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel36.setText("Double");
+        jPanel8.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 210, -1));
+
+        jLabel37.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel37.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel37.setText("₱7,000.00 / night");
+        jPanel8.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, -1, -1));
+
+        jLabel58.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel58.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel58.setText("6 max");
+        jPanel8.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 10, -1, -1));
+
+        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 860, 210));
+
+        jPanel10.setBackground(new java.awt.Color(237, 234, 233));
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/IMAGE_Deluxe.jpg"))); // NOI18N
+        jLabel14.setText("jLabel11");
+        jPanel10.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 16, 270, -1));
+
+        deluxe.setBackground(new java.awt.Color(134, 97, 72));
+        deluxe.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        deluxe.setForeground(new java.awt.Color(255, 255, 255));
+        deluxe.setText("ADD");
+        jPanel10.add(deluxe, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 170, -1, -1));
+
+        jLabel46.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel46.setText("Deluxe");
+        jPanel10.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 210, -1));
+
+        jLabel47.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel47.setText("Live the life of royalty with our deluxe package! This is perfect for a massive");
+        jPanel10.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 540, -1));
+
+        jLabel48.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel48.setText("luxurious party of people!");
+        jPanel10.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, 540, -1));
+
+        jLabel49.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel49.setText("2 bedrooms with a King or 3 Double beds");
+        jPanel10.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 270, 20));
+
+        jLabel50.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel50.setText("2 bathrooms, and a kitchenette per room.");
+        jPanel10.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 270, 20));
+
+        jLabel51.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel51.setText("The deluxe room has the perks of the previous three room types, but also has");
+        jPanel10.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 520, -1));
+
+        jLabel52.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel52.setText("assistants.");
+        jPanel10.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, 450, -1));
+
+        jLabel53.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel53.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel53.setText("₱50,000.00 / night");
+        jPanel10.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, -1, -1));
+
+        jLabel54.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(103, 64, 37));
+        jLabel54.setText("package is privy to free caviar per night! a small team of 4 personal");
+        jPanel10.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 450, -1));
+
+        jLabel45.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel45.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel45.setText("16 max");
+        jPanel10.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, -1, -1));
+
+        jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 770, 860, 210));
+
+        jScrollPane1.setViewportView(jPanel1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 920, 690));
+
+        setSize(new java.awt.Dimension(1360, 765));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-
-SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
-Date today = new Date();
-Date checkInDate = check_in.getDate();
-Date checkOutDate = check_out.getDate();
-
-if (checkInDate == null || checkOutDate == null) {
-    invalid.setText("Please select both check-in and check-out dates.");
-} else if (checkInDate.before(today) || checkOutDate.before(today)) {
-    invalid.setText("You can only book for future dates.");
-} else if (!checkOutDate.after(checkInDate)) {
-    invalid.setText("Check-out must be after check-in.");
-} else {
-     ci = sdf.format(checkInDate);
-     co = sdf.format(checkOutDate);
-    User_Checkout loginmenu = new User_Checkout();
-    loginmenu.setVisible(true);
+if (check_in.getText().isEmpty()||check_in.getText().isEmpty()){
+   invalid.setText("STUPID"); 
 }
-
+else{
+    ci=check_in.getText();
+    co=check_out.getText();
+        User_Checkout loginmenu = new User_Checkout();
+        loginmenu.setVisible(true);
+}
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void check_inActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_check_inActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_check_inActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
@@ -227,77 +650,156 @@ if (checkInDate == null || checkOutDate == null) {
         loginmenu.setVisible(true);
     }//GEN-LAST:event_logoutActionPerformed
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        USER_descriptionroom roomdesc = new USER_descriptionroom();
-        this.dispose();
-        roomdesc.setVisible(true);
-    }//GEN-LAST:event_jButton13ActionPerformed
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        USER_description description = new USER_description();
-        this.dispose();
-        description.setVisible(true);
-    }//GEN-LAST:event_jButton14ActionPerformed
+    }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton15ActionPerformed
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        USER_booking bookings = new USER_booking();
+        this.dispose();
+        bookings.setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(User_room_selection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(User_room_selection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(User_room_selection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(User_room_selection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new User_room_selection().setVisible(true);
+        try {
+            /* Set the Nimbus look and feel */
+            //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+            /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+            * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+            */
+            try {
+                for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                    if ("Nimbus".equals(info.getName())) {
+                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                        break;
+                    }
+                }
+            } catch (ClassNotFoundException ex) {
+                java.util.logging.Logger.getLogger(User_room_selection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            } catch (InstantiationException ex) {
+                java.util.logging.Logger.getLogger(User_room_selection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            } catch (IllegalAccessException ex) {
+                java.util.logging.Logger.getLogger(User_room_selection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+                java.util.logging.Logger.getLogger(User_room_selection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             }
-        });
+            //</editor-fold>
+            UIManager.setLookAndFeel("com.formdev.flatlaf.FlatLightLaf");
+            
+            
+            /* Create and display the form */
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    new User_room_selection().setVisible(true);
+                }
+            });
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(User_room_selection.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(User_room_selection.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(User_room_selection.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(User_room_selection.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.toedter.calendar.JDateChooser check_in;
-    private com.toedter.calendar.JDateChooser check_out;
+    private javax.swing.JButton add_double;
+    private javax.swing.JButton add_premium;
+    private javax.swing.JButton add_standard;
+    private javax.swing.JTextField check_in;
+    private javax.swing.JTextField check_out;
+    private javax.swing.JButton deluxe;
+    private javax.swing.Box.Filler filler1;
     private javax.swing.JLabel invalid;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable jTable1;
     private javax.swing.JButton logout;
     // End of variables declaration//GEN-END:variables
 }
