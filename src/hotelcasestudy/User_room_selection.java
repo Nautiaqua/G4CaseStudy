@@ -15,6 +15,8 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.concurrent.TimeUnit;
 
 /**
  *
@@ -51,7 +53,7 @@ public class User_room_selection extends connect {
         jScrollPane2 = new javax.swing.JScrollPane();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        total = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -65,9 +67,7 @@ public class User_room_selection extends connect {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
-        jLabel15 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jToggleButton1 = new javax.swing.JToggleButton();
         jPanel3 = new javax.swing.JPanel();
         logout = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
@@ -139,10 +139,10 @@ public class User_room_selection extends connect {
         jPanel2.setBackground(new java.awt.Color(237, 234, 233));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(103, 64, 37));
-        jLabel4.setText("Total: ₱0.00");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+        total.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
+        total.setForeground(new java.awt.Color(103, 64, 37));
+        total.setText("Total: ₱0.00");
+        jPanel2.add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(134, 97, 72));
         jButton1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -240,25 +240,13 @@ public class User_room_selection extends connect {
 
         jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 70, 430, 690));
 
-        jLabel15.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(103, 64, 37));
-        jLabel15.setText("Your Cart:");
-        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 31, 120, -1));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        jToggleButton1.setText("check total ");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
             }
-        ));
-        jScrollPane3.setViewportView(jTable1);
-
-        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 370, 120));
+        });
+        jPanel2.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 70, 430, 690));
 
@@ -654,82 +642,103 @@ public class User_room_selection extends connect {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-
-
 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
 Date inDate = check_in.getDate();
 Date outDate = check_out.getDate();
-
 if (inDate == null || outDate == null) {
     invalid.setText("Please select check-in and check-out dates.");
     return;
 }
-
-// Validation: Check-in must not be in the past, and check-out must be after check-in
 Date today = new Date();
 if (inDate.before(today)) {
     invalid.setText("Check-in date cannot be in the past.");
     return;
 }
-
 if (!outDate.after(inDate)) {
-    invalid.setText("Check-out date must be after check-in date.");
+    invalid.setText("Check-out must be after check-in.");
     return;
 }
-
-java.sql.Date sqlCheckIn = new java.sql.Date(inDate.getTime());
-java.sql.Date sqlCheckOut = new java.sql.Date(outDate.getTime());
-
+long diffInMillis = outDate.getTime() - inDate.getTime();
+long numOfDays = TimeUnit.DAYS.convert(diffInMillis, TimeUnit.MILLISECONDS);
+if (numOfDays <= 0) {
+    invalid.setText("Reservation must be at least 1 day.");
+    return;
+}
+int baseRate = 0;
+int id = 0;
 if (room1) {
-    rm = 3000;
-    id = 1;
+   baseRate = 3000; id = 1;
 } else if (room2) {
-    rm = 7000;
-    id = 2;
+   baseRate = 7000; id = 2;
 } else if (room3) {
-    rm = 15000;
-    id = 3;
+    baseRate = 15000; id = 3;
 } else if (room4) {
-    rm = 50000;
-    id = 4;
+    baseRate = 50000; id = 4;
 } else {
     invalid.setText("No room selected.");
     return;
 }
-
+rm = baseRate * (int) numOfDays;
 try {
-    String query = "SELECT * FROM RESERVATIONS WHERE ROOM_ID = ? AND NOT (CHECKOUT <= ? OR CHECKIN >= ?)";
-    PreparedStatement pst = con.prepareStatement(query);
+    Calendar calIn = Calendar.getInstance();
+    calIn.setTime(inDate);
+    calIn.set(Calendar.HOUR_OF_DAY, 0);
+    calIn.set(Calendar.MINUTE, 0);
+    calIn.set(Calendar.SECOND, 0);
+    calIn.set(Calendar.MILLISECOND, 0);
+    inDate = calIn.getTime();
+    Calendar calOut = Calendar.getInstance();
+    calOut.setTime(outDate);
+    calOut.set(Calendar.HOUR_OF_DAY, 0);
+    calOut.set(Calendar.MINUTE, 0);
+    calOut.set(Calendar.SECOND, 0);
+    calOut.set(Calendar.MILLISECOND, 0);
+    outDate = calOut.getTime();
+    Timestamp tsCheckIn = new Timestamp(inDate.getTime());
+    Timestamp tsCheckOut = new Timestamp(outDate.getTime());
+    String overlapQuery = """
+        SELECT * FROM RESERVATIONS 
+        WHERE ROOM_ID = ? 
+          AND STATUS = 'payed'
+          AND CHECKIN < ? 
+          AND CHECKOUT > ?
+    """;
+    PreparedStatement pst = con.prepareStatement(overlapQuery);
     pst.setInt(1, id);
-    pst.setDate(2, sqlCheckIn); 
-    pst.setDate(3, sqlCheckOut);
-
-
+    pst.setTimestamp(2, tsCheckOut);
+    pst.setTimestamp(3, tsCheckIn);
     ResultSet rs = pst.executeQuery();
-
     if (rs.next()) {
-        JOptionPane.showMessageDialog(null, "Room already reserved for selected dates.");
+        JOptionPane.showMessageDialog(null, "Room already reserved during these dates.");
         return;
     }
-
-    // If not reserved, proceed
+    String exactQuery = """
+        SELECT * FROM RESERVATIONS 
+        WHERE ROOM_ID = ? 
+          AND STATUS = 'payed'
+          AND CHECKIN = ? 
+          AND CHECKOUT = ?
+    """;
+    PreparedStatement exactPst = con.prepareStatement(exactQuery);
+    exactPst.setInt(1, id);
+    exactPst.setTimestamp(2, tsCheckIn);
+    exactPst.setTimestamp(3, tsCheckOut);
+    ResultSet exactRs = exactPst.executeQuery();
+    if (exactRs.next()) {
+   JOptionPane.showMessageDialog(null, "Exact same reservation already exists.");
+        return;
+    }
     User_room_selection.ci = sdf.format(inDate);
     User_room_selection.co = sdf.format(outDate);
     User_room_selection.id = id;
     User_room_selection.rm = rm;
-
     User_Checkout loginmenu = new User_Checkout();
     loginmenu.setVisible(true);
     this.dispose();
-
 } catch (SQLException e) {
     JOptionPane.showMessageDialog(null, "Database error: " + e.getMessage());
     e.printStackTrace();
 }
-
-
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -760,24 +769,99 @@ try {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void add_standardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_standardActionPerformed
-        
+    
         room1=true;
+        room4=false;
+    room3=false;
+    room2=false;
+    
     }//GEN-LAST:event_add_standardActionPerformed
 
     private void add_doubleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_doubleActionPerformed
-        
+       
         room2=true;
+         room4=false;
+    room3=false;
+    room1=false;
+    
     }//GEN-LAST:event_add_doubleActionPerformed
 
     private void add_premiumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_premiumActionPerformed
        
         room3=true;
+            room4=false;
+    room2=false;
+    room1=false;
+    
     }//GEN-LAST:event_add_premiumActionPerformed
 
     private void deluxeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deluxeActionPerformed
-       
+     
         room4=true;
+        room3=false;
+    room2=false;
+    room1=false;
+    
     }//GEN-LAST:event_deluxeActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+  Date inDate = check_in.getDate();
+        Date outDate = check_out.getDate();
+
+        if (inDate == null || outDate == null) {
+            total.setText("Please select dates.");
+            return;
+        }
+
+        // Normalize dates to 00:00:00 to avoid time issues
+        Calendar calIn = Calendar.getInstance();
+        calIn.setTime(inDate);
+        calIn.set(Calendar.HOUR_OF_DAY, 0);
+        calIn.set(Calendar.MINUTE, 0);
+        calIn.set(Calendar.SECOND, 0);
+        calIn.set(Calendar.MILLISECOND, 0);
+        inDate = calIn.getTime();
+
+        Calendar calOut = Calendar.getInstance();
+        calOut.setTime(outDate);
+        calOut.set(Calendar.HOUR_OF_DAY, 0);
+        calOut.set(Calendar.MINUTE, 0);
+        calOut.set(Calendar.SECOND, 0);
+        calOut.set(Calendar.MILLISECOND, 0);
+        outDate = calOut.getTime();
+
+        // Validate date range
+        if (!outDate.after(inDate)) {
+            total.setText("Invalid date range.");
+            return;
+        }
+
+        long diffInMillis = outDate.getTime() - inDate.getTime();
+        long numOfDays = TimeUnit.DAYS.convert(diffInMillis, TimeUnit.MILLISECONDS);
+
+        if (numOfDays <= 0) {
+            total.setText("Reservation must be at least 1 day.");
+            return;
+        }
+
+        // Determine selected room and base rate
+        int baseRate = 0;
+        if (room1) {
+            baseRate = 3000;
+        } else if (room2) {
+            baseRate = 7000;
+        } else if (room3) {
+            baseRate = 15000;
+        } else if (room4) {
+            baseRate = 50000;
+        } else {
+            total.setText("No room selected.");
+            return;
+        }
+
+        int total1 = baseRate * (int) numOfDays;
+        total.setText("Total: ₱" + total1);
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -847,7 +931,6 @@ try {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -870,7 +953,6 @@ try {
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
@@ -908,8 +990,8 @@ try {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JButton logout;
+    private javax.swing.JLabel total;
     // End of variables declaration//GEN-END:variables
 }

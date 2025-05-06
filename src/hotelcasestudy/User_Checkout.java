@@ -26,6 +26,7 @@ public class User_Checkout extends connect  {
     initComponents();
     DoConnect();
     
+    
 
  
 }
@@ -213,9 +214,9 @@ try {
     con.commit();
     Refresh_RS_STMT();
     System.out.println("Reservation inserted with ID: " + resID);
-    User_Checkout userloginmenu = new User_Checkout();
+    User_Checkout_complete userlogin = new User_Checkout_complete();
     this.setVisible(false);
-    userloginmenu.setVisible(false);
+    userlogin.setVisible(true);
 } catch (SQLException e) {
     System.out.println("SQL Error: " + e);
     if (con != null) {
