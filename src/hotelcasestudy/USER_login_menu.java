@@ -19,6 +19,7 @@ public class USER_login_menu extends javax.swing.JFrame {
      * Creates new form login_menu
      */
     public USER_login_menu() {
+        UIManager.put("Button.arc", 20);
         initComponents();
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
 
@@ -36,12 +37,28 @@ public class USER_login_menu extends javax.swing.JFrame {
         login_popup = new javax.swing.JPopupMenu();
         member_item = new javax.swing.JMenuItem();
         admin_item = new javax.swing.JMenuItem();
+        loginpanel = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        signup_btn = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
         login_btn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        casa_icon = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        casa_icon1 = new javax.swing.JLabel();
+        signup_btn1 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        signup_btn2 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
 
         member_item.setBackground(new java.awt.Color(237, 234, 233));
         member_item.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
@@ -70,83 +87,130 @@ public class USER_login_menu extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(237, 234, 233));
+        loginpanel.setBackground(new java.awt.Color(237, 234, 233));
+        loginpanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBackground(new java.awt.Color(237, 234, 233));
+        jPanel2.setForeground(new java.awt.Color(134, 97, 72));
+        jPanel2.setToolTipText("");
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel5.add(jPanel6);
+
+        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 391, 220));
+
+        jLabel5.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(134, 97, 72));
+        jLabel5.setText("Experience various activities!");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, 500, 40));
+
+        jLabel3.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel3.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(134, 97, 72));
+        jLabel3.setText("<html> At Casa De Los Trópico, guests can indulge in a variety of leisure and entertainment experiences—from relaxing by the resort’s stunning infinity pool with panoramic ocean views to sipping tropical cocktails at one of our vibrant beachside or rooftop bars. For those seeking excitement after sunset, our elegant on-site casino offers world-class gaming in a refined, tropical setting, making every evening as thrilling as the day is relaxing. </html>");
+        jLabel3.setAutoscrolls(true);
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, 880, 90));
+
+        loginpanel.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1040, 1370, 260));
+
+        jPanel1.setBackground(new java.awt.Color(134, 97, 72));
+        jPanel1.setForeground(new java.awt.Color(134, 97, 72));
+        jPanel1.setToolTipText("");
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        signup_btn.setBackground(new java.awt.Color(134, 97, 72));
-        signup_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        signup_btn.setForeground(new java.awt.Color(255, 255, 255));
-        signup_btn.setText("SIGN UP");
-        signup_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signup_btnActionPerformed(evt);
-            }
-        });
-        jPanel1.add(signup_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 500, 160, 49));
+        jLabel6.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel6.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Stay for as long as you like!");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 480, 40));
+
+        jLabel7.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel7.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("<html> At Casa De Los Trópico, guests are welcome to stay whenever and for as long as they desire, whether it's a spontaneous weekend escape or an extended tropical retreat. With five distinct room types to suit every style and occasion—Standard for cozy comfort, Special for added charm, Party for group-friendly fun, Deluxe for elevated luxury, and Premium for the ultimate indulgence—our resort ensures every guest finds their perfect home away from home. </html>");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 890, -1));
+
+        jPanel7.add(jPanel8);
+
+        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 20, 391, 220));
+
+        loginpanel.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1300, 1350, 260));
 
         login_btn.setBackground(new java.awt.Color(134, 97, 72));
         login_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         login_btn.setForeground(new java.awt.Color(255, 255, 255));
-        login_btn.setText("LOG IN");
+        login_btn.setText("Log In");
         login_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 login_btnActionPerformed(evt);
             }
         });
-        jPanel1.add(login_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 440, 160, 49));
+        loginpanel.add(login_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, 120, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownbig.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 390, 80));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownbig.png"))); // NOI18N
+        jLabel2.setText("jLabel1");
+        loginpanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 390, 80));
 
-        casa_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_medium.png"))); // NOI18N
-        casa_icon.setText("jLabel1");
-        jPanel1.add(casa_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 240, 180));
+        casa_icon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_medium.png"))); // NOI18N
+        casa_icon1.setText("jLabel1");
+        loginpanel.add(casa_icon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 240, 180));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 520, 760));
+        signup_btn1.setBackground(new java.awt.Color(237, 234, 233));
+        signup_btn1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        signup_btn1.setForeground(new java.awt.Color(134, 97, 72));
+        signup_btn1.setText("Find Out More About Us");
+        signup_btn1.setBorder(null);
+        signup_btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signup_btn1ActionPerformed(evt);
+            }
+        });
+        loginpanel.add(signup_btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 540, 200, 20));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/BG_booking.png"))); // NOI18N
-        jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, -10, -1, -1));
+        jPanel3.setBackground(new java.awt.Color(134, 97, 72));
+        jPanel3.setForeground(new java.awt.Color(134, 97, 72));
+        jPanel3.setToolTipText("");
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel8.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel8.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Who are we?");
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 230, 40));
+
+        jLabel9.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel9.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("<html>Casa De Los Trópico is a premier luxury resort nestled in one of the most breathtaking coastal destinations in the Philippines. Surrounded by swaying trees, crystal-clear waters in both the surroundings and our pools, and unspoiled natural beauty, the resort offers a tranquil escape where elegance meets island charm. Designed for discerning travelers, Casa De Los Trópico blends Filipino warmth with world-class comfort, creating a sanctuary where relaxation and sophistication coexist.</html> ");
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 890, 120));
+
+        jPanel9.add(jPanel10);
+
+        jPanel3.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 20, 391, 220));
+
+        loginpanel.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 770, 1350, 260));
+
+        signup_btn2.setBackground(new java.awt.Color(134, 97, 72));
+        signup_btn2.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        signup_btn2.setForeground(new java.awt.Color(255, 255, 255));
+        signup_btn2.setText("Sign Up");
+        signup_btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signup_btn2ActionPerformed(evt);
+            }
+        });
+        loginpanel.add(signup_btn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 120, 40));
+
+        getContentPane().add(loginpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 760));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/BG_booking.png"))); // NOI18N
+        jLabel11.setText("jLabel4");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, -10, -1, -1));
 
         setSize(new java.awt.Dimension(1360, 765));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void signup_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signup_btnActionPerformed
-        // TODO add your handling code here:
-        USER_signup_screen usersignup = new USER_signup_screen();
-        this.setVisible(false);
-        usersignup.setVisible(true);
-    }//GEN-LAST:event_signup_btnActionPerformed
-
-    private void login_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_btnActionPerformed
-        // TODO add your handling code here:
-        
-        
-        //
-        //
-        //
-        //
-        //
-        //
-        //
-        ///
-        ///
-        ///
-        ///
-        ///
-        ///
-        ///
-        ///
-        ///
-        ///
-        ///
-        ///
-        ///
-          
-        login_popup.show(login_btn, 0, login_btn.getHeight());
-    }//GEN-LAST:event_login_btnActionPerformed
 
     private void member_itemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_member_itemActionPerformed
         // TODO add your handling code here:
@@ -161,6 +225,44 @@ public class USER_login_menu extends javax.swing.JFrame {
         this.setVisible(false);
         adminlogin.setVisible(true);
     }//GEN-LAST:event_admin_itemActionPerformed
+
+    private void signup_btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signup_btn2ActionPerformed
+        // TODO add your handling code here:
+        USER_signup_screen usersignup = new USER_signup_screen();
+        this.dispose();
+        usersignup.setVisible(true);
+    }//GEN-LAST:event_signup_btn2ActionPerformed
+
+    private void signup_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signup_btn1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_signup_btn1ActionPerformed
+
+    private void login_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_btnActionPerformed
+        // TODO add your handling code here:
+
+        //
+        //
+        //
+        //
+        //
+        //
+        //
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+
+        login_popup.show(login_btn, 0, login_btn.getHeight());
+    }//GEN-LAST:event_login_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -211,13 +313,29 @@ public class USER_login_menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem admin_item;
-    private javax.swing.JLabel casa_icon;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel casa_icon1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JButton login_btn;
     private javax.swing.JPopupMenu login_popup;
+    private javax.swing.JPanel loginpanel;
     private javax.swing.JMenuItem member_item;
-    private javax.swing.JButton signup_btn;
+    private javax.swing.JButton signup_btn1;
+    private javax.swing.JButton signup_btn2;
     // End of variables declaration//GEN-END:variables
 }

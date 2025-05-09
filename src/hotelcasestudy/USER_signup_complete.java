@@ -31,15 +31,13 @@ public class USER_signup_complete extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        signup_finish_btn = new javax.swing.JButton();
-        invalid_confirm = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        invalid1 = new javax.swing.JLabel();
+        casa_icon1 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        invalid_email = new javax.swing.JLabel();
-        invalid_password = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        casa_icon = new javax.swing.JLabel();
+        signup_finish_btn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,106 +45,48 @@ public class USER_signup_complete extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(237, 234, 233));
+        jPanel2.setBackground(new java.awt.Color(237, 234, 233));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        signup_finish_btn.setBackground(new java.awt.Color(134, 97, 72));
-        signup_finish_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        signup_finish_btn.setForeground(new java.awt.Color(255, 255, 255));
-        signup_finish_btn.setText("LOG IN");
-        signup_finish_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signup_finish_btnActionPerformed(evt);
-            }
-        });
+        invalid1.setBackground(new java.awt.Color(105, 73, 50));
+        invalid1.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        invalid1.setForeground(new java.awt.Color(123, 24, 24));
+        invalid1.setToolTipText("");
+        invalid1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel2.add(invalid1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 400, -1, -1));
 
-        invalid_confirm.setBackground(new java.awt.Color(105, 73, 50));
-        invalid_confirm.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        invalid_confirm.setForeground(new java.awt.Color(123, 24, 24));
-        invalid_confirm.setToolTipText("");
+        casa_icon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_medium.png"))); // NOI18N
+        casa_icon1.setText("jLabel1");
+        jPanel2.add(casa_icon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 240, 180));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownbig.png"))); // NOI18N
+        jLabel6.setText("jLabel1");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 390, 80));
 
         jLabel3.setBackground(new java.awt.Color(105, 73, 50));
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(105, 73, 50));
         jLabel3.setText("Thank you for joining us!");
-
-        invalid_email.setBackground(new java.awt.Color(105, 73, 50));
-        invalid_email.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        invalid_email.setForeground(new java.awt.Color(123, 24, 24));
-        invalid_email.setToolTipText("");
-
-        invalid_password.setBackground(new java.awt.Color(105, 73, 50));
-        invalid_password.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        invalid_password.setForeground(new java.awt.Color(123, 24, 24));
-        invalid_password.setToolTipText("");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, -1, -1));
 
         jLabel5.setBackground(new java.awt.Color(105, 73, 50));
         jLabel5.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(105, 73, 50));
         jLabel5.setText("Your registration is complete.");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownbig.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
+        signup_finish_btn.setBackground(new java.awt.Color(134, 97, 72));
+        signup_finish_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        signup_finish_btn.setForeground(new java.awt.Color(255, 255, 255));
+        signup_finish_btn.setText("Log In");
+        signup_finish_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signup_finish_btnActionPerformed(evt);
+            }
+        });
+        jPanel2.add(signup_finish_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 520, 111, 40));
 
-        casa_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_medium.png"))); // NOI18N
-        casa_icon.setText("jLabel1");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(300, 300, 300)
-                        .addComponent(invalid_email, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(185, 185, 185)
-                        .addComponent(signup_finish_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(130, 130, 130)
-                        .addComponent(invalid_password, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(40, 40, 40)
-                                    .addComponent(jLabel5))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel3)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addGap(70, 70, 70)
-                                            .addComponent(casa_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(invalid_confirm))))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
-                        .addComponent(casa_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(invalid_email)
-                        .addGap(60, 60, 60)
-                        .addComponent(invalid_password)
-                        .addGap(94, 94, 94))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(signup_finish_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(64, 64, 64)))
-                .addComponent(invalid_confirm)
-                .addGap(121, 121, 121))
-        );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 520, 760));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 520, 760));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/BG_NewUserLogin.png"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -168,9 +108,7 @@ public class USER_signup_complete extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
 
-        try {
-            DBConnection bConnection = new DBConnection(); // Allows this JFrame to connect to database.
-            /* Set the Nimbus look and feel */
+        try {            /* Set the Nimbus look and feel */
             //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
             /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
             * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
@@ -247,15 +185,13 @@ public class USER_signup_complete extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel casa_icon;
-    private javax.swing.JLabel invalid_confirm;
-    private javax.swing.JLabel invalid_email;
-    private javax.swing.JLabel invalid_password;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel casa_icon1;
+    private javax.swing.JLabel invalid1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JButton signup_finish_btn;
     // End of variables declaration//GEN-END:variables
 }

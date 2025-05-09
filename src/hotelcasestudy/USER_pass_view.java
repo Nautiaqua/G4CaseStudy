@@ -20,6 +20,7 @@ public class USER_pass_view extends connect {
      * Creates new form login_menu
      */
     public USER_pass_view() {
+        UIManager.put("Button.arc", 20);
         initComponents();
         DoConnect();
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
@@ -34,19 +35,19 @@ public class USER_pass_view extends connect {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        return_btn = new javax.swing.JButton();
-        invalid = new javax.swing.JLabel();
-        email_txt = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        email_label1 = new javax.swing.JLabel();
-        sec_ans = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        password_label = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        invalid1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        casa_icon1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         pass = new javax.swing.JTextField();
+        email_label1 = new javax.swing.JLabel();
+        email_txt = new javax.swing.JTextField();
+        password_label = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        sec_ans = new javax.swing.JTextField();
         getpass = new javax.swing.JToggleButton();
-        jLabel1 = new javax.swing.JLabel();
-        casa_icon = new javax.swing.JLabel();
+        return_btn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,25 +55,45 @@ public class USER_pass_view extends connect {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(237, 234, 233));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.setBackground(new java.awt.Color(237, 234, 233));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        return_btn.setBackground(new java.awt.Color(134, 97, 72));
-        return_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        return_btn.setForeground(new java.awt.Color(255, 255, 255));
-        return_btn.setText("RETURN");
-        return_btn.addActionListener(new java.awt.event.ActionListener() {
+        invalid1.setBackground(new java.awt.Color(105, 73, 50));
+        invalid1.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        invalid1.setForeground(new java.awt.Color(123, 24, 24));
+        invalid1.setToolTipText("");
+        invalid1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel2.add(invalid1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, -1));
+
+        jLabel4.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel4.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel4.setText("Password Recovery");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, -1, -1));
+
+        casa_icon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_medium.png"))); // NOI18N
+        casa_icon1.setText("jLabel1");
+        jPanel2.add(casa_icon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 240, 180));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownbig.png"))); // NOI18N
+        jLabel5.setText("jLabel1");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 390, 80));
+
+        pass.setEditable(false);
+        pass.setText("Your Password Appears Here!");
+        pass.setEnabled(false);
+        pass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                return_btnActionPerformed(evt);
+                passActionPerformed(evt);
             }
         });
-        jPanel1.add(return_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 620, 160, 49));
+        jPanel2.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 500, 320, -1));
 
-        invalid.setBackground(new java.awt.Color(105, 73, 50));
-        invalid.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        invalid.setForeground(new java.awt.Color(123, 24, 24));
-        invalid.setToolTipText("");
-        jPanel1.add(invalid, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 230, -1));
+        email_label1.setBackground(new java.awt.Color(105, 73, 50));
+        email_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        email_label1.setForeground(new java.awt.Color(105, 73, 50));
+        email_label1.setText("Email");
+        jPanel2.add(email_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, 50, -1));
 
         email_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         email_txt.setForeground(new java.awt.Color(105, 73, 50));
@@ -81,28 +102,13 @@ public class USER_pass_view extends connect {
                 email_txtActionPerformed(evt);
             }
         });
-        jPanel1.add(email_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 440, 320, 20));
+        jPanel2.add(email_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 320, 20));
 
-        jLabel3.setBackground(new java.awt.Color(105, 73, 50));
-        jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel3.setText("Password Recovery");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, -1, -1));
-
-        email_label1.setBackground(new java.awt.Color(105, 73, 50));
-        email_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        email_label1.setForeground(new java.awt.Color(105, 73, 50));
-        email_label1.setText("Email");
-        jPanel1.add(email_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 50, -1));
-
-        sec_ans.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        sec_ans.setForeground(new java.awt.Color(105, 73, 50));
-        sec_ans.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sec_ansActionPerformed(evt);
-            }
-        });
-        jPanel1.add(sec_ans, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 510, 320, 20));
+        password_label.setBackground(new java.awt.Color(105, 73, 50));
+        password_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        password_label.setForeground(new java.awt.Color(105, 73, 50));
+        password_label.setText("Security Question");
+        jPanel2.add(password_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 160, -1));
 
         jComboBox1.setEditable(true);
         jComboBox1.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
@@ -113,44 +119,40 @@ public class USER_pass_view extends connect {
                 jComboBox1ItemStateChanged(evt);
             }
         });
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 320, 20));
+        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, 320, 20));
 
-        password_label.setBackground(new java.awt.Color(105, 73, 50));
-        password_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        password_label.setForeground(new java.awt.Color(105, 73, 50));
-        password_label.setText("Security Question");
-        jPanel1.add(password_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 160, -1));
-
-        pass.setEditable(false);
-        pass.setText("Your Password Appears Here!");
-        pass.setEnabled(false);
-        pass.addActionListener(new java.awt.event.ActionListener() {
+        sec_ans.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        sec_ans.setForeground(new java.awt.Color(105, 73, 50));
+        sec_ans.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passActionPerformed(evt);
+                sec_ansActionPerformed(evt);
             }
         });
-        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, 320, -1));
+        jPanel2.add(sec_ans, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 320, 20));
 
         getpass.setBackground(new java.awt.Color(134, 97, 72));
         getpass.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         getpass.setForeground(new java.awt.Color(255, 255, 255));
-        getpass.setText("GET PASSWORD");
+        getpass.setText("Get Password");
         getpass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 getpassActionPerformed(evt);
             }
         });
-        jPanel1.add(getpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 560, -1, 50));
+        jPanel2.add(getpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 550, 150, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownbig.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 390, 80));
+        return_btn.setBackground(new java.awt.Color(134, 97, 72));
+        return_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        return_btn.setForeground(new java.awt.Color(255, 255, 255));
+        return_btn.setText("Return");
+        return_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                return_btnActionPerformed(evt);
+            }
+        });
+        jPanel2.add(return_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 600, 150, 40));
 
-        casa_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_medium.png"))); // NOI18N
-        casa_icon.setText("jLabel1");
-        jPanel1.add(casa_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 240, 180));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 520, 760));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 520, 760));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/BG_NewUserLogin.png"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -226,7 +228,7 @@ try {
     }
 
     if (!found) {
-        invalid.setText("Email or security answer is invalid!");
+        invalid1.setText("Email or security answer is invalid!");
     }
 
     rs.close();
@@ -242,9 +244,7 @@ try {
      */
     public static void main(String args[]) {
 
-        try {
-            DBConnection bConnection = new DBConnection(); // Allows this JFrame to connect to database.
-            /* Set the Nimbus look and feel */
+        try {            /* Set the Nimbus look and feel */
             //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
             /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
             * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
@@ -305,16 +305,16 @@ try {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel casa_icon;
+    private javax.swing.JLabel casa_icon1;
     private javax.swing.JLabel email_label1;
     private javax.swing.JTextField email_txt;
     private javax.swing.JToggleButton getpass;
-    private javax.swing.JLabel invalid;
+    private javax.swing.JLabel invalid1;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField pass;
     private javax.swing.JLabel password_label;
     private javax.swing.JButton return_btn;

@@ -69,26 +69,25 @@ public class ADMIN_usermanagement extends connect {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        user = new javax.swing.JLabel();
-        fname = new javax.swing.JTextField();
-        user1 = new javax.swing.JLabel();
-        lname = new javax.swing.JTextField();
-        user3 = new javax.swing.JLabel();
         email = new javax.swing.JTextField();
         user2 = new javax.swing.JLabel();
+        user3 = new javax.swing.JLabel();
+        user1 = new javax.swing.JLabel();
+        fname = new javax.swing.JTextField();
+        lname = new javax.swing.JTextField();
         pass = new javax.swing.JTextField();
         user4 = new javax.swing.JLabel();
-        sec_sq = new javax.swing.JTextField();
-        secquesbox = new javax.swing.JComboBox<>();
         user5 = new javax.swing.JLabel();
+        secquesbox = new javax.swing.JComboBox<>();
+        user = new javax.swing.JLabel();
         sec_a = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        sec_sq = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jTextField1 = new javax.swing.JTextField();
+        email_label3 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         logout_btn2 = new javax.swing.JButton();
@@ -96,70 +95,38 @@ public class ADMIN_usermanagement extends connect {
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1.setBackground(new java.awt.Color(237, 234, 233));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel10.setBackground(new java.awt.Color(105, 73, 50));
-        jLabel10.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel10.setText("User Management");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 330, -1));
-
-        user.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        user.setForeground(new java.awt.Color(105, 73, 50));
-        user.setText("Security Question Answer:");
-        jPanel1.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 240, 20));
-
-        fname.setBackground(new java.awt.Color(217, 217, 217));
-        jPanel1.add(fname, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 150, 20));
-
-        user1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        user1.setForeground(new java.awt.Color(105, 73, 50));
-        user1.setText("First Name:");
-        jPanel1.add(user1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 155, 20));
-
-        lname.setBackground(new java.awt.Color(217, 217, 217));
-        jPanel1.add(lname, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 150, 20));
-
-        user3.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        user3.setForeground(new java.awt.Color(105, 73, 50));
-        user3.setText("Last Name:");
-        jPanel1.add(user3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 155, 20));
-
         email.setBackground(new java.awt.Color(217, 217, 217));
         email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailActionPerformed(evt);
             }
         });
-        jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 150, 20));
 
         user2.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         user2.setForeground(new java.awt.Color(105, 73, 50));
         user2.setText("Email:");
-        jPanel1.add(user2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 155, 20));
+
+        user3.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        user3.setForeground(new java.awt.Color(105, 73, 50));
+        user3.setText("Last Name:");
+
+        user1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        user1.setForeground(new java.awt.Color(105, 73, 50));
+        user1.setText("First Name:");
+
+        fname.setBackground(new java.awt.Color(217, 217, 217));
+
+        lname.setBackground(new java.awt.Color(217, 217, 217));
 
         pass.setBackground(new java.awt.Color(217, 217, 217));
-        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 150, 20));
 
         user4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         user4.setForeground(new java.awt.Color(105, 73, 50));
         user4.setText("Password:");
-        jPanel1.add(user4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 155, 20));
 
-        sec_sq.setBackground(new java.awt.Color(237, 234, 233));
-        sec_sq.setForeground(new java.awt.Color(237, 234, 233));
-        sec_sq.setBorder(null);
-        sec_sq.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sec_sqActionPerformed(evt);
-            }
-        });
-        jPanel1.add(sec_sq, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 610, 310, 50));
+        user5.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        user5.setForeground(new java.awt.Color(105, 73, 50));
+        user5.setText("Security Question:");
 
         secquesbox.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         secquesbox.setForeground(new java.awt.Color(105, 73, 50));
@@ -174,12 +141,10 @@ public class ADMIN_usermanagement extends connect {
                 secquesboxActionPerformed(evt);
             }
         });
-        jPanel1.add(secquesbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 320, 20));
 
-        user5.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        user5.setForeground(new java.awt.Color(105, 73, 50));
-        user5.setText("Security Question:");
-        jPanel1.add(user5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 155, 20));
+        user.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        user.setForeground(new java.awt.Color(105, 73, 50));
+        user.setText("Security Question Answer:");
 
         sec_a.setBackground(new java.awt.Color(217, 217, 217));
         sec_a.addActionListener(new java.awt.event.ActionListener() {
@@ -187,36 +152,36 @@ public class ADMIN_usermanagement extends connect {
                 sec_aActionPerformed(evt);
             }
         });
-        jPanel1.add(sec_a, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 310, 20));
 
-        jButton3.setBackground(new java.awt.Color(134, 97, 72));
-        jButton3.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("DELETE USER");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        sec_sq.setBackground(new java.awt.Color(237, 234, 233));
+        sec_sq.setForeground(new java.awt.Color(237, 234, 233));
+        sec_sq.setBorder(null);
+        sec_sq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                sec_sqActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, 170, 50));
 
-        jButton4.setBackground(new java.awt.Color(134, 97, 72));
-        jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("EDIT");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, 110, 50));
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(237, 234, 233));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel10.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel10.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel10.setText("Users");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 330, -1));
+
+        jTable2.setBackground(new java.awt.Color(255, 255, 255));
         jTable2.setModel(tbModel);
         jScrollPane1.setViewportView(jTable2);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 940, 560));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 1300, 560));
 
-        jTextField1.setBackground(new java.awt.Color(217, 217, 217));
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -227,7 +192,13 @@ public class ADMIN_usermanagement extends connect {
                 jTextField1KeyReleased(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 590, 940, 30));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 410, 20));
+
+        email_label3.setBackground(new java.awt.Color(105, 73, 50));
+        email_label3.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        email_label3.setForeground(new java.awt.Color(105, 73, 50));
+        email_label3.setText("Search:");
+        jPanel1.add(email_label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 200, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1350, 750));
 
@@ -310,116 +281,6 @@ public class ADMIN_usermanagement extends connect {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-     
-int e = jTable2.getSelectedRow();
-DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
-if (e >= 0) {
-    String emailToDelete = ((String) model.getValueAt(e, 2)).trim().toLowerCase();
-    System.out.println("Deleting email: '" + emailToDelete + "'");
-    try {
-        String sql = "DELETE FROM USERS WHERE LOWER(TRIM(EMAIL)) = ?";
-        System.out.println("Executing SQL: " + sql + " with email: " + emailToDelete);
-        PreparedStatement pst = con.prepareStatement(sql);
-        pst.setString(1, emailToDelete);
-        int rowsAffected = pst.executeUpdate();
-        System.out.println("Rows affected: " + rowsAffected);
-        if (rowsAffected > 0) {
-            model.removeRow(e);
-            JOptionPane.showMessageDialog(null, "Deleted successfully.");
-        } else {
-            JOptionPane.showMessageDialog(null, "No matching email found in database.");
-        }
-        con.commit(); 
-    } catch (SQLException a) {
-        JOptionPane.showMessageDialog(null, "Database delete failed: " + a.getMessage());
-        a.printStackTrace();
-    }
-} else {
-    JOptionPane.showMessageDialog(null, "Please select a row to delete.");
-}   
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-int e = jTable2.getSelectedRow();
-if (e >= 0) {
-    String fname1 = (String) jTable2.getValueAt(e, 0);  
-    String lname1 = (String) jTable2.getValueAt(e, 1); 
-    String email1 = (String) jTable2.getValueAt(e, 2);  
-    String pass1 = (String) jTable2.getValueAt(e, 3);   
-    String secsq1 = (String) jTable2.getValueAt(e, 4);  
-    String seca1 = (String) jTable2.getValueAt(e, 5);   
-    fname.setText(fname1);
-    lname.setText(lname1);
-    email.setText(email1);
-    pass.setText(pass1);
-    sec_sq.setText(secsq1);
-    sec_a.setText(seca1);
-    int option = JOptionPane.showConfirmDialog(null, new Object[] {
-        "First Name:", fname,
-        "Last Name:", lname,
-        "Email:", email,
-        "Password:", pass,
-        "Security Code:", sec_sq,
-        "Security Answer:", sec_a
-    }, "Edit User", JOptionPane.OK_CANCEL_OPTION);
-    if (option == JOptionPane.OK_OPTION && (email.getText().contains("@gmail.com") || email.getText().contains("@yahoo.com") || email.getText().contains("@ue.edu.ph"))) {
-        if ("@gmail.com".equals(email.getText()) || "@yahoo.com".equals(email.getText()) || "@ue.edu.ph".equals(email.getText())) {
-            JOptionPane.showMessageDialog(null, "Invalid input.");
-        } else {
-            String newFname = fname.getText().trim();
-            String newLname = lname.getText().trim();
-            String newEmail = email.getText().trim().toLowerCase();
-            String newPass = pass.getText().trim();
-            String newSecSq = sec_sq.getText().trim();
-            String newSecA = sec_a.getText().trim();
-            if (newFname.isEmpty() || newLname.isEmpty() || newEmail.isEmpty() || newPass.isEmpty() || newSecSq.isEmpty() || newSecA.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "All fields must be filled out.");
-                return;
-            }
-            try {
-                String sql = "UPDATE USERS SET FIRSTNAME = ?, LASTNAME = ?, EMAIL = ?, PASSWORD = ?, SEC_CODE = ?, SEC_ANSWER = ? WHERE LOWER(TRIM(EMAIL)) = ?";
-                PreparedStatement pst = con.prepareStatement(sql);
-                pst.setString(1, newFname);
-                pst.setString(2, newLname);
-                pst.setString(3, newEmail);
-                pst.setString(4, newPass);
-                pst.setString(5, newSecSq);
-                pst.setString(6, newSecA);
-                pst.setString(7, email1.toLowerCase().trim());
-                int rowsAffected = pst.executeUpdate();
-                System.out.println("Rows affected: " + rowsAffected);
-                if (rowsAffected > 0) {
-                    jTable2.setValueAt(newFname, e, 0);
-                    jTable2.setValueAt(newLname, e, 1);
-                    jTable2.setValueAt(newEmail, e, 2);
-                    jTable2.setValueAt(newPass, e, 3);
-                    jTable2.setValueAt(newSecSq, e, 4);
-                    jTable2.setValueAt(newSecA, e, 5);
-                    JOptionPane.showMessageDialog(null, "Updated successfully.");
-                } else {
-                    JOptionPane.showMessageDialog(null, "No matching email found in the database.");
-                }
-                con.commit();
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Error updating database: " + ex.getMessage());
-                ex.printStackTrace();
-            }
-        }
-    } else {
-        JOptionPane.showMessageDialog(null, "Invalid input.");
-    }
-} else {
-    JOptionPane.showMessageDialog(null, "Please select a row to edit.");
-}
-
-
-
-
-
-
-    }//GEN-LAST:event_jButton4ActionPerformed
-
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
@@ -496,9 +357,8 @@ obj.setRowFilter(RowFilter.regexFilter(jTextField1.getText().trim()));
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField email;
+    private javax.swing.JLabel email_label3;
     private javax.swing.JTextField fname;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel8;
