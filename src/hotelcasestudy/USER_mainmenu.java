@@ -30,15 +30,16 @@ public class USER_mainmenu extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         email_label1 = new javax.swing.JLabel();
         invalid1 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        casa_logo = new javax.swing.JLabel();
+        casa_name = new javax.swing.JLabel();
+        about_us_btn = new javax.swing.JButton();
+        booking_btn = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        email_label2 = new javax.swing.JLabel();
+        sublabel = new javax.swing.JLabel();
         email_label3 = new javax.swing.JLabel();
         email_label4 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        roomtype_btn = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -50,7 +51,7 @@ public class USER_mainmenu extends javax.swing.JFrame {
         email_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         email_label1.setForeground(new java.awt.Color(105, 73, 50));
         email_label1.setText("Changed your mind?");
-        jPanel2.add(email_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 510, 270, -1));
+        jPanel2.add(email_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 540, 270, -1));
 
         invalid1.setBackground(new java.awt.Color(105, 73, 50));
         invalid1.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
@@ -59,60 +60,101 @@ public class USER_mainmenu extends javax.swing.JFrame {
         invalid1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jPanel2.add(invalid1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, -1, -1));
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_topleft.png"))); // NOI18N
-        jLabel14.setText("jLabel2");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 60, -1));
+        casa_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_topleft.png"))); // NOI18N
+        casa_logo.setText("jLabel2");
+        jPanel2.add(casa_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 60, -1));
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownsmall.png"))); // NOI18N
-        jLabel13.setText("jLabel1");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 240, 50));
+        casa_name.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownsmall.png"))); // NOI18N
+        casa_name.setText("jLabel1");
+        jPanel2.add(casa_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 240, 50));
 
-        jButton1.setBackground(new java.awt.Color(134, 97, 72));
-        jButton1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("About Us");
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 440, 150, 40));
+        about_us_btn.setBackground(new java.awt.Color(134, 97, 72));
+        about_us_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        about_us_btn.setForeground(new java.awt.Color(255, 255, 255));
+        about_us_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/ICON_contract.png"))); // NOI18N
+        about_us_btn.setText("   About Us");
+        about_us_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                about_us_btnActionPerformed(evt);
+            }
+        });
+        jPanel2.add(about_us_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, 330, 70));
 
-        jButton3.setBackground(new java.awt.Color(134, 97, 72));
-        jButton3.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Book A Room");
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 150, 40));
+        booking_btn.setBackground(new java.awt.Color(134, 97, 72));
+        booking_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        booking_btn.setForeground(new java.awt.Color(255, 255, 255));
+        booking_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/ICON_calendar.png"))); // NOI18N
+        booking_btn.setText("   Book A Room");
+        booking_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                booking_btnActionPerformed(evt);
+            }
+        });
+        jPanel2.add(booking_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 330, 70));
 
         jButton4.setBackground(new java.awt.Color(134, 97, 72));
         jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Log Out");
-        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 540, 150, 40));
+        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 570, 150, 40));
 
-        email_label2.setBackground(new java.awt.Color(105, 73, 50));
-        email_label2.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        email_label2.setForeground(new java.awt.Color(105, 73, 50));
-        email_label2.setText("Live Luxuriously.");
-        jPanel2.add(email_label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, -1, -1));
+        sublabel.setBackground(new java.awt.Color(105, 73, 50));
+        sublabel.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        sublabel.setForeground(new java.awt.Color(105, 73, 50));
+        sublabel.setText("Live Luxuriously.");
+        jPanel2.add(sublabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, -1, -1));
 
         email_label3.setBackground(new java.awt.Color(105, 73, 50));
         email_label3.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         email_label3.setForeground(new java.awt.Color(105, 73, 50));
         email_label3.setText("Looking to stay with us?");
-        jPanel2.add(email_label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 200, -1));
+        jPanel2.add(email_label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 200, -1));
 
         email_label4.setBackground(new java.awt.Color(105, 73, 50));
         email_label4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         email_label4.setForeground(new java.awt.Color(105, 73, 50));
         email_label4.setText("Want to get to know us?");
-        jPanel2.add(email_label4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, -1, -1));
+        jPanel2.add(email_label4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, -1, -1));
 
-        jButton5.setBackground(new java.awt.Color(134, 97, 72));
-        jButton5.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Room Types");
-        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 440, 150, 40));
+        roomtype_btn.setBackground(new java.awt.Color(134, 97, 72));
+        roomtype_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        roomtype_btn.setForeground(new java.awt.Color(255, 255, 255));
+        roomtype_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/ICON_house.png"))); // NOI18N
+        roomtype_btn.setText("   Room Types");
+        roomtype_btn.setToolTipText("<html>Testing</html>");
+        roomtype_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                roomtype_btnActionPerformed(evt);
+            }
+        });
+        jPanel2.add(roomtype_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 330, 70));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 760));
 
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/BG_booking.png"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, -10, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void booking_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_booking_btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_booking_btnActionPerformed
+
+    private void about_us_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_about_us_btnActionPerformed
+        // TODO add your handling code here:
+        USER_description description = new USER_description();
+        this.dispose();
+        description.setVisible(true);
+    }//GEN-LAST:event_about_us_btnActionPerformed
+
+    private void roomtype_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roomtype_btnActionPerformed
+        // TODO add your handling code here:
+        USER_descriptionroom descriptionroom = new USER_descriptionroom();
+        this.dispose();
+        descriptionroom.setVisible(true);
+    }//GEN-LAST:event_roomtype_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,17 +192,18 @@ public class USER_mainmenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton about_us_btn;
+    private javax.swing.JButton booking_btn;
+    private javax.swing.JLabel casa_logo;
+    private javax.swing.JLabel casa_name;
     private javax.swing.JLabel email_label1;
-    private javax.swing.JLabel email_label2;
     private javax.swing.JLabel email_label3;
     private javax.swing.JLabel email_label4;
     private javax.swing.JLabel invalid1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton roomtype_btn;
+    private javax.swing.JLabel sublabel;
     // End of variables declaration//GEN-END:variables
 }

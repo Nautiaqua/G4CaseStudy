@@ -97,6 +97,7 @@ public void Select(){
         jButton4 = new javax.swing.JButton();
         ty1 = new javax.swing.JTextField();
         id1 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -145,25 +146,25 @@ public void Select(){
                 jTextField5KeyReleased(evt);
             }
         });
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 600, 750, -1));
+        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 320, 20));
 
         jLabel10.setBackground(new java.awt.Color(105, 73, 50));
         jLabel10.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(105, 73, 50));
         jLabel10.setText("Room Management");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 430, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 340, -1));
 
         jLabel11.setBackground(new java.awt.Color(105, 73, 50));
         jLabel11.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel11.setText("ROOM TYPE:");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, -1, -1));
+        jLabel11.setText("Search");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
         jLabel14.setBackground(new java.awt.Color(105, 73, 50));
         jLabel14.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel14.setText("ROOM ID:");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
+        jLabel14.setText("Room ID:");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 80, -1, -1));
 
         jPanel6.setBackground(new java.awt.Color(140, 100, 75));
         jPanel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -243,42 +244,48 @@ public void Select(){
         jTable1.setModel(model);
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, 750, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 1300, 500));
 
         addroom.setBackground(new java.awt.Color(134, 97, 72));
         addroom.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         addroom.setForeground(new java.awt.Color(255, 255, 255));
-        addroom.setText("ADD ROOM");
+        addroom.setText("Add Room");
         addroom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addroomActionPerformed(evt);
             }
         });
-        jPanel1.add(addroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 150, 50));
+        jPanel1.add(addroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 130, 40));
 
         deletetype.setBackground(new java.awt.Color(134, 97, 72));
         deletetype.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         deletetype.setForeground(new java.awt.Color(255, 255, 255));
-        deletetype.setText("DELETE TYPE");
+        deletetype.setText("Delete");
         deletetype.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deletetypeActionPerformed(evt);
             }
         });
-        jPanel1.add(deletetype, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, 170, 50));
+        jPanel1.add(deletetype, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 80, 130, 40));
 
         jButton4.setBackground(new java.awt.Color(134, 97, 72));
         jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("EDIT");
+        jButton4.setText("Edit");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 120, 50));
-        jPanel1.add(ty1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, 277, 20));
-        jPanel1.add(id1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, 277, 20));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 120, 40));
+        jPanel1.add(ty1, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 110, 277, 20));
+        jPanel1.add(id1, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 80, 277, 20));
+
+        jLabel12.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel12.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel12.setText("Room Type:");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 110, -1, -1));
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -520,6 +527,7 @@ if (selectedRow >= 0) {
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;

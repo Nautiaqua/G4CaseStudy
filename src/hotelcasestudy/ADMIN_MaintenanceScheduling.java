@@ -144,7 +144,7 @@ int x=0;
         jLabel11.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(105, 73, 50));
         jLabel11.setText("Maintenance Scheduling");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 430, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 430, -1));
 
         jLabel2.setBackground(new java.awt.Color(105, 73, 50));
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -167,13 +167,13 @@ int x=0;
         addroom.setBackground(new java.awt.Color(134, 97, 72));
         addroom.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         addroom.setForeground(new java.awt.Color(255, 255, 255));
-        addroom.setText("ADD ROOM");
+        addroom.setText("Add Room");
         addroom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addroomActionPerformed(evt);
             }
         });
-        jPanel1.add(addroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 150, 50));
+        jPanel1.add(addroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 140, 40));
 
         jTable1.setModel(model);
         jScrollPane1.setViewportView(jTable1);
@@ -183,24 +183,24 @@ int x=0;
         jButton5.setBackground(new java.awt.Color(134, 97, 72));
         jButton5.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("DELETE USER");
+        jButton5.setText("Delete");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 180, 50));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 130, 40));
 
         jButton4.setBackground(new java.awt.Color(134, 97, 72));
         jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("EDIT");
+        jButton4.setText("Edit");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 100, 50));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 100, 40));
 
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

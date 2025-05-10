@@ -172,14 +172,14 @@ public class ADMIN_usermanagement extends connect {
         jLabel10.setBackground(new java.awt.Color(105, 73, 50));
         jLabel10.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel10.setText("Users");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 330, -1));
+        jLabel10.setText("User Records");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 240, -1));
 
         jTable2.setBackground(new java.awt.Color(255, 255, 255));
         jTable2.setModel(tbModel);
         jScrollPane1.setViewportView(jTable2);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 1300, 560));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 1300, 500));
 
         jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -192,13 +192,13 @@ public class ADMIN_usermanagement extends connect {
                 jTextField1KeyReleased(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 410, 20));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 410, 20));
 
         email_label3.setBackground(new java.awt.Color(105, 73, 50));
         email_label3.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         email_label3.setForeground(new java.awt.Color(105, 73, 50));
-        email_label3.setText("Search:");
-        jPanel1.add(email_label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 200, -1));
+        email_label3.setText("Search");
+        jPanel1.add(email_label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 200, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1350, 750));
 

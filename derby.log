@@ -1,14 +1,14 @@
-Tue May 06 21:14:35 GMT+08:00 2025 : Apache Derby Network Server - 10.17.1.0 - (1913217) started and ready to accept connections on port 1527
+Sat May 10 11:51:25 PST 2025 : Apache Derby Network Server - 10.17.1.0 - (1913217) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Tue May 06 21:14:35 GMT+08:00 2025:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-0196-a5bb-e0e4-ffffda4be7fb 
-on database directory A:\java activitieds\MALUPITON\hotelcasestudy with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@11a4022a 
-Loaded from file:/C:/Users/nejac/Downloads/javaderby/db-derby-10.17.1.0-bin/lib/derby.jar
+Sat May 10 11:51:25 PST 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-0196-b851-b834-000008d086ff 
+on database directory C:\Users\WINDOWS\Documents\NetBeansProjects\CaseStudyAAAAAGH\G4CaseStudy\hotelcasestudy with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@11a4022a 
+Loaded from file:/C:/Users/WINDOWS/Documents/NetBeansProjects/CaseStudy/G4CaseStudy/db-derby-10.17.1.0-bin/lib/derby.jar
 java.vendor=Oracle Corporation
-java.runtime.version=24.0.1+9-30
-user.dir=C:\Users\nejac\Downloads\javaderby\db-derby-10.17.1.0-bin
+java.runtime.version=24+36-3646
+user.dir=C:\Users\WINDOWS\Documents\NetBeansProjects\CaseStudy\G4CaseStudy\db-derby-10.17.1.0-bin
 os.name=Windows 11
 os.arch=amd64
 os.version=10.0
-derby.system.home=A:\java activitieds\MALUPITON
+derby.system.home=C:\Users\WINDOWS\Documents\NetBeansProjects\CaseStudyAAAAAGH\G4CaseStudy
 Database Class Loader started - derby.database.classpath=''

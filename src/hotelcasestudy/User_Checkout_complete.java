@@ -31,104 +31,103 @@ public class User_Checkout_complete extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        returnbtn = new javax.swing.JButton();
-        invalid_confirm = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        invalid_email = new javax.swing.JLabel();
-        invalid_password = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        invalid1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        casa_icon = new javax.swing.JLabel();
-        addanother = new javax.swing.JButton();
+        signup_finish_btn = new javax.swing.JButton();
+        casa_logo = new javax.swing.JLabel();
+        casa_name = new javax.swing.JLabel();
+        sublabel = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        signup_finish_btn1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Casa de Los Tropicos"); // NOI18N
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(237, 234, 233));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.setBackground(new java.awt.Color(237, 234, 233));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        returnbtn.setBackground(new java.awt.Color(134, 97, 72));
-        returnbtn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        returnbtn.setForeground(new java.awt.Color(255, 255, 255));
-        returnbtn.setText("RETURN");
-        returnbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                returnbtnActionPerformed(evt);
-            }
-        });
-        jPanel1.add(returnbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(181, 517, 160, 49));
-
-        invalid_confirm.setBackground(new java.awt.Color(105, 73, 50));
-        invalid_confirm.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        invalid_confirm.setForeground(new java.awt.Color(123, 24, 24));
-        invalid_confirm.setToolTipText("");
-        jPanel1.add(invalid_confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(461, 702, -1, -1));
-
-        jLabel3.setBackground(new java.awt.Color(105, 73, 50));
-        jLabel3.setFont(new java.awt.Font("Liberation Sans", 0, 36)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel3.setText("Thank you for joining us!");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 437, -1, -1));
-
-        invalid_email.setBackground(new java.awt.Color(105, 73, 50));
-        invalid_email.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        invalid_email.setForeground(new java.awt.Color(123, 24, 24));
-        invalid_email.setToolTipText("");
-        jPanel1.add(invalid_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 485, 120, -1));
-
-        invalid_password.setBackground(new java.awt.Color(105, 73, 50));
-        invalid_password.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        invalid_password.setForeground(new java.awt.Color(123, 24, 24));
-        invalid_password.setToolTipText("");
-        jPanel1.add(invalid_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(475, 545, 170, -1));
+        invalid1.setBackground(new java.awt.Color(105, 73, 50));
+        invalid1.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        invalid1.setForeground(new java.awt.Color(123, 24, 24));
+        invalid1.setToolTipText("");
+        invalid1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel2.add(invalid1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 400, -1, -1));
 
         jLabel5.setBackground(new java.awt.Color(105, 73, 50));
         jLabel5.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel5.setText("Your booking is complete.");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 403, -1, -1));
+        jLabel5.setText("Thank you for joining us!");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownbig.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 299, 390, 80));
-
-        casa_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_medium.png"))); // NOI18N
-        casa_icon.setText("jLabel1");
-        jPanel1.add(casa_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 119, 240, 180));
-
-        addanother.setBackground(new java.awt.Color(134, 97, 72));
-        addanother.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        addanother.setForeground(new java.awt.Color(255, 255, 255));
-        addanother.setText("ADD ANOTHER ROOM");
-        addanother.addActionListener(new java.awt.event.ActionListener() {
+        signup_finish_btn.setBackground(new java.awt.Color(134, 97, 72));
+        signup_finish_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        signup_finish_btn.setForeground(new java.awt.Color(255, 255, 255));
+        signup_finish_btn.setText("Return");
+        signup_finish_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addanotherActionPerformed(evt);
+                signup_finish_btnActionPerformed(evt);
             }
         });
-        jPanel1.add(addanother, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 578, 253, 49));
+        jPanel2.add(signup_finish_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 150, 40));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 520, 760));
+        casa_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_topleft.png"))); // NOI18N
+        casa_logo.setText("jLabel2");
+        jPanel2.add(casa_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 60, -1));
 
-        setSize(new java.awt.Dimension(513, 765));
+        casa_name.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownsmall.png"))); // NOI18N
+        casa_name.setText("jLabel1");
+        jPanel2.add(casa_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 240, 50));
+
+        sublabel.setBackground(new java.awt.Color(105, 73, 50));
+        sublabel.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        sublabel.setForeground(new java.awt.Color(105, 73, 50));
+        sublabel.setText("Live Luxuriously.");
+        jPanel2.add(sublabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, -1, -1));
+
+        jLabel7.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel7.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel7.setText("Your booking is complete.");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, -1, -1));
+
+        signup_finish_btn1.setBackground(new java.awt.Color(134, 97, 72));
+        signup_finish_btn1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        signup_finish_btn1.setForeground(new java.awt.Color(255, 255, 255));
+        signup_finish_btn1.setText("Book Another");
+        signup_finish_btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signup_finish_btn1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(signup_finish_btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 440, 150, 40));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 520, 760));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/BG_NewUserLogin.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -10, -1, -1));
+
+        setSize(new java.awt.Dimension(1360, 765));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void returnbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnbtnActionPerformed
+    private void signup_finish_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signup_finish_btnActionPerformed
         // TODO add your handling code here:
         USER_login_screen userlogin = new USER_login_screen();
         this.setVisible(false);
         userlogin.setVisible(true);
-    }//GEN-LAST:event_returnbtnActionPerformed
+    }//GEN-LAST:event_signup_finish_btnActionPerformed
 
-    private void addanotherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addanotherActionPerformed
+    private void signup_finish_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signup_finish_btn1ActionPerformed
         // TODO add your handling code here:
         User_room_selection roomselect = new User_room_selection();
         this.dispose();
         roomselect.setVisible(true);
-    }//GEN-LAST:event_addanotherActionPerformed
+    }//GEN-LAST:event_signup_finish_btn1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -308,15 +307,15 @@ public class User_Checkout_complete extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addanother;
-    private javax.swing.JLabel casa_icon;
-    private javax.swing.JLabel invalid_confirm;
-    private javax.swing.JLabel invalid_email;
-    private javax.swing.JLabel invalid_password;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel casa_logo;
+    private javax.swing.JLabel casa_name;
+    private javax.swing.JLabel invalid1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton returnbtn;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton signup_finish_btn;
+    private javax.swing.JButton signup_finish_btn1;
+    private javax.swing.JLabel sublabel;
     // End of variables declaration//GEN-END:variables
 }

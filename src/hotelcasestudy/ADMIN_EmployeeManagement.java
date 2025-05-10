@@ -73,6 +73,7 @@ DefaultTableModel MODEL = new DefaultTableModel() {
         TF6 = new javax.swing.JTextField();
         TF5 = new javax.swing.JTextField();
         TF1 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
         background = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -114,44 +115,48 @@ DefaultTableModel MODEL = new DefaultTableModel() {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel11.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel11.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel11.setText("Search");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+
         background.setBackground(new java.awt.Color(237, 234, 233));
         background.setForeground(new java.awt.Color(237, 234, 233));
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(134, 97, 72));
+        jLabel1.setForeground(new java.awt.Color(105, 73, 50));
         jLabel1.setText("Employee Management");
         background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 418, 40));
 
-        jTable2.setBackground(new java.awt.Color(255, 255, 255));
         jTable2.setModel(MODEL);
         jScrollPane2.setViewportView(jTable2);
 
-        background.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 1280, 510));
+        background.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 1310, 500));
 
         jButton4.setBackground(new java.awt.Color(134, 97, 72));
         jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("EDIT");
+        jButton4.setText("Edit");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        background.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 110, 50));
+        background.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, 110, 40));
 
         jButton5.setBackground(new java.awt.Color(134, 97, 72));
         jButton5.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("DELETE USER");
+        jButton5.setText("Delete");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
-        background.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 180, 50));
+        background.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 10, 120, 40));
 
-        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField4ActionPerformed(evt);
@@ -162,7 +167,7 @@ DefaultTableModel MODEL = new DefaultTableModel() {
                 jTextField4KeyReleased(evt);
             }
         });
-        background.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, 390, 30));
+        background.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 390, 20));
 
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1360, 690));
 
@@ -473,6 +478,7 @@ int e = jTable2.getSelectedRow();
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel6;

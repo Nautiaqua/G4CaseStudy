@@ -232,7 +232,7 @@ DefaultTableModel model = new DefaultTableModel() {
 
         created_in.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         created_in.setForeground(new java.awt.Color(105, 73, 50));
-        created_in.setText("Num:");
+        created_in.setText("Num of Beds:");
         background.add(created_in, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, 20));
 
         type_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -247,7 +247,7 @@ DefaultTableModel model = new DefaultTableModel() {
 
         bednum_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         bednum_label.setForeground(new java.awt.Color(105, 73, 50));
-        bednum_label.setText("Max:");
+        bednum_label.setText("Max Occupancy:");
         background.add(bednum_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, 20));
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
@@ -258,24 +258,24 @@ DefaultTableModel model = new DefaultTableModel() {
         addtype.setBackground(new java.awt.Color(134, 97, 72));
         addtype.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         addtype.setForeground(new java.awt.Color(255, 255, 255));
-        addtype.setText("ADD TYPE");
+        addtype.setText("Add Type");
         addtype.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addtypeActionPerformed(evt);
             }
         });
-        background.add(addtype, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, 150, 50));
+        background.add(addtype, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, 150, 40));
 
         deletetype.setBackground(new java.awt.Color(134, 97, 72));
         deletetype.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         deletetype.setForeground(new java.awt.Color(255, 255, 255));
-        deletetype.setText("DELETE TYPE");
+        deletetype.setText("Delete");
         deletetype.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deletetypeActionPerformed(evt);
             }
         });
-        background.add(deletetype, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 550, 170, 50));
+        background.add(deletetype, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 550, 130, 40));
 
         jTable1.setModel(model);
         jScrollPane2.setViewportView(jTable1);
@@ -294,55 +294,55 @@ DefaultTableModel model = new DefaultTableModel() {
 
         bednum_label3.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         bednum_label3.setForeground(new java.awt.Color(105, 73, 50));
-        bednum_label3.setText("Beds:");
+        bednum_label3.setText("Bed Types:");
         background.add(bednum_label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, 20));
 
         jButton4.setBackground(new java.awt.Color(134, 97, 72));
         jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("EDIT");
+        jButton4.setText("Edit");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        background.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 550, 120, 50));
+        background.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 550, 120, 40));
 
         max1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 max1ActionPerformed(evt);
             }
         });
-        background.add(max1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 300, 20));
+        background.add(max1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, 260, 20));
 
         bed1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bed1ActionPerformed(evt);
             }
         });
-        background.add(bed1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 300, 20));
+        background.add(bed1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 260, 20));
 
         num1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 num1ActionPerformed(evt);
             }
         });
-        background.add(num1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 300, 20));
-        background.add(price1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 300, 20));
+        background.add(num1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 260, 20));
+        background.add(price1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 260, 20));
 
         name1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 name1ActionPerformed(evt);
             }
         });
-        background.add(name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 300, 20));
+        background.add(name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 260, 20));
 
         type1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 type1ActionPerformed(evt);
             }
         });
-        background.add(type1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 300, 20));
+        background.add(type1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 260, 20));
         background.add(desc1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 440, 110));
 
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1350, 700));

@@ -33,11 +33,12 @@ public class USER_signup_complete extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         invalid1 = new javax.swing.JLabel();
-        casa_icon1 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         signup_finish_btn = new javax.swing.JButton();
+        casa_logo = new javax.swing.JLabel();
+        casa_name = new javax.swing.JLabel();
+        sublabel = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,25 +56,11 @@ public class USER_signup_complete extends javax.swing.JFrame {
         invalid1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jPanel2.add(invalid1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 400, -1, -1));
 
-        casa_icon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_medium.png"))); // NOI18N
-        casa_icon1.setText("jLabel1");
-        jPanel2.add(casa_icon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 240, 180));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownbig.png"))); // NOI18N
-        jLabel6.setText("jLabel1");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 390, 80));
-
-        jLabel3.setBackground(new java.awt.Color(105, 73, 50));
-        jLabel3.setFont(new java.awt.Font("Liberation Sans", 0, 36)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel3.setText("Thank you for joining us!");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, -1, -1));
-
         jLabel5.setBackground(new java.awt.Color(105, 73, 50));
         jLabel5.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel5.setText("Your registration is complete.");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, -1, -1));
+        jLabel5.setText("Thank you for joining us!");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, -1, -1));
 
         signup_finish_btn.setBackground(new java.awt.Color(134, 97, 72));
         signup_finish_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -84,7 +71,27 @@ public class USER_signup_complete extends javax.swing.JFrame {
                 signup_finish_btnActionPerformed(evt);
             }
         });
-        jPanel2.add(signup_finish_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 520, 111, 40));
+        jPanel2.add(signup_finish_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 440, 111, 40));
+
+        casa_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_topleft.png"))); // NOI18N
+        casa_logo.setText("jLabel2");
+        jPanel2.add(casa_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 60, -1));
+
+        casa_name.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownsmall.png"))); // NOI18N
+        casa_name.setText("jLabel1");
+        jPanel2.add(casa_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 240, 50));
+
+        sublabel.setBackground(new java.awt.Color(105, 73, 50));
+        sublabel.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        sublabel.setForeground(new java.awt.Color(105, 73, 50));
+        sublabel.setText("Live Luxuriously.");
+        jPanel2.add(sublabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, -1, -1));
+
+        jLabel7.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel7.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel7.setText("Your registration is complete.");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 520, 760));
 
@@ -185,13 +192,14 @@ public class USER_signup_complete extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel casa_icon1;
+    private javax.swing.JLabel casa_logo;
+    private javax.swing.JLabel casa_name;
     private javax.swing.JLabel invalid1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton signup_finish_btn;
+    private javax.swing.JLabel sublabel;
     // End of variables declaration//GEN-END:variables
 }

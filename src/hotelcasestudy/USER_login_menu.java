@@ -48,6 +48,7 @@ public class USER_login_menu extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
+        sublabel = new javax.swing.JLabel();
         login_btn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         casa_icon1 = new javax.swing.JLabel();
@@ -137,6 +138,12 @@ public class USER_login_menu extends javax.swing.JFrame {
 
         loginpanel.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1300, 1350, 260));
 
+        sublabel.setBackground(new java.awt.Color(105, 73, 50));
+        sublabel.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        sublabel.setForeground(new java.awt.Color(105, 73, 50));
+        sublabel.setText("Live Luxuriously.");
+        loginpanel.add(sublabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, -1, -1));
+
         login_btn.setBackground(new java.awt.Color(134, 97, 72));
         login_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         login_btn.setForeground(new java.awt.Color(255, 255, 255));
@@ -146,15 +153,15 @@ public class USER_login_menu extends javax.swing.JFrame {
                 login_btnActionPerformed(evt);
             }
         });
-        loginpanel.add(login_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, 120, 40));
+        loginpanel.add(login_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 120, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownbig.png"))); // NOI18N
         jLabel2.setText("jLabel1");
-        loginpanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 390, 80));
+        loginpanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 390, 80));
 
         casa_icon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_medium.png"))); // NOI18N
         casa_icon1.setText("jLabel1");
-        loginpanel.add(casa_icon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 240, 180));
+        loginpanel.add(casa_icon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 240, 180));
 
         signup_btn1.setBackground(new java.awt.Color(237, 234, 233));
         signup_btn1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -166,7 +173,7 @@ public class USER_login_menu extends javax.swing.JFrame {
                 signup_btn1ActionPerformed(evt);
             }
         });
-        loginpanel.add(signup_btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 540, 200, 20));
+        loginpanel.add(signup_btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 520, 200, 20));
 
         jPanel3.setBackground(new java.awt.Color(134, 97, 72));
         jPanel3.setForeground(new java.awt.Color(134, 97, 72));
@@ -200,7 +207,7 @@ public class USER_login_menu extends javax.swing.JFrame {
                 signup_btn2ActionPerformed(evt);
             }
         });
-        loginpanel.add(signup_btn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 120, 40));
+        loginpanel.add(signup_btn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, 120, 40));
 
         getContentPane().add(loginpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 760));
 
@@ -337,5 +344,6 @@ public class USER_login_menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem member_item;
     private javax.swing.JButton signup_btn1;
     private javax.swing.JButton signup_btn2;
+    private javax.swing.JLabel sublabel;
     // End of variables declaration//GEN-END:variables
 }

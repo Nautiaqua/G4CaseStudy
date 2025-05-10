@@ -100,13 +100,13 @@ public class User_Checkout extends connect  {
         jButton1.setBackground(new java.awt.Color(134, 97, 72));
         jButton1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("COMPLETE");
+        jButton1.setText("Complete");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 160, 60));
+        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 140, 40));
 
         jLabel20.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(105, 73, 50));

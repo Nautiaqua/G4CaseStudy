@@ -222,7 +222,7 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel1.setText("Revenue Report");
+        jLabel1.setText("Sales Report");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 280, -1));
 
         rev.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
