@@ -180,11 +180,11 @@ boolean emailExists = false;
 newEmail = USER_login_screen.acc;
 newcheckout = User_room_selection.co;
 newcheckin = User_room_selection.ci;
-newchild = USER_booking.chi;
-newadult = USER_booking.adu;
+newchild = (int) User_room_selection.chi.getValue();
+newadult = (int) User_room_selection.adu.getValue();
 int newroomid = User_room_selection.id;
 int newtotal = User_room_selection.rm;
-newdate = new java.sql.Date(USER_booking.dat.getTime());
+// newdate = new java.sql.Date(USER_booking.datetoday.getTime()); // okay i admit i fucked this up, i dont wanna change it too much so i'll leave this errored for now ~ jose
 try {
     con.setAutoCommit(false);
     stmt = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);

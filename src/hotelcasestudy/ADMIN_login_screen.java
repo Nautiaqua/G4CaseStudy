@@ -21,6 +21,7 @@ public class ADMIN_login_screen extends connect {
      * Creates new form login_menu
      */
     public ADMIN_login_screen() {
+        UIManager.put("Button.arc", 20);
         initComponents();
         DoConnect();
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));

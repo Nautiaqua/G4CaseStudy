@@ -46,9 +46,6 @@ public class USER_description extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         logout1 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
@@ -175,39 +172,6 @@ public class USER_description extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(236, 234, 232));
-        jButton5.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(103, 64, 37));
-        jButton5.setText("Rooms");
-        jButton5.setBorder(null);
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-
-        jButton7.setBackground(new java.awt.Color(236, 234, 232));
-        jButton7.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(103, 64, 37));
-        jButton7.setText("About Us");
-        jButton7.setBorder(null);
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-
-        jButton8.setBackground(new java.awt.Color(236, 234, 232));
-        jButton8.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(103, 64, 37));
-        jButton8.setText("Current Bookings");
-        jButton8.setBorder(null);
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
-
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownsmall.png"))); // NOI18N
         jLabel13.setText("jLabel1");
 
@@ -234,14 +198,8 @@ public class USER_description extends javax.swing.JFrame {
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 661, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 902, Short.MAX_VALUE)
                 .addComponent(jButton6)
-                .addGap(18, 18, 18)
-                .addComponent(jButton8)
-                .addGap(18, 18, 18)
-                .addComponent(jButton7)
-                .addGap(18, 18, 18)
-                .addComponent(jButton5)
                 .addGap(18, 18, 18)
                 .addComponent(logout1)
                 .addGap(17, 17, 17))
@@ -258,14 +216,11 @@ public class USER_description extends javax.swing.JFrame {
                         .addGap(20, 20, 20)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(logout1)
-                            .addComponent(jButton5)
-                            .addComponent(jButton7)
-                            .addComponent(jButton8)
                             .addComponent(jButton6))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 70));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         setSize(new java.awt.Dimension(1360, 765));
         setLocationRelativeTo(null);
@@ -278,23 +233,11 @@ public class USER_description extends javax.swing.JFrame {
         loginmenu.setVisible(true);
     }//GEN-LAST:event_logout1ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
-
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        USER_booking bookings = new USER_booking();
+        USER_mainmenu mainmenu = new USER_mainmenu();
         this.dispose();
-        bookings.setVisible(true);
+        mainmenu.setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
@@ -332,10 +275,7 @@ public class USER_description extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

@@ -32,6 +32,7 @@ DefaultTableModel model = new DefaultTableModel() {
      * Creates new form ADMIN_RoomTypeManagement
      */
     public ADMIN_RoomTypeManagement() {
+        UIManager.put("Button.arc", 20);
         initComponents();
         DoConnect();
         Select();

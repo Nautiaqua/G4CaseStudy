@@ -26,6 +26,7 @@ public class ADMIN_usermanagement extends connect {
     int x=0;
    
     public ADMIN_usermanagement() {
+        UIManager.put("Button.arc", 20);
         initComponents();
         DoConnect();
         Select();

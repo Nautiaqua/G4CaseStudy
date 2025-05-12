@@ -190,7 +190,7 @@ try {
         if (newEmail.equals(n)) {
             if (newPass.equals(u)) {
                 USER_mainmenu mainmenu = new USER_mainmenu();
-                this.setVisible(false);
+                this.dispose();
                 mainmenu.setVisible(true);
                 acc=newEmail;
                 break;

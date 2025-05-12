@@ -39,6 +39,7 @@ DefaultTableModel model = new DefaultTableModel() {
     int x=0;
     
     public ADMIN_room_management() {
+        UIManager.put("Button.arc", 20);
         initComponents();
         DoConnect();
         Select();

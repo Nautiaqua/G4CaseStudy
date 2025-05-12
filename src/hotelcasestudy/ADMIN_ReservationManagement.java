@@ -32,6 +32,7 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
     int x=0;
     
     public ADMIN_ReservationManagement() {
+        UIManager.put("Button.arc", 20);
         initComponents();
         DoConnect();
         Select();

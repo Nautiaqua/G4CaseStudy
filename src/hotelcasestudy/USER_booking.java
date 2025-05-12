@@ -4,36 +4,31 @@
  */
 package hotelcasestudy;
 
-
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.*;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-
-
 /**
  *
- * @author nejac
+ * @author WINDOWS
  */
 public class USER_booking extends javax.swing.JFrame {
-    public static int adu;
-    public static int chi;
-    public static Date dat;
 
-
+    /**
+     * Creates new form USER_booking
+     */
     public USER_booking() {
+        UIManager.put("Button.arc", 20);
         initComponents();
-        setDateToToday();
-        
+        LocalDate today = LocalDate.now();
+        Date dateNow = Date.from(today.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        datetoday.setDate(dateNow);
     }
-public void setDateToToday() {
-    Date today = new Date();
-    datechoose.setDate(today);
-    datechoose.setEnabled(false);
-}
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -43,153 +38,84 @@ public void setDateToToday() {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenu1 = new javax.swing.JMenu();
-        jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        adu = new javax.swing.JSpinner();
+        chi = new javax.swing.JSpinner();
         jLabel1 = new javax.swing.JLabel();
-        adult_spinner = new javax.swing.JSpinner();
-        child_spinner = new javax.swing.JSpinner();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        datechoose = new com.toedter.calendar.JDateChooser();
-        invalid = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-
-        jMenu1.setText("jMenu1");
+        jLabel4 = new javax.swing.JLabel();
+        datetoday = new com.toedter.calendar.JDateChooser();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(105, 73, 50));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel4.setBackground(new java.awt.Color(237, 234, 233));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(236, 234, 232));
+        jLabel16.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel16.setText("Booking");
+        jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        jLabel1.setBackground(new java.awt.Color(105, 73, 50));
-        jLabel1.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel1.setText("Date");
-
-        adult_spinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
-
-        child_spinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
-
-        jLabel10.setBackground(new java.awt.Color(105, 73, 50));
-        jLabel10.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel10.setText("Adults");
-
-        jLabel11.setBackground(new java.awt.Color(105, 73, 50));
-        jLabel11.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel11.setText("Children");
-
-        jButton5.setBackground(new java.awt.Color(134, 97, 72));
-        jButton5.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("BOOK");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setBackground(new java.awt.Color(134, 97, 72));
+        jButton1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Next");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
+        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 100, 40));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(datechoose, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(adult_spinner, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(child_spinner, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
-                .addGap(59, 59, 59)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+        adu.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        jPanel4.add(adu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 90, -1));
+
+        chi.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        jPanel4.add(chi, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 90, -1));
+
+        jLabel1.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel1.setText("Children");
+        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 60, -1));
+
+        jLabel4.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel4.setText("Date Today:");
+        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
+        jPanel4.add(datetoday, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 200, 30));
+
+        jLabel5.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel5.setText("Adults");
+        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(adult_spinner)
-                            .addComponent(child_spinner)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(datechoose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(23, 23, 23))
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
         );
 
-        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 19, -1, 90));
-
-        invalid.setBackground(new java.awt.Color(105, 73, 50));
-        invalid.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
-        invalid.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel3.add(invalid, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 110, -1));
-
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 580, -1, -1));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/BG_booking.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, -20, -1, -1));
-
-        setSize(new java.awt.Dimension(1360, 765));
-        setLocationRelativeTo(null);
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-boolean a = false;
-boolean b = false;
-
-int adult = (int) adult_spinner.getValue();
-int child = (int) child_spinner.getValue();
-
-
-Date today = new Date();
-dat = today; 
-
-if (adult == 0) {
-    invalid.setText("Invalid Selection!");
-} else {
-    System.out.println("This works.");
-    adu = adult;
-    chi = child;
-    b = true;
-    a = true;
-}
-
-if (a && b) {
-    User_room_selection description = new User_room_selection();
-    this.dispose();
-    description.setVisible(true);
-}
-
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
-        try {            /* Set the Nimbus look and feel */
+
+        try {
+            /* Set the Nimbus look and feel */
             //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
             /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
             * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
@@ -231,17 +157,14 @@ if (a && b) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JSpinner adult_spinner;
-    private javax.swing.JSpinner child_spinner;
-    private com.toedter.calendar.JDateChooser datechoose;
-    private javax.swing.JLabel invalid;
-    private javax.swing.JButton jButton5;
+    public static javax.swing.JSpinner adu;
+    public static javax.swing.JSpinner chi;
+    public static com.toedter.calendar.JDateChooser datetoday;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
 }

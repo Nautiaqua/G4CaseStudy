@@ -41,6 +41,7 @@ int x=0;
      * Creates new form ADMIN_USERMANAGEMENT
      */
     public ADMIN_MaintenanceScheduling() {
+        UIManager.put("Button.arc", 20);
         initComponents();
         DoConnect();
         Select();
