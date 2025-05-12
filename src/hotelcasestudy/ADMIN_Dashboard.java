@@ -20,6 +20,7 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
      * Creates new form ADMIN_dashbard
      */
     public ADMIN_Dashboard() {
+        UIManager.put("Button.arc", 20);
         initComponents();
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
     }
@@ -50,7 +51,6 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
         resv_management = new javax.swing.JButton();
         user_management = new javax.swing.JButton();
         employee_management = new javax.swing.JButton();
-        report_btn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         reservation_history.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
@@ -74,7 +74,7 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
         email_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         email_label1.setForeground(new java.awt.Color(105, 73, 50));
         email_label1.setText("Done working?");
-        jPanel2.add(email_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 610, 270, -1));
+        jPanel2.add(email_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 560, 270, -1));
 
         invalid1.setBackground(new java.awt.Color(105, 73, 50));
         invalid1.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
@@ -95,7 +95,7 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
         jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Log Out");
-        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 640, 150, 40));
+        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 590, 150, 40));
 
         sublabel.setBackground(new java.awt.Color(105, 73, 50));
         sublabel.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -145,13 +145,13 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
         resv_management.setBackground(new java.awt.Color(140, 100, 75));
         resv_management.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         resv_management.setForeground(new java.awt.Color(255, 255, 255));
-        resv_management.setText("Reservation Management");
+        resv_management.setText("Reservations and Profits");
         resv_management.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 resv_managementActionPerformed(evt);
             }
         });
-        jPanel2.add(resv_management, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 330, 40));
+        jPanel2.add(resv_management, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 500, 330, 40));
 
         user_management.setBackground(new java.awt.Color(140, 100, 75));
         user_management.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -162,7 +162,7 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
                 user_managementActionPerformed(evt);
             }
         });
-        jPanel2.add(user_management, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, 330, 40));
+        jPanel2.add(user_management, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 330, 40));
 
         employee_management.setBackground(new java.awt.Color(140, 100, 75));
         employee_management.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -173,18 +173,7 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
                 employee_managementActionPerformed(evt);
             }
         });
-        jPanel2.add(employee_management, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 500, 330, 40));
-
-        report_btn.setBackground(new java.awt.Color(140, 100, 75));
-        report_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        report_btn.setForeground(new java.awt.Color(255, 255, 255));
-        report_btn.setText("Report Generation Module");
-        report_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                report_btnActionPerformed(evt);
-            }
-        });
-        jPanel2.add(report_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 550, 330, 40));
+        jPanel2.add(employee_management, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, 330, 40));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 760));
 
@@ -195,11 +184,6 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1358, 764));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void report_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_report_btnActionPerformed
-        // TODO add your handling code here:
-        report_popup.show(report_btn, 0, report_btn.getHeight());
-    }//GEN-LAST:event_report_btnActionPerformed
 
     private void maint_schedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maint_schedActionPerformed
         // TODO add your handling code here:
@@ -302,7 +286,6 @@ public class ADMIN_Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton maint_sched;
-    private javax.swing.JButton report_btn;
     private javax.swing.JPopupMenu report_popup;
     private javax.swing.JMenuItem reservation_history;
     private javax.swing.JButton resv_management;

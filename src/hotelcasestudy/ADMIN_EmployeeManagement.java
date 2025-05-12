@@ -32,6 +32,7 @@ DefaultTableModel MODEL = new DefaultTableModel() {
      * Creates new form ADMIN_UserManagement
      */
     public ADMIN_EmployeeManagement() {
+        UIManager.put("Button.arc", 20);
         initComponents();
         DoConnect();
         Select();
@@ -73,7 +74,6 @@ DefaultTableModel MODEL = new DefaultTableModel() {
         TF6 = new javax.swing.JTextField();
         TF5 = new javax.swing.JTextField();
         TF1 = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
         background = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -81,6 +81,8 @@ DefaultTableModel MODEL = new DefaultTableModel() {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jTextField4 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         logout_btn2 = new javax.swing.JButton();
@@ -115,12 +117,6 @@ DefaultTableModel MODEL = new DefaultTableModel() {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel11.setBackground(new java.awt.Color(105, 73, 50));
-        jLabel11.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel11.setText("Search");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
-
         background.setBackground(new java.awt.Color(237, 234, 233));
         background.setForeground(new java.awt.Color(237, 234, 233));
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -133,7 +129,7 @@ DefaultTableModel MODEL = new DefaultTableModel() {
         jTable2.setModel(MODEL);
         jScrollPane2.setViewportView(jTable2);
 
-        background.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 1310, 500));
+        background.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 1320, 500));
 
         jButton4.setBackground(new java.awt.Color(134, 97, 72));
         jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -144,7 +140,7 @@ DefaultTableModel MODEL = new DefaultTableModel() {
                 jButton4ActionPerformed(evt);
             }
         });
-        background.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, 110, 40));
+        background.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 80, 110, 40));
 
         jButton5.setBackground(new java.awt.Color(134, 97, 72));
         jButton5.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -155,7 +151,7 @@ DefaultTableModel MODEL = new DefaultTableModel() {
                 jButton5ActionPerformed(evt);
             }
         });
-        background.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 10, 120, 40));
+        background.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 80, 120, 40));
 
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,7 +163,24 @@ DefaultTableModel MODEL = new DefaultTableModel() {
                 jTextField4KeyReleased(evt);
             }
         });
-        background.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 390, 20));
+        background.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 400, 20));
+
+        jLabel11.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel11.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel11.setText("Search:");
+        background.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+
+        jButton6.setBackground(new java.awt.Color(134, 97, 72));
+        jButton6.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setText("Add");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        background.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 80, 120, 40));
 
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1360, 690));
 
@@ -414,6 +427,14 @@ int e = jTable2.getSelectedRow();
         admindashboard.setVisible(true);
     }//GEN-LAST:event_return_btn913ActionPerformed
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        // needs code to check if the currently logged in user has ADMIN_TYPE = MANAGER before it goes into the setup screen.
+        ADMIN_sign_up signup = new ADMIN_sign_up();
+        this.dispose();
+        signup.setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -476,6 +497,7 @@ int e = jTable2.getSelectedRow();
     private javax.swing.JPanel background;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

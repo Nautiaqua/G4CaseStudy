@@ -100,6 +100,11 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jLabel21 = new javax.swing.JLabel();
+        rev = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
 
         remove_text.setBackground(new java.awt.Color(237, 234, 233));
         remove_text.setFont(new java.awt.Font("Liberation Sans", 1, 12)); // NOI18N
@@ -214,12 +219,51 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
         jTable1.setModel(tbModel1);
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 1300, 530));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 1310, 500));
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel1.setText("Reservation Management");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 579, -1));
+        jLabel1.setText("Reservations and Sales");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 450, -1));
+
+        jToggleButton1.setBackground(new java.awt.Color(134, 97, 72));
+        jToggleButton1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jToggleButton1.setText("Calculate Revenue");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 80, 200, 40));
+
+        jLabel21.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel21.setText("Total Revenue:");
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, 130, 20));
+
+        rev.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        rev.setForeground(new java.awt.Color(105, 73, 50));
+        rev.setText("₱00.00");
+        jPanel1.add(rev, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 110, 200, 20));
+
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+        jTextField4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField4KeyReleased(evt);
+            }
+        });
+        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 400, 20));
+
+        jLabel11.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel11.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel11.setText("Search:");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1344, 690));
 
@@ -281,6 +325,30 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
         // TODO add your handling code here:
     }//GEN-LAST:event_userActionPerformed
 
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        double totalSum = 0.0;
+
+        for (int row = 0; row < jTable1.getRowCount(); row++) {
+            Object value = jTable1.getValueAt(row, 3); // Column 3 = TOTAL_PRICE
+            if (value != null) {
+                try {
+                    totalSum += Double.parseDouble(value.toString());
+                } catch (NumberFormatException ex) {
+                    System.out.println("Invalid total at row " + row + ": " + value);
+                }
+            }
+        }
+        rev.setText("₱" + String.format("%.2f", totalSum));
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jTextField4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyReleased
+        // code needs to be here
+    }//GEN-LAST:event_jTextField4KeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -336,16 +404,21 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
     private javax.swing.JTextField date;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JButton logout_btn2;
     private javax.swing.JMenuItem remove_text;
     private javax.swing.JPopupMenu remove_warning;
     private javax.swing.JButton return_btn913;
+    private javax.swing.JLabel rev;
     private javax.swing.JTextField room;
     private javax.swing.JTextField roomt;
     private javax.swing.JTextField stat;

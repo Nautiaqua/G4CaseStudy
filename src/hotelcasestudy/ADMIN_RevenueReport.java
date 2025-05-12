@@ -218,33 +218,33 @@ DefaultTableModel tbModel1 = new DefaultTableModel() {
         jTable1.setModel(tbModel1);
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 1300, 510));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 1300, 490));
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(105, 73, 50));
         jLabel1.setText("Sales Report");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 280, -1));
 
-        rev.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        rev.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         rev.setForeground(new java.awt.Color(105, 73, 50));
         rev.setText("₱00.00");
-        jPanel1.add(rev, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 280, 20));
+        jPanel1.add(rev, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, 270, 20));
 
         jToggleButton1.setBackground(new java.awt.Color(134, 97, 72));
         jToggleButton1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jToggleButton1.setText("CALCULATE");
+        jToggleButton1.setText("Calculate");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 160, 50));
+        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 130, 40));
 
-        jLabel21.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jLabel21.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(105, 73, 50));
         jLabel21.setText("Total Revenue:");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 280, 20));
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 130, 20));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1344, 690));
 

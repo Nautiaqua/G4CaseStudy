@@ -38,6 +38,7 @@ public class USER_signup_screen extends connect {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
+        invalid_name = new javax.swing.JLabel();
         invalid_contact = new javax.swing.JLabel();
         contactnum_label = new javax.swing.JLabel();
         contactnum = new javax.swing.JTextField();
@@ -79,6 +80,13 @@ public class USER_signup_screen extends connect {
 
         jPanel2.setBackground(new java.awt.Color(237, 234, 233));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        invalid_name.setBackground(new java.awt.Color(105, 73, 50));
+        invalid_name.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        invalid_name.setForeground(new java.awt.Color(123, 24, 24));
+        invalid_name.setToolTipText("");
+        invalid_name.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel2.add(invalid_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, -1, -1));
 
         invalid_contact.setBackground(new java.awt.Color(105, 73, 50));
         invalid_contact.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
@@ -130,7 +138,7 @@ public class USER_signup_screen extends connect {
         invalid_confirm.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         invalid_confirm.setForeground(new java.awt.Color(123, 24, 24));
         invalid_confirm.setToolTipText("");
-        jPanel2.add(invalid_confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 520, -1, -1));
+        jPanel2.add(invalid_confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 520, -1, -1));
 
         invalid_password.setBackground(new java.awt.Color(105, 73, 50));
         invalid_password.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
@@ -322,6 +330,8 @@ public class USER_signup_screen extends connect {
     }//GEN-LAST:event_return_btnActionPerformed
 
     private void signup_finish_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signup_finish_btnActionPerformed
+        SimpleDateFormat sdf  = new SimpleDateFormat("yyyy-MM-dd");
+        
         boolean email_check = false;
         boolean password_check = false;
         boolean password_confirm_check = false;
@@ -329,10 +339,10 @@ public class USER_signup_screen extends connect {
         boolean address_check = false;
         boolean bday_check = false;
         boolean cnum_check = false;
-        int password_length = password_txt.getText().length();
+        boolean namecheck = false;
         
         LocalDate today = LocalDate.now();
-
+        
     
         if (email_txt.getText().isEmpty()) {
             invalid_email.setText("Must be a valid email.");
@@ -349,20 +359,20 @@ public class USER_signup_screen extends connect {
             }
         }
         
-        if (password_length >= 8 && password_length <= 30){ // Checker for password.
+        if (password_txt.getText().length() >= 8 && password_txt.getText().length() <= 30){ // Checker for password.
             password_check = true;
             invalid_password.setText(null);
         } else {
             invalid_password.setText("Must be 8 to 30 characters.");
         }
         
-        if (password_txt.getText() == null) { // Checker for password confirm
-            invalid_confirm.setText("Input a password.");
+        if (password_txt.getText().isEmpty()) { // Checker for password confirm
+            invalid_confirm.setText("Invalid Input.");
         } else if (password_txt.getText().equals(password_confirm_txt.getText())){
             password_confirm_check = true;
             invalid_confirm.setText(null);
         } else {
-            invalid_confirm.setText("Must match password.");
+            invalid_confirm.setText("Invalid Input.");
         }
         
         if (sec_ans.getText().isEmpty()) { // Checker for security question.
@@ -370,12 +380,21 @@ public class USER_signup_screen extends connect {
         } 
         if (!sec_ans.getText().isEmpty()) {
             sec_check = true;
+            invalid_sec.setText(null);
         }
         
         if (address_txt.getText().isEmpty()) {
             invalid_address.setText("Input an address.");
         } else if (!address_txt.getText().isEmpty()) {
             address_check = true;
+            invalid_address.setText(null);
+        }
+        
+        if (fname.getText().isEmpty() || lname.getText().isEmpty()) {
+            invalid_name.setText("Must not be empty.");
+        } else if (!(fname.getText().isEmpty() || lname.getText().isEmpty())) {
+            namecheck = true;
+            invalid_name.setText(null);
         }
         
         if (bday_chooser.getDate() == null) {
@@ -383,7 +402,8 @@ public class USER_signup_screen extends connect {
         } else if (bday_chooser.getDate() != null) {
             LocalDate bday = bday_chooser.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
             if (ChronoUnit.YEARS.between(bday, today) >= 18) {
-                bday_check = true;
+                bday_check = true; 
+                invalid_birthday.setText(null);
             } else if (ChronoUnit.YEARS.between(bday, today) < 18) {
                 invalid_birthday.setText("Must be 18 or older.");
             }
@@ -393,9 +413,10 @@ public class USER_signup_screen extends connect {
             invalid_contact.setText("Must be 11 digits.");
         } else if (contactnum.getText().length() == 11) {
             cnum_check = true;
+            invalid_contact.setText(null);
         }
         
-        SimpleDateFormat sdf  = new SimpleDateFormat("yyyy-MM-dd");
+        // Gets the values from the textfields and sets it to their "new" variants.
         newEmail = email_txt.getText();
         newPass = password_txt.getText();
         newFname = fname.getText();
@@ -433,7 +454,7 @@ public class USER_signup_screen extends connect {
                 }
             }
             rs.close();
-            if (!emailExists && sec_check == true && password_confirm_check == true && password_check == true && email_check == true && address_check == true && bday_check == true && cnum_check == true) {
+            if (!emailExists && sec_check && password_confirm_check && password_check && email_check && address_check && bday_check && cnum_check && namecheck) {
             rs = stmt.executeQuery("SELECT * FROM \"USERS\"");
             rs.moveToInsertRow();
             rs.updateString("FIRSTNAME", newFname);
@@ -586,6 +607,7 @@ public class USER_signup_screen extends connect {
     private javax.swing.JLabel invalid_confirm;
     private javax.swing.JLabel invalid_contact;
     private javax.swing.JLabel invalid_email;
+    private javax.swing.JLabel invalid_name;
     private javax.swing.JLabel invalid_password;
     private javax.swing.JLabel invalid_sec;
     private javax.swing.JComboBox<String> jComboBox1;

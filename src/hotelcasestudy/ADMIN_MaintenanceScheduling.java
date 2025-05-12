@@ -105,6 +105,7 @@ int x=0;
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         maint = new com.toedter.calendar.JDateChooser();
+        jLabel12 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -150,19 +151,19 @@ int x=0;
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(105, 73, 50));
         jLabel2.setText("Status:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 140, -1, -1));
 
         jLabel4.setBackground(new java.awt.Color(105, 73, 50));
         jLabel4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(105, 73, 50));
         jLabel4.setText("Room Number:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, -1, -1));
 
         jLabel5.setBackground(new java.awt.Color(105, 73, 50));
         jLabel5.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(105, 73, 50));
         jLabel5.setText("Maintenance Date:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, -1, -1));
 
         addroom.setBackground(new java.awt.Color(134, 97, 72));
         addroom.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -173,12 +174,12 @@ int x=0;
                 addroomActionPerformed(evt);
             }
         });
-        jPanel1.add(addroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 140, 40));
+        jPanel1.add(addroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 150, 140, 40));
 
         jTable1.setModel(model);
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 750, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 1310, 500));
 
         jButton5.setBackground(new java.awt.Color(134, 97, 72));
         jButton5.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -189,7 +190,7 @@ int x=0;
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 130, 40));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 150, 130, 40));
 
         jButton4.setBackground(new java.awt.Color(134, 97, 72));
         jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -200,7 +201,7 @@ int x=0;
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 100, 40));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 150, 100, 40));
 
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -212,9 +213,9 @@ int x=0;
                 jTextField4KeyReleased(evt);
             }
         });
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, 450, -1));
-        jPanel1.add(roomn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 240, -1));
-        jPanel1.add(statu, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, 240, -1));
+        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 400, 20));
+        jPanel1.add(roomn, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, 240, 20));
+        jPanel1.add(statu, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 140, 240, 20));
 
         jPanel6.setBackground(new java.awt.Color(140, 100, 75));
         jPanel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -290,7 +291,13 @@ int x=0;
         );
 
         jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-        jPanel1.add(maint, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, 240, -1));
+        jPanel1.add(maint, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 170, 240, 20));
+
+        jLabel12.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel12.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel12.setText("Search:");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, 20));
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -569,6 +576,7 @@ if (e >= 0) {
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

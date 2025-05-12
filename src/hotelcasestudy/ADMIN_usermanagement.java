@@ -192,7 +192,7 @@ public class ADMIN_usermanagement extends connect {
                 jTextField1KeyReleased(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 410, 20));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 400, 20));
 
         email_label3.setBackground(new java.awt.Color(105, 73, 50));
         email_label3.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N

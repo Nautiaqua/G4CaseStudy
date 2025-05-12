@@ -13,7 +13,7 @@ public class connect extends javax.swing.JFrame {
     Statement stmt;
     ResultSet rs,rsDup;
     DefaultTableModel LoginModel=new DefaultTableModel();
-    String newID,newEmail,newPass,newFname,newLname,newSQ,newSA,newAddress,newBday,newCNum,s,i,n,u,q,a,w,e,r,d,f,temp_email,newcheckout,newcheckin;
+    String newID,newEmail,newPass,newFname,newLname,newSQ,newSA,newAddress,newBday,newCNum,newType,s,i,n,u,q,a,w,e,r,d,f,temp_email,newcheckout,newcheckin;
     int newchild,newadult;
     Date newdate;
     //User_room_selection.co=checkout;

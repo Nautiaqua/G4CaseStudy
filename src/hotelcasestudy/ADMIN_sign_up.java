@@ -10,6 +10,10 @@ import javax.swing.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
 
 
 /**
@@ -26,6 +30,8 @@ public class ADMIN_sign_up extends connect {
         initComponents();
         DoConnect();
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
+        admintypes.add(manager_type);
+        admintypes.add(employee_type);
     }
 
     /**
@@ -37,20 +43,43 @@ public class ADMIN_sign_up extends connect {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        return_btn = new javax.swing.JButton();
-        login_finish_btn = new javax.swing.JButton();
-        invalid = new javax.swing.JLabel();
-        adminid = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        password_label = new javax.swing.JLabel();
-        email_label1 = new javax.swing.JLabel();
-        pass = new javax.swing.JTextField();
-        password_label1 = new javax.swing.JLabel();
-        email_txt = new javax.swing.JTextField();
+        admintypes = new javax.swing.ButtonGroup();
+        setup_panel = new javax.swing.JPanel();
+        invalid_type = new javax.swing.JLabel();
+        invalid_contact = new javax.swing.JLabel();
+        contactnum_label = new javax.swing.JLabel();
+        contactnum = new javax.swing.JTextField();
+        invalid_address = new javax.swing.JLabel();
         invalid_email = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        casa_icon = new javax.swing.JLabel();
+        invalid_id = new javax.swing.JLabel();
+        invalid_confirm = new javax.swing.JLabel();
+        invalid_password = new javax.swing.JLabel();
+        return_btn1 = new javax.swing.JButton();
+        address_txt = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        password_label2 = new javax.swing.JLabel();
+        bday_label = new javax.swing.JLabel();
+        password_label3 = new javax.swing.JLabel();
+        password_label4 = new javax.swing.JLabel();
+        password_confirm_txt = new javax.swing.JPasswordField();
+        lname = new javax.swing.JTextField();
+        lastname_label = new javax.swing.JLabel();
+        fname = new javax.swing.JTextField();
+        firstname_label = new javax.swing.JLabel();
+        sublabel = new javax.swing.JLabel();
+        casa_name = new javax.swing.JLabel();
+        casa_logo = new javax.swing.JLabel();
+        email_label = new javax.swing.JLabel();
+        address_label = new javax.swing.JLabel();
+        bday_chooser = new com.toedter.calendar.JDateChooser();
+        invalid_birthday = new javax.swing.JLabel();
+        login_finish_btn = new javax.swing.JButton();
+        email_txt = new javax.swing.JTextField();
+        pass = new javax.swing.JTextField();
+        adminid = new javax.swing.JTextField();
+        invalid_name = new javax.swing.JLabel();
+        manager_type = new javax.swing.JRadioButton();
+        employee_type = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,36 +87,213 @@ public class ADMIN_sign_up extends connect {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(140, 100, 75));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setup_panel.setBackground(new java.awt.Color(237, 234, 233));
+        setup_panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        return_btn.setBackground(new java.awt.Color(237, 234, 233));
-        return_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        return_btn.setForeground(new java.awt.Color(134, 97, 72));
-        return_btn.setText("RETURN");
-        return_btn.addActionListener(new java.awt.event.ActionListener() {
+        invalid_type.setBackground(new java.awt.Color(105, 73, 50));
+        invalid_type.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        invalid_type.setForeground(new java.awt.Color(123, 24, 24));
+        invalid_type.setToolTipText("");
+        invalid_type.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        setup_panel.add(invalid_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 610, -1, -1));
+
+        invalid_contact.setBackground(new java.awt.Color(105, 73, 50));
+        invalid_contact.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        invalid_contact.setForeground(new java.awt.Color(123, 24, 24));
+        invalid_contact.setToolTipText("");
+        setup_panel.add(invalid_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 390, 100, -1));
+
+        contactnum_label.setBackground(new java.awt.Color(105, 73, 50));
+        contactnum_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        contactnum_label.setForeground(new java.awt.Color(105, 73, 50));
+        contactnum_label.setText("Contact No. (Phone):");
+        setup_panel.add(contactnum_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 180, 20));
+
+        contactnum.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        contactnum.setForeground(new java.awt.Color(105, 73, 50));
+        contactnum.setText("09");
+        contactnum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                return_btnActionPerformed(evt);
+                contactnumActionPerformed(evt);
             }
         });
-        jPanel1.add(return_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 610, 160, 49));
+        contactnum.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                contactnumKeyReleased(evt);
+            }
+        });
+        setup_panel.add(contactnum, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 320, 20));
 
-        login_finish_btn.setBackground(new java.awt.Color(237, 234, 233));
+        invalid_address.setBackground(new java.awt.Color(105, 73, 50));
+        invalid_address.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        invalid_address.setForeground(new java.awt.Color(123, 24, 24));
+        invalid_address.setToolTipText("");
+        invalid_address.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        setup_panel.add(invalid_address, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, -1, -1));
+
+        invalid_email.setBackground(new java.awt.Color(105, 73, 50));
+        invalid_email.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        invalid_email.setForeground(new java.awt.Color(123, 24, 24));
+        invalid_email.setToolTipText("");
+        setup_panel.add(invalid_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 120, -1));
+
+        invalid_id.setBackground(new java.awt.Color(105, 73, 50));
+        invalid_id.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        invalid_id.setForeground(new java.awt.Color(123, 24, 24));
+        invalid_id.setToolTipText("");
+        setup_panel.add(invalid_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, -1, -1));
+
+        invalid_confirm.setBackground(new java.awt.Color(105, 73, 50));
+        invalid_confirm.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        invalid_confirm.setForeground(new java.awt.Color(123, 24, 24));
+        invalid_confirm.setToolTipText("");
+        setup_panel.add(invalid_confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 490, -1, -1));
+
+        invalid_password.setBackground(new java.awt.Color(105, 73, 50));
+        invalid_password.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        invalid_password.setForeground(new java.awt.Color(123, 24, 24));
+        invalid_password.setToolTipText("");
+        setup_panel.add(invalid_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 440, 150, -1));
+
+        return_btn1.setBackground(new java.awt.Color(134, 97, 72));
+        return_btn1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        return_btn1.setForeground(new java.awt.Color(255, 255, 255));
+        return_btn1.setText("Return");
+        return_btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                return_btn1ActionPerformed(evt);
+            }
+        });
+        setup_panel.add(return_btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 660, 140, 40));
+
+        address_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        address_txt.setForeground(new java.awt.Color(105, 73, 50));
+        address_txt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                address_txtActionPerformed(evt);
+            }
+        });
+        setup_panel.add(address_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 320, 20));
+
+        jLabel5.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel5.setText("Account Setup");
+        setup_panel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, -1, -1));
+
+        password_label2.setBackground(new java.awt.Color(105, 73, 50));
+        password_label2.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        password_label2.setForeground(new java.awt.Color(105, 73, 50));
+        password_label2.setText("Admin ID:");
+        setup_panel.add(password_label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 540, 160, -1));
+
+        bday_label.setBackground(new java.awt.Color(105, 73, 50));
+        bday_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        bday_label.setForeground(new java.awt.Color(105, 73, 50));
+        bday_label.setText("Birthdate:");
+        setup_panel.add(bday_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 90, -1));
+
+        password_label3.setBackground(new java.awt.Color(105, 73, 50));
+        password_label3.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        password_label3.setForeground(new java.awt.Color(105, 73, 50));
+        password_label3.setText("Password:");
+        setup_panel.add(password_label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 440, 90, -1));
+
+        password_label4.setBackground(new java.awt.Color(105, 73, 50));
+        password_label4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        password_label4.setForeground(new java.awt.Color(105, 73, 50));
+        password_label4.setText("Confirm Password:");
+        setup_panel.add(password_label4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 160, -1));
+
+        password_confirm_txt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                password_confirm_txtActionPerformed(evt);
+            }
+        });
+        setup_panel.add(password_confirm_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 510, 320, 20));
+
+        lname.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        lname.setForeground(new java.awt.Color(105, 73, 50));
+        lname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lnameActionPerformed(evt);
+            }
+        });
+        setup_panel.add(lname, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 150, 20));
+
+        lastname_label.setBackground(new java.awt.Color(105, 73, 50));
+        lastname_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        lastname_label.setForeground(new java.awt.Color(105, 73, 50));
+        lastname_label.setText("Last Name:");
+        setup_panel.add(lastname_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 100, -1));
+
+        fname.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        fname.setForeground(new java.awt.Color(105, 73, 50));
+        fname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fnameActionPerformed(evt);
+            }
+        });
+        setup_panel.add(fname, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 150, 20));
+
+        firstname_label.setBackground(new java.awt.Color(105, 73, 50));
+        firstname_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        firstname_label.setForeground(new java.awt.Color(105, 73, 50));
+        firstname_label.setText("First Name:");
+        setup_panel.add(firstname_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 100, 20));
+
+        sublabel.setBackground(new java.awt.Color(105, 73, 50));
+        sublabel.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        sublabel.setForeground(new java.awt.Color(105, 73, 50));
+        sublabel.setText("Live Luxuriously.");
+        setup_panel.add(sublabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, -1, -1));
+
+        casa_name.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownsmall.png"))); // NOI18N
+        casa_name.setText("jLabel1");
+        setup_panel.add(casa_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 240, 50));
+
+        casa_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_topleft.png"))); // NOI18N
+        casa_logo.setText("jLabel2");
+        setup_panel.add(casa_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 60, -1));
+
+        email_label.setBackground(new java.awt.Color(105, 73, 50));
+        email_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        email_label.setForeground(new java.awt.Color(105, 73, 50));
+        email_label.setText("Email:");
+        setup_panel.add(email_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 50, -1));
+
+        address_label.setBackground(new java.awt.Color(105, 73, 50));
+        address_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        address_label.setForeground(new java.awt.Color(105, 73, 50));
+        address_label.setText("Address:");
+        setup_panel.add(address_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 70, -1));
+        setup_panel.add(bday_chooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 320, 20));
+
+        invalid_birthday.setBackground(new java.awt.Color(105, 73, 50));
+        invalid_birthday.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        invalid_birthday.setForeground(new java.awt.Color(123, 24, 24));
+        invalid_birthday.setToolTipText("");
+        invalid_birthday.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        setup_panel.add(invalid_birthday, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, -1, -1));
+
+        login_finish_btn.setBackground(new java.awt.Color(134, 97, 72));
         login_finish_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        login_finish_btn.setForeground(new java.awt.Color(134, 97, 72));
-        login_finish_btn.setText("LOG IN");
+        login_finish_btn.setForeground(new java.awt.Color(237, 234, 233));
+        login_finish_btn.setText("Finish");
         login_finish_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 login_finish_btnActionPerformed(evt);
             }
         });
-        jPanel1.add(login_finish_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 550, 160, 49));
+        setup_panel.add(login_finish_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 660, 140, 40));
 
-        invalid.setBackground(new java.awt.Color(105, 73, 50));
-        invalid.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        invalid.setForeground(new java.awt.Color(255, 51, 51));
-        invalid.setToolTipText("");
-        jPanel1.add(invalid, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, 230, 10));
+        email_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        email_txt.setForeground(new java.awt.Color(105, 73, 50));
+        setup_panel.add(email_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 320, 20));
+
+        pass.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        pass.setForeground(new java.awt.Color(105, 73, 50));
+        setup_panel.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, 320, 20));
 
         adminid.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         adminid.setForeground(new java.awt.Color(105, 73, 50));
@@ -96,55 +302,36 @@ public class ADMIN_sign_up extends connect {
                 adminidActionPerformed(evt);
             }
         });
-        jPanel1.add(adminid, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, 320, 26));
+        setup_panel.add(adminid, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 560, 320, 20));
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Employee Sign Up");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, -1, -1));
+        invalid_name.setBackground(new java.awt.Color(105, 73, 50));
+        invalid_name.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        invalid_name.setForeground(new java.awt.Color(123, 24, 24));
+        invalid_name.setToolTipText("");
+        invalid_name.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        setup_panel.add(invalid_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, -1, -1));
 
-        password_label.setBackground(new java.awt.Color(105, 73, 50));
-        password_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        password_label.setForeground(new java.awt.Color(255, 255, 255));
-        password_label.setText("Password");
-        jPanel1.add(password_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, 90, -1));
+        manager_type.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        manager_type.setForeground(new java.awt.Color(105, 73, 50));
+        manager_type.setText("Manager");
+        manager_type.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                manager_typeActionPerformed(evt);
+            }
+        });
+        setup_panel.add(manager_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 620, 90, -1));
 
-        email_label1.setBackground(new java.awt.Color(105, 73, 50));
-        email_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        email_label1.setForeground(new java.awt.Color(255, 255, 255));
-        email_label1.setText("Admin ID");
-        jPanel1.add(email_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 80, -1));
+        employee_type.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        employee_type.setForeground(new java.awt.Color(105, 73, 50));
+        employee_type.setText("Employee");
+        employee_type.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                employee_typeActionPerformed(evt);
+            }
+        });
+        setup_panel.add(employee_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 600, -1, -1));
 
-        pass.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        pass.setForeground(new java.awt.Color(105, 73, 50));
-        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, 320, 26));
-
-        password_label1.setBackground(new java.awt.Color(105, 73, 50));
-        password_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        password_label1.setForeground(new java.awt.Color(255, 255, 255));
-        password_label1.setText("Email");
-        jPanel1.add(password_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 490, 90, -1));
-
-        email_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        email_txt.setForeground(new java.awt.Color(105, 73, 50));
-        jPanel1.add(email_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 510, 320, 26));
-
-        invalid_email.setBackground(new java.awt.Color(105, 73, 50));
-        invalid_email.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        invalid_email.setForeground(new java.awt.Color(255, 51, 51));
-        invalid_email.setToolTipText("");
-        jPanel1.add(invalid_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 230, 10));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_whitebig.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 390, 80));
-
-        casa_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_medium.png"))); // NOI18N
-        casa_icon.setText("jLabel1");
-        jPanel1.add(casa_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 240, 180));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 520, 760));
+        getContentPane().add(setup_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 520, 760));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/BG_NewAdminLogin.png"))); // NOI18N
         jLabel4.setText("jLabel4");
@@ -154,97 +341,239 @@ public class ADMIN_sign_up extends connect {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void return_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_return_btnActionPerformed
-        // TODO add your handling code here:
-        USER_login_menu userloginmenu = new USER_login_menu();
-        this.setVisible(false);
-        userloginmenu.setVisible(true);
-    }//GEN-LAST:event_return_btnActionPerformed
-
     private void login_finish_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_finish_btnActionPerformed
-newID = adminid.getText().trim(); 
-newPass = pass.getText().trim(); 
-newEmail = email_txt.getText().trim(); 
-if (newID.isEmpty() || newPass.isEmpty()) {
-    invalid.setText("Admin ID or Password is invalid!");
-    return;
-}
-if (newEmail.isEmpty()) {
-    invalid_email.setText("Must be a valid email!");
-    return;
-}
-if (!(newEmail.endsWith("@gmail.com") || newEmail.endsWith("@yahoo.com") || newEmail.endsWith("@ue.edu.ph"))) {
-    invalid_email.setText("Must be a valid email!");
-    return;
-}
-if (newEmail.equals("@gmail.com") || newEmail.equals("@yahoo.com") || newEmail.equals("@ue.edu.ph")) {
-    invalid_email.setText("Must be a valid email!");
-    return;
-}
-invalid_email.setText(null); 
-int adminId;
-try {
-    adminId = Integer.parseInt(newID);
-} catch (NumberFormatException e) {
-    invalid.setText("Admin ID must be a number!");
-    System.out.println("Invalid ID input: " + e);
-    return;
-}
-boolean emailExists = false;
-
-try {
-    con.setAutoCommit(false);
-    stmt = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-    rs = stmt.executeQuery("SELECT * FROM ADMIN");
-
-    while (rs.next()) {
-        int existingId = rs.getInt("ADMIN_ID");
-        String existingEmail = rs.getString("EMAIL");
-
-        if (adminId == existingId || newEmail.equals(existingEmail)) {
-            if (adminId == existingId) {
-                invalid.setText("Already used ID");
+        SimpleDateFormat sdf  = new SimpleDateFormat("yyyy-MM-dd");
+        
+        boolean idcheck = false,
+                passcheck = false,
+                confirmcheck = false,
+                emailcheck = false,
+                bday_check = false,
+                cnumcheck = false,
+                address_check = false,
+                namecheck = false,
+                typecheck = false;
+        
+        String acctype = "NULL";
+        
+        LocalDate today = LocalDate.now();
+        
+        
+        // Checks the birthday.
+        if (bday_chooser.getDate() == null) {
+            invalid_birthday.setText("Must be 18 or older.");
+        } else if (bday_chooser.getDate() != null) {
+            LocalDate bday = bday_chooser.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            if (ChronoUnit.YEARS.between(bday, today) >= 18) {
+                bday_check = true;
+                invalid_birthday.setText("test");
+            } else if (ChronoUnit.YEARS.between(bday, today) < 18) {
+                invalid_birthday.setText("Must be 18 or older.");
             }
-            if (newEmail.equals(existingEmail)) {
-                invalid_email.setText("Email has already been used");
-            }
-            emailExists = true;
-            break;
         }
-    }
-    rs.close();
-    if (!emailExists) {
-        rs = stmt.executeQuery("SELECT * FROM ADMIN");
-        rs.moveToInsertRow();
+        
+        if (adminid.getText().isEmpty() || adminid.getText().length() != 5) {
+            invalid_id.setText("Must be an integer and 5 digits.");
+        } else if ((!adminid.getText().isEmpty()) && adminid.getText().length() == 5) {
+            idcheck = true;
+            invalid_id.setText("test");
+        }
+        
+        // Checks if password fills the 8-30 condition.
+        if (pass.getText().isEmpty() || pass.getText().length() < 8 || pass.getText().length() > 30) {
+            invalid_password.setText("Must be 8 to 30 characters.");
+        } else if (pass.getText().length() >= 8 && pass.getText().length() <= 30 ) {
+            passcheck = true;
+            invalid_password.setText("test");
+        }
+        
+        if (pass.getText().isEmpty()) { // Checker for password confirm
+            invalid_confirm.setText("Invalid Input.");
+        } else if (pass.getText().equals(password_confirm_txt.getText())){
+            confirmcheck = true;
+            invalid_confirm.setText(null);
+        } else {
+            invalid_confirm.setText("Invalid Input.");
+        }
+       
+        
+        // Makes sure email is valid:
+        if (email_txt.getText().isEmpty()) {
+            invalid_email.setText("Must be a valid email.");
+        } else if (!(email_txt.getText().endsWith("@gmail.com") || email_txt.getText().endsWith("@yahoo.com") || email_txt.getText().endsWith("@ue.edu.ph"))) {
+            invalid_email.setText("Must be a valid email.");
+        } else if (email_txt.getText().equals("@gmail.com") || email_txt.getText().equals("@yahoo.com") || email_txt.getText().equals("@ue.edu.ph")) {
+            invalid_email.setText("Must be a valid email.");
+        } else {
+            emailcheck = true;
+            invalid_email.setText("test");
+        }
+        
+        // Makes sure contact number is valid.
+        if (contactnum.getText().length() != 11) {
+            invalid_contact.setText("Must be 11 digits.");
+        } else if (contactnum.getText().length() == 11) {
+            cnumcheck = true;
+            invalid_contact.setText("test");
+        }
+        
+        // Makes sure address isn't empty.
+        if (address_txt.getText().isEmpty()) {
+            invalid_address.setText("Input an address.");
+        } else if (!address_txt.getText().isEmpty()) {
+            address_check = true;
+            invalid_address.setText(null);
+        }
+        
+        // Makes sure names arent empty.
+        if (fname.getText().isEmpty() || lname.getText().isEmpty()) {
+            invalid_name.setText("Must not be empty.");
+        } else if (!(fname.getText().isEmpty() || lname.getText().isEmpty())) {
+            namecheck = true;
+            invalid_name.setText(null);
+        }
+        
+        // Sets the admin type to a variable AND checks it too C:
+        if (!(employee_type.isSelected() || manager_type.isSelected())) {
+            invalid_type.setText("Select an account type.");
+        }
+        if (employee_type.isSelected()) {
+            acctype = "EMPLOYEE";
+            typecheck = true;
+            invalid_type.setText(null);
+        } else if (manager_type.isSelected()) {
+            acctype = "MANAGER";
+            typecheck = true;
+            invalid_type.setText(null);
+        }
+        
+        // Gets the values from the textfields and sets it to their "new" variants.
+        newID = adminid.getText();
+        newPass = pass.getText();
+        newEmail = email_txt.getText();
+        newCNum = String.valueOf(contactnum.getText()); 
+        newBday = sdf.format(bday_chooser.getDate());
+        newAddress = address_txt.getText();
+        newFname = fname.getText();
+        newLname = lname.getText();
+        newType = acctype;
+        int adminId;
+        
+        // Checks if Admin ID is an integer.
+        try {
+            adminId = Integer.parseInt(newID);
+            invalid_id.setText(null);
+        } catch (NumberFormatException e) {
+            invalid_id.setText("Must be an integer and 5 digits.");
+            System.out.println("Invalid ID input: " + e);
+            return;
+        }
+        
+        boolean emailExists = false;
+        
+        try {
+            con.setAutoCommit(false);
+            stmt = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            rs = stmt.executeQuery("SELECT * FROM ADMIN");
+ 
+            while (rs.next()) {
+                int existingId = rs.getInt("ADMIN_ID");
+                String existingEmail = rs.getString("EMAIL");
 
-        rs.updateInt("ADMIN_ID", adminId);
-        rs.updateString("PASSWORD", newPass);
-        rs.updateString("EMAIL", newEmail);
-        rs.updateTimestamp("CREATED_ON", new Timestamp(System.currentTimeMillis()));
+                if (adminId == existingId || newEmail.equals(existingEmail)) {
+                    if (adminId == existingId) {
+                        invalid_id.setText("Already used ID.");
+                    }
+                    if (newEmail.equals(existingEmail)) {
+                        invalid_email.setText("Email has already been used.");
+                    }
+                    emailExists = true;
+                    break;
+                }
+            }
+            rs.close();
+            
+            if (!emailExists && idcheck && passcheck && confirmcheck && emailcheck && bday_check && cnumcheck && address_check && namecheck && typecheck) {
+                rs = stmt.executeQuery("SELECT * FROM ADMIN");
+                rs.moveToInsertRow();
 
-        rs.insertRow();
-        con.commit();
+                rs.updateInt("ADMIN_ID", adminId);
+                rs.updateString("PASSWORD", newPass);
+                rs.updateString("EMAIL", newEmail);
+                rs.updateString("FIRSTNAME", newFname);
+                rs.updateString("LASTNAME", newLname);
+                rs.updateString("BIRTHDATE", newBday);
+                rs.updateString("ADDRESS", newAddress);
+                rs.updateString("CONTACTNUM", newCNum);
+                rs.updateString("ADMIN_TYPE", newType);
+                
+                rs.updateTimestamp("CREATED_ON", new Timestamp(System.currentTimeMillis()));
 
-        Refresh_RS_STMT();
-        System.out.println("Admin inserted successfully.");
-        invalid.setText("ACCOUNT CREATED");
+                rs.insertRow();
+                con.commit();
 
-        USER_signup_complete userlogin = new USER_signup_complete();
-        this.setVisible(false);
-        userlogin.setVisible(true);
-    }
+                Refresh_RS_STMT();
+                System.out.println("Admin inserted successfully.");
+                invalid_id.setText("ACCOUNT CREATED");
 
-} catch (SQLException e) {
-    System.out.println("SQL Error: " + e);
-    invalid.setText("Database error occurred.");
-}
+                ADMIN_AccSetup_Complete complete = new ADMIN_AccSetup_Complete();
+                this.dispose();
+                complete.setVisible(true);
+                
+                
+            }
 
-
+        } catch (SQLException e) {
+            System.out.println("SQL Error: " + e);
+            invalid_id.setText("Database error occurred.");
+        }
     }//GEN-LAST:event_login_finish_btnActionPerformed
 
     private void adminidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminidActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_adminidActionPerformed
+
+    private void contactnumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactnumActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contactnumActionPerformed
+
+    private void contactnumKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_contactnumKeyReleased
+        // TODO add your handling code here:
+        if (String.valueOf(contactnum.getText()).equals("0") || String.valueOf(contactnum.getText()).equals("9") || contactnum.getText().isEmpty()) {
+            contactnum.setText("09");
+        }
+    }//GEN-LAST:event_contactnumKeyReleased
+
+    private void return_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_return_btn1ActionPerformed
+        // TODO add your handling code here:
+        ADMIN_EmployeeManagement employeeman = new ADMIN_EmployeeManagement();
+        this.dispose();
+        employeeman.setVisible(true);
+    }//GEN-LAST:event_return_btn1ActionPerformed
+
+    private void address_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_address_txtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_address_txtActionPerformed
+
+    private void password_confirm_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_confirm_txtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_password_confirm_txtActionPerformed
+
+    private void lnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lnameActionPerformed
+
+    private void fnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fnameActionPerformed
+
+    private void manager_typeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manager_typeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_manager_typeActionPerformed
+
+    private void employee_typeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employee_typeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_employee_typeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -300,20 +629,43 @@ try {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel address_label;
+    private javax.swing.JTextField address_txt;
     private javax.swing.JTextField adminid;
-    private javax.swing.JLabel casa_icon;
-    private javax.swing.JLabel email_label1;
+    private javax.swing.ButtonGroup admintypes;
+    private com.toedter.calendar.JDateChooser bday_chooser;
+    private javax.swing.JLabel bday_label;
+    private javax.swing.JLabel casa_logo;
+    private javax.swing.JLabel casa_name;
+    private javax.swing.JTextField contactnum;
+    private javax.swing.JLabel contactnum_label;
+    private javax.swing.JLabel email_label;
     private javax.swing.JTextField email_txt;
-    private javax.swing.JLabel invalid;
+    private javax.swing.JRadioButton employee_type;
+    private javax.swing.JLabel firstname_label;
+    private javax.swing.JTextField fname;
+    private javax.swing.JLabel invalid_address;
+    private javax.swing.JLabel invalid_birthday;
+    private javax.swing.JLabel invalid_confirm;
+    private javax.swing.JLabel invalid_contact;
     private javax.swing.JLabel invalid_email;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel invalid_id;
+    private javax.swing.JLabel invalid_name;
+    private javax.swing.JLabel invalid_password;
+    private javax.swing.JLabel invalid_type;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel lastname_label;
+    private javax.swing.JTextField lname;
     private javax.swing.JButton login_finish_btn;
+    private javax.swing.JRadioButton manager_type;
     private javax.swing.JTextField pass;
-    private javax.swing.JLabel password_label;
-    private javax.swing.JLabel password_label1;
-    private javax.swing.JButton return_btn;
+    private javax.swing.JPasswordField password_confirm_txt;
+    private javax.swing.JLabel password_label2;
+    private javax.swing.JLabel password_label3;
+    private javax.swing.JLabel password_label4;
+    private javax.swing.JButton return_btn1;
+    private javax.swing.JPanel setup_panel;
+    private javax.swing.JLabel sublabel;
     // End of variables declaration//GEN-END:variables
 }
