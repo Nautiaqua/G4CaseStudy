@@ -5,6 +5,7 @@
 package hotelcasestudy;
 
 import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
 import javax.swing.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,11 +22,15 @@ import java.util.Date;
 
 public class USER_signup_screen extends connect {
     
+    public String currentans;
+    
     public USER_signup_screen() {
         UIManager.put("Button.arc", 20);
         initComponents();
         DoConnect();
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
+        
+        generation();
     }
 
     /**
@@ -38,6 +43,8 @@ public class USER_signup_screen extends connect {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
+        invalid_cap = new javax.swing.JLabel();
+        cap_ans = new javax.swing.JTextField();
         invalid_name = new javax.swing.JLabel();
         invalid_contact = new javax.swing.JLabel();
         contactnum_label = new javax.swing.JLabel();
@@ -64,13 +71,17 @@ public class USER_signup_screen extends connect {
         lastname_label = new javax.swing.JLabel();
         fname = new javax.swing.JTextField();
         firstname_label = new javax.swing.JLabel();
-        sublabel = new javax.swing.JLabel();
-        casa_name = new javax.swing.JLabel();
-        casa_logo = new javax.swing.JLabel();
         email_label = new javax.swing.JLabel();
         address_label = new javax.swing.JLabel();
         bday_chooser = new com.toedter.calendar.JDateChooser();
         invalid_birthday = new javax.swing.JLabel();
+        password_label3 = new javax.swing.JLabel();
+        captchalabel = new javax.swing.JLabel();
+        password_label4 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        sublabel = new javax.swing.JLabel();
+        casa_name = new javax.swing.JLabel();
+        casa_logo = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -81,24 +92,40 @@ public class USER_signup_screen extends connect {
         jPanel2.setBackground(new java.awt.Color(237, 234, 233));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        invalid_cap.setBackground(new java.awt.Color(105, 73, 50));
+        invalid_cap.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        invalid_cap.setForeground(new java.awt.Color(123, 24, 24));
+        invalid_cap.setToolTipText("");
+        invalid_cap.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel2.add(invalid_cap, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 580, -1, -1));
+
+        cap_ans.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        cap_ans.setForeground(new java.awt.Color(105, 73, 50));
+        cap_ans.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cap_ansActionPerformed(evt);
+            }
+        });
+        jPanel2.add(cap_ans, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 620, 160, 20));
+
         invalid_name.setBackground(new java.awt.Color(105, 73, 50));
         invalid_name.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         invalid_name.setForeground(new java.awt.Color(123, 24, 24));
         invalid_name.setToolTipText("");
         invalid_name.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel2.add(invalid_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, -1, -1));
+        jPanel2.add(invalid_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, -1, -1));
 
         invalid_contact.setBackground(new java.awt.Color(105, 73, 50));
         invalid_contact.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         invalid_contact.setForeground(new java.awt.Color(123, 24, 24));
         invalid_contact.setToolTipText("");
-        jPanel2.add(invalid_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 100, -1));
+        jPanel2.add(invalid_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 100, -1));
 
         contactnum_label.setBackground(new java.awt.Color(105, 73, 50));
         contactnum_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         contactnum_label.setForeground(new java.awt.Color(105, 73, 50));
         contactnum_label.setText("Contact No. (Phone):");
-        jPanel2.add(contactnum_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 180, 20));
+        jPanel2.add(contactnum_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 180, 20));
 
         contactnum.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         contactnum.setForeground(new java.awt.Color(105, 73, 50));
@@ -113,38 +140,38 @@ public class USER_signup_screen extends connect {
                 contactnumKeyReleased(evt);
             }
         });
-        jPanel2.add(contactnum, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 440, 320, 20));
+        jPanel2.add(contactnum, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, 320, 20));
 
         invalid_address.setBackground(new java.awt.Color(105, 73, 50));
         invalid_address.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         invalid_address.setForeground(new java.awt.Color(123, 24, 24));
         invalid_address.setToolTipText("");
         invalid_address.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel2.add(invalid_address, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, -1, -1));
+        jPanel2.add(invalid_address, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, -1, -1));
 
         invalid_email.setBackground(new java.awt.Color(105, 73, 50));
         invalid_email.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         invalid_email.setForeground(new java.awt.Color(123, 24, 24));
         invalid_email.setToolTipText("");
-        jPanel2.add(invalid_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 120, -1));
+        jPanel2.add(invalid_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 120, -1));
 
         invalid_sec.setBackground(new java.awt.Color(105, 73, 50));
         invalid_sec.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         invalid_sec.setForeground(new java.awt.Color(123, 24, 24));
         invalid_sec.setToolTipText("");
-        jPanel2.add(invalid_sec, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 570, 120, -1));
+        jPanel2.add(invalid_sec, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 510, 120, -1));
 
         invalid_confirm.setBackground(new java.awt.Color(105, 73, 50));
         invalid_confirm.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         invalid_confirm.setForeground(new java.awt.Color(123, 24, 24));
         invalid_confirm.setToolTipText("");
-        jPanel2.add(invalid_confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 520, -1, -1));
+        jPanel2.add(invalid_confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, -1, -1));
 
         invalid_password.setBackground(new java.awt.Color(105, 73, 50));
         invalid_password.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         invalid_password.setForeground(new java.awt.Color(123, 24, 24));
         invalid_password.setToolTipText("");
-        jPanel2.add(invalid_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 470, 150, -1));
+        jPanel2.add(invalid_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 150, -1));
 
         return_btn.setBackground(new java.awt.Color(134, 97, 72));
         return_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -155,7 +182,7 @@ public class USER_signup_screen extends connect {
                 return_btnActionPerformed(evt);
             }
         });
-        jPanel2.add(return_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 650, 140, 40));
+        jPanel2.add(return_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 660, 140, 40));
 
         signup_finish_btn.setBackground(new java.awt.Color(134, 97, 72));
         signup_finish_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -166,7 +193,7 @@ public class USER_signup_screen extends connect {
                 signup_finish_btnActionPerformed(evt);
             }
         });
-        jPanel2.add(signup_finish_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 650, 140, 40));
+        jPanel2.add(signup_finish_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 660, 140, 40));
 
         address_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         address_txt.setForeground(new java.awt.Color(105, 73, 50));
@@ -175,7 +202,7 @@ public class USER_signup_screen extends connect {
                 address_txtActionPerformed(evt);
             }
         });
-        jPanel2.add(address_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 320, 20));
+        jPanel2.add(address_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 320, 20));
 
         email_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         email_txt.setForeground(new java.awt.Color(105, 73, 50));
@@ -184,37 +211,37 @@ public class USER_signup_screen extends connect {
                 email_txtActionPerformed(evt);
             }
         });
-        jPanel2.add(email_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 320, 20));
+        jPanel2.add(email_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 320, 20));
 
         jLabel3.setBackground(new java.awt.Color(105, 73, 50));
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(105, 73, 50));
         jLabel3.setText("Sign Up");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, -1));
 
         password_label.setBackground(new java.awt.Color(105, 73, 50));
-        password_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        password_label.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         password_label.setForeground(new java.awt.Color(105, 73, 50));
-        password_label.setText("Security Question");
-        jPanel2.add(password_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 570, 160, -1));
+        password_label.setText("Answer");
+        jPanel2.add(password_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 610, 50, 10));
 
         bday_label.setBackground(new java.awt.Color(105, 73, 50));
         bday_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         bday_label.setForeground(new java.awt.Color(105, 73, 50));
         bday_label.setText("Birthdate:");
-        jPanel2.add(bday_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, 90, -1));
+        jPanel2.add(bday_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 90, -1));
 
         password_label1.setBackground(new java.awt.Color(105, 73, 50));
         password_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         password_label1.setForeground(new java.awt.Color(105, 73, 50));
         password_label1.setText("Password:");
-        jPanel2.add(password_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 90, -1));
+        jPanel2.add(password_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 90, -1));
 
         password_label2.setBackground(new java.awt.Color(105, 73, 50));
         password_label2.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         password_label2.setForeground(new java.awt.Color(105, 73, 50));
         password_label2.setText("Confirm Password:");
-        jPanel2.add(password_label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 520, 160, -1));
+        jPanel2.add(password_label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, 160, -1));
 
         jComboBox1.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(105, 73, 50));
@@ -229,7 +256,7 @@ public class USER_signup_screen extends connect {
                 jComboBox1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 590, 320, 20));
+        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 530, 320, 20));
 
         sec_ans.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         sec_ans.setForeground(new java.awt.Color(105, 73, 50));
@@ -238,15 +265,15 @@ public class USER_signup_screen extends connect {
                 sec_ansActionPerformed(evt);
             }
         });
-        jPanel2.add(sec_ans, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 610, 320, 20));
-        jPanel2.add(password_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 320, 20));
+        jPanel2.add(sec_ans, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 550, 320, 20));
+        jPanel2.add(password_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 320, 20));
 
         password_confirm_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 password_confirm_txtActionPerformed(evt);
             }
         });
-        jPanel2.add(password_confirm_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 540, 320, 20));
+        jPanel2.add(password_confirm_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 480, 320, 20));
 
         lname.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         lname.setForeground(new java.awt.Color(105, 73, 50));
@@ -255,13 +282,13 @@ public class USER_signup_screen extends connect {
                 lnameActionPerformed(evt);
             }
         });
-        jPanel2.add(lname, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 150, 20));
+        jPanel2.add(lname, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 150, 20));
 
         lastname_label.setBackground(new java.awt.Color(105, 73, 50));
         lastname_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         lastname_label.setForeground(new java.awt.Color(105, 73, 50));
         lastname_label.setText("Last Name:");
-        jPanel2.add(lastname_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 100, -1));
+        jPanel2.add(lastname_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, 100, -1));
 
         fname.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         fname.setForeground(new java.awt.Color(105, 73, 50));
@@ -270,47 +297,71 @@ public class USER_signup_screen extends connect {
                 fnameActionPerformed(evt);
             }
         });
-        jPanel2.add(fname, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 150, 20));
+        jPanel2.add(fname, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 150, 20));
 
         firstname_label.setBackground(new java.awt.Color(105, 73, 50));
         firstname_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         firstname_label.setForeground(new java.awt.Color(105, 73, 50));
         firstname_label.setText("First Name:");
-        jPanel2.add(firstname_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 100, 20));
-
-        sublabel.setBackground(new java.awt.Color(105, 73, 50));
-        sublabel.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        sublabel.setForeground(new java.awt.Color(105, 73, 50));
-        sublabel.setText("Live Luxuriously.");
-        jPanel2.add(sublabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, -1, -1));
-
-        casa_name.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownsmall.png"))); // NOI18N
-        casa_name.setText("jLabel1");
-        jPanel2.add(casa_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 240, 50));
-
-        casa_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_topleft.png"))); // NOI18N
-        casa_logo.setText("jLabel2");
-        jPanel2.add(casa_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 60, -1));
+        jPanel2.add(firstname_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 100, 20));
 
         email_label.setBackground(new java.awt.Color(105, 73, 50));
         email_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         email_label.setForeground(new java.awt.Color(105, 73, 50));
         email_label.setText("Email:");
-        jPanel2.add(email_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 50, -1));
+        jPanel2.add(email_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 50, -1));
 
         address_label.setBackground(new java.awt.Color(105, 73, 50));
         address_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         address_label.setForeground(new java.awt.Color(105, 73, 50));
         address_label.setText("Address:");
-        jPanel2.add(address_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 70, -1));
-        jPanel2.add(bday_chooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 320, 20));
+        jPanel2.add(address_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 70, -1));
+        jPanel2.add(bday_chooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 320, 20));
 
         invalid_birthday.setBackground(new java.awt.Color(105, 73, 50));
         invalid_birthday.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
         invalid_birthday.setForeground(new java.awt.Color(123, 24, 24));
         invalid_birthday.setToolTipText("");
         invalid_birthday.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel2.add(invalid_birthday, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, -1, -1));
+        jPanel2.add(invalid_birthday, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, -1, -1));
+
+        password_label3.setBackground(new java.awt.Color(105, 73, 50));
+        password_label3.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        password_label3.setForeground(new java.awt.Color(105, 73, 50));
+        password_label3.setText("Security Question");
+        jPanel2.add(password_label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 510, 160, -1));
+        jPanel2.add(captchalabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 600, -1, -1));
+
+        password_label4.setBackground(new java.awt.Color(105, 73, 50));
+        password_label4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        password_label4.setForeground(new java.awt.Color(105, 73, 50));
+        password_label4.setText("Captcha");
+        jPanel2.add(password_label4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 580, 70, -1));
+
+        jButton1.setBackground(new java.awt.Color(237, 234, 233));
+        jButton1.setForeground(new java.awt.Color(105, 73, 50));
+        jButton1.setText("↺ Reset");
+        jButton1.setBorder(null);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 580, 50, 20));
+
+        sublabel.setBackground(new java.awt.Color(105, 73, 50));
+        sublabel.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        sublabel.setForeground(new java.awt.Color(105, 73, 50));
+        sublabel.setText("Live Luxuriously.");
+        jPanel2.add(sublabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, -1, -1));
+
+        casa_name.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownsmall.png"))); // NOI18N
+        casa_name.setText("jLabel1");
+        jPanel2.add(casa_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 240, 50));
+
+        casa_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_topleft.png"))); // NOI18N
+        casa_logo.setText("jLabel2");
+        jPanel2.add(casa_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 60, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 520, 760));
 
@@ -332,14 +383,15 @@ public class USER_signup_screen extends connect {
     private void signup_finish_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signup_finish_btnActionPerformed
         SimpleDateFormat sdf  = new SimpleDateFormat("yyyy-MM-dd");
         
-        boolean email_check = false;
-        boolean password_check = false;
-        boolean password_confirm_check = false;
-        boolean sec_check = false;
-        boolean address_check = false;
-        boolean bday_check = false;
-        boolean cnum_check = false;
-        boolean namecheck = false;
+        boolean email_check = false,
+                password_check = false,
+                password_confirm_check = false,
+                sec_check = false,
+                address_check = false,
+                bday_check = false,
+                cnum_check = false,
+                namecheck = false,
+                capcheck = false;
         
         LocalDate today = LocalDate.now();
         
@@ -416,6 +468,15 @@ public class USER_signup_screen extends connect {
             invalid_contact.setText(null);
         }
         
+        if (cap_ans.getText().equals(currentans)) {
+            invalid_cap.setText(null);
+            capcheck = true;
+            System.out.println("CAPTCHAWORKS");
+        } else if (!cap_ans.getText().equals(currentans)) {
+            invalid_cap.setText("Wrong.");
+            System.out.println("WRONG");
+        }
+        
         // Gets the values from the textfields and sets it to their "new" variants.
         newEmail = email_txt.getText();
         newPass = password_txt.getText();
@@ -454,7 +515,7 @@ public class USER_signup_screen extends connect {
                 }
             }
             rs.close();
-            if (!emailExists && sec_check && password_confirm_check && password_check && email_check && address_check && bday_check && cnum_check && namecheck) {
+            if (!emailExists && sec_check && password_confirm_check && password_check && email_check && address_check && bday_check && cnum_check && namecheck && capcheck) {
             rs = stmt.executeQuery("SELECT * FROM \"USERS\"");
             rs.moveToInsertRow();
             rs.updateString("FIRSTNAME", newFname);
@@ -523,6 +584,15 @@ public class USER_signup_screen extends connect {
         // TODO add your handling code here:
     }//GEN-LAST:event_password_confirm_txtActionPerformed
 
+    private void cap_ansActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cap_ansActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cap_ansActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        generation();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -589,11 +659,22 @@ public class USER_signup_screen extends connect {
         
     }
 
+    public void generation() {
+        invalid_cap.setText(null);
+        String captchatext = captcha.generatetext();
+        currentans = captchatext;
+        System.out.println(captchatext);
+        BufferedImage captchaimage = captcha.createimage(captchatext);
+        
+        captchalabel.setIcon(new ImageIcon(captchaimage));
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel address_label;
     private javax.swing.JTextField address_txt;
     private com.toedter.calendar.JDateChooser bday_chooser;
     private javax.swing.JLabel bday_label;
+    private javax.swing.JTextField cap_ans;
+    private javax.swing.JLabel captchalabel;
     private javax.swing.JLabel casa_logo;
     private javax.swing.JLabel casa_name;
     private javax.swing.JTextField contactnum;
@@ -604,12 +685,14 @@ public class USER_signup_screen extends connect {
     private javax.swing.JTextField fname;
     private javax.swing.JLabel invalid_address;
     private javax.swing.JLabel invalid_birthday;
+    private javax.swing.JLabel invalid_cap;
     private javax.swing.JLabel invalid_confirm;
     private javax.swing.JLabel invalid_contact;
     private javax.swing.JLabel invalid_email;
     private javax.swing.JLabel invalid_name;
     private javax.swing.JLabel invalid_password;
     private javax.swing.JLabel invalid_sec;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -620,6 +703,8 @@ public class USER_signup_screen extends connect {
     private javax.swing.JLabel password_label;
     private javax.swing.JLabel password_label1;
     private javax.swing.JLabel password_label2;
+    private javax.swing.JLabel password_label3;
+    private javax.swing.JLabel password_label4;
     private javax.swing.JPasswordField password_txt;
     private javax.swing.JButton return_btn;
     private javax.swing.JTextField sec_ans;

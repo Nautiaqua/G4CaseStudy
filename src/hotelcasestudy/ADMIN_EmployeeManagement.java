@@ -80,7 +80,7 @@ DefaultTableModel MODEL = new DefaultTableModel() {
         jTable2 = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jTextField4 = new javax.swing.JTextField();
+        searchbar = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
@@ -129,7 +129,7 @@ DefaultTableModel MODEL = new DefaultTableModel() {
         jTable2.setModel(MODEL);
         jScrollPane2.setViewportView(jTable2);
 
-        background.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 1320, 500));
+        background.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 1310, 500));
 
         jButton4.setBackground(new java.awt.Color(134, 97, 72));
         jButton4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -153,17 +153,17 @@ DefaultTableModel MODEL = new DefaultTableModel() {
         });
         background.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 80, 120, 40));
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        searchbar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                searchbarActionPerformed(evt);
             }
         });
-        jTextField4.addKeyListener(new java.awt.event.KeyAdapter() {
+        searchbar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextField4KeyReleased(evt);
+                searchbarKeyReleased(evt);
             }
         });
-        background.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 400, 20));
+        background.add(searchbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 400, 20));
 
         jLabel11.setBackground(new java.awt.Color(105, 73, 50));
         jLabel11.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
@@ -403,16 +403,16 @@ int e = jTable2.getSelectedRow();
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void searchbarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchbarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_searchbarActionPerformed
 
-    private void jTextField4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyReleased
+    private void searchbarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchbarKeyReleased
         DefaultTableModel model=(DefaultTableModel)jTable2.getModel();
         TableRowSorter<DefaultTableModel>obj=new TableRowSorter<>(model);
         jTable2.setRowSorter(obj);
-        obj.setRowFilter(RowFilter.regexFilter(jTextField4.getText().trim()));
-    }//GEN-LAST:event_jTextField4KeyReleased
+        obj.setRowFilter(RowFilter.regexFilter(searchbar.getText().trim()));
+    }//GEN-LAST:event_searchbarKeyReleased
 
     private void logout_btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btn2ActionPerformed
         // TODO add your handling code here:
@@ -506,10 +506,10 @@ int e = jTable2.getSelectedRow();
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JButton logout_btn2;
     private javax.swing.JMenuItem remove_text;
     private javax.swing.JPopupMenu remove_warning;
     private javax.swing.JButton return_btn913;
+    private javax.swing.JTextField searchbar;
     // End of variables declaration//GEN-END:variables
 }

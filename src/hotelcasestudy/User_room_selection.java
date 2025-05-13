@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @author Lenovo
  */
-public class User_room_selection extends connect {
+public final class User_room_selection extends connect {
     public static String ci;
     public static String co;
     public static int id;
@@ -34,6 +34,11 @@ public class User_room_selection extends connect {
     public static boolean room2=(false);
     public static boolean room3=(false);
     public static boolean room4=(false);
+    public static int typeindex;
+    
+    int aducount,
+        chicount,
+        totalguests;
     
     /**
      * Creates new form User_room_selection
@@ -41,7 +46,8 @@ public class User_room_selection extends connect {
     public User_room_selection() {
         initComponents();
         DoConnect();
-       
+        
+        guestSetter();
     }
 
     /**
@@ -57,7 +63,6 @@ public class User_room_selection extends connect {
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         jPanel2 = new javax.swing.JPanel();
         total = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -83,8 +88,16 @@ public class User_room_selection extends connect {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         bookedrooms = new javax.swing.JLabel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        guessts = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        topbar = new javax.swing.JPanel();
+        logout1 = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        romtab = new javax.swing.JTabbedPane();
+        tab1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         invalid = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
@@ -138,7 +151,7 @@ public class User_room_selection extends connect {
         jLabel53 = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
+        tab2 = new javax.swing.JScrollPane();
         jPanel30 = new javax.swing.JPanel();
         invalid4 = new javax.swing.JLabel();
         jPanel32 = new javax.swing.JPanel();
@@ -179,7 +192,7 @@ public class User_room_selection extends connect {
         jLabel220 = new javax.swing.JLabel();
         jLabel221 = new javax.swing.JLabel();
         jLabel222 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
+        tab3 = new javax.swing.JScrollPane();
         jPanel36 = new javax.swing.JPanel();
         invalid5 = new javax.swing.JLabel();
         jPanel38 = new javax.swing.JPanel();
@@ -208,7 +221,7 @@ public class User_room_selection extends connect {
         jLabel262 = new javax.swing.JLabel();
         jLabel263 = new javax.swing.JLabel();
         jLabel264 = new javax.swing.JLabel();
-        jScrollPane6 = new javax.swing.JScrollPane();
+        tab4 = new javax.swing.JScrollPane();
         jPanel42 = new javax.swing.JPanel();
         invalid6 = new javax.swing.JLabel();
         jPanel44 = new javax.swing.JPanel();
@@ -225,11 +238,6 @@ public class User_room_selection extends connect {
         jLabel304 = new javax.swing.JLabel();
         jLabel305 = new javax.swing.JLabel();
         jLabel306 = new javax.swing.JLabel();
-        jPanel11 = new javax.swing.JPanel();
-        logout1 = new javax.swing.JButton();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -241,19 +249,7 @@ public class User_room_selection extends connect {
         total.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         total.setForeground(new java.awt.Color(103, 64, 37));
         total.setText("Total: P0.00");
-        jPanel2.add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, -1, -1));
-
-        jButton1.setBackground(new java.awt.Color(134, 97, 72));
-        jButton1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Check Out");
-        jButton1.setBorderPainted(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 590, 130, 40));
+        jPanel2.add(total, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 580, -1, -1));
 
         jPanel4.setBackground(new java.awt.Color(237, 234, 233));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -348,62 +344,76 @@ public class User_room_selection extends connect {
                 jToggleButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, -1, 40));
+        jPanel2.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 600, -1, 40));
 
         check_out.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 check_outPropertyChange(evt);
             }
         });
-        jPanel2.add(check_out, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 140, -1));
+        jPanel2.add(check_out, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 140, -1));
 
         booked.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
         booked.setForeground(new java.awt.Color(105, 73, 50));
         booked.setText("Total nights:");
-        jPanel2.add(booked, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 140, -1));
+        jPanel2.add(booked, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 180, -1));
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(105, 73, 50));
         jLabel1.setText("Children");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 60, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 60, -1));
 
         check_in.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 check_inPropertyChange(evt);
             }
         });
-        jPanel2.add(check_in, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 140, -1));
+        jPanel2.add(check_in, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 140, -1));
 
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(105, 73, 50));
         jLabel3.setText("Check-Out Date");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(105, 73, 50));
         jLabel2.setText("Check-In Date");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(105, 73, 50));
         jLabel4.setText("Adults");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, -1, -1));
-        jPanel2.add(chi, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 90, -1));
-        jPanel2.add(adu, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 90, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, -1, -1));
+
+        chi.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        chi.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                chiStateChanged(evt);
+            }
+        });
+        jPanel2.add(chi, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 90, -1));
+
+        adu.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+        adu.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                aduStateChanged(evt);
+            }
+        });
+        jPanel2.add(adu, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 90, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Room Type", "Price"
+                "Room Type", "Room Number", "Price"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -412,18 +422,105 @@ public class User_room_selection extends connect {
         });
         jScrollPane3.setViewportView(jTable1);
 
-        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 390, 400));
+        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 390, 400));
 
         bookedrooms.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
         bookedrooms.setForeground(new java.awt.Color(105, 73, 50));
         bookedrooms.setText("Booked Rooms:");
-        jPanel2.add(bookedrooms, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 140, -1));
+        jPanel2.add(bookedrooms, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 140, -1));
+
+        guessts.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        guessts.setForeground(new java.awt.Color(105, 73, 50));
+        guessts.setText("Total guests: 1");
+        jPanel2.add(guessts, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 170, -1));
+
+        jLabel16.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel16.setText("Reservation Details");
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, -1));
+
+        jButton5.setBackground(new java.awt.Color(134, 97, 72));
+        jButton5.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("Check Out");
+        jButton5.setBorderPainted(false);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 600, 130, 40));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 70, 430, 690));
 
-        jScrollPane1.setBorder(null);
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        topbar.setBackground(new java.awt.Color(236, 234, 232));
+        topbar.setForeground(new java.awt.Color(255, 255, 255));
+        topbar.setPreferredSize(new java.awt.Dimension(1344, 70));
+
+        logout1.setBackground(new java.awt.Color(236, 234, 232));
+        logout1.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        logout1.setForeground(new java.awt.Color(103, 64, 37));
+        logout1.setText("Log Out");
+        logout1.setBorder(null);
+        logout1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logout1ActionPerformed(evt);
+            }
+        });
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownsmall.png"))); // NOI18N
+        jLabel15.setText("jLabel1");
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_topleft.png"))); // NOI18N
+        jLabel17.setText("jLabel2");
+
+        jButton6.setBackground(new java.awt.Color(236, 234, 232));
+        jButton6.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(103, 64, 37));
+        jButton6.setText("Return");
+        jButton6.setBorder(null);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout topbarLayout = new javax.swing.GroupLayout(topbar);
+        topbar.setLayout(topbarLayout);
+        topbarLayout.setHorizontalGroup(
+            topbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(topbarLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton6)
+                .addGap(18, 18, 18)
+                .addComponent(logout1)
+                .addGap(17, 17, 17))
+        );
+        topbarLayout.setVerticalGroup(
+            topbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(topbarLayout.createSequentialGroup()
+                .addGap(4, 4, 4)
+                .addGroup(topbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(topbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel17)
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(topbarLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(topbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(logout1)
+                            .addComponent(jButton6))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(topbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        tab1.setBorder(null);
+        tab1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        tab1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         jPanel1.setBackground(new java.awt.Color(140, 100, 75));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -727,13 +824,13 @@ public class User_room_selection extends connect {
 
         jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 710, 860, 210));
 
-        jScrollPane1.setViewportView(jPanel1);
+        tab1.setViewportView(jPanel1);
 
-        jTabbedPane1.addTab("TAB_ONE", jScrollPane1);
+        romtab.addTab("TAB_ONE", tab1);
 
-        jScrollPane4.setBorder(null);
-        jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        tab2.setBorder(null);
+        tab2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        tab2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         jPanel30.setBackground(new java.awt.Color(140, 100, 75));
         jPanel30.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -964,13 +1061,13 @@ public class User_room_selection extends connect {
 
         jPanel30.add(jPanel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 860, 210));
 
-        jScrollPane4.setViewportView(jPanel30);
+        tab2.setViewportView(jPanel30);
 
-        jTabbedPane1.addTab("TAB_TWO", jScrollPane4);
+        romtab.addTab("TAB_TWO", tab2);
 
-        jScrollPane5.setBorder(null);
-        jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane5.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        tab3.setBorder(null);
+        tab3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        tab3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         jPanel36.setBackground(new java.awt.Color(140, 100, 75));
         jPanel36.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -1134,13 +1231,13 @@ public class User_room_selection extends connect {
 
         jPanel36.add(jPanel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 860, 210));
 
-        jScrollPane5.setViewportView(jPanel36);
+        tab3.setViewportView(jPanel36);
 
-        jTabbedPane1.addTab("TAB_THREE", jScrollPane5);
+        romtab.addTab("TAB_THREE", tab3);
 
-        jScrollPane6.setBorder(null);
-        jScrollPane6.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane6.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        tab4.setBorder(null);
+        tab4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        tab4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         jPanel42.setBackground(new java.awt.Color(140, 100, 75));
         jPanel42.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -1237,181 +1334,15 @@ public class User_room_selection extends connect {
 
         jPanel42.add(jPanel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 860, 210));
 
-        jScrollPane6.setViewportView(jPanel42);
+        tab4.setViewportView(jPanel42);
 
-        jTabbedPane1.addTab("TAB_FOUR", jScrollPane6);
+        romtab.addTab("TAB_FOUR", tab4);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 920, 730));
-
-        jPanel11.setBackground(new java.awt.Color(236, 234, 232));
-        jPanel11.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel11.setPreferredSize(new java.awt.Dimension(1344, 70));
-
-        logout1.setBackground(new java.awt.Color(236, 234, 232));
-        logout1.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        logout1.setForeground(new java.awt.Color(103, 64, 37));
-        logout1.setText("Log Out");
-        logout1.setBorder(null);
-        logout1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logout1ActionPerformed(evt);
-            }
-        });
-
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownsmall.png"))); // NOI18N
-        jLabel15.setText("jLabel1");
-
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_topleft.png"))); // NOI18N
-        jLabel17.setText("jLabel2");
-
-        jButton6.setBackground(new java.awt.Color(236, 234, 232));
-        jButton6.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(103, 64, 37));
-        jButton6.setText("Return");
-        jButton6.setBorder(null);
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 902, Short.MAX_VALUE)
-                .addComponent(jButton6)
-                .addGap(18, 18, 18)
-                .addComponent(logout1)
-                .addGap(17, 17, 17))
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(4, 4, 4)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel17)
-                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(logout1)
-                            .addComponent(jButton6))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(romtab, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 920, 730));
 
         setSize(new java.awt.Dimension(1360, 765));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-Date inDate = check_in.getDate();
-Date outDate = check_out.getDate();
-if (inDate == null || outDate == null) {
-    invalid.setText("Please select check-in and check-out dates.");
-    return;
-}
-Date today = new Date();
-if (inDate.before(today)) {
-    invalid.setText("Check-in date cannot be in the past.");
-    return;
-}
-if (!outDate.after(inDate)) {
-    invalid.setText("Check-out must be after check-in.");
-    return;
-}
-long diffInMillis = outDate.getTime() - inDate.getTime();
-long numOfDays = TimeUnit.DAYS.convert(diffInMillis, TimeUnit.MILLISECONDS);
-if (numOfDays <= 0) {
-    invalid.setText("Reservation must be at least 1 day.");
-    return;
-}
-int baseRate = 0;
-int id = 0;
-if (room1) {
-   baseRate = 3000; id = 1;
-} else if (room2) {
-   baseRate = 7000; id = 2;
-} else if (room3) {
-    baseRate = 15000; id = 3;
-} else if (room4) {
-    baseRate = 50000; id = 4;
-} else {
-    invalid.setText("No room selected.");
-    return;
-}
-rm = baseRate * (int) numOfDays;
-try {
-    Calendar calIn = Calendar.getInstance();
-    calIn.setTime(inDate);
-    calIn.set(Calendar.HOUR_OF_DAY, 0);
-    calIn.set(Calendar.MINUTE, 0);
-    calIn.set(Calendar.SECOND, 0);
-    calIn.set(Calendar.MILLISECOND, 0);
-    inDate = calIn.getTime();
-    Calendar calOut = Calendar.getInstance();
-    calOut.setTime(outDate);
-    calOut.set(Calendar.HOUR_OF_DAY, 0);
-    calOut.set(Calendar.MINUTE, 0);
-    calOut.set(Calendar.SECOND, 0);
-    calOut.set(Calendar.MILLISECOND, 0);
-    outDate = calOut.getTime();
-    Timestamp tsCheckIn = new Timestamp(inDate.getTime());
-    Timestamp tsCheckOut = new Timestamp(outDate.getTime());
-    String overlapQuery = """
-        SELECT * FROM RESERVATIONS 
-        WHERE ROOM_ID = ? 
-          AND STATUS = 'payed'
-          AND CHECKIN < ? 
-          AND CHECKOUT > ?
-    """;
-    PreparedStatement pst = con.prepareStatement(overlapQuery);
-    pst.setInt(1, id);
-    pst.setTimestamp(2, tsCheckOut);
-    pst.setTimestamp(3, tsCheckIn);
-    ResultSet rs = pst.executeQuery();
-    if (rs.next()) {
-        JOptionPane.showMessageDialog(null, "Room already reserved during these dates.");
-        return;
-    }
-    String exactQuery = """
-        SELECT * FROM RESERVATIONS 
-        WHERE ROOM_ID = ? 
-          AND STATUS = 'payed'
-          AND CHECKIN = ? 
-          AND CHECKOUT = ?
-    """;
-    PreparedStatement exactPst = con.prepareStatement(exactQuery);
-    exactPst.setInt(1, id);
-    exactPst.setTimestamp(2, tsCheckIn);
-    exactPst.setTimestamp(3, tsCheckOut);
-    ResultSet exactRs = exactPst.executeQuery();
-    if (exactRs.next()) {
-   JOptionPane.showMessageDialog(null, "Exact same reservation already exists.");
-        return;
-    }
-    User_room_selection.ci = sdf.format(inDate);
-    User_room_selection.co = sdf.format(outDate);
-    User_room_selection.id = id;
-    User_room_selection.rm = rm;
-    User_Checkout loginmenu = new User_Checkout();
-    loginmenu.setVisible(true);
-    this.dispose();
-} catch (SQLException e) {
-    JOptionPane.showMessageDialog(null, "Database error: " + e.getMessage());
-    e.printStackTrace();
-}
-
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -1426,11 +1357,15 @@ try {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void add_standardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_standardActionPerformed
-    
-        room1=true;
-        room4=false;
-    room3=false;
-    room2=false;
+        
+        typeindex = 0;
+        USER_specificroom specificroom = new USER_specificroom();
+        specificroom.setVisible(true);
+        
+        // room1=true;
+        // room4=false;
+        // room3=false;
+        // room2=false;
     
     }//GEN-LAST:event_add_standardActionPerformed
 
@@ -1558,31 +1493,53 @@ try {
     }//GEN-LAST:event_add_premium4ActionPerformed
 
     private void deluxeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deluxeActionPerformed
-
-        room4=true;
-        room3=false;
-        room2=false;
-        room1=false;
+        typeindex = 2;
+        USER_specificroom specificroom = new USER_specificroom();
+        specificroom.setVisible(true);
+        //room4=true;
+        //room3=false;
+        //room2=false;
+        //room1=false;
 
     }//GEN-LAST:event_deluxeActionPerformed
 
     private void add_premiumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_premiumActionPerformed
-
-        room3=true;
-        room4=false;
-        room2=false;
-        room1=false;
+        typeindex = 3;
+        USER_specificroom specificroom = new USER_specificroom();
+        specificroom.setVisible(true);
+        
+        //room3=true;
+        //room4=false;
+        //room2=false;
+        //room1=false;
 
     }//GEN-LAST:event_add_premiumActionPerformed
 
     private void add_doubleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_doubleActionPerformed
-
-        room2=true;
-        room4=false;
-        room3=false;
-        room1=false;
+        typeindex = 1;
+        USER_specificroom specificroom = new USER_specificroom();
+        specificroom.setVisible(true);
+        
+        // room2=true;
+        // room4=false;
+        // room3=false;
+        // room1=false;
 
     }//GEN-LAST:event_add_doubleActionPerformed
+
+    private void aduStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_aduStateChanged
+        // TODO add your handling code here:
+        tabChanger();
+    }//GEN-LAST:event_aduStateChanged
+
+    private void chiStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_chiStateChanged
+        // TODO add your handling code here:
+        tabChanger();
+    }//GEN-LAST:event_chiStateChanged
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1621,6 +1578,8 @@ try {
                     new User_room_selection().setVisible(true);
                 }
             });
+            
+            
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(User_room_selection.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
@@ -1631,7 +1590,51 @@ try {
             Logger.getLogger(User_room_selection.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    
+    public void guestSetter() {
+        int adutransfer = (int) USER_booking.adu.getValue();
+        int chitransfer = (int) USER_booking.chi.getValue();
+        System.out.println(adutransfer + chitransfer);
+        
+        User_room_selection.adu.setValue(adutransfer);
+        User_room_selection.chi.setValue(chitransfer);
+    }
+    
+    public void tabChanger() {
+        if (adu.getValue() != null) {
+            aducount = (int) adu.getValue();
+            if (chi.getValue() == null) {
+                chicount = 0;
+            } else {
+                chicount = (int) chi.getValue();
+            }
+            
+            totalguests = aducount + chicount;
+            guessts.setText("Total guests: " + totalguests);
+            
+        } else if (adu.getValue() == null) {
+            totalguests = 0;
+        }
+        
+        // Swaps the tabs based on total guests.
+        if (totalguests <= 2) {
+                System.out.println("TAB 1");
+                romtab.setSelectedIndex(0);
+            } else if (totalguests > 2 && totalguests <= 6) {
+                System.out.println("TAB 2");
+                romtab.setSelectedIndex(1);
+            } else if (totalguests > 6 && totalguests <= 14) {
+                System.out.println("TAB 3");
+                romtab.setSelectedIndex(2);
+            } else if (totalguests > 14 && totalguests <= 16) {
+                System.out.println("Tab 4");
+                romtab.setSelectedIndex(3);
+            } else if (totalguests > 16) {
+                System.out.println("TOO MANY PEOPLE");
+                guessts.setText(totalguests + " exceeds room capacity.");
+            }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton add_double;
     private javax.swing.JButton add_double4;
@@ -1650,14 +1653,15 @@ try {
     private javax.swing.JButton deluxe5;
     private javax.swing.JButton deluxe6;
     private javax.swing.Box.Filler filler1;
+    private javax.swing.JLabel guessts;
     private javax.swing.JLabel invalid;
     private javax.swing.JLabel invalid4;
     private javax.swing.JLabel invalid5;
     private javax.swing.JLabel invalid6;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1666,6 +1670,7 @@ try {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel192;
     private javax.swing.JLabel jLabel193;
@@ -1778,7 +1783,6 @@ try {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel30;
@@ -1799,16 +1803,17 @@ try {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JButton logout1;
+    private javax.swing.JTabbedPane romtab;
+    private javax.swing.JScrollPane tab1;
+    private javax.swing.JScrollPane tab2;
+    private javax.swing.JScrollPane tab3;
+    private javax.swing.JScrollPane tab4;
+    private javax.swing.JPanel topbar;
     private javax.swing.JLabel total;
     // End of variables declaration//GEN-END:variables
 }

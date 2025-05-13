@@ -4,6 +4,7 @@
  */
 package hotelcasestudy;
 
+import java.awt.Toolkit;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.*;
@@ -17,7 +18,8 @@ import javax.swing.UnsupportedLookAndFeelException;
  * @author WINDOWS
  */
 public class USER_booking extends javax.swing.JFrame {
-
+    
+    int aducount, chicount, totalguests;
     /**
      * Creates new form USER_booking
      */
@@ -25,6 +27,7 @@ public class USER_booking extends javax.swing.JFrame {
         UIManager.put("Button.arc", 20);
         initComponents();
         LocalDate today = LocalDate.now();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
         Date dateNow = Date.from(today.atStartOfDay(ZoneId.systemDefault()).toInstant());
         datetoday.setDate(dateNow);
     }
@@ -41,14 +44,16 @@ public class USER_booking extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        adu = new javax.swing.JSpinner();
-        chi = new javax.swing.JSpinner();
         jLabel1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        invalid_guests = new javax.swing.JLabel();
         datetoday = new com.toedter.calendar.JDateChooser();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        chi = new javax.swing.JSpinner();
+        adu = new javax.swing.JSpinner();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jPanel4.setBackground(new java.awt.Color(237, 234, 233));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -69,45 +74,76 @@ public class USER_booking extends javax.swing.JFrame {
         });
         jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 100, 40));
 
-        adu.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        jPanel4.add(adu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 90, -1));
-
-        chi.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        jPanel4.add(chi, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 90, -1));
-
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(105, 73, 50));
         jLabel1.setText("Children");
         jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 60, -1));
 
-        jLabel4.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(105, 73, 50));
-        jLabel4.setText("Date Today:");
-        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
-        jPanel4.add(datetoday, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 200, 30));
+        invalid_guests.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        invalid_guests.setForeground(new java.awt.Color(123, 24, 24));
+        jPanel4.add(invalid_guests, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
+
+        datetoday.setEnabled(false);
+        jPanel4.add(datetoday, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 200, 20));
 
         jLabel5.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(105, 73, 50));
         jLabel5.setText("Adults");
         jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
 
+        jLabel6.setFont(new java.awt.Font("Liberation Sans", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel6.setText("Date Today:");
+        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
+
+        chi.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        chi.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                chiStateChanged(evt);
+            }
+        });
+        jPanel4.add(chi, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 90, -1));
+
+        adu.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+        adu.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                aduStateChanged(evt);
+            }
+        });
+        jPanel4.add(adu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 90, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(323, 361));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        if (totalguests < 17) {
+            User_room_selection roomsel = new User_room_selection();
+            this.dispose();
+            roomsel.setVisible(true);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void chiStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_chiStateChanged
+        // TODO add your handling code here:
+        guestcheck();
+    }//GEN-LAST:event_chiStateChanged
+
+    private void aduStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_aduStateChanged
+        // TODO add your handling code here:
+        guestcheck();
+    }//GEN-LAST:event_aduStateChanged
 
     /**
      * @param args the command line arguments
@@ -156,15 +192,39 @@ public class USER_booking extends javax.swing.JFrame {
         }
     }
 
+    public void guestcheck() {
+        if (adu.getValue() != null) {
+            aducount = (int) adu.getValue();
+            if (chi.getValue() == null) {
+                chicount = 0;
+            } else {
+                chicount = (int) chi.getValue();
+            }
+            
+            totalguests = aducount + chicount;
+            
+        } else if (adu.getValue() == null) {
+            totalguests = 0;
+        }
+        
+        // Swaps the tabs based on total guests.
+        if (totalguests <= 16) {
+            invalid_guests.setText(null);
+        } else if (totalguests > 16) {
+            System.out.println("TOO MANY PEOPLE");
+            invalid_guests.setText(totalguests + " is too many guests.");
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JSpinner adu;
     public static javax.swing.JSpinner chi;
     public static com.toedter.calendar.JDateChooser datetoday;
+    private javax.swing.JLabel invalid_guests;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
 }

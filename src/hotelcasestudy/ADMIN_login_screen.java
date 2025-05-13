@@ -36,17 +36,19 @@ public class ADMIN_login_screen extends connect {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        return_btn = new javax.swing.JButton();
-        login_finish_btn = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
         invalid = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        email_label2 = new javax.swing.JLabel();
+        password_label1 = new javax.swing.JLabel();
+        logout_btn = new javax.swing.JButton();
+        sublabel = new javax.swing.JLabel();
+        casa_name = new javax.swing.JLabel();
+        casa_logo = new javax.swing.JLabel();
         email_txt = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        password_label = new javax.swing.JLabel();
-        email_label1 = new javax.swing.JLabel();
         password_txt = new javax.swing.JTextField();
-        casa_icon = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        login_finish_btn = new javax.swing.JButton();
+        return_btn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,72 +56,91 @@ public class ADMIN_login_screen extends connect {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(140, 100, 75));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.setBackground(new java.awt.Color(237, 234, 233));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        return_btn.setBackground(new java.awt.Color(237, 234, 233));
-        return_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        return_btn.setForeground(new java.awt.Color(105, 73, 50));
-        return_btn.setText("RETURN");
-        return_btn.addActionListener(new java.awt.event.ActionListener() {
+        invalid.setBackground(new java.awt.Color(105, 73, 50));
+        invalid.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        invalid.setForeground(new java.awt.Color(123, 24, 24));
+        invalid.setToolTipText("");
+        invalid.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel2.add(invalid, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, -1, -1));
+
+        jLabel5.setBackground(new java.awt.Color(105, 73, 50));
+        jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(105, 73, 50));
+        jLabel5.setText("Admin Log In");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, -1, -1));
+
+        email_label2.setBackground(new java.awt.Color(105, 73, 50));
+        email_label2.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        email_label2.setForeground(new java.awt.Color(105, 73, 50));
+        email_label2.setText("Admin ID");
+        jPanel2.add(email_label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 100, -1));
+
+        password_label1.setBackground(new java.awt.Color(105, 73, 50));
+        password_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        password_label1.setForeground(new java.awt.Color(105, 73, 50));
+        password_label1.setText("Password");
+        jPanel2.add(password_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, 90, -1));
+
+        logout_btn.setBackground(new java.awt.Color(237, 234, 233));
+        logout_btn.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        logout_btn.setForeground(new java.awt.Color(140, 100, 75));
+        logout_btn.setText("Forgot your password?");
+        logout_btn.setBorder(null);
+        logout_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                return_btnActionPerformed(evt);
+                logout_btnActionPerformed(evt);
             }
         });
-        jPanel1.add(return_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 560, 160, 49));
+        jPanel2.add(logout_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 420, -1, -1));
 
-        login_finish_btn.setBackground(new java.awt.Color(237, 234, 233));
+        sublabel.setBackground(new java.awt.Color(105, 73, 50));
+        sublabel.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        sublabel.setForeground(new java.awt.Color(105, 73, 50));
+        sublabel.setText("Live Luxuriously.");
+        jPanel2.add(sublabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, -1, -1));
+
+        casa_name.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_brownsmall.png"))); // NOI18N
+        casa_name.setText("jLabel1");
+        jPanel2.add(casa_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 240, 50));
+
+        casa_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_topleft.png"))); // NOI18N
+        casa_logo.setText("jLabel2");
+        jPanel2.add(casa_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 60, -1));
+
+        email_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        email_txt.setForeground(new java.awt.Color(105, 73, 50));
+        jPanel2.add(email_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 320, 20));
+
+        password_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
+        password_txt.setForeground(new java.awt.Color(105, 73, 50));
+        jPanel2.add(password_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 320, 20));
+
+        login_finish_btn.setBackground(new java.awt.Color(134, 97, 72));
         login_finish_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        login_finish_btn.setForeground(new java.awt.Color(105, 73, 50));
-        login_finish_btn.setText("LOG IN");
+        login_finish_btn.setForeground(new java.awt.Color(255, 255, 255));
+        login_finish_btn.setText("Finish");
         login_finish_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 login_finish_btnActionPerformed(evt);
             }
         });
-        jPanel1.add(login_finish_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 500, 160, 49));
+        jPanel2.add(login_finish_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 450, 120, 40));
 
-        invalid.setBackground(new java.awt.Color(105, 73, 50));
-        invalid.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        invalid.setForeground(new java.awt.Color(255, 51, 51));
-        invalid.setToolTipText("");
-        jPanel1.add(invalid, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 230, -1));
+        return_btn.setBackground(new java.awt.Color(134, 97, 72));
+        return_btn.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        return_btn.setForeground(new java.awt.Color(255, 255, 255));
+        return_btn.setText("Return");
+        return_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                return_btnActionPerformed(evt);
+            }
+        });
+        jPanel2.add(return_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 500, 120, 40));
 
-        email_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        email_txt.setForeground(new java.awt.Color(105, 73, 50));
-        jPanel1.add(email_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 320, 20));
-
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Admin Login");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, -1, -1));
-
-        password_label.setBackground(new java.awt.Color(105, 73, 50));
-        password_label.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        password_label.setForeground(new java.awt.Color(255, 255, 255));
-        password_label.setText("Password");
-        jPanel1.add(password_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 90, -1));
-
-        email_label1.setBackground(new java.awt.Color(105, 73, 50));
-        email_label1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        email_label1.setForeground(new java.awt.Color(255, 255, 255));
-        email_label1.setText("Admin ID");
-        jPanel1.add(email_label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, 80, 20));
-
-        password_txt.setFont(new java.awt.Font("Liberation Sans", 0, 12)); // NOI18N
-        password_txt.setForeground(new java.awt.Color(105, 73, 50));
-        jPanel1.add(password_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 450, 320, 20));
-
-        casa_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/LOGO_medium.png"))); // NOI18N
-        casa_icon.setText("jLabel1");
-        jPanel1.add(casa_icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 240, 180));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/TITLELOGO_whitebig.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 390, 80));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 520, 760));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 520, 760));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/BG_NewAdminLogin.png"))); // NOI18N
         jLabel4.setText("jLabel4");
@@ -178,6 +199,11 @@ public class ADMIN_login_screen extends connect {
         }
 
     }//GEN-LAST:event_login_finish_btnActionPerformed
+
+    private void logout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_btnActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Please send a support ticket to our IT Department at casaIT@gmail.com");
+    }//GEN-LAST:event_logout_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -358,17 +384,19 @@ public class ADMIN_login_screen extends connect {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel casa_icon;
-    private javax.swing.JLabel email_label1;
+    private javax.swing.JLabel casa_logo;
+    private javax.swing.JLabel casa_name;
+    private javax.swing.JLabel email_label2;
     private javax.swing.JTextField email_txt;
     private javax.swing.JLabel invalid;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JButton login_finish_btn;
-    private javax.swing.JLabel password_label;
+    private javax.swing.JButton logout_btn;
+    private javax.swing.JLabel password_label1;
     private javax.swing.JTextField password_txt;
     private javax.swing.JButton return_btn;
+    private javax.swing.JLabel sublabel;
     // End of variables declaration//GEN-END:variables
 }
