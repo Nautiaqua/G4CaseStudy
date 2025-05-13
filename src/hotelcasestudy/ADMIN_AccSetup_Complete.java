@@ -18,6 +18,7 @@ public class ADMIN_AccSetup_Complete extends javax.swing.JFrame {
      * Creates new form login_menu
      */
     public ADMIN_AccSetup_Complete() {
+        UIManager.put("Button.arc", 20);
         initComponents();
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
     }

@@ -18,6 +18,7 @@ public class USER_signup_complete extends javax.swing.JFrame {
      * Creates new form login_menu
      */
     public USER_signup_complete() {
+        UIManager.put("Button.arc", 20);
         initComponents();
         this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/resources/images/LOGO_favicon.png")));
     }
